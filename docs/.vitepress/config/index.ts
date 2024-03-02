@@ -154,7 +154,7 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/api/introduction.html',
+              link: '/api/',
             },
             {
               text: 'Authentication',
@@ -175,7 +175,7 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/cli/introduction.html',
+              link: '/cli/',
             },
             {
               text: 'Available Commands',
@@ -191,6 +191,10 @@ export default defineConfig({
           text: 'Templates',
           items: [
             {
+              text: 'About Templates',
+              link: '/templates/',
+            },
+            {
               text: 'Available Templates',
               link: '/templates/browse.html',
             },
@@ -205,7 +209,7 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/modules/introduction.html',
+              link: '/modules/',
             },
             {
               text: 'Example Modules',
@@ -218,7 +222,7 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/extensions/introduction.html',
+              link: '/extensions/',
             },
             {
               text: 'Example Extensions',
@@ -231,7 +235,7 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/images/basic.html',
+              link: '/images/',
             },
             {
               text: 'Available images',
