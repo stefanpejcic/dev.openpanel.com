@@ -21,6 +21,31 @@ Whether you're managing a single website or an entire fleet of servers, the Open
 
 ## Complete list of API Endpoints
 
+```
+/api/v1/users
+```
+
+```
+/api/v1/plans
+```
+
+```
+/api/v1/services
+```
+
+```
+/api/v1/settings
+```
+
+```
+/api/v1/notifications
+```
+
+```
+/api/v1/admin
+```
+
+
 
 ## Creating a Custom Endpoint
 
