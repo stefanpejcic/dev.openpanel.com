@@ -18,9 +18,6 @@ hero:
     - theme: alt
       text: Showcase
       link: /examples
-    - theme: cta mastering-pinia
-      text: ' '
-      link: https://openpanel.co
 
 features:
   - title: 💡 Intuitive
