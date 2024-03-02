@@ -30,6 +30,10 @@ Whether you're managing a single website or an entire fleet of servers, the Open
 ```
 
 ```
+/api/v1/backups
+```
+
+```
 /api/v1/services
 ```
 
