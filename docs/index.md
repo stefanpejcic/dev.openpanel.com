@@ -21,17 +21,17 @@ hero:
 
 features:
   - title: 🔑 API
-    details: Stores are as familiar as components. API designed to let you write well organized stores.
+    details: OpenAdmin API provides seamless integration and automation capabilities for developers, enabling effortless management of hosting environments through programmatic access.
   - title: 👨🏻‍💻 OpenCLI
-    details: Types are inferred, which means stores provide you with autocompletion even in JavaScript!
+    details: Simplify your OpenPanel administration with our comprehensive CLI commands, offering precise control and efficient management of your web hosting environment.
   - title: 🎨 Templates
-    details: Pinia hooks into Vue devtools to give you an enhanced development experience in both Vue 2 and Vue 3.
+    details: OpenPanel templates are fully customizable, allowing you to tailor your web hosting environment to perfectly match your brand's identity and requirements.
   - title: 🔌 OpenAdmin Plugins
-    details: React to store changes to extend Pinia with transactions, local storage synchronization, etc.
+    details: OpenAdmin Plugins empower administrators to extend the admin interface with additional functionalities, ensuring a tailored and enhanced management experience.
   - title: 🏗 OpenPanel Modules
-    details: Build multiple stores and let your bundler code split them automatically.
+    details: OpenPanel Modules enable administrators to add new features to the user-level panel, enriching the user experience with expanded capabilities and services.
   - title: 📦 Docker images
-    details: Pinia weighs ~1.5kb, you will forget it's even there!
+    details: OpenPanel docker images allow administrators to customize technology stacks per user plan, offering flexibility and tailored solutions for diverse hosting needs.
 ---
 
 <script setup>
