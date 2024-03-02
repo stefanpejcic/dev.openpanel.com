@@ -6,9 +6,9 @@
   >
     <img width="22" height="22" src="/logo.svg" />
     <span>
-      <p class="extra-info">Get support on</p>
-      <p class="heading">community.openpanel.co</p>
-      <p class="extra-info">forums</p>
+      <p class="extra-info">Get immediate</p>
+      <p class="heading">Dev Support</p>
+      <p class="extra-info">on our community forums</p>
     </span>
   </a>
 </template>
