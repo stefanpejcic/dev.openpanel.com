@@ -136,11 +136,96 @@ export default defineConfig({
           text: 'Introduction',
           items: [
             {
-              text: 'What is Pinia?',
+              text: 'What is OpenPanel?',
               link: '/introduction.html',
             },
             {
               text: 'Getting Started',
+              link: '/getting-started.html',
+            },
+            {
+              text: 'Showcase',
+              link: '/showcase.html',
+            },
+          ],
+        },
+        {
+          text: 'API',
+          items: [
+            {
+              text: 'Introduction',
+              link: '/introduction.html',
+            },
+            {
+              text: 'Authentication',
+              link: '/getting-started.html',
+            },
+            {
+              text: 'Available Endpoints',
+              link: '/showcase.html',
+            },
+            {
+              text: 'Best Practice',
+              link: '/showcase.html',
+            },
+          ],
+        },
+        {
+          text: 'OpenCLI',
+          items: [
+            {
+              text: 'Introduction',
+              link: '/introduction.html',
+            },
+            {
+              text: 'Available Commands',
+              link: '/getting-started.html',
+            },
+            {
+              text: 'Custom Commands',
+              link: '/showcase.html',
+            },
+          ],
+        },
+        {
+          text: 'OpenPanel Modules',
+          items: [
+            {
+              text: 'Introduction',
+              link: '/introduction.html',
+            },
+            {
+              text: 'Example Modules',
+              link: '/getting-started.html',
+            },
+          ],
+        },
+        {
+          text: 'OpenAdmin Extensions',
+          items: [
+            {
+              text: 'Introduction',
+              link: '/introduction.html',
+            },
+            {
+              text: 'Example Extensions',
+              link: '/getting-started.html',
+            },
+          ],
+        },
+        {
+          text: 'Docker images',
+          items: [
+            {
+              text: 'Introduction',
+              link: '/introduction.html',
+            },
+            {
+              text: 'Available images',
+              link: '/getting-started.html',
+            },
+            {
+              text: 'Create an image',
               link: '/getting-started.html',
             },
           ],
