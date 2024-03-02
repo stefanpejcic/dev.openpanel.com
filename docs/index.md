@@ -20,17 +20,17 @@ hero:
       link: /examples
 
 features:
-  - title: <a href="#ee">🔑 API</a>
+  - title: <a href="/api">🔑 API</a>
     details: OpenAdmin API provides seamless integration and automation capabilities for developers, enabling effortless management of hosting environments through programmatic access.
-  - title: 👨🏻‍💻 OpenCLI
+  - title: <a href="/cli">👨🏻‍💻 OpenCLI</a>
     details: Simplify your OpenPanel administration with our comprehensive CLI commands, offering precise control and efficient management of your web hosting environment.
-  - title: 🎨 Templates
+  - title: <a href="/templates">🎨 Templates</a>
     details: OpenPanel templates are fully customizable, allowing you to tailor your web hosting environment to perfectly match your brand's identity and requirements.
-  - title: 🔌 OpenAdmin Plugins
+  - title: <a href="/extensions">🔌 OpenAdmin Plugins</a>
     details: OpenAdmin Plugins empower administrators to extend the admin interface with additional functionalities, ensuring a tailored and enhanced management experience.
-  - title: 🏗 OpenPanel Modules
+  - title: <a href="/modules">🏗 OpenPanel Modules</a>
     details: OpenPanel Modules enable administrators to add new features to the user-level panel, enriching the user experience with expanded capabilities and services.
-  - title: 📦 Docker images
+  - title: <a href="/images">📦 Docker images</a>
     details: OpenPanel docker images allow administrators to customize technology stacks per user plan, offering flexibility and tailored solutions for diverse hosting needs.
 ---
 
