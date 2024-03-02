@@ -1,14 +1,14 @@
 <template>
   <a
     class="mp-banner"
-    href="https://masteringpinia.com?utm=pinia-sidebar"
+    href="https://community.openpanel.co?utm=dev_docs-sidebar"
     target="_blank"
   >
-    <img width="22" height="22" src="/mp-pinia-logo.svg" />
+    <img width="22" height="22" src="/logo.svg" />
     <span>
-      <p class="extra-info">Complete guide to</p>
-      <p class="heading">Mastering Pinia</p>
-      <p class="extra-info">written by its creator</p>
+      <p class="extra-info">Get support on</p>
+      <p class="heading">community.openpanel.co</p>
+      <p class="extra-info">forums</p>
     </span>
   </a>
 </template>
