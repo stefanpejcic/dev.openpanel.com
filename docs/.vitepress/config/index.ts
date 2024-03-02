@@ -45,8 +45,8 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/openpanel.svg' }],
+    //['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
 
     ['meta', { property: 'og:url', content: META_URL }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -70,7 +70,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/openpanel.svg',
     outline: [2, 3],
 
     socialLinks: [
