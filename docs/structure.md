@@ -2,7 +2,7 @@
 twxt
 
 
-::: vue
+```
 theme
 ├── `global-components`
 │   └── xxx.vue
@@ -20,4 +20,4 @@ theme
 ├── `index.js`
 ├── `enhanceApp.js`
 └── package.json
-:::
+```
