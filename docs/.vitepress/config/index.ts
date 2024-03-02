@@ -154,19 +154,19 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/introduction.html',
+              link: '/api/introduction.html',
             },
             {
               text: 'Authentication',
-              link: '/getting-started.html',
+              link: '/api/authentication.html',
             },
             {
               text: 'Available Endpoints',
-              link: '/showcase.html',
+              link: '/api/endpoints.html',
             },
             {
               text: 'Best Practice',
-              link: '/showcase.html',
+              link: '/api/security.html',
             },
           ],
         },
@@ -175,15 +175,15 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/introduction.html',
+              link: '/cli/introduction.html',
             },
             {
               text: 'Available Commands',
-              link: '/getting-started.html',
+              link: '/cli/commands.html',
             },
             {
               text: 'Custom Commands',
-              link: '/showcase.html',
+              link: '/cli/create.html',
             },
           ],
         },
@@ -192,37 +192,37 @@ export default defineConfig({
           items: [
             {
               text: 'Available Templates',
-              link: '/introduction.html',
+              link: '/templates/browse.html',
             },
             {
               text: 'Create a Template',
-              link: '/getting-started.html',
+              link: '/templates/create.html',
             },
           ],
         },
         {
-          text: 'OpenPanel Modules',
+          text: 'Modules',
           items: [
             {
               text: 'Introduction',
-              link: '/introduction.html',
+              link: '/modules/introduction.html',
             },
             {
               text: 'Example Modules',
-              link: '/getting-started.html',
+              link: '/modules/examples.html',
             },
           ],
         },
         {
-          text: 'OpenAdmin Extensions',
+          text: 'Extensions',
           items: [
             {
               text: 'Introduction',
-              link: '/introduction.html',
+              link: '/extensions/introduction.html',
             },
             {
               text: 'Example Extensions',
-              link: '/getting-started.html',
+              link: '/extensions/examples.html',
             },
           ],
         },
@@ -231,22 +231,17 @@ export default defineConfig({
           items: [
             {
               text: 'Introduction',
-              link: '/introduction.html',
+              link: '/images/basic.html',
             },
             {
               text: 'Available images',
-              link: '/getting-started.html',
+              link: '/images/browse.html',
             },
             {
               text: 'Create an image',
-              link: '/getting-started.html',
+              link: '/images/create.html',
             },
           ],
-        },
-        {
-          text: 'Guide',
-
-          items: [],
         },
       ],
     },
