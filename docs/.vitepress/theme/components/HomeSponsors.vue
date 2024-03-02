@@ -1,19 +1,6 @@
 <template>
   <div class="sponsors_outer">
     <div>
-      <HomeSponsorsGroup
-        v-if="sponsors.platinum.length"
-        name="Platinum"
-        size="96"
-      />
-
-      <HomeSponsorsGroup v-if="sponsors.gold.length" name="Gold" size="38" />
-
-      <HomeSponsorsGroup
-        v-if="sponsors.silver.length"
-        name="Silver"
-        size="24"
-      />
 
       <div class="cta">
         <a class="become-sponsor" href="https://community.openpanel.co">{{
@@ -25,8 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import HomeSponsorsGroup from './HomeSponsorsGroup.vue'
-import sponsors from './sponsors.json'
 import { useData } from 'vitepress'
 
 const { site } = useData()
