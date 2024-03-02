@@ -1,26 +1,26 @@
 ---
 layout: home
 
-title: Pinia Colada
-titleTemplate: The Data Fetching layer for pinia
+title: OpenPanel
+titleTemplate: Documentation for Developers
 
 hero:
-  name: Pinia Colada
-  text: The Data Fetching layer for pinia
-  tagline: Makes handling async state management a breeze
+  name: Docs for OpenPanel
+  text: Development
+  tagline: Our APIs and other integration systems offer the tools to successfully build a custom application that works seamlessly with OpenPanel.
   image:
-    src: /logo.svg
-    alt: Pinia Colada
+    src: https://openpanel.co/img/circle-logo-homepage-showcase.png
+    alt: OpenPanel Logo
   actions:
     - theme: brand
       text: Get Started
       link: /introduction
     - theme: alt
-      text: Demo
-      link: https://stackblitz.com/github/piniajs/example-vue-3-vite
+      text: Showcase
+      link: /examples
     - theme: cta mastering-pinia
       text: ' '
-      link: https://masteringpinia.com
+      link: https://openpanel.co
 
 features:
   - title: 💡 Intuitive
