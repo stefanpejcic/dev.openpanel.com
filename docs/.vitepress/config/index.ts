@@ -188,6 +188,19 @@ export default defineConfig({
           ],
         },
         {
+          text: 'Templates',
+          items: [
+            {
+              text: 'Available Templates',
+              link: '/introduction.html',
+            },
+            {
+              text: 'Create a Template',
+              link: '/getting-started.html',
+            },
+          ],
+        },
+        {
           text: 'OpenPanel Modules',
           items: [
             {
