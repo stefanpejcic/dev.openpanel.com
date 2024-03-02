@@ -118,12 +118,12 @@ export default defineConfig({
         text: 'Links',
         items: [
           {
-            text: 'Discussions',
-            link: 'https://github.com/posva/pinia-colada/discussions',
+            text: 'OpenPanel Docs',
+            link: 'https://openpanel.co/docs/panel/intro/',
           },
           {
-            text: 'Changelog',
-            link: 'https://github.com/posva/pinia-colada/blob/main/CHANGELOG.md',
+            text: 'OpenAdmin Docs',
+            link: 'https://openpanel.co/docs/admin/intro/',
           },
         ],
       },
