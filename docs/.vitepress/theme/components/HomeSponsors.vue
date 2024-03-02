@@ -16,7 +16,7 @@
       />
 
       <div class="cta">
-        <a class="become-sponsor" href="https://github.com/sponsors/posva">{{
+        <a class="become-sponsor" href="https://community.openpanel.co">{{
           translations[site.lang] || translations.en
         }}</a>
       </div>
@@ -31,9 +31,7 @@ import { useData } from 'vitepress'
 
 const { site } = useData()
 const translations = {
-  en: 'Become a sponsor',
-  'en-US': 'Become a Sponsor!',
-  'zh-CN': '成为赞助者！',
+  en: 'Get Support',
 }
 </script>
 
