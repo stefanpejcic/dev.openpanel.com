@@ -214,21 +214,68 @@ GET OPENPANEL:2087/api/v1/backups/{backupId}/log
 
 ## Services
 
+
+### Service Status
+To check the status of a specific service:
 ```
-/api/v1/services
+GET OPENPANEL:2087/api/v1/services/{serviceName}/status
+```
+### Service Status
+To check the status of a specific service:
+```
+GET OPENPANEL:2087/api/v1/services/{serviceName}/status
+```
+Replace {serviceName} with the actual name of the service you wish to check.
+
+### Start Status
+To check the status of a specific service:
+```
+GET OPENPANEL:2087/api/v1/services/{serviceName}/status
+```
+### Stop Status
+To stop a specific service:
+```
+POST OPENPANEL:2087/api/v1/services/{serviceName}/stop
 ```
 
 ## Settings 
 
+
+### Get Settings
+
+To retrieve the current settings:
 ```
-/api/v1/settings
+GET OPENPANEL:2087/api/v1/settings/{settingName}
+```
+
+### Update Settings
+
+To update one or more settings:
+```
+PUT OPENPANEL:2087/api/v1/settings
+{
+  "setting_name1": "new_value",
+  "setting_name2": "new_value"
+}
 ```
 
 ## Notifications
 
+
+### List Notifications
+
+To list notifications:
 ```
-/api/v1/notifications
+GET OPENPANEL:2087/api/v1/notifications/
 ```
+
+### Delete Notifications
+
+To delete all notifications:
+```
+DELETE OPENPANEL:2087/api/v1/notifications/
+```
+
 
 
 ## Administration
