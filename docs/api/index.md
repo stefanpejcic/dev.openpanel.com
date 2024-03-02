@@ -53,25 +53,25 @@ Now that you're familiar with making requests and navigating the documentation, 
 The OpenPanel API offers a comprehensive set of endpoints that allow you to manage and configure various aspects of your hosting environment. Below is a complete list of available endpoints:
 
 ### User Management
-        `/api/v1/users` - Manage user accounts, including creation, deletion, and modification of user details.
+`/api/v1/users` - Manage user accounts, including creation, deletion, and modification of user details.
 
 ### Plan Management
-        `/api/v1/plans` - Handle hosting plans, allowing for the creation, modification, and deletion of service plans.
+`/api/v1/plans` - Handle hosting plans, allowing for the creation, modification, and deletion of service plans.
 
 ### Backup Management
-        `/api/v1/backups` - Manage backups, offering options to create, restore, and delete backups of your hosting environment.
+`/api/v1/backups` - Manage backups, offering options to create, restore, and delete backups of your hosting environment.
 
 ### Service Management
-        `/api/v1/services` - Control server services, including starting, stopping, and configuring web, database, and email services.
+`/api/v1/services` - Control server services, including starting, stopping, and configuring web, database, and email services.
 
 ### Settings Management
-        `/api/v1/settings` - Configure global settings for the OpenPanel environment, including security settings, default configurations, and more.
+`/api/v1/settings` - Configure global settings for the OpenPanel environment, including security settings, default configurations, and more.
 
 ### Notification Management
-        `/api/v1/notifications` - Manage notifications, enabling you to configure alerts for various events within your hosting environment.
+`/api/v1/notifications` - Manage notifications, enabling you to configure alerts for various events within your hosting environment.
 
 ### Administrative Functions
-        `/api/v1/admin` - Access administrative functions, such as system updates, user role management, and logging.
+`/api/v1/admin` - Access administrative functions, such as system updates, user role management, and logging.
 
 Each endpoint is designed to be RESTful, supporting standard HTTP methods (GET, POST, PUT, DELETE) to perform actions. For detailed information about the parameters, request and response formats, and specific functionalities of each endpoint, refer to the corresponding sections of the API documentation.
 
