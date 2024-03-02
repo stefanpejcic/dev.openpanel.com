@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-export const META_IMAGE = 'https://pinia-colada.esm.dev/social.png'
-export const META_URL = 'https://pinia-colada.esm.dev'
-export const META_TITLE = 'Pinia Colada 🍹'
-export const META_DESCRIPTION = 'The smart Data Fetching layer for Pinia'
+export const META_IMAGE = 'https://dev.openpanel.co/social.png'
+export const META_URL = 'https://dev.openpanel.co'
+export const META_TITLE = 'dev.openpanel.co'
+export const META_DESCRIPTION = 'Developer documentation for OpenPanel'
 
 const rControl = /[\u0000-\u001f]/g
 const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'“”‘’<>,.?/]+/g
@@ -25,7 +25,7 @@ export const slugify = (str: string): string =>
     .replace(/^(\d)/, '_$1')
 
 export default defineConfig({
-  title: 'Pinia Colada',
+  title: 'dev.openpanel.co',
   appearance: 'dark',
 
   markdown: {
@@ -74,24 +74,24 @@ export default defineConfig({
     outline: [2, 3],
 
     socialLinks: [
-      { icon: 'x', link: 'https://twitter.com/posva' },
+      { icon: 'x', link: 'https://twitter.com/openpanelco' },
       {
         icon: 'github',
-        link: 'https://github.com/posva/pinia-colada',
+        link: 'https://github.com/stefanpejcic/openpanel',
       },
       {
         icon: 'discord',
-        link: 'https://chat.vuejs.org',
+        link: 'https://discord.com/invite/7bNY8fANqF',
       },
     ],
 
     footer: {
-      copyright: 'Copyright © 2023-present Eduardo San Martin Morote',
+      copyright: 'Copyright © 2024 OPENPANEL',
       message: 'Released under the MIT License.',
     },
 
     editLink: {
-      pattern: 'https://github.com/posva/pinia-colada/edit/main/docs/:path',
+      pattern: 'https://github.com/stefanpejcic/dev.openpanel.co/edit/main/docs/:path',
       text: 'Suggest changes to this page',
     },
 
@@ -112,8 +112,8 @@ export default defineConfig({
         text: 'Guide',
         link: '/guide/',
       },
-      // { text: 'API', link: '/api/', activeMatch: '^/api/' },
-      // { text: 'Cookbook', link: '/cookbook/', activeMatch: '^/cookbook/' },
+       { text: 'API', link: '/api/', activeMatch: '^/api/' },
+       { text: 'Cookbook', link: '/cookbook/', activeMatch: '^/cookbook/' },
       {
         text: 'Links',
         items: [
