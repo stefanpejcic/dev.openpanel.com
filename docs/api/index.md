@@ -19,7 +19,7 @@ Whether you're managing a single website or an entire fleet of servers, the Open
 
 This section will guide you through the initial steps needed to start using the OpenPanel API, ensuring a smooth setup and integration process. By following these steps, you will be able to authenticate, make your first request, and understand the basic principles of interacting with our endpoints.
 
-1. Step 1: Obtain an API Key
+1. Obtain an API Key
 
 To use the OpenPanel API, you first need to obtain an API key. This key will authenticate your requests and provide access to the API's features. To get your API key:
 
@@ -28,7 +28,7 @@ To use the OpenPanel API, you first need to obtain an API key. This key will aut
 - Click on the "Generate API Key" button.
 - Copy the generated API key and keep it secure.
 
-2. Step 2: Make Your First Request
+2. Make Your First Request
 
 With your API key in hand, you're ready to make your first API call. We recommend starting with a simple request to fetch your user information. Use the following example, replacing YOUR_API_KEY with your actual API key.
 
@@ -37,12 +37,12 @@ curl -X GET "https://OPENADMIN:2087/api/v1/users/me" -H "Authorization: Bearer Y
 ```
 This request will return information about your user account, verifying that your API key is working correctly.
 
-3. Step 3: Explore the Documentation
+3. Explore the Documentation
 
 Before diving deeper, take some time to explore the API documentation. Familiarize yourself with the available endpoints, data formats, and common parameters. Understanding these basics will help you effectively utilize the API for your needs.
 
 
-4. Step 4: Integrate with Your Application
+4. Integrate with Your Application
 
 Now that you're familiar with making requests and navigating the documentation, start integrating the API with your application. Experiment with different endpoints, and consider how you can automate tasks, enhance functionality, or streamline operations within your environment.
 
