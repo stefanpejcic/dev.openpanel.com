@@ -20,8 +20,7 @@ hero:
       link: /examples
 
 features:
-  - title: 🔑 API
-    link: /introduction
+  - title: <a href="#ee">🔑 API</a>
     details: OpenAdmin API provides seamless integration and automation capabilities for developers, enabling effortless management of hosting environments through programmatic access.
   - title: 👨🏻‍💻 OpenCLI
     details: Simplify your OpenPanel administration with our comprehensive CLI commands, offering precise control and efficient management of your web hosting environment.
