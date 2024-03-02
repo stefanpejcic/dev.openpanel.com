@@ -45,7 +45,7 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/openpanel.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
     //['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
 
     ['meta', { property: 'og:url', content: META_URL }],
@@ -70,7 +70,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    logo: '/openpanel.svg',
+    logo: '/logo.svg',
     outline: [2, 3],
 
     socialLinks: [
