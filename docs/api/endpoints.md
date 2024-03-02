@@ -114,8 +114,102 @@ DELETE OPENPANEL:2087/api/v1/plans/{planId}
 
 ## Backups
 
+OpenPanel API Endpoints for Backup Management:
+
+### Create Backup Job
+
+To create a new backup job:
 ```
-/api/v1/backups
+POST OPENPANEL:2087/api/v1/backups
+{
+  "type": "full",
+  "destination_id": "destinationId",
+  "schedule": "daily"
+}
+```
+
+### Delete Backup
+
+To delete an existing backup:
+```
+DELETE OPENPANEL:2087/api/v1/backups/{backupId}
+```
+
+### Edit Backup Job
+
+To modify an existing backup job:
+```
+PUT OPENPANEL:2087/api/v1/backups/{backupId}
+{
+  "type": "incremental",
+  "schedule": "weekly"
+}
+```
+ ### Add Backup Destination
+
+To add a new backup destination:
+```
+POST OPENPANEL:2087/api/v1/backups/destinations
+{
+  "name": "New Destination",
+  "type": "s3",
+  "details": {
+    "access_key": "accessKey",
+    "secret_key": "secretKey",
+    "bucket_name": "bucketName",
+    "region": "us-east-1"
+  }
+}
+```
+
+### Delete Backup Destination
+
+To remove an existing backup destination:
+```
+DELETE OPENPANEL:2087/api/v1/backups/destinations/{destinationId}
+```
+
+### Edit Backup Destination
+
+To edit the details of a backup destination:
+```
+PUT OPENPANEL:2087/api/v1/backups/destinations/{destinationId}
+{
+  "name": "Updated Destination",
+  "details": {
+    "bucket_name": "newBucketName"
+  }
+}
+```
+
+### Restore Full Account of User
+
+To restore the full account of a user from a backup:
+```
+POST OPENPANEL:2087/api/v1/backups/{backupId}/restore
+{
+  "user_id": "userId",
+  "restore_type": "full"
+}
+```
+
+### Restore Single Item of User
+
+To restore a single item (e.g., a file or database) for a user:
+```
+POST OPENPANEL:2087/api/v1/backups/{backupId}/restore
+{
+  "user_id": "userId",
+  "restore_type": "single",
+  "item": "path/to/item"
+}
+
+```
+
+### View Backup Log
+To view the log for a specific backup job:
+```
+GET OPENPANEL:2087/api/v1/backups/{backupId}/log
 ```
 
 ## Services
