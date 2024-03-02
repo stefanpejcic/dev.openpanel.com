@@ -72,9 +72,45 @@ POST OPENPANEL:2087/api/v1/users/{userId}/disable2fa
 
 ## Plans
 
+
+
+### List Plans
+
+To retrieve a list of all available subscription plans:
 ```
-/api/v1/plans
+GET OPENPANEL:2087/api/v1/plans
 ```
+
+### Create Plan
+To create a new subscription plan:
+```
+POST OPENPANEL:2087/api/v1/plans
+{
+  "name": "Premium Plan",
+  "price": 99.99,
+  "currency": "USD",
+  "features": ["feature1", "feature2", "feature3"]
+}
+```
+
+### Edit Plan
+To edit an existing subscription plan. This example updates the plan's price and features:
+```
+PUT OPENPANEL:2087/api/v1/plans/{planId}
+{
+  "name": "Premium Plan Updated",
+  "price": 109.99,
+  "currency": "USD",
+  "features": ["feature1", "feature2", "feature4", "feature5"]
+}
+```
+
+### Delete Plan
+To delete a subscription plan:
+```
+DELETE OPENPANEL:2087/api/v1/plans/{planId}
+```
+
 
 ## Backups
 
