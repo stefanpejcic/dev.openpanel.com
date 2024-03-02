@@ -20,17 +20,17 @@ hero:
       link: /examples
 
 features:
-  - title: 💡 Intuitive
+  - title: 💡 API
     details: Stores are as familiar as components. API designed to let you write well organized stores.
-  - title: 🔑 Type Safe
+  - title: 🔑 OpenCLI
     details: Types are inferred, which means stores provide you with autocompletion even in JavaScript!
-  - title: ⚙️ Devtools support
+  - title: ⚙️ OpenPanel Modules
     details: Pinia hooks into Vue devtools to give you an enhanced development experience in both Vue 2 and Vue 3.
-  - title: 🔌 Extensible
+  - title: 🔌 OpenAdmin Addons
     details: React to store changes to extend Pinia with transactions, local storage synchronization, etc.
-  - title: 🏗 Modular by design
+  - title: 🏗 Templates
     details: Build multiple stores and let your bundler code split them automatically.
-  - title: 📦 Extremely light
+  - title: 📦 Docker images
     details: Pinia weighs ~1.5kb, you will forget it's even there!
 ---
 
