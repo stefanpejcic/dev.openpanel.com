@@ -1221,8 +1221,6 @@ logo=https://http.cat/images/100.jpg
 
 `brand_name` allows you to brand the OpenPanel name that users see in their user panel with your custom brand name.
 
-![brand_name](/img/admin/brand_name.png)
-
 This brand name is displayed in the following positions:
 - on top left when logo is not provided
 - in the page title
@@ -1285,7 +1283,6 @@ resource_usage_retention=100
 #### resource_usage_charts_mode
 `resource_usage_charts_mode` allows you to set the number of charts displayed on users _Historical Resource Usage_ page.
 
-![resource_columns](/img/admin/resource_columns.gif)
 
 - _one_ - displays a single chart for both CPU and RAM usage.
 - _two_ (Default) - displays two charts: one for CPU and another for RAM. 
@@ -1299,7 +1296,6 @@ resource_usage_charts_mode=two
 
 `sidebar_color` allows you to set a custom color scheme for the sidebar.
 
-![Sidebar colors](/img/admin/sidebar_colors.gif)
 
 Available options are:
 
@@ -1323,7 +1319,6 @@ password_reset=yes
 
 `avatar_type` allows you to set the type of images used for users profile pictures in the users panel.
 
-![avatar type](/img/admin/profile_picture.gif)
 
 Available options:
 
@@ -1395,8 +1390,6 @@ openpanel_proxy=open_sesame
 The `ns1` `ns2` `ns3` `ns4` options allow you to set nameservers that will be used in dns zone files for newly added domains, and displayed to users on their panel dashboard.
 Nameservers should be added in pairs, ns1 and ns2, ns3 and ns4.
 
-![ns](/img/admin/ns.png)
-
 ```bash
 ns1=ns1.openpanel.co
 ns2=ns2.openpanel.co
@@ -1444,8 +1437,6 @@ autoupdate=yes
 
 The `twofa_nag` option allows Administrator to set if 2FA nag should be displayed to users on their dashboard page.
 
-![2fa nag](/img/admin/2fa_nag.png)
-
 
 ```bash
 twofa_nag=yes
@@ -1455,7 +1446,6 @@ twofa_nag=yes
 
 The `how_to_guides` option allows Aministrator to enable or disable the How-to guides section from users dashboards.
 
-![how_to guides](/img/admin/how_to.png)
 
 ```bash
 how_to_guides=yes
