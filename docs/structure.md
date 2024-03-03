@@ -21,8 +21,8 @@ OpenPanel uses the following files and directories:
 ├── translations/
 │   ├── dev.html
 │   └── ssr.html
-├── `app.py`
-├── `pyarmor`
+├── app.py
+├── pyarmor
 └── version
 ```
 
@@ -42,7 +42,7 @@ OpenPanel uses the following files and directories:
 ├── static/
 │   ├── index.styl
 │   └── palette.styl
-├── `app.py`
-├── `scripts/`
+├── app.py
+├── scripts/
 └── version
 ```
