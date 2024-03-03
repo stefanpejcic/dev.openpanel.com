@@ -1,3 +1,6 @@
 # Getting Started
 
-## Installation
+## Structure
+
+## Configuration Fles
+
