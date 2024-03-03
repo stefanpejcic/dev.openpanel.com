@@ -17,6 +17,8 @@ The autocomplete functionality enhances user experience by displaying available 
 
 ## Available Commands
 
+OpenCLI is comprised of over 70 Python scripts, collectively offering more than 120 terminal commands.
+
 To explore the full range of commands, please refer to [Available Commands](/cli/commands.html).
 
 ## Developing Commands
