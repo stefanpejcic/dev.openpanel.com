@@ -426,7 +426,7 @@ Generate and manage SSL certificates for user domains and server hostname.
 
 ### Check SSL for all domains owned by user
 
-This command allows you to check the SSL status of all user domains in Certbot and updates the ssl/.domain_status file of the user. This file is used to display SSL status and expiry date on [SSL Certificates page](/docs/panel/domains/SSL) in OpenPanel.
+This command allows you to check the SSL status of all user domains in Certbot and updates the ssl/.domain_status file of the user. This file is used to display SSL status and expiry date on [SSL Certificates page](#SSL) in OpenPanel.
 
 ```bash
 opencli ssl-user <username>
@@ -1371,7 +1371,7 @@ After adjusting the port, it's necessary to restart the panel service to apply t
 
 #### ssl
 
-The `ssl` setting when enabled will force both the OpenPanel and AdminPanel to use SSL for the hostname and redirect traffic to https. This setting is by default disabled but will be automatically enabled if [opencli ssl-hostname](/docs/admin/scripts/ssl#hostname) succeeded in generating an SSL for the hostname during OpenPanel installation.
+The `ssl` setting when enabled will force both the OpenPanel and AdminPanel to use SSL for the hostname and redirect traffic to https. This setting is by default disabled but will be automatically enabled if [opencli ssl-hostname](#hostname) succeeded in generating an SSL for the hostname during OpenPanel installation.
 
 ```bash
 ssl=no
