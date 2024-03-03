@@ -113,7 +113,7 @@ export default defineConfig({
         link: '/guide/',
       },
        { text: 'API', link: '/api/', activeMatch: '^/api/' },
-       { text: 'Cookbook', link: '/cookbook/', activeMatch: '^/cookbook/' },
+       { text: 'OpenCLI', link: '/cli/', activeMatch: '^/cli/' },
       {
         text: 'Links',
         items: [
@@ -142,6 +142,10 @@ export default defineConfig({
             {
               text: 'Getting Started',
               link: '/getting-started.html',
+            },
+            {
+              text: 'Structure',
+              link: '/structure.html',
             },
             {
               text: 'Showcase',
