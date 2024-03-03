@@ -17,7 +17,7 @@ hero:
       link: /introduction
     - theme: alt
       text: Showcase
-      link: /examples
+      link: /showcase
 
 features:
   - title: <a href="/api">🔑 API</a>
