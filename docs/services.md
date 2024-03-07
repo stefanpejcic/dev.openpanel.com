@@ -87,11 +87,11 @@ OpenPanel installation **does not** setup [ModSecurity](https://github.com/owasp
 
 Upon installation of OpenPanel, all access is initially blocked, with exceptions made for the following ports:
 ```
-80/tcp for HTTP websites via Nginx
-53 for DNS services using Named service
-443/tcp for HTTPS websites via Nginx
-2083/tcp as the default port for OpenPanel
-2087/tcp as the default port for OpenAdmin
+80/tcp                    # for HTTP websites via Nginx
+53                        # for DNS services using Named service
+443/tcp                   # for HTTPS websites via Nginx
+2083/tcp                  # as the default port for OpenPanel
+2087/tcp                  # as the default port for OpenAdmin
 ```
 
 All other ports, **including the default SSH port 22, are blocked**. However, OpenPanel does whitelist the IP address of the admin user who installs OpenPanel, ensuring they retain access.
