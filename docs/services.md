@@ -57,6 +57,8 @@ location /openpanel {
 }
 ```
 
+This can be changed by the Administrator from *OpenAdmin > General Settings*
+
 
 `/etc/nginx/snippets/` directory is used to store configuration and templates for [Nginx error pages](https://github.com/denysvitali/nginx-error-pages).
 
