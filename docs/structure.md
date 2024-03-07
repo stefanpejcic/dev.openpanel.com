@@ -3,8 +3,7 @@
 
 OpenPanel uses the following files and directories:
 
-## OpenPanel
-
+OpenPanel Directories:
 ```
 /usr/local/admin/
 ├── core/                     - Users information and usage data
@@ -21,10 +20,7 @@ OpenPanel uses the following files and directories:
 └── app.py                    - Main Python file for user panel
 ```
 
-
-# OpenAdmin 
-
-
+OpenAdmin Directories:
 ```
 /usr/local/admin/
 ├── core/                     - Password hashing module
