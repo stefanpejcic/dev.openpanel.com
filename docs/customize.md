@@ -1,6 +1,7 @@
 # Customize
 
-# Pre-fill **OpenAdmin > Plans > New** form
+
+## Pre-fill **OpenAdmin > Plans > New** form
 
 To pref-fill data into the new plan form, simply create a new file:
 
