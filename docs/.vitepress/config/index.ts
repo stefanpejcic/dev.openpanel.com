@@ -137,6 +137,10 @@ export default defineConfig({
               text: 'Customize',
               link: '/customize.html',
             },
+            {
+              text: 'Logs',
+              link: '/logs.html',
+            },
           ],
         },
         {
