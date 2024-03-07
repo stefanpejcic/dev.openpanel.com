@@ -46,27 +46,14 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
-    //['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
-
     ['meta', { property: 'og:url', content: META_URL }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:description', content: META_DESCRIPTION }],
-
     ['meta', { property: 'twitter:url', content: META_URL }],
     ['meta', { property: 'twitter:title', content: META_TITLE }],
     ['meta', { property: 'twitter:description', content: META_DESCRIPTION }],
     ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { property: 'twitter:image', content: META_IMAGE }],
-
-    [
-      'script',
-      {
-        src: 'https://cdn.usefathom.com/script.js',
-        'data-site': 'WUXSABAN',
-        'data-spa': 'auto',
-        defer: '',
-      },
-    ],
   ],
 
   themeConfig: {
@@ -81,7 +68,7 @@ export default defineConfig({
       },
       {
         icon: 'discord',
-        link: 'https://discord.com/invite/7bNY8fANqF',
+        link: 'https://discord.openpanel.co',
       },
     ],
 
@@ -101,12 +88,7 @@ export default defineConfig({
         detailedView: true,
       },
     },
-
-    // carbonAds: {
-    //   code: 'CEBICK3I',
-    //   placement: 'routervuejsorg',
-    // },
-
+    
     nav: [
       {
         text: 'Guide',
@@ -146,6 +128,10 @@ export default defineConfig({
             {
               text: 'Structure',
               link: '/structure.html',
+            },
+            {
+              text: 'Services',
+              link: '/services.html',
             },
             {
               text: 'Customize',
