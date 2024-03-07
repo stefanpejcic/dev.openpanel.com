@@ -6,23 +6,19 @@ OpenPanel uses the following files and directories:
 ## OpenPanel
 
 ```
-/usr/local/panel/
-├── core/
-│   └── users
-├── modules/
-│   └── includes
-├── templates/
-│   ├── Layout.vue
-│   └── 404.vue
-├── static/
-│   ├── index.styl
-│   └── palette.styl
-├── translations/
-│   ├── dev.html
-│   └── ssr.html
-├── app.py
-├── pyarmor
-└── version
+/usr/local/admin/
+├── core/                     - Users information and usage data
+├── modules/                  - Python scripts for user panel
+├── templates/                - HTML templates for the user panel
+├── static/                   - CSS, JS and images for the user panel
+├── conf/                     - Configuration files
+├── screenshot_cache/         - Screenshots for user websites
+├── pyarmor_runtime_000000/   - Encoded python files
+├── __pycache__/              - Cached python files
+├── ubabel.cfg                - Localization configuration
+├── messages.pot              - Localization file
+├── version                   - OpenPanel version
+└── app.py                    - Main Python file for user panel
 ```
 
 
@@ -40,8 +36,9 @@ OpenPanel uses the following files and directories:
 ├── conf/                     - Custom configuration added by user
 ├── logs/                     - Logs for the Notifications Center
 ├── pyarmor_runtime_000000/   - Encoded python files
+├── __pycache__/              - Cached python files
 ├── users.db                  - SQLite database with the admin users
 ├── db.cnf                    - MySQL login infomration for OpenCLI
 ├── config.json               - MySQL login information fur OpenPanel
-└── app.py                    - Main Python file for amdin panel
+└── app.py                    - Main Python file for admin panel
 ```
