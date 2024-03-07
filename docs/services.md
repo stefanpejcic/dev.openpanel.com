@@ -39,10 +39,11 @@ Nginx service uses the following log files:
 
 ## Docker
 
-Docker is used to isolate user accounts and provide them a VPS-like experience.
+[Docker](https://www.docker.com/) is used to isolate user accounts and provide them a VPS-like experience.
 
+During OpenPanel installation process, defualt storage driver for Docker is changed from *overlay2* to *devicemapper*.
 
-
+Configuration file `/etc/docker/daemon.json` is not modified on update.
 
 ## MySQL
 
@@ -61,9 +62,21 @@ SQLite database is used by the OpenAdmin panel in order to completely separate t
 
 Named (BIND9) service is used for DNS.
 
+# GoAccess
+
+OpenPanel uses [GoAccess](https://goaccess.io/) to generate beautiful HTML reports from Nginx access logs for each domain.
+
+GoAccess main configuration file: `/etc/goaccess/goaccess.conf`
+
+OpenPanel also downloads [GeoIPLite2 City and Country](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) databases in order to display location info for each IP address in reports.
+
+## ModSecurity
+
+OpenPanel installation **does not** setup [ModSecurity](https://github.com/owasp-modsecurity/ModSecurity). Installation of ModSecurity is optional.
+
 ## ClamAV
 
-ClamAV is used to allow users to scan their websites for malicious files.
+[ClamAV](https://www.clamav.net/) is used to allow users to scan their websites for malicious files.
 
 
 ---
