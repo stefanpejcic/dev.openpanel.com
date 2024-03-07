@@ -23,13 +23,7 @@ Nginx service uses the following log files:
 - error log: `/var/log/nginx/error.log`
 - access log: `/var/log/nginx/access.log`
 
-
-
-
-
-
-
-
+There is a known issue with the Nginx service on servers operating behind NAT (such as those on Azure, AWS, etc.) that do not have a public IP assigned directly to them, which can cause the Nginx service to fail to start. To circumvent this problem, the OpenPanel installation procedure includes a check for this scenario and, if necessary, [applies an additional configuration](https://stackoverflow.com/questions/3191509/nginx-error-99-cannot-assign-requested-address/13141104#13141104) as advised. This step ensures that Nginx can successfully start and operate even in environments where the server is behind NAT and lacks a public IP address.
 
 
 
