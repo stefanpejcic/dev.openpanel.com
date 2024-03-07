@@ -4,7 +4,7 @@ OpenPanel uses the following services:
 
 ## Nginx
 
-Nginx is used as a reverse proxy to redirect traffic from and to user websites in their docker containers.
+[Nginx](https://www.nginx.com/) is used as a reverse proxy to redirect traffic from and to user websites in their docker containers.
 
 Nginx main configuration file location: `/etc/nginx/nginx.conf`
 
