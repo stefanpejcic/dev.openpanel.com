@@ -55,7 +55,7 @@ Example:
 ![screenshot](/prefill_plan_form.png)
 
 
-To pref-fill data into the new plan form, simply create a new file:
+To pre-fill data into the new plan form, simply create a new file:
 
 ```
 /usr/local/admin/conf/new_plan_template
