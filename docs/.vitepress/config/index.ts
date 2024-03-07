@@ -122,10 +122,6 @@ export default defineConfig({
               link: '/introduction.html',
             },
             {
-              text: 'Getting Started',
-              link: '/getting-started.html',
-            },
-            {
               text: 'Structure',
               link: '/structure.html',
             },
