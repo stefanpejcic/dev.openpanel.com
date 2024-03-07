@@ -14,7 +14,7 @@ export default defineConfig([
     ...commonOptions,
     clean: true,
     entry: ['src/index.ts'],
-    globalName: 'PiniaColada',
+    globalName: 'dev.openpanel.co',
   },
   // {
   //   ...commonOptions,
