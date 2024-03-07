@@ -19,7 +19,9 @@ Virtual host files for each domain are situated within the `/etc/nginx/sites-ena
 
 `/etc/nginx/snippets/` directory is used to store configuration and templates for [Nginx error pages](https://github.com/denysvitali/nginx-error-pages).
 
-
+Nginx service uses the following log files:
+- error log: `/var/log/nginx/error.log`
+- access log: `/var/log/nginx/access.log`
 
 
 
