@@ -56,7 +56,7 @@ server {
 }
 ```
 
-OpenPanel is available to all users on their-domain.com**/openpanel**
+OpenPanel is available to all users on their-domain.com`/openpanel`
 ```
 # openpanel
 location /openpanel {
@@ -242,6 +242,9 @@ OpenPanel also downloads [GeoIPLite2 City and Country](https://dev.maxmind.com/g
 
 OpenPanel installation **does not** setup [ModSecurity](https://github.com/owasp-modsecurity/ModSecurity). Installation of ModSecurity is optional.
 
+## Certbot
+
+OpenPanel employs [Certbot](https://certbot.eff.org/), a free, open-source software tool, for generating, renewing, and configuring Let's Encrypt SSL certificates for all domains added by users. This integration facilitates the secure encryption of web traffic by providing and managing SSL/TLS certificates for websites hosted on the panel, ensuring that all communications between the server and its visitors are securely encrypted.
 
 ## UFW
 [UncomplicatedFirewall (UFW)](https://wiki.ubuntu.com/UncomplicatedFirewall) is utilized by OpenPanel to manage access to users' services and websites. OpenPanel configures UFW to open only the necessary ports for each user.
@@ -276,11 +279,6 @@ These ports are uniquely assigned and are indicated in the firewall settings wit
 [ClamAV](https://www.clamav.net/) is used to allow users to scan their websites for malicious files.
 
 
----
-
-and two custom services:
-
-
 ## Panel
 
 `panel` service is used by the OpenPanel interface that allows users to manage their accounts.
@@ -300,9 +298,6 @@ Then, to start the Flask application:
 `cd /usr/local/panel && flask run --host=0.0.0.0 -p 2083 --cert=/etc/letsencrypt/live/server.openpanel.co/fullchain.pem --key=/etc/letsencrypt/live/server.openpanel.co/privkey.pem`
 
 This approach allows developers to see real-time logs directly in the console, providing a more detailed insight into the application's operations, which can be invaluable for debugging or during development. Remember to restart the OpenPanel service with `service panel start` after completing your log analysis or development work to return to the standard, production-ready environment.
-
-
-
 
 
 ## Admin
