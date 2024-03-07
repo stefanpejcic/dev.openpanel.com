@@ -91,8 +91,8 @@ export default defineConfig({
     
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'Getting Started',
+        link: '/introduction.html',
       },
        { text: 'API', link: '/api/', activeMatch: '^/api/' },
        { text: 'OpenCLI', link: '/cli/', activeMatch: '^/cli/' },
