@@ -47,16 +47,29 @@ Configuration file `/etc/docker/daemon.json` is not modified on update.
 
 ## MySQL
 
-MySQL is used as a database to store all user related information:
+[MySQL](https://www.mysql.com/) is used as a database to store all user related information:
 
 - Users
 - Plans
 - Domains
 - Websites
 
+During OpenPanel installation, MySQL is installed and configured to allow only local access.
+
+Main configuration file `/etc/mysql/mysql.conf.d/mysqld.cnf` is not edited on update.
+
+MySQL login information is stored in files:
+
+- `/usr/local/admin/db.conf` - for OpenCLI
+- `/usr/local/admin/config.json` - for OpenPanel
+
+To use remote mysql database: https://community.openpanel.co/d/19-use-remote-mysql-server-for-openadmin
+
 ## SQLite
 
 SQLite database is used by the OpenAdmin panel in order to completely separate the Admin and end-user interface.
+
+Database file: `/usr/local/admin/scripts`
 
 ## Named
 
@@ -74,6 +87,35 @@ OpenPanel also downloads [GeoIPLite2 City and Country](https://dev.maxmind.com/g
 
 OpenPanel installation **does not** setup [ModSecurity](https://github.com/owasp-modsecurity/ModSecurity). Installation of ModSecurity is optional.
 
+
+## UFW
+[UncomplicatedFirewall (UFW)](https://wiki.ubuntu.com/UncomplicatedFirewall) is utilized by OpenPanel to manage access to users' services and websites. OpenPanel configures UFW to open only the necessary ports for each user.
+
+Upon installation of OpenPanel, all access is initially blocked, with exceptions made for the following ports:
+```
+80/tcp for HTTP websites via Nginx
+53 for DNS services using Named service
+443/tcp for HTTPS websites via Nginx
+2083/tcp as the default port for OpenPanel
+2087/tcp as the default port for OpenAdmin
+```
+
+All other ports, **including the default SSH port 22, are blocked**. However, OpenPanel does whitelist the IP address of the admin user who installs OpenPanel, ensuring they retain access.
+
+For each user created, OpenPanel configures UFW to open necessary random ports for their specific services, such as remote MySQL access, SSH, and phpMyAdmin. This ensures users have the required access while maintaining security by not using standard ports for these services.
+
+Here's an example of random ports opened for a user, each accompanied by a comment for identification:
+
+Example random ports opened for a user:
+```
+32772/tcp                  ALLOW       Anywhere                   # stefan
+32770/tcp                  ALLOW       Anywhere                   # stefan
+32769/tcp                  ALLOW       Anywhere                   # stefan
+32768/tcp                  ALLOW       Anywhere                   # stefan
+```
+
+These ports are uniquely assigned and are indicated in the firewall settings with a comment (e.g., # stefan) to identify the specific user they are associated with.
+
 ## ClamAV
 
 [ClamAV](https://www.clamav.net/) is used to allow users to scan their websites for malicious files.
@@ -88,6 +130,10 @@ and two custom services:
 
 `panel` service is used by teh OpenPanel interface that allows users to manage their accounts.
 
+OpenPanel is a [Flask](https://flask.palletsprojects.com/en/3.0.x/)-based application that uses [MySQL](#MySQL) to store user data and operates on the [Gunicorn](https://gunicorn.org/) web server. This configuration ensures that OpenPanel remains functional even if the Nginx service is down, thereby providing complete isolation between user websites and the admin panel.
+
 ## Admin
 
 `admin` service is used by the OpenAdmin interface.
+
+OpenAdmin is a [Flask](https://flask.palletsprojects.com/en/3.0.x/) application that utilizes [SQLite](https://www.sqlite.org/) for its database and runs on a separate Gunicorn instance. It operates independently from the OpenPanel and Nginx services.
