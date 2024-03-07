@@ -69,7 +69,7 @@ Database file: `/usr/local/admin/scripts`
 
 Named (BIND9) service is used for DNS.
 
-# GoAccess
+## GoAccess
 
 OpenPanel uses [GoAccess](https://goaccess.io/) to generate beautiful HTML reports from Nginx access logs for each domain.
 
