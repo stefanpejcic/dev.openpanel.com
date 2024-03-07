@@ -17,7 +17,50 @@ The `/etc/nginx/sites-enabled/default`  file acts as the default configuration f
 
 Virtual host files for each domain are situated within the `/etc/nginx/sites-enabled/` directory. For example, the virtual host file for the domain *pejcic.rs* can be found at `/etc/nginx/sites-enabled/pejcic.rs.conf`.
 
+VrutalHosts template for domains:
+```
+server {
+    listen <LISTEN_IP>;
+    server_name <DOMAIN_NAME>;
+
+    # if modsecurity is installed
+    modsecurity on;
+    modsecurity_rules_file /etc/nginx/modsec/main.conf;
+
+    include snippets/error_pages.conf;
+    access_log /var/log/nginx/domlogs/<DOMAIN_NAME>.log;
+    include /usr/local/panel/core/users/<USERNAME>/domains/<DOMAIN_NAME>-block_ips.conf;
+
+
+    location / {
+        proxy_pass http://<IP>;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # openpanel
+    include /usr/local/panel/templates/vhosts/openpanel_proxy.conf;
+}
+```
+
+OpenPanel is available to all users on their-domain.com**/openpanel**
+```
+# openpanel
+location /openpanel {
+    proxy_pass https://127.0.0.1:2083;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+```
+
+
 `/etc/nginx/snippets/` directory is used to store configuration and templates for [Nginx error pages](https://github.com/denysvitali/nginx-error-pages).
+
+Each domain has a configuration file where user can block IP addresses per domain: `/usr/local/panel/core/users/<USERNAME>/domains/<DOMAIN_NAME>-block_ips.conf`.
 
 Nginx service uses the following log files:
 - error log: `/var/log/nginx/error.log`
@@ -67,7 +110,7 @@ Database file: `/usr/local/admin/scripts`
 
 ## Named
 
-Named (BIND9) service is used for DNS.
+[Named (BIND9)](https://www.isc.org/bind/) service is used for DNS.
 
 ## GoAccess
 
