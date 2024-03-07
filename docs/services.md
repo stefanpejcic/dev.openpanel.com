@@ -283,9 +283,27 @@ and two custom services:
 
 ## Panel
 
-`panel` service is used by teh OpenPanel interface that allows users to manage their accounts.
+`panel` service is used by the OpenPanel interface that allows users to manage their accounts.
 
 OpenPanel is a [Flask](https://flask.palletsprojects.com/en/3.0.x/)-based application that uses [MySQL](#MySQL) to store user data and operates on the [Gunicorn](https://gunicorn.org/) web server. This configuration ensures that OpenPanel remains functional even if the Nginx service is down, thereby providing complete isolation between user websites and the admin panel.
+
+OpenPanel operates in production mode by default, logging only [errors and access logs](/logs.html). For developers needing more detailed logs for troubleshooting or development purposes, it is possible to switch to a more verbose logging mode by stopping the OpenPanel service and running the Flask application directly with specific commands.
+
+To temporarily stop the OpenPanel service for this purpose, use the following command:
+`service panel stop`
+
+Then, to start the Flask application:
+
+- For OpenPanel accessible via an IP address (without using a domain name), navigate to the OpenPanel directory and run the Flask application with the following command to listen on all network interfaces (0.0.0.0) on port 2083 (or another port if you have customized this setting):
+`cd /usr/local/panel && flask run --host=0.0.0.0 -p 2083`
+- For OpenPanel accessible via a domain name, you need to specify the SSL certificate and key to securely serve over HTTPS. Make sure to replace `server.openpanel.co` with your domain name for the panel and adjust the port number (`2083` by default) if you have changed it. Navigate to the OpenPanel directory and run the Flask application with the following command:
+`cd /usr/local/panel && flask run --host=0.0.0.0 -p 2083 --cert=/etc/letsencrypt/live/server.openpanel.co/fullchain.pem --key=/etc/letsencrypt/live/server.openpanel.co/privkey.pem`
+
+This approach allows developers to see real-time logs directly in the console, providing a more detailed insight into the application's operations, which can be invaluable for debugging or during development. Remember to restart the OpenPanel service with `service panel start` after completing your log analysis or development work to return to the standard, production-ready environment.
+
+
+
+
 
 ## Admin
 
