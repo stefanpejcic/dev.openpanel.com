@@ -148,6 +148,10 @@ export default defineConfig({
               link: '/structure.html',
             },
             {
+              text: 'Customize',
+              link: '/customize.html',
+            },
+            {
               text: 'Showcase',
               link: '/showcase.html',
             },
