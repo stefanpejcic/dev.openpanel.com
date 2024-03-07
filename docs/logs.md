@@ -1,6 +1,4 @@
-# Troubleshooting
-
-## Logs
+# Logs
 
 OpenPanel generates the following logs:
 
