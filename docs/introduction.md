@@ -7,6 +7,12 @@ Before starting with custom development, please first get familiar with our user
 - [OpenPanel Documentation](https://openpanel.co/docs/panel/intro/)
 - [OpenAdmin Documentation](https://openpanel.co/docs/admin/intro/)
 
+Afterwards, make sure to understand OpenPanel directory structure, services and logs:
+
+- [Directory Structure](structure.html)
+- [Services and their Configuration files](/services.html)
+- [Log file locations](/logs.html)
+
 
 ## Developer Support
 
