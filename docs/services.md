@@ -114,6 +114,8 @@ Database file: `/usr/local/admin/scripts`
 
 [Named (BIND9)](https://www.isc.org/bind/) service is used for DNS.
 
+Administrators can set custom nameservers on *OpenAdmin > OpenPanel Settings* to be used for OpenPanel websites.
+
 ## GoAccess
 
 OpenPanel uses [GoAccess](https://goaccess.io/) to generate beautiful HTML reports from Nginx access logs for each domain.
