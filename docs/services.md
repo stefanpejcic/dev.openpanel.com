@@ -15,6 +15,17 @@ The `/var/log/nginx/domlogs/` directory serves as the repository for access logs
 
 The `/etc/nginx/sites-enabled/default`  file acts as the default configuration file, which restricts access to domains that are not hosted on the server. It is recommended not to modify this file.
 
+defaultvhost file template:
+```
+server {
+    listen IP_HERE:80;
+    server_name _;
+    return 444;
+    # https://http.cat/status/444
+}
+```
+
+
 Virtual host files for each domain are situated within the `/etc/nginx/sites-enabled/` directory. For example, the virtual host file for the domain *pejcic.rs* can be found at `/etc/nginx/sites-enabled/pejcic.rs.conf`.
 
 VrutalHosts template for domains:
@@ -59,7 +70,6 @@ location /openpanel {
 
 This can be changed by the Administrator from *OpenAdmin > General Settings*
 
-
 `/etc/nginx/snippets/` directory is used to store configuration and templates for [Nginx error pages](https://github.com/denysvitali/nginx-error-pages).
 
 Each domain has a configuration file where user can block IP addresses per domain: `/usr/local/panel/core/users/<USERNAME>/domains/<DOMAIN_NAME>-block_ips.conf`.
@@ -97,10 +107,32 @@ During OpenPanel installation, MySQL is installed and configured to allow only l
 
 Main configuration file `/etc/mysql/mysql.conf.d/mysqld.cnf` is not edited on update.
 
+Default MySQL configuration file:
+```
+[mysqld]
+
+user            = mysql
+bind-address            = 127.0.0.1
+mysqlx-bind-address     = 127.0.0.1
+key_buffer_size         = 160M
+max_allowed_packet      = 32M
+thread_stack            = 256K
+myisam-recover-options  = BACKUP
+table_open_cache       = 4000
+interactive_timeout=15
+wait_timeout=10
+
+log_error = /var/log/mysql/error.log
+max_binlog_size   = 100M
+```
+
 MySQL login information is stored in files:
 
 - `/usr/local/admin/db.conf` - for OpenCLI
 - `/usr/local/admin/config.json` - for OpenPanel
+
+
+
 
 To use remote mysql database: https://community.openpanel.co/d/19-use-remote-mysql-server-for-openadmin
 
@@ -116,11 +148,93 @@ Database file: `/usr/local/admin/scripts`
 
 Administrators can set custom nameservers on *OpenAdmin > OpenPanel Settings* to be used for OpenPanel websites.
 
+`named.conf.options` configuration file:
+```
+acl trusted {
+                localhost;
+                192.168.1.0/24;
+                172.0.0.0/8;
+                   };
+
+options {
+        directory "/var/cache/bind";
+
+        recursion yes;
+        allow-recursion { trusted; };
+
+        forwarders {
+        8.8.8.8;
+        8.8.4.4;
+                   };
+
+        dnssec-validation auto;
+        listen-on-v6 { any; };
+        };
+```
+
+
 ## GoAccess
 
 OpenPanel uses [GoAccess](https://goaccess.io/) to generate beautiful HTML reports from Nginx access logs for each domain.
 
 GoAccess main configuration file: `/etc/goaccess/goaccess.conf`
+
+configuration file:
+
+```
+time-format %H:%M:%S
+date-format %d/%b/%Y
+log-format %h %^[%d:%t %^] "%r" %s %b "%R" "%u"
+html-prefs {"theme":"bright"}
+json-pretty-print false
+no-color false
+no-column-names false
+no-csv-summary false
+no-progress false
+no-tab-scroll false
+with-mouse false
+static-file .css
+static-file .js
+static-file .jpg
+static-file .png
+static-file .gif
+static-file .ico
+static-file .jpeg
+static-file .pdf
+static-file .csv
+static-file .mpeg
+static-file .mpg
+static-file .swf
+static-file .woff
+static-file .woff2
+static-file .xls
+static-file .xlsx
+static-file .doc
+static-file .docx
+static-file .ppt
+static-file .pptx
+static-file .txt
+static-file .zip
+static-file .ogg
+static-file .mp3
+static-file .mp4
+static-file .exe
+static-file .iso
+static-file .gz
+static-file .rar
+static-file .svg
+static-file .bmp
+static-file .tar
+static-file .tgz
+static-file .tiff
+static-file .tif
+static-file .ttf
+static-file .flv
+static-file .dmg
+static-file .xz
+static-file .zst
+geoip-database /usr/local/share/GeoIP/GeoLite2-City_20231219/GeoLite2-City.mmdb
+```
 
 OpenPanel also downloads [GeoIPLite2 City and Country](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) databases in order to display location info for each IP address in reports.
 
