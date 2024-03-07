@@ -52,7 +52,7 @@ Example:
 
 ## Pre-fill **OpenAdmin > Plans > New** form
 
-![screenshot](./prefill_plan_form.png)
+![screenshot](/prefill_plan_form.png)
 
 
 To pref-fill data into the new plan form, simply create a new file:
