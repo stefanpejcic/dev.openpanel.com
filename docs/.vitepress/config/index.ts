@@ -136,7 +136,7 @@ export default defineConfig({
           text: 'Introduction',
           items: [
             {
-              text: 'What is OpenPanel?',
+              text: 'Welcome',
               link: '/introduction.html',
             },
             {
@@ -150,10 +150,6 @@ export default defineConfig({
             {
               text: 'Customize',
               link: '/customize.html',
-            },
-            {
-              text: 'Showcase',
-              link: '/showcase.html',
             },
           ],
         },
