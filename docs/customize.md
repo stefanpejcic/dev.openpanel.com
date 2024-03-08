@@ -48,7 +48,13 @@ Example:
  --post_install=/root/my_custom_script.sh
 ```
 
+### After update
 
+To execute custom code following the update of OpenPanel, create a custom bash script:
+
+```bash
+/root/openpanel_run_after_update
+```
 
 ## Pre-fill **OpenAdmin > Plans > New** form
 
