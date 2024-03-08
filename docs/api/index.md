@@ -2,6 +2,10 @@
 
 Welcome to the OpenPanel API documentation!
 
+:::danger
+THIS API IS STILL EXPERIMENTAL AND NOT SUITABLE FOR PRODUCTION USE.
+:::
+
 ## Introduction
 
 OpenPanel, known for revolutionizing the web hosting industry with its unparalleled flexibility and robust security features, now extends its capabilities through a comprehensive API. This API enables developers, system administrators, and tech enthusiasts to automate, customize, and integrate OpenPanel functionalities seamlessly with their systems and applications.
