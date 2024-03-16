@@ -1170,6 +1170,8 @@ default_php_version=8.2
 [PANEL]
 autoupdate=on
 autopatch=on
+api=off
+dev_mode=off
 ```
 
 
@@ -1457,3 +1459,16 @@ The `how_to_guides` option allows Aministrator to enable or disable the How-to g
 how_to_guides=yes
 ```
 If configured as "yes", the system will initially attempt to access a JSON file containing your custom how-to guides. In the event that the file is not available, articles from https://openpanel.co/docs/panel/dashboard/#how-to-guides will be shown instead.
+
+
+#### api
+
+The `api` option allows Aministrator to enable or disable the API functionality.
+
+Default value is Off
+
+#### dev_mode
+
+The `dev_mode` option allows Aministrator to disable minified responses for OpenAdmin (HTML, JS, CSS and JSON).
+
+Default value is Off
