@@ -637,7 +637,7 @@ To view all ModSecurity rule IDs:
 opencli nginx-modsec --rules [--json]
 ```
 
-To update and downlaod latest ModSecurity rules:
+To update and download latest ModSecurity rules:
 ```bash
 opencli nginx-modsec --update
 ```
