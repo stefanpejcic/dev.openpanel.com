@@ -11,14 +11,17 @@ To change theme for OpenPanel, run command:
 ```opencli config update template NAME_HERE```
 
 instead of *NAME_HERE* set either just the folder name in `/usr/local/panel/` or a full path, example:
+
 ```opencli config update template "/home/custom_template/"```
 
 ---
 
 To change theme for OpenAdmin, run command:
+
 ```opencli config update admin_template NAME_HERE```
 
 instead of *NAME_HERE* set either just the folder name in `/usr/local/admin/` or a full path, example:
+
 ```opencli config update admin_template "/home/custom_admin_template/"```
 
 ---
