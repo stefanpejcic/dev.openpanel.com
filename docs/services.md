@@ -279,7 +279,7 @@ These ports are uniquely assigned and are indicated in the firewall settings wit
 [ClamAV](https://www.clamav.net/) is used to allow users to scan their websites for malicious files.
 
 
-## Panel
+## OpenPanel
 
 `panel` service is used by the OpenPanel interface that allows users to manage their accounts.
 
@@ -300,7 +300,7 @@ Then, to start the Flask application:
 This approach allows developers to see real-time logs directly in the console, providing a more detailed insight into the application's operations, which can be invaluable for debugging or during development. Remember to restart the OpenPanel service with `service panel start` after completing your log analysis or development work to return to the standard, production-ready environment.
 
 
-## Admin
+## OpenAdmin
 
 `admin` service is used by the OpenAdmin interface.
 
