@@ -9,6 +9,7 @@ OpenPanel is shipped with the following locales:
 
 - English (EN)
 - German (DE)
+- Turkish (TR)
 
 ## How to translate
 
