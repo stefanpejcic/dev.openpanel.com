@@ -7,18 +7,19 @@ OpenPanel Templates offer a flexible way to customize the appearance of your con
 OpenPanel templates are designed to be easily interchangeable, allowing users to swiftly change the look and feel of their control panel without affecting the underlying functionality. This ensures that you can update the appearance of your control panel as often as you like, without any downtime or disruption to your operations.
 
 To change theme for OpenPanel, run command:
-`opencli config update template NAME_HERE`
+
+```opencli config update template NAME_HERE```
 
 instead of *NAME_HERE* set either just the folder name in `/usr/local/panel/` or a full path, example:
-`opencli config update template "/home/custom_template/"`
+```opencli config update template "/home/custom_template/"```
 
 ---
 
 To change theme for OpenAdmin, run command:
-`opencli config update admin_template NAME_HERE`
+```opencli config update admin_template NAME_HERE```
 
 instead of *NAME_HERE* set either just the folder name in `/usr/local/admin/` or a full path, example:
-`opencli config update admin_template "/home/custom_admin_template/"`
+```opencli config update admin_template "/home/custom_admin_template/"```
 
 ---
 
@@ -29,10 +30,10 @@ For those who require a more personalized touch, OpenPanel allows the creation o
 To create new templates copy the default templates folders:
 
 For OpenPanel:
-`cp /usr/local/panel/templates/ /home/custom_template/`
+```cp /usr/local/panel/templates/ /home/custom_template/```
 
 For OpenAdmin:
-`cp /usr/local/admin/templates/ /home/custom_admin_template/`
+```cp /usr/local/admin/templates/ /home/custom_admin_template/```
 
 and then make the changes in html/css files.
 
