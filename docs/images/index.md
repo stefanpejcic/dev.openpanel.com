@@ -6,8 +6,8 @@ OpenPanel utilizes custom Docker images as the foundation for the hosting plans 
 
 Currently, OpenPanel includes two default images:
 
-- `openpanel_nginx`
-- `openpanel_apache`
+- [`openpanel_nginx`](/images/browse.html#Nginx)
+- [`openpanel_apache`](/images/browse.html#Apache)
 
 Additionally, you can craft custom Docker images tailored with specific MySQL/MariaDB versions, various PHP versions and extensions, or bespoke commands like composer or WPCLI.
 
