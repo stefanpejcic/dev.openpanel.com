@@ -7,7 +7,7 @@ Description: The official Docker image for Apache enables OpenPanel users to uti
 - Download: https://hub.openpanel.co/_/ubuntu_22.04/apache.tar.gz
 - Checksum: https://hub.openpanel.co/_/ubuntu_22.04/apache_info
 
-Stack:
+Technology Stack:
 | Service/Tool |                 Purpose                |
 |:------------:|:--------------------------------------:|
 | Ubuntu 22    | Operating System                       |
@@ -35,7 +35,7 @@ Description: The official Docker image for Nginx provides OpenPanel users with t
 - Download: https://hub.openpanel.co/_/ubuntu_22.04/nginx.tar.gz
 - Checksum: https://hub.openpanel.co/_/ubuntu_22.04/nginx_info
 
-Stack: 
+Technology Stack: 
 | Service/Tool |                 Purpose                |
 |:------------:|:--------------------------------------:|
 | Ubuntu 22    | Operating System                       |
