@@ -8,8 +8,8 @@ OpenPanel is localization ready and can easily be translated into any language.
 OpenPanel is shipped with the following locales:
 
 - English (EN)
-- German (DE)
-- Turkish (TR)
+- [German (DE)](https://community.openpanel.co/d/25-sprichst-du-deutsch-german-translation-for-openpanel)
+- [Turkish (TR)](https://community.openpanel.co/d/31-turkce-konusuyor-musun-turkish-translation-for-openpanel)
 
 ## How to translate
 
