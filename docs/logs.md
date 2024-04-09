@@ -8,6 +8,7 @@ OpenPanel generates the following logs:
 |`/var/log/openpanel/user/error.log`|OpenPanel error log|
 |`/var/log/openpanel/admin/access.log`|OpenAdmin access log|
 |`/var/log/openpanel/admin/api.log`|OpenAdmin [API](/api/) log|
+|`/usr/local/admin/logs/login.log`|OpenAdmin Login log|
 |`/var/log/openpanel/admin/error.log`|OpenAdmin error log|
 
 Services used by OpenPanel have the following logs:
