@@ -23,33 +23,36 @@ Whether you're managing a single website or an entire fleet of servers, the Open
 
 This section will guide you through the initial steps needed to start using the OpenPanel API, ensuring a smooth setup and integration process. By following these steps, you will be able to authenticate, make your first request, and understand the basic principles of interacting with our endpoints.
 
-1. Obtain an API Key
+1. Enable API access
+   First make sure that API access is enabled on your server by going to `OpenAdmin > API` or by running `opencli config get api` from the terminal:
+   ![enable_api](https://i.postimg.cc/L6vwMQ4t/image.png)
+   If API is not enabled, click on the "Enable API access" button or from terminal run `opencli config update api on`.
+   We recommend creating new Administrator user for API, to create a new user navigate to *OpenAdmin > OpenAdmin Settings* and create new admin user, or from terminal run: `opencli admin new USERNAME_HERE PASSWORD_HERE`
 
-To use the OpenPanel API, you first need to obtain an API key. This key will authenticate your requests and provide access to the API's features. To get your API key:
+2. Generate JWT token
+   OpenPanel uses JWT tokens which means that you need to send your username and password once to generate a JWT token, after that the token can be reused for future requests.
+   To generate a token, send POST request to the /api/ enpoint with your admin username and password. Example:
+   ```bash
+   curl -X POST "http://PANEL_ADDRESS:2087/api/" -H "Content-Type: application/json" -d '{"username":"stefan","password":"megamind728"}'
+   ```
+   In the response you will receive the JWT token to be used in future api calls. example response:
+   ```bash
+   {
+   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaC.....PvCboDVHkJ1rTerBns"
+   }```
 
-- Log in to your OpenAdmin account.
-- Navigate to the API section in the dashboard.
-- Click on the "Generate API Key" button.
-- Copy the generated API key and keep it secure.
-
-2. Make Your First Request
-
-With your API key in hand, you're ready to make your first API call. We recommend starting with a simple request to fetch your user information. Use the following example, replacing YOUR_API_KEY with your actual API key.
-
-```
-curl -X GET "https://OPENADMIN:2087/api/v1/users/me" -H "Authorization: Bearer YOUR_API_KEY"
-```
-This request will return information about your user account, verifying that your API key is working correctly.
-
-3. Explore the Documentation
-
-Before diving deeper, take some time to explore the API documentation. Familiarize yourself with the available endpoints, data formats, and common parameters. Understanding these basics will help you effectively utilize the API for your needs.
-
-
-4. Integrate with Your Application
-
-Now that you're familiar with making requests and navigating the documentation, start integrating the API with your application. Experiment with different endpoints, and consider how you can automate tasks, enhance functionality, or streamline operations within your environment.
-
+3. Send API requests with the access token
+   We can use /api/whoami enpoint to verify that our token is valid:
+   ```bash
+   curl -X GET "http://64.23.205.3:2087/api/whoami" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2U...kJ1rTerBns"
+   ```
+   example response:
+   ```bash
+   {
+   "logged_in_as": "stefan"
+   }
+   ```
+  This request will return information about your admin account, verifying that your API key is working correctly.
 
 
 ## Complete list of API Endpoints
@@ -57,27 +60,66 @@ Now that you're familiar with making requests and navigating the documentation, 
 The OpenPanel API offers a comprehensive set of endpoints that allow you to manage and configure various aspects of your hosting environment. Below is a complete list of available endpoints:
 
 ### User Management
-`/api/v1/users` - Manage user accounts, including creation, deletion, and modification of user details.
+`/api/users` - Manage user accounts, including creation, deletion, and modification of user details.
+
+
+#### Create account
+
+POST request with `username` `password` `email` `plan_id`  to `/api/users` endpoint.
+
+```bash
+curl -X POST "http://PANEL:2087/api/users" -H "Authorization: Bearer JWT_TOKEN" -H "Content-Type: application/json" -d '{"username":"USERNAME","password":"PASSWORD","email":"EMAIL","plan_id":"ID_HERE"}'
+
+```
+
+Example: 
+```bash
+curl -X POST "http://64.23.205.3:2087/api/users" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGcBns" -H "Content-Type: application/json" -d '{"username":"stefan","password":"s32dsasaq","email":"stefan@pejcic.rs","plan_id":"1"}'
+```
+Example response:
+```bash
+{
+  "response": {
+    "message": "Successfully added user stefan password: s32dsasaq"
+  },
+  "success": true
+}
+```
+
+
+
+#### Suspend/Unsuspend account
+
+POST request with `username` `password` `email_address` `plan_id` 
+
+#### Terminate accounts
+
+DELETE request to `/api/v1/username`
+
+
+#### Change plan
+
+
+
 
 ### Plan Management
-`/api/v1/plans` - Handle hosting plans, allowing for the creation, modification, and deletion of service plans.
+`/api/plans` - Handle hosting plans, allowing for the creation, modification, and deletion of service plans.
 
 ### Backup Management
-`/api/v1/backups` - Manage backups, offering options to create, restore, and delete backups of your hosting environment.
+`/api/backups` - Manage backups, offering options to create, restore, and delete backups of your hosting environment.
 
 ### Service Management
-`/api/v1/services` - Control server services, including starting, stopping, and configuring web, database, and email services.
+`/api/services` - Control server services, including starting, stopping, and configuring web, database, and email services.
 
 ### Settings Management
-`/api/v1/settings` - Configure global settings for the OpenPanel environment, including security settings, default configurations, and more.
+`/api/settings` - Configure global settings for the OpenPanel environment, including security settings, default configurations, and more.
 
 ### Notification Management
-`/api/v1/notifications` - Manage notifications, enabling you to configure alerts for various events within your hosting environment.
+`/api/notifications` - Manage notifications, enabling you to configure alerts for various events within your hosting environment.
 
 ### Administrative Functions
-`/api/v1/admin` - Access administrative functions, such as system updates, user role management, and logging.
+`/api/admin` - Access administrative functions, such as system updates, user role management, and logging.
 
-Each endpoint is designed to be RESTful, supporting standard HTTP methods (GET, POST, PUT, DELETE) to perform actions. For detailed information about the parameters, request and response formats, and specific functionalities of each endpoint, refer to the corresponding sections of the API documentation.
 
 
 ## Creating a Custom Endpoint
