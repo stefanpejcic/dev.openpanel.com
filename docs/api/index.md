@@ -39,7 +39,8 @@ This section will guide you through the initial steps needed to start using the 
    ```bash
    {
    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaC.....PvCboDVHkJ1rTerBns"
-   }```
+   }
+   ```
 
 3. Send API requests with the access token
    We can use /api/whoami enpoint to verify that our token is valid:
