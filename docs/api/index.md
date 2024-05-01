@@ -63,13 +63,16 @@ The OpenPanel API offers a comprehensive set of endpoints that allow you to mana
 `/api/users` - Manage user accounts, including creation, deletion, and modification of user details.
 
 
-#### Create account
-
-POST request with `username` `password` `email` `plan_id`  to `/api/users` endpoint.
+#### List accounts
 
 ```bash
-curl -X POST "http://PANEL:2087/api/users" -H "Authorization: Bearer JWT_TOKEN" -H "Content-Type: application/json" -d '{"username":"USERNAME","password":"PASSWORD","email":"EMAIL","plan_id":"ID_HERE"}'
+curl -X GET http://PANEL:2087/api/users -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
 
+#### Create account
+
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"email": "EMAIL_HERE", "username": "USERNAME_HERE", "password": "PASSWORD_HERE", "plan_id": "PLAN_ID_HERE"}' http://PANEL:2087/api/users
 ```
 
 Example: 
@@ -86,21 +89,41 @@ Example response:
 }
 ```
 
+#### Suspend account
 
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"action": "suspend"}' http://PANEL:2087/api/users/USERNAME_HERE
+```
 
-#### Suspend/Unsuspend account
+#### Unsuspend account
 
-POST request with `username` `password` `email_address` `plan_id` 
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"action": "unsuspend"}' http://PANEL:2087/api/users/USERNAME_HERE
+```
 
-#### Terminate accounts
+#### Delete account
 
-DELETE request to `/api/v1/username`
+```bash
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" http://PANEL:2087/api/users/USERNAME_HERE
+```
 
+#### Change password
+
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"password": "NEW_PASSWORD_HERE"}' http://PANEL:2087/api/users/USERNAME_HERE
+```
 
 #### Change plan
 
+```bash
+curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"plan_id": "PLAN_ID_HERE"}' http://PANEL:2087/api/users/USERNAME_HERE
+```
 
+#### Autologin
 
+```bash
+curl -X CONNECT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" http://PANEL:2087/api/users/USERNAME_HERE
+```
 
 ### Plan Management
 `/api/plans` - Handle hosting plans, allowing for the creation, modification, and deletion of service plans.
