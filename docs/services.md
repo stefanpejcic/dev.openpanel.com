@@ -97,7 +97,7 @@ Configuration file `/etc/docker/daemon.json` is not modified on update.
 ## MySQL
 
 :::info
-Staring 0.1.7 OpenPanel uses MySQL docker container and data is stored inside `openpanel_mysql_data` volume.
+Starting 0.1.7 OpenPanel uses MySQL docker container and data is stored inside `openpanel_mysql_data` volume. [Info](https://openpanel.co/docs/changelog/0.1.7/#containerized-services)
 :::
 
 [MySQL](https://www.mysql.com/) is used as a database to store all user related information:
