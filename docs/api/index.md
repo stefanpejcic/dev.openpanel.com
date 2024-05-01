@@ -20,12 +20,14 @@ Whether you're managing a single website or an entire fleet of servers, the Open
 This section will guide you through the initial steps needed to start using the OpenPanel API, ensuring a smooth setup and integration process. By following these steps, you will be able to authenticate, make your first request, and understand the basic principles of interacting with our endpoints.
 
 1. Enable API access
+
    First make sure that API access is enabled on your server by going to `OpenAdmin > API` or by running `opencli config get api` from the terminal:
    ![enable_api](https://i.postimg.cc/L6vwMQ4t/image.png)
    If API is not enabled, click on the "Enable API access" button or from terminal run `opencli config update api on`.
    We recommend creating new Administrator user for API, to create a new user navigate to *OpenAdmin > OpenAdmin Settings* and create new admin user, or from terminal run: `opencli admin new USERNAME_HERE PASSWORD_HERE`
 
-2. Generate JWT token
+3. Generate JWT token
+   
    OpenPanel uses JWT tokens which means that you need to send your username and password once to generate a JWT token, after that the token can be reused for future requests.
    To generate a token, send POST request to the /api/ enpoint with your admin username and password. Example:
    ```bash
@@ -38,7 +40,8 @@ This section will guide you through the initial steps needed to start using the 
    }
    ```
 
-3. Send API requests with the access token
+4. Send API requests with the access token
+
    We can use /api/whoami enpoint to verify that our token is valid:
    ```bash
    curl -X GET "http://64.23.205.3:2087/api/whoami" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2U...kJ1rTerBns"
