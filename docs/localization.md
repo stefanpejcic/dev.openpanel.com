@@ -40,7 +40,7 @@ msgstr "Sajtovi"
 4. After you are finished translating, you need to compile the edited `.po` file to `.mo` in order to be used by the panel:
 
 ```bash
-pybabel compile -d translations
+cd /usr/local/panel && pybabel compile -d translations
 ```
 
 Thats it, your new locale is added and ready to be used.
