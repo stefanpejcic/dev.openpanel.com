@@ -677,13 +677,15 @@ Example:
 
 ### Enable / Disable AdminPanel
 
-To disable access to the AdminPanel:
+OpenAdmin can run in headless mode, that is to say without a front-end UI. This can further save on memory requirements and keep your server secure.
+
+To disable access to the OpenAdmin panel:
 
 ```bash
 opencli admin off
 ```
 
-To enable access to the AdminPanel:
+To enable access to the OpenAdmin panel:
 
 ```bash
 opencli admin on
