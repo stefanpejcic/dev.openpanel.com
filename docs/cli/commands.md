@@ -261,7 +261,7 @@ Change plan limits.
 
 Manage users' PHP versions: list enabled, list available, change version, etc.
 
-## Get version for a domain
+### Get version for a domain
 
 To view the current PHP version used by a domain, run the following command:
 
