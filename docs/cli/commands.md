@@ -713,7 +713,7 @@ To reset the password for an admin user:
 opencli admin password <username> <new_password>
 ```
 
-## Rename Admin User
+### Rename Admin User
 
 To rename an existing admin user:
 
@@ -737,7 +737,7 @@ To unsuspend an existing admin user:
 opencli admin unsuspend <username>
 ```
 
-## Delete Admin User
+### Delete Admin User
 
 To rename an existing admin user:
 
