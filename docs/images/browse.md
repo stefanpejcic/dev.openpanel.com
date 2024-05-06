@@ -2,7 +2,7 @@
 
 ## openpanel/apache
 
-Description: The official Docker image for Apache enables OpenPanel users to utilize the Apache web server for website management. Apache natively supports .htaccess files, although restarting Apache is required to activate any modifications made through .htaccess.
+The official Docker image for Apache enables OpenPanel users to utilize the Apache web server for website management. Apache natively supports .htaccess files, although restarting Apache is required to activate any modifications made through .htaccess.
 
 - Download: https://hub.docker.com/r/openpanel/apache
 
@@ -28,7 +28,7 @@ Technology Stack:
 
 ## openpanel/nginx
 
-Description: The official Docker image for Nginx provides OpenPanel users with the capability to manage websites using the Nginx web server. Unlike Apache, Nginx does not natively support .htaccess files. For configuration changes, directly editing the Nginx configuration files is necessary, and requires reloading Nginx.
+The official Docker image for Nginx provides OpenPanel users with the capability to manage websites using the Nginx web server. Unlike Apache, Nginx does not natively support .htaccess files. For configuration changes, directly editing the Nginx configuration files is necessary, and requires reloading Nginx.
 
 - Download: https://hub.docker.com/r/openpanel/nginx
 
