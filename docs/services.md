@@ -15,7 +15,7 @@ The `/var/log/nginx/domlogs/` directory serves as the repository for access logs
 
 The `/etc/nginx/sites-enabled/default`  file acts as the default configuration file, which restricts access to domains that are not hosted on the server. It is recommended not to modify this file.
 
-defaultvhost file template:
+default vhost file template:
 ```
 server {
     listen IP_HERE:80;
@@ -181,64 +181,7 @@ options {
 
 OpenPanel uses [GoAccess](https://goaccess.io/) to generate beautiful HTML reports from Nginx access logs for each domain.
 
-GoAccess main configuration file: `/etc/goaccess/goaccess.conf`
-
-configuration file:
-
-```
-time-format %H:%M:%S
-date-format %d/%b/%Y
-log-format %h %^[%d:%t %^] "%r" %s %b "%R" "%u"
-html-prefs {"theme":"bright"}
-json-pretty-print false
-no-color false
-no-column-names false
-no-csv-summary false
-no-progress false
-no-tab-scroll false
-with-mouse false
-static-file .css
-static-file .js
-static-file .jpg
-static-file .png
-static-file .gif
-static-file .ico
-static-file .jpeg
-static-file .pdf
-static-file .csv
-static-file .mpeg
-static-file .mpg
-static-file .swf
-static-file .woff
-static-file .woff2
-static-file .xls
-static-file .xlsx
-static-file .doc
-static-file .docx
-static-file .ppt
-static-file .pptx
-static-file .txt
-static-file .zip
-static-file .ogg
-static-file .mp3
-static-file .mp4
-static-file .exe
-static-file .iso
-static-file .gz
-static-file .rar
-static-file .svg
-static-file .bmp
-static-file .tar
-static-file .tgz
-static-file .tiff
-static-file .tif
-static-file .ttf
-static-file .flv
-static-file .dmg
-static-file .xz
-static-file .zst
-geoip-database /usr/local/share/GeoIP/GeoLite2-City_20231219/GeoLite2-City.mmdb
-```
+Starting with OpenPanel version 0.1.7, goaccess is no more installed on the server. Instead, it's executed within Docker containers when required to parse domain access logs.
 
 OpenPanel also downloads [GeoIPLite2 City and Country](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) databases in order to display location info for each IP address in reports.
 
@@ -255,6 +198,7 @@ OpenPanel employs [Certbot](https://certbot.eff.org/), a free, open-source softw
 
 Upon installation of OpenPanel, all access is initially blocked, with exceptions made for the following ports:
 ```
+22/tcp                    # for SSH
 80/tcp                    # for HTTP websites via Nginx
 53                        # for DNS services using Named service
 443/tcp                   # for HTTPS websites via Nginx
@@ -262,7 +206,7 @@ Upon installation of OpenPanel, all access is initially blocked, with exceptions
 2087/tcp                  # as the default port for OpenAdmin
 ```
 
-All other ports, **including the default SSH port 22, are blocked**. However, OpenPanel does whitelist the IP address of the admin user who installs OpenPanel, ensuring they retain access.
+On installation, OpenPanel whitelists the IP address of the admin user who installs OpenPanel, ensuring they retain access.
 
 For each user created, OpenPanel configures UFW to open necessary random ports for their specific services, such as remote MySQL access, SSH, and phpMyAdmin. This ensures users have the required access while maintaining security by not using standard ports for these services.
 
@@ -277,10 +221,6 @@ Example random ports opened for a user:
 ```
 
 These ports are uniquely assigned and are indicated in the firewall settings with a comment (e.g., # stefan) to identify the specific user they are associated with.
-
-## ClamAV
-
-[ClamAV](https://www.clamav.net/) is used to allow users to scan their websites for malicious files.
 
 
 ## OpenPanel
