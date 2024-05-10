@@ -13,14 +13,14 @@ Additionally, you can craft custom Docker images tailored with specific MySQL/Ma
 
 ## Creating an Image
 
-To develop a custom Docker image for OpenPanel, start by copying the example image template provided for building custom images:
+To build a custom Docker image for OpenPanel, start by downloading the Dockerfile for openpane/nginx image:
 
 ```
-cp -r /usr/local/panel/DOCKER/images/example /usr/local/panel/DOCKER/images/YOUR_IMAGE_NAME_HERE
+wget -qO- https://download-directory.github.io/?url=https://github.com/stefanpejcic/OpenPanel/tree/main/docker/nginx | unzip -d openpanel_nginx_docker -
 ```
 Navigate to the directory and list its contents:
 ```
-cd /usr/local/panel/DOCKER/images/YOUR_IMAGE_NAME_HERE && ls -la
+cd /openpanel_nginx_docker && ls -la
 ```
 
 You will find the following files:
