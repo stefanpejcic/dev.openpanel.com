@@ -1244,6 +1244,12 @@ autoupdate=on
 autopatch=on
 api=off
 dev_mode=off
+
+[DOCKER]
+max_ram=90
+max_cpu=95
+
+
 ```
 
 
@@ -1544,3 +1550,19 @@ Default value is Off
 The `dev_mode` option allows Aministrator to disable minified responses for OpenAdmin (HTML, JS, CSS and JSON).
 
 Default value is Off
+
+#### max_ram
+
+The `max_ram` option allows Aministrator to set maximum % of available RAM that can be used by Docker service. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
+
+```bash
+max_ram=90
+```
+
+#### max_cpu
+
+The `max_cpu` option allows Aministrator to set maximum % of available CPU that can be used by Docker service. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
+
+```bash
+max_cpu=95
+```
