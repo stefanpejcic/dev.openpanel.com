@@ -15,6 +15,7 @@ OpenPanel currently includes the following official modules:
 - phpmyadmin
 - ssh
 - dns
+- ftp
 - crons
 - backups
 - wordpress
