@@ -19,7 +19,7 @@ POST OPENPANEL:2087/api/v1/users
   "username": "newuser",
   "email": "newuser@example.com",
   "password": "password",
-  "plan_id": "plan_basic"
+  "plan_name": "plan_basic"
 }
 ```
 
@@ -46,7 +46,7 @@ To change the subscription plan for a user:
 ```
 PUT OPENPANEL:2087/api/v1/users/{userId}/plan
 {
-  "new_plan_id": "plan_premium"
+  "new_plan_name": "plan_premium"
 }
 
 ```
