@@ -64,7 +64,7 @@ To execute custom code following the update of OpenPanel, create a custom bash s
 To pre-fill data into the new plan form, simply create a new file:
 
 ```
-/usr/local/admin/conf/new_plan_template
+/etc/openpanel/openadmin/config/new_plan_template
 ```
 
 and set the data to be used:
