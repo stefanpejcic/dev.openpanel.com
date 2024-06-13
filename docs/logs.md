@@ -8,16 +8,16 @@ OpenPanel generates the following logs:
 |`/var/log/openpanel/user/error.log`|OpenPanel error log|
 |`/var/log/openpanel/admin/access.log`|OpenAdmin access log|
 |`/var/log/openpanel/admin/api.log`|OpenAdmin [API](/api/) log|
-|`/usr/local/admin/logs/login.log`|OpenAdmin Login log|
-|`/usr/local/admin/logs/notifications.log`|OpenAdmin notifications log|
+|`/var/log/openpanel/admin/login.log`|OpenAdmin Login log|
+|`/var/log/openpanel/admin/notifications.log`|OpenAdmin notifications log|
 |`/var/log/openpanel/admin/error.log`|OpenAdmin error log|
 
 Services used by OpenPanel have the following logs:
 
 | Log file | Description |
 |----------|-------------|
-|`/var/log/nging/access.log`|Nginx access log|
-|`/var/log/nging/error.log`|Nginx error log|
+|`/var/log/nginx/access.log`|Nginx access log|
+|`/var/log/nginx/error.log`|Nginx error log|
 |`docker logs openpanel_mysql`|MySQL error log|
 |`journalctl -u named`|Named service logs|
 |`/var/log/ufw.log`|UFW log|
