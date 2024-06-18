@@ -10,6 +10,7 @@ OpenPanel generates the following logs:
 |`/var/log/openpanel/admin/api.log`|OpenAdmin [API](/api/) log|
 |`/var/log/openpanel/admin/login.log`|OpenAdmin Login log|
 |`/var/log/openpanel/admin/notifications.log`|OpenAdmin notifications log|
+|`/var/log/openpanel/admin/cron.log`|OpenAdmin Crons log|
 |`/var/log/openpanel/admin/error.log`|OpenAdmin error log|
 
 Services used by OpenPanel have the following logs:
