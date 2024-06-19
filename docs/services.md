@@ -222,6 +222,12 @@ Example random ports opened for a user:
 
 These ports are uniquely assigned and are indicated in the firewall settings with a comment (e.g., # stefan) to identify the specific user they are associated with.
 
+If you are using external firewall, open the following port range:
+```
+32768:60999               # Docker range
+```
+
+NOTE: If you have other docker containers not run by OpenPanel, be cautious when opening the docker range, as it will expose those containers as well.
 
 ## OpenPanel
 
