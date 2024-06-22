@@ -1,22 +1,16 @@
 # Create Docker image
 
-To develop a custom Docker image for OpenPanel, start by copying the example image template provided for building custom images:
+To develop a custom Docker image for OpenPanel, start by downloading Dockerfile for the nginx image:
 
 ```
-cp -r /usr/local/panel/DOCKER/images/example /usr/local/panel/DOCKER/images/YOUR_IMAGE_NAME_HERE
-```
-Navigate to the directory and list its contents:
-```
-cd /usr/local/panel/DOCKER/images/YOUR_IMAGE_NAME_HERE && ls -la
+git clone -n --depth=1 --filter=tree:0 \
+https://github.com/stefanpejcic/OpenPanel/tree/main/docker/nginx
+cd OpenPanel
+git sparse-checkout set --no-cone docker/nginx
+git checkout
 ```
 
-You will find the following files:
-- `Dockerfile` - This file defines the software stack of the image.
-- `entrypoint.sh` - Used by OpenPanel to monitor users' services status and versions, such as tracking the random IP of users' Docker containers, status of Redis/Memcached services, PHP versions installed, etc. This file is essential and should not be modified.
-- `my.cnf` - A MySQL service configuration file for customizing MySQL limits and settings.
-- `pma.php` - A configuration file for phpMyAdmin to enable passwordless login from OpenPanel to phpMyAdmin.
-
-Feel free to add any additional files and folders you wish to include for your users. Then, modify the Dockerfile to incorporate (copy) these files as needed.
+Edit and/or add new files, then build the docker image.
 
 Example Image: Ubuntu 22 Docker image optimized for WordPress: Nginx, MySQL 8, PHP 8.3, phpMyAdmin, WP-CLI.
 
