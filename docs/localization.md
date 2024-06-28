@@ -8,11 +8,10 @@ OpenPanel is localization ready and can easily be translated into any language.
 OpenPanel is shipped with the following locales:
 
 - English (EN)
-- [Spanish (ES)](https://community.openpanel.co/d/59-hablas-espanol-spanish-translation-for-openpanel)
-- [French (FR)](https://community.openpanel.co/d/45-parles-tu-francais-french-translation-for-openpanel)
-- [German (DE)](https://community.openpanel.co/d/25-sprichst-du-deutsch-german-translation-for-openpanel)
-- [Turkish (TR)](https://community.openpanel.co/d/31-turkce-konusuyor-musun-turkish-translation-for-openpanel)
-
+- [🇪🇸 Spanish (ES)](https://community.openpanel.co/d/59-hablas-espanol-spanish-translation-for-openpanel)
+- [🇫🇷 French (FR)](https://community.openpanel.co/d/45-parles-tu-francais-french-translation-for-openpanel)
+- [🇩🇪 German (DE)](https://community.openpanel.co/d/25-sprichst-du-deutsch-german-translation-for-openpanel)
+- [🇹🇷 Turkish (TR)](https://community.openpanel.co/d/31-turkce-konusuyor-musun-turkish-translation-for-openpanel)
 
 ## How to translate
 
