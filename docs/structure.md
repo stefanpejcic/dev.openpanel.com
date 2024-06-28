@@ -3,21 +3,19 @@
 
 OpenPanel uses the following files and directories:
 
-OpenPanel Directories:
+Configuration:
 ```
-/usr/local/admin/
-├── core/                     - Users information and usage data
-├── modules/                  - Python scripts for user panel
-├── templates/                - HTML templates for the user panel
-├── static/                   - CSS, JS and images for the user panel
-├── conf/                     - Configuration files
-├── screenshot_cache/         - Screenshots for user websites
-├── pyarmor_runtime_000000/   - Encoded python files
-├── __pycache__/              - Cached python files
-├── ubabel.cfg                - Localization configuration
-├── messages.pot              - Localization file
-├── version                   - OpenPanel version
-└── app.py                    - Main Python file for user panel
+/etc/openpanel/
+├── bind9/                    - DNS configuration files and templates 
+├── docker/                   - Docker configuration
+├── goaccess/                 - Configuration for Domain Access Reports
+├── mysql/                    - MySQL login information and backups
+├── nginx/                    - Nginx configurtion and domain templates
+├── openadmin/                - Configuration files for OpenAdmin service
+├── openpanel/                - Configuration files for OpenPanel
+├── skeleton/                 - Files that are used for new users
+├── ssh/                      - SSH configuration
+└── ufw/                      - Firewall configuration
 ```
 
 OpenAdmin Directories:
