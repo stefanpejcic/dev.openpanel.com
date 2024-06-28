@@ -1,7 +1,6 @@
 # Customize
 
-
-
+OpenPanel is renowned for its modularity, allowing you to customize numerous aspects. 
 
 
 ## Custom Code
