@@ -5,7 +5,7 @@ OpenPanel generates the following logs:
 | Log file | Description |
 |----------|-------------|
 |`/var/log/openpanel/user/access.log`|OpenPanel access log|
-|`/var/log/openpanel/user/error.log`|OpenPanel error log|
+|`docker logs openpanel`|OpenPanel error log|
 |`/var/log/openpanel/admin/access.log`|OpenAdmin access log|
 |`/var/log/openpanel/admin/api.log`|OpenAdmin [API](/api/) log|
 |`/var/log/openpanel/admin/login.log`|OpenAdmin Login log|
