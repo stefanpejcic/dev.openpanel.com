@@ -5,36 +5,43 @@ OpenPanel is renowned for its modularity, allowing you to customize numerous asp
 
 ## Custom Code
 
+To add custom code to OpenPanel, simply edit the coresponding file and afterwards restart openpanel docker container:
+
+```bash
+docker restart openpanel
+```
+
 
 ### Custom CSS
 
-To add custom CSS code to the OpenPanel interface, edit the file `/usr/local/panel/templates/custom_code/custom.css`.
+To add custom CSS code to the OpenPanel interface, edit the file `/etc/openpanel/openpanel/custom_code/custom.css`.
 
 ```bash
-nano /usr/local/panel/templates/custom_code/custom.css
+nano /etc/openpanel/openpanel/custom_code/custom.css
 ```
 
 ### Custom JS
 
-To add custom JavaScript code to the OpenPanel interface, edit the file `/usr/local/panel/templates/custom_code/custom.js`.
+To add custom JavaScript code to the OpenPanel interface, edit the file `/etc/openpanel/openpanel/custom_code/custom.js`.
+
 ```bash
-nano /usr/local/panel/templates/custom_code/custom.js
+nano /etc/openpanel/openpanel/custom_code/custom.js
 ```
 
 ### Code in Header
 
-To insert custom code within the `<head>` tag of the OpenPanel interface, modify the content of the file located at `/usr/local/panel/templates/custom_code/in_header.html` and include your custom code within it.
+To insert custom code within the `<head>` tag of the OpenPanel interface, modify the content of the file located at `/etc/openpanel/openpanel/custom_code/in_header.html` and include your custom code within it.
 
 ```bash
-nano /usr/local/panel/templates/custom_code/in_header.html
+nano /etc/openpanel/openpanel/custom_code/in_header.html
 ```
 
 ### Code in Footer
 
-To insert custom code within the `<footer>` tag of the OpenPanel interface, modify the content of the file located at `/usr/local/panel/templates/custom_code/in_footer.html` and include your custom code within it.
+To insert custom code within the `<footer>` tag of the OpenPanel interface, modify the content of the file located at `/etc/openpanel/openpanel/custom_code/in_footer.html` and include your custom code within it.
 
 ```bash
-nano /usr/local/panel/templates/custom_code/in_footer.html
+nano /etc/openpanel/openpanel/custom_code/in_footer.html
 ```
 
 
