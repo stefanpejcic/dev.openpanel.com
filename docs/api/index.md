@@ -116,7 +116,7 @@ curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer JWT_
 #### Change plan
 
 ```bash
-curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"plan_id": "PLAN_ID_HERE"}' http://PANEL:2087/api/users/USERNAME_HERE
+curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"plan_name": "PLAN_NAME_HERE"}' http://PANEL:2087/api/users/USERNAME_HERE
 ```
 
 #### Autologin
