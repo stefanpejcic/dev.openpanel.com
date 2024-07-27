@@ -25,5 +25,5 @@ To translate OpenPanel to another language, for example Serbian:
 To instal additional locales (replace de-de with your locale):
 
 ```bash
-https://github.com/stefanpejcic/openpanel-translations de-de
+opencli locale de-de
 ```
