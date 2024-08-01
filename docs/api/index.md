@@ -125,6 +125,12 @@ curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TO
 curl -X CONNECT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" http://PANEL:2087/api/users/USERNAME_HERE
 ```
 
+
+:::danger
+THE FOLLOWING API ENDPOINTS ARE STILL EXPERIMENTAL AND NOT SUITABLE FOR PRODUCTION USE.
+:::
+
+
 ### Plan Management
 `/api/plans` - Handle hosting plans, allowing for the creation, modification, and deletion of service plans.
 
@@ -143,23 +149,3 @@ curl -X CONNECT -H "Content-Type: application/json" -H "Authorization: Bearer JW
 ### Administrative Functions
 `/api/admin` - Access administrative functions, such as system updates, user role management, and logging.
 
-
-
-## Creating a Custom Endpoint
-
-:::danger
-THIS API FEATURE IS STILL EXPERIMENTAL AND NOT SUITABLE FOR PRODUCTION USE.
-:::
-
-After developing your endpoint, you need to register it with OpenPanel. This involves adding your endpoint to the OpenPanel API configuration, specifying the request method, and mapping the endpoint to your code.
-
-- Open the OpenPanel API configuration file, typically located in `/etc/openpanel/api.conf`.
-- Add a new entry under the custom_endpoints section, specifying the method, route (URL path), and the path to your script.
-
-For example, to add a POST endpoint /api/v1/custom/myendpoint, you would add the following:
-```
-custom_endpoints:
-  - method: POST
-  route: /api/v1/custom/myendpoint
-  script: /path/to/your/script
-```
