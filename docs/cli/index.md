@@ -1,14 +1,10 @@
 # OpenCLI
-OpenPanel leverages OpenCLI, a robust tool powered by multiple Python scripts, designed to facilitate administrators in performing maintenance tasks and automating processes within the terminal environment.
+OpenPanel uses OpenCLI, a command line interface designed for administrators to manage server from the terminal.
 
 ## Understanding OpenCLI
 
-Upon installing OpenPanel, the system generates the executable file `/usr/bin/local/opencli`. This file is dedicated to executing the Python script located at `/usr/local/admin/scripts/opencli.py`, forwarding any command-line arguments received to it.
+Upon installing OpenPanel, the system generates the executable file `/usr/bin/local/opencli`. This file will make all commands from `/usr/local/admin/scripts/` available.
 
-For instance, executing the command `opencli user-list` triggers the following process:
-
-The executable `/usr/bin/local/opencli` activates the script `/usr/local/admin/scripts/opencli.py`, passing along the 'user-list' arguments.
-The `opencli.py` script then identifies 'user' as the directory to search for the list.py file. It subsequently imports the main function from `/usr/local/admin/scripts/user/list.py` into the `opencli.py` script for execution.
 
 ## Autocomplete
 
@@ -17,9 +13,9 @@ The autocomplete functionality enhances user experience by displaying available 
 
 ## Available Commands
 
-OpenCLI is comprised of over 70 Python scripts, collectively offering more than 120 terminal commands.
+OpenCLI is comprised of over 100 separate scripts, collectively offering more than 140 terminal commands.
 
-To explore the full range of commands, please refer to [Available Commands](/cli/commands.html).
+[Complete list of OpenCLI Commands](/cli/commands.html).
 
 ## Developing Commands
 
