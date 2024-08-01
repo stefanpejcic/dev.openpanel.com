@@ -692,6 +692,29 @@ opencli domains-add stefan pejcic.rs
 Note: this command will add a domain for user regardless of their domains limit.
 
 
+### DNSSEC
+
+Command `opencli domains-dnssec` allows administrators to enable DNSSEC, re-sign the zone and view DS records for domains.
+
+:::info
+Please note that this feature is still experimental and there is still no UI for it in OpenPanel interface.
+:::
+
+- to enable dnssec for example.net :
+  ```
+  opencli domains-dnssec example.com
+  ```
+
+- to update the zone after publishing new records:
+  ```
+  opencli domains-dnssec example.com --update
+  ```
+
+- to check if domain has dnssec enabled and view DS records:
+  ```
+  opencli domains-dnssec example.com --check
+  ```
+
 ### Parse domain access logs
 
 To parse domain (Nginx) access logs and generate static reports for users domains accessible from `Domains > Access Logs` run the script:
