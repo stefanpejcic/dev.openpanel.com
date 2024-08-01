@@ -1,6 +1,34 @@
 # OpenCLI
 
 
+OpenCLI keeps history of used commands and allows you to view last and top 5 used commands:
+```
+# opencli
+
+Usage: opencli <COMMAND> [additional_arguments]
+
+Suggested commands:
+  opencli faq                       Display frequently asked questions and answers.
+  opencli commands                  List all available OpenCLI commands and their usage.
+
+Recently used commands:
+  opencli docker-collect_stats
+  opencli faq
+  opencli update
+  opencli update_check
+  opencli user-add
+
+Most commonly used commands:
+  opencli admin
+  opencli docker-collect_stats
+  opencli faq
+  opencli update
+  opencli update_check
+```
+
+Logs are stored in `/var/log/openpanel/admin/opencli.log`. File stores only commands and not attributes (flags).
+
+
 ## Users
 
 Manage users: Add, Delete, Suspend, Unsuspend, etc.
