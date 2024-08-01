@@ -881,6 +881,19 @@ opencli admin delete <username>
 Note: User with 'admin' role can not be deleted.
 :::
 
+
+### Sentinel
+
+Sentinel is an AI-powered service that autonomously monitors your server, makes decisions, and sends alerts to the notifications center and emails.
+
+Using the command you can check current system health and get suggestions on improving configuration:
+
+```bash
+opencli sentinel
+```
+
+![sentinel openpanel cli](https://i.postimg.cc/kg56D2x2/sentinel-openpaenl.png)
+
 ### Notifications
 
 `opencli admin notifications` allows you to change the notification preferences.
