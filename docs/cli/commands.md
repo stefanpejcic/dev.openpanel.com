@@ -503,6 +503,14 @@ After this operation, 21.1 MB of additional disk space will be used.
 ```
 
 
+### Enable ioncube loader
+
+To enable ioncube loader php extension on all installed PHP versions for users' OS, run the following command:
+
+```bash
+opencli php-ioncube <USERNAME>
+```
+
 ## SSL
 
 Generate and manage SSL certificates for user domains and server hostname.
@@ -510,8 +518,29 @@ Generate and manage SSL certificates for user domains and server hostname.
 
 ### Check SSL for all domains owned by user
 
-This command allows you to check the SSL status of all user domains in Certbot and updates the ssl/.domain_status file of the user. This file is used to display SSL status and expiry date on [SSL Certificates page](#SSL) in OpenPanel.
+This command allows you to check the SSL status of all user domains in Certbot and updates the ssl/.domain_status file of the user/s.
 
+To check and generate SSL for all domains owned by a specific user:
+
+```bash
+opencli ssl-user <username> --generate
+```
+
+To check and generate SSL for all domains owned by a all users:
+
+```bash
+opencli ssl-user --all --generate
+```
+
+
+To simply recreate the .ssl file used to display SSL status and expiry date on [SSL Certificates page](https://openpanel.co/docs/panel/domains/SSL/) in OpenPanel:
+
+for all users:
+```bash
+opencli ssl-user --all
+```
+
+for specific user:
 ```bash
 opencli ssl-user <username>
 ```
@@ -522,6 +551,8 @@ Example:
 panel.pejcic.rs:  2024-02-20 08:24:00+00:00 (VALID: 89 days)
 example.com: None
 ```
+
+
 
 
 ### Check SSL for server hostname
