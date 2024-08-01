@@ -933,6 +933,22 @@ Note: User with 'admin' role can not be deleted.
 :::
 
 
+### Cloudflare only
+
+Administrators can disable direct server access and only allow access via Cloudflare proxy. This setting affects all domains and users.
+
+- Enable Cloudflare restrictions:
+  ```bash
+  opencli cloudflare --enable
+  ```
+- Disable Cloudflare restrictions:
+  ```bash
+  opencli cloudflare --disable
+  ```
+
+This feature will regularly update Cloudflare ip addresses to make sure new CF IP ranges are included.
+
+
 ### Firewall Reset
 
 This command will delete existing firewall rules and reopen ports for OpenPanel servisec and users. It works with both UFW and CSF.
