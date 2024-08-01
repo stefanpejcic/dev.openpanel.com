@@ -933,6 +933,14 @@ Note: User with 'admin' role can not be deleted.
 :::
 
 
+### Firewall Reset
+
+This command will delete existing firewall rules and reopen ports for OpenPanel servisec and users. It works with both UFW and CSF.
+
+```
+opencli firewall-reset
+```
+
 ### Sentinel
 
 Sentinel is an AI-powered service that autonomously monitors your server, makes decisions, and sends alerts to the notifications center and emails.
