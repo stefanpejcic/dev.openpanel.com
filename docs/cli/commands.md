@@ -134,6 +134,90 @@ To remove dedicated IP address from a user run:
 opencli user-ip <USERNAME> delete
 ```
 
+### View disk usage for user
+
+To list real-time disk and inodes usage for a user:
+
+```bash
+opencli user-disk <USERNAME> <summary|detail|path> [--json]
+```
+
+Example usage:
+
+- Disk usage summary for user:
+  ```bash
+  # opencli user-disk proba summary
+  
+  -------------- disk usage --------------
+  - 564M	/home/proba
+  - 864M	/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184
+  ```
+  
+  ```bash
+  # opencli user-disk proba summary --json
+  
+  {"home_directory_usage": "564564", "docker_container_usage": "883864", "home_path": "/home/proba", "docker_path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184"}
+  ```
+
+- Detailed disk usage report for user:
+  ```bash
+  # opencli user-disk proba detail
+  ------------- home directory -------------
+  - home directory:        /home/proba
+  - mountpoint:            /home/proba
+  - bytes used:            61440
+  - bytes total:           10375548928
+  - bytes limit:           true
+  - inodes used:           20
+  - inodes total:          1000960
+  ---------------- container ---------------
+  - container directory:   /var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184
+  - bytes used:            1025388544
+  - bytes total:           10726932480
+  - inodes used:           20905
+  - inodes total:          5242880
+  - storage driver:        devicemapper
+  ```
+  
+  ```bash
+  # opencli user-disk proba detail --json
+  
+  {
+    "user": "proba",
+    "home": {
+      "path": "/home/proba",
+      "bytes_used": "61440",
+      "bytes_total": "10375548928",
+      "bytes_limit": true,
+      "inodes_used": "20",
+      "inodes_total": "1000960"
+    },
+    "container": {
+      "path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184",
+      "storage_driver": "devicemapper",
+      "bytes_used": "1025388544",
+      "bytes_total": "10726932480",
+      "inodes_used": "20905",
+      "inodes_total": "5242880"
+    }
+  }
+  ```
+
+- Paths for user:
+  ```bash
+  # opencli user-disk proba path
+  
+  -------------- paths --------------
+  - home_directory=/home/proba
+  - docker_container_path=/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184
+  ```
+  
+  ```bash
+  # opencli user-disk proba path --json
+  
+  {"home_directory": "/home/proba","docker_container_path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184"}
+  ```
+  
 
 ### View login log
 View up to last 20 successfull logins for the user.
