@@ -249,7 +249,24 @@ Example usage:
   
   {"home_directory": "/home/proba","docker_container_path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184"}
   ```
-  
+
+
+### Grant root
+
+Administrators can grant root-level (sudo) permissions to users inside their docker containers. This allows user to use the 'su -' command and switch ti root user.
+
+- Check current sudo status:
+  ```bash
+  opencli user-sudo USERNAME status
+  ```
+- Grant sudo privilegies:
+  ```bash
+  opencli user-sudo USERNAME enable
+  ```
+- Remove sudo privilegies:
+  ```bash
+  opencli user-sudo USERNAME disable
+  ```
 
 ### View login log
 View up to last 20 successfull logins for the user.
