@@ -532,6 +532,23 @@ Owner of 'pejcic.rs': stefan
 
 The `whoowns` script searches the database in order to determine which username added a domain.
 
+
+### Add Domain to User
+
+To add a domain name for user:
+
+```bash
+opencli domains-add <USERNAME> <DOMAIN>
+```
+
+Example:
+```bash
+opencli domains-add stefan pejcic.rs
+```
+
+Note: this command will add a domain for user regardless of their domains limit.
+
+
 ### Parse domain access logs
 
 To parse domain (Nginx) access logs and generate static reports for users domains accessible from `Domains > Access Logs` run the script:
