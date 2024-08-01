@@ -26,8 +26,6 @@ Most commonly used commands:
   opencli update_check
 ```
 
-Logs are stored in `/var/log/openpanel/admin/opencli.log`. File stores only commands and not attributes (flags).
-
 
 ## FAQ 
 `opencli faq` diisplays most frequently asked questions:
