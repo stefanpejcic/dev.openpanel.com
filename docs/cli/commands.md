@@ -29,6 +29,12 @@ Most commonly used commands:
 Logs are stored in `/var/log/openpanel/admin/opencli.log`. File stores only commands and not attributes (flags).
 
 
+## FAQ 
+`opencli faq` diisplays most frequently asked questions:
+
+![opencli faq command output](https://i.postimg.cc/k5k7VkQX/image.png)
+
+
 ## Users
 
 Manage users: Add, Delete, Suspend, Unsuspend, etc.
