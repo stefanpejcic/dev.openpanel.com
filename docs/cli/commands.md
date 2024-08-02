@@ -648,6 +648,14 @@ Restarting the panel services to apply the newly generated SSL and force domain 
 - AdminPanel is now available on: https://server.openpanel.co:2087
 ```
 
+### Delete unused SSLs
+
+Compare list of domains on the server with certificates issued by certbot. If domain is no longer present on server, the SSL certificate will be permanently  deleted.
+
+```bash
+opencli ssl-cleanup [-y]
+```
+
 
 ## Domains
 
