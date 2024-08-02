@@ -565,6 +565,13 @@ opencli php-ioncube <USERNAME>
 Generate and manage SSL certificates for user domains and server hostname.
 
 
+
+### Generate SSL for a domain
+
+```bash
+opencli ssl-domain <domain_name>
+```
+
 ### Check SSL for all domains owned by user
 
 This command allows you to check the SSL status of all user domains in Certbot and updates the ssl/.domain_status file of the user/s.
