@@ -33,6 +33,14 @@ Most commonly used commands:
 ![opencli faq command output](https://i.postimg.cc/k5k7VkQX/image.png)
 
 
+## Commands 
+`opencli commands` generates a list of available OpenCLI commands:
+
+```
+opencli commands
+```
+
+
 ## Users
 
 Manage users: Add, Delete, Suspend, Unsuspend, etc.
