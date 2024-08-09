@@ -878,6 +878,14 @@ You can pass the `--all` flag to change permissions for all users:
 opencli files-fix_permissions --all
 ```
 
+### Remount
+
+Mount every home directory of users. This is done automaticatlly but can also be triggered when needed. Make sure to restart that docker container afterwards to apply changes.
+
+```bash
+opencli files-remount
+```
+
 ## Admin
 
 enable/disable the admin panel, reset password, add admin users, etc.
