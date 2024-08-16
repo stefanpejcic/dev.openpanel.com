@@ -14,7 +14,7 @@ export default defineConfig([
     ...commonOptions,
     clean: true,
     entry: ['src/index.ts'],
-    globalName: 'dev.openpanel.co',
+    globalName: 'dev.openpanel.com',
   },
   // {
   //   ...commonOptions,
