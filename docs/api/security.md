@@ -31,7 +31,7 @@ Welcome to the best practices guide for the OpenPanel API. This document provide
 
 ## Updates and Community
 
-- **Stay Updated**: Follow our [changelog](https://openpanel.co/docs/changelog/intro/) to stay informed about new features, bug fixes, and security updates.
+- **Stay Updated**: Follow our [changelog](https://openpanel.com/docs/changelog/intro/) to stay informed about new features, bug fixes, and security updates.
 - **Community Engagement**: Engage with the OpenPanel community through [forums](https://community.openpanel.co/), or [discord](https://discord.com/invite/7bNY8fANqF) to share insights, ask questions, and stay connected with other developers.
 
 ---
