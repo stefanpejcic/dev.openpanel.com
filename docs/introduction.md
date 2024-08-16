@@ -4,8 +4,8 @@ Welcome to the Development section of OpenPanel, where developers can dive into 
 
 Before starting with custom development, please first get familiar with our user docs:
 
-- [OpenPanel Documentation](https://openpanel.co/docs/panel/intro/)
-- [OpenAdmin Documentation](https://openpanel.co/docs/admin/intro/)
+- [OpenPanel Documentation](https://openpanel.com/docs/panel/intro/)
+- [OpenAdmin Documentation](https://openpanel.com/docs/admin/intro/)
 
 Afterwards, make sure to understand OpenPanel directory structure, services and logs:
 
@@ -16,4 +16,4 @@ Afterwards, make sure to understand OpenPanel directory structure, services and 
 
 ## Developer Support
 
-Connect with fellow developers in the [OpenPanel community](https://community.openpanel.co/) through our Forum. Share your experiences, seek advice, and collaborate on innovative solutions. Together, we can expand the capabilities of OpenPanel and create a vibrant ecosystem.
+Connect with fellow developers in the [OpenPanel community](https://community.openpanel.com/) through our Forum. Share your experiences, seek advice, and collaborate on innovative solutions. Together, we can expand the capabilities of OpenPanel and create a vibrant ecosystem.
