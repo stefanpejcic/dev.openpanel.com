@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
-export const META_IMAGE = 'https://dev.openpanel.co/social.png'
-export const META_URL = 'https://dev.openpanel.co'
-export const META_TITLE = 'dev.openpanel.co'
+export const META_IMAGE = 'https://dev.openpanel.com/social.png'
+export const META_URL = 'https://dev.openpanel.com'
+export const META_TITLE = 'dev.openpanel.com'
 export const META_DESCRIPTION = 'Developer documentation for OpenPanel'
 
 const rControl = /[\u0000-\u001f]/g
@@ -68,7 +68,7 @@ export default defineConfig({
       },
       {
         icon: 'discord',
-        link: 'https://discord.openpanel.co',
+        link: 'https://discord.openpanel.com',
       },
     ],
 
@@ -78,7 +78,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/stefanpejcic/dev.openpanel.co/edit/main/docs/:path',
+      pattern: 'https://github.com/stefanpejcic/dev.openpanel.com/edit/main/docs/:path',
       text: 'Suggest changes to this page',
     },
 
@@ -101,11 +101,11 @@ export default defineConfig({
         items: [
           {
             text: 'OpenPanel Docs',
-            link: 'https://openpanel.co/docs/panel/intro/',
+            link: 'https://openpanel.com/docs/panel/intro/',
           },
           {
             text: 'OpenAdmin Docs',
-            link: 'https://openpanel.co/docs/admin/intro/',
+            link: 'https://openpanel.com/docs/admin/intro/',
           },
         ],
       },
