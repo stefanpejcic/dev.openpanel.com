@@ -9,7 +9,7 @@ hero:
   text: Development
   tagline: Our APIs and other integration systems offer the tools to successfully build a custom application that works seamlessly with OpenPanel.
   image:
-    src: https://openpanel.co/img/circle-logo-homepage-showcase.png
+    src: https://openpanel.com/img/circle-logo-homepage-showcase.png
     alt: OpenPanel Logo
   actions:
     - theme: brand
