@@ -25,7 +25,7 @@ export const slugify = (str: string): string =>
     .replace(/^(\d)/, '_$1')
 
 export default defineConfig({
-  title: 'dev.openpanel.co',
+  title: 'dev.openpanel.com',
   appearance: 'dark',
 
   markdown: {
