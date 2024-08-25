@@ -212,6 +212,10 @@ export default defineConfig({
               link: '/cli/websites.html',
             },
             {
+              text: 'opencli email',
+              link: '/cli/email.html',
+            },
+            {
               text: 'opencli php',
               link: '/cli/php.html',
             },
