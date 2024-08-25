@@ -1,5 +1,4 @@
-
-## SSL
+# SSL
 
 Generate and manage SSL certificates for user domains and server hostname.
 
