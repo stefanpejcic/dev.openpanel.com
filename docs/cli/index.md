@@ -2,7 +2,7 @@
 OpenPanel uses OpenCLI, a command line interface designed for administrators to manage server from the terminal.
 
 OpenCLI keeps history of used commands and allows you to view last and top 5 used commands:
-```
+```bash
 # opencli
 
 Usage: opencli <COMMAND> [additional_arguments]
