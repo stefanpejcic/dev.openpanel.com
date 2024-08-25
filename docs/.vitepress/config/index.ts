@@ -151,12 +151,16 @@ export default defineConfig({
               link: '/api/',
             },
             {
-              text: 'Available Endpoints',
-              link: '/api/endpoints.html',
+              text: '/api/users',
+              link: '/api/users.html',
             },
             {
-              text: 'Best Practice',
-              link: '/api/security.html',
+              text: '/api/plans',
+              link: '/api/plans.html',
+            },
+            {
+              text: '/api/services',
+              link: '/api/services.html',
             },
           ],
         },
