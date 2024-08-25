@@ -147,7 +147,7 @@ export default defineConfig({
           text: 'API',
           items: [
             {
-              text: 'Introduction',
+              text: '/api',
               link: '/api/',
             },
             {
