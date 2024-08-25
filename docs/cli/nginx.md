@@ -1,7 +1,7 @@
-## Nginx
+# Nginx
 
 
-### Install ModSecurity
+# Install ModSecurity
 
 You can install modsecurity by using:
 
@@ -9,7 +9,7 @@ You can install modsecurity by using:
 opencli nginx-install_modsec
 ```
 
-### Manage ModSecurity
+# Manage ModSecurity
 
 To list ModSecurity configuration files with rules:
 ```bash
