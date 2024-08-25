@@ -151,10 +151,6 @@ export default defineConfig({
               link: '/api/',
             },
             {
-              text: 'Authentication',
-              link: '/api/authentication.html',
-            },
-            {
               text: 'Available Endpoints',
               link: '/api/endpoints.html',
             },
