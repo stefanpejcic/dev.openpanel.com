@@ -4,70 +4,72 @@
 
 The OpenPanel API provides a comprehensive set of endpoints for managing user accounts. Below are the operations available for user management.
 
-### List Users
+### List accounts
 
 ```
-GET OPENPANEL:2087/api/v1/users
+curl -X GET http://PANEL:2087/api/users -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
-### Create User
+
+### Create account
 
 To create a new user account:
 
 ```
-POST OPENPANEL:2087/api/v1/users
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"email": "EMAIL_HERE", "username": "USERNAME_HERE", "password": "PASSWORD_HERE", "plan_name": "PLAN_NAME_HERE"}' http://PANEL:2087/api/users
+```
+
+
+Example: 
+```bash
+curl -X POST "http://64.23.205.3:2087/api/users" -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGcBns" -H "Content-Type: application/json" -d '{"username":"stefan","password":"s32dsasaq","email":"stefan@pejcic.rs","plan_name":"default_plan_nginx"}'
+```
+Example response:
+```bash
 {
-  "username": "newuser",
-  "email": "newuser@example.com",
-  "password": "password",
-  "plan_name": "plan_basic"
+  "response": {
+    "message": "Successfully added user stefan password: s32dsasaq"
+  },
+  "success": true
 }
 ```
 
-### Delete User
-To delete an existing user:
-```
-DELETE OPENPANEL:2087/api/v1/users/{userId}
+### Suspend account
+
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"action": "suspend"}' http://PANEL:2087/api/users/USERNAME_HERE
 ```
 
-### Suspend User
-To suspend a user account:
-```
-POST OPENPANEL:2087/api/v1/users/{userId}/suspend
+### Unsuspend account
+
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"action": "unsuspend"}' http://PANEL:2087/api/users/USERNAME_HERE
 ```
 
-### Unsuspend User
-To unsuspend a user account:
-```
-POST OPENPANEL:2087/api/v1/users/{userId}/unsuspend
+### Delete account
+
+```bash
+curl -X DELETE -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" http://PANEL:2087/api/users/USERNAME_HERE
 ```
 
-### Change User Plan
-To change the subscription plan for a user:
-```
-PUT OPENPANEL:2087/api/v1/users/{userId}/plan
-{
-  "new_plan_name": "plan_premium"
-}
+### Change password
 
+```bash
+curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"password": "NEW_PASSWORD_HERE"}' http://PANEL:2087/api/users/USERNAME_HERE
 ```
 
+### Change plan
 
-### Change User Password
-To change a user's password:
-```
-PUT OPENPANEL:2087/api/v1/users/{userId}/password
-{
-  "new_password": "newSecurePassword"
-}
-```
-### Disable 2FA
-
-To disable Two-Factor Authentication (2FA) for a user:
-```
-POST OPENPANEL:2087/api/v1/users/{userId}/disable2fa
+```bash
+curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"plan_name": "PLAN_NAME_HERE"}' http://PANEL:2087/api/users/USERNAME_HERE
 ```
 
+### Autologin
 
+```bash
+curl -X CONNECT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" http://PANEL:2087/api/users/USERNAME_HERE
+```
+
+-----
 
 
 ## Plans
@@ -76,210 +78,69 @@ POST OPENPANEL:2087/api/v1/users/{userId}/disable2fa
 
 ### List Plans
 
-To retrieve a list of all available subscription plans:
+To retrieve a list of all available hosting plans:
 ```
-GET OPENPANEL:2087/api/v1/plans
-```
-
-### Create Plan
-To create a new subscription plan:
-```
-POST OPENPANEL:2087/api/v1/plans
-{
-  "name": "Premium Plan",
-  "price": 99.99,
-  "currency": "USD",
-  "features": ["feature1", "feature2", "feature3"]
-}
+curl -X GET http://PANEL:2087/api/plans -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
-### Edit Plan
-To edit an existing subscription plan. This example updates the plan's price and features:
+To retrieve information about a single hosting plan:
 ```
-PUT OPENPANEL:2087/api/v1/plans/{planId}
-{
-  "name": "Premium Plan Updated",
-  "price": 109.99,
-  "currency": "USD",
-  "features": ["feature1", "feature2", "feature4", "feature5"]
-}
-```
-
-### Delete Plan
-To delete a subscription plan:
-```
-DELETE OPENPANEL:2087/api/v1/plans/{planId}
-```
-
-
-## Backups
-
-OpenPanel API Endpoints for Backup Management:
-
-### Create Backup Job
-
-To create a new backup job:
-```
-POST OPENPANEL:2087/api/v1/backups
-{
-  "type": "full",
-  "destination_id": "destinationId",
-  "schedule": "daily"
-}
-```
-
-### Delete Backup
-
-To delete an existing backup:
-```
-DELETE OPENPANEL:2087/api/v1/backups/{backupId}
-```
-
-### Edit Backup Job
-
-To modify an existing backup job:
-```
-PUT OPENPANEL:2087/api/v1/backups/{backupId}
-{
-  "type": "incremental",
-  "schedule": "weekly"
-}
-```
- ### Add Backup Destination
-
-To add a new backup destination:
-```
-POST OPENPANEL:2087/api/v1/backups/destinations
-{
-  "name": "New Destination",
-  "type": "s3",
-  "details": {
-    "access_key": "accessKey",
-    "secret_key": "secretKey",
-    "bucket_name": "bucketName",
-    "region": "us-east-1"
-  }
-}
-```
-
-### Delete Backup Destination
-
-To remove an existing backup destination:
-```
-DELETE OPENPANEL:2087/api/v1/backups/destinations/{destinationId}
-```
-
-### Edit Backup Destination
-
-To edit the details of a backup destination:
-```
-PUT OPENPANEL:2087/api/v1/backups/destinations/{destinationId}
-{
-  "name": "Updated Destination",
-  "details": {
-    "bucket_name": "newBucketName"
-  }
-}
-```
-
-### Restore Full Account of User
-
-To restore the full account of a user from a backup:
-```
-POST OPENPANEL:2087/api/v1/backups/{backupId}/restore
-{
-  "user_id": "userId",
-  "restore_type": "full"
-}
-```
-
-### Restore Single Item of User
-
-To restore a single item (e.g., a file or database) for a user:
-```
-POST OPENPANEL:2087/api/v1/backups/{backupId}/restore
-{
-  "user_id": "userId",
-  "restore_type": "single",
-  "item": "path/to/item"
-}
-
-```
-
-### View Backup Log
-To view the log for a specific backup job:
-```
-GET OPENPANEL:2087/api/v1/backups/{backupId}/log
+curl -X GET http://PANEL:2087/api/plans/<PLAN_ID> -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
 ## Services
 
 
-### Service Status
-To check the status of a specific service:
-```
-GET OPENPANEL:2087/api/v1/services/{serviceName}/status
-```
-### Service Status
-To check the status of a specific service:
-```
-GET OPENPANEL:2087/api/v1/services/{serviceName}/status
-```
-Replace {serviceName} with the actual name of the service you wish to check.
+### Services List
 
-### Start Status
-To check the status of a specific service:
+To view a list of all currently monitored services:
 ```
-GET OPENPANEL:2087/api/v1/services/{serviceName}/status
+curl -X GET http://PANEL:2087/api/services -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
-### Stop Status
+
+This reads the `/etc/openpanel/openadmin/config/services.json` file.
+
+### Edit Services
+
+To edit the list of minitored services:
+```
+curl -X PUT http://PANEL:2087/api/services -H "Authorization: Bearer JWT_TOKEN_HERE" -H "Content-Type: application/json" -d '{"service1": {"name": "Service One","status": "active"},"service2": {"name": "Service Two","status": "inactive"}}'
+```
+This will update the list of monitored services stored inside `/etc/openpanel/openadmin/config/services.json` file.
+
+### Services Status
+
+To check the status of all monitored services:
+```
+curl -X GET http://PANEL:2087/api/services/status -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+
+### Start Service
+
+To start a specific service:
+```
+curl -X POST http://PANEL:2087/api/service/start/<service_name> -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Replace `<service_name> with the actual name of the service you wish to start.
+
+
+### Restart Service
+
 To stop a specific service:
 ```
-POST OPENPANEL:2087/api/v1/services/{serviceName}/stop
+curl -X POST http://PANEL:2087/api/service/restart/<service_name> -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
+Replace `<service_name> with the actual name of the service you wish to restart.
 
-## Settings 
 
+### Stop Service
 
-### Get Settings
-
-To retrieve the current settings:
+To stop a specific service:
 ```
-GET OPENPANEL:2087/api/v1/settings/{settingName}
+curl -X POST http://PANEL:2087/api/service/stop/<service_name> -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
-
-### Update Settings
-
-To update one or more settings:
-```
-PUT OPENPANEL:2087/api/v1/settings
-{
-  "setting_name1": "new_value",
-  "setting_name2": "new_value"
-}
-```
-
-## Notifications
+Replace `<service_name> with the actual name of the service you wish to stop.
 
 
-### List Notifications
-
-To list notifications:
-```
-GET OPENPANEL:2087/api/v1/notifications/
-```
-
-### Delete Notifications
-
-To delete all notifications:
-```
-DELETE OPENPANEL:2087/api/v1/notifications/
-```
-
-
-
-## Administration
-
-```
-/api/v1/admin
-```
