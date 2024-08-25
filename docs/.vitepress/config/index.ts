@@ -168,12 +168,92 @@ export default defineConfig({
               link: '/cli/',
             },
             {
-              text: 'Available Commands',
+              text: 'opencli faq',
+              link: '/cli/faq.html',
+            },
+            {
+              text: 'opencli version',
+              link: '/cli/version.html',
+            },
+            {
+              text: 'opencli commands',
               link: '/cli/commands.html',
             },
             {
-              text: 'Custom Commands',
-              link: '/cli/create.html',
+              text: 'opencli config',
+              link: '/cli/config.html',
+            },
+            {
+              text: 'opencli users',
+              link: '/cli/user.html',
+            },
+            {
+              text: 'opencli plans',
+              link: '/cli/plans.html',
+            },
+            {
+              text: 'opencli domains',
+              link: '/cli/domains.html',
+            },
+            {
+              text: 'opencli ssl',
+              link: '/cli/ssl.html',
+            },
+            {
+              text: 'opencli websites',
+              link: '/cli/websites.html',
+            },
+            {
+              text: 'opencli php',
+              link: '/cli/php.html',
+            },
+            {
+              text: 'opencli webserver',
+              link: '/cli/webserver.html',
+            },
+            {
+              text: 'opencli nginx',
+              link: '/cli/nginx.html',
+            },
+            {
+              text: 'opencli docker',
+              link: '/cli/docker.html',
+            },
+            {
+              text: 'opencli files',
+              link: '/cli/commands.html',
+            },
+            {
+              text: 'opencli sentinel',
+              link: '/cli/sentinel.html',
+            },
+            {
+              text: 'opencli firewall',
+              link: '/cli/firewall.html',
+            },
+            {
+              text: 'opencli admin',
+              link: '/cli/admin.html',
+            },
+            {
+              text: 'opencli backup',
+              link: '/cli/backup.html',
+            },
+            {
+              text: 'opencli report',
+              link: '/cli/report.html',
+            },
+            {
+              text: 'opencli admin',
+              link: '/cli/admin.html',
+            },
+            {
+              text: 'opencli locale',
+              link: '/cli/locale.html',
+            },
+            {
+              text: 'opencli license',
+              link: '/cli/license.html',
             },
           ],
         },
