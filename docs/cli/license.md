@@ -1,5 +1,4 @@
-
-## License
+# License
 
 `opencli license` command is used to set a license key for [OpenPanel Enterprise](https://openpanel.co/product/openpanel-premium-control-panel/), verify it, display information and delete the key to downgrade to Community edition.
 
