@@ -1,5 +1,4 @@
-
-## Apache / Nginx
+# Apache / Nginx
 
 Scripts for managing users webserver: Nginx or Apache
 
