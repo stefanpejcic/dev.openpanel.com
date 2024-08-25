@@ -1,5 +1,4 @@
-
-## PHP
+# PHP
 
 Manage users' PHP versions: list enabled, list available, change version, etc.
 
