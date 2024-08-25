@@ -224,6 +224,10 @@ export default defineConfig({
               link: '/cli/nginx.html',
             },
             {
+              text: 'opencli cloudflare',
+              link: '/cli/cloudflare.html',
+            },
+            {
               text: 'opencli docker',
               link: '/cli/docker.html',
             },
@@ -234,6 +238,10 @@ export default defineConfig({
             {
               text: 'opencli firewall',
               link: '/cli/firewall.html',
+            },
+            {
+              text: 'opencli cloudflare',
+              link: '/cli/cloudflare.html',
             },
             {
               text: 'opencli backup',
