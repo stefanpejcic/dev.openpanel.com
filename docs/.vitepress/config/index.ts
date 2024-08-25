@@ -233,7 +233,7 @@ export default defineConfig({
             },
             {
               text: 'opencli files',
-              link: '/cli/commands.html',
+              link: '/cli/files.html',
             },
             {
               text: 'opencli firewall',
