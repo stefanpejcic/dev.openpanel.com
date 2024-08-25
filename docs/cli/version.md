@@ -1,6 +1,6 @@
 # Version 
 
-`opencli version` will display install OpenPanel version:
+`opencli version` will display installed OpenPanel version:
 
 ```
 opencli version
