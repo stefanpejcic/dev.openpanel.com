@@ -224,10 +224,6 @@ export default defineConfig({
               link: '/cli/nginx.html',
             },
             {
-              text: 'opencli cloudflare',
-              link: '/cli/cloudflare.html',
-            },
-            {
               text: 'opencli docker',
               link: '/cli/docker.html',
             },
