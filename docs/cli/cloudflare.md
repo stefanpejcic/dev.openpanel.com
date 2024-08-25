@@ -10,3 +10,5 @@ Administrators can disable direct server access and only allow access via Cloudf
   ```bash
   opencli cloudflare --disable
   ```
+
+This feature will regularly update Cloudflare ip addresses to make sure new CF IP ranges are included.
