@@ -1,9 +1,8 @@
-
-## Plans
+# Plans
 
 Scripts for creating and editing hosting plans (packages).
 
-### List Plans
+## List Plans
 
 To list all current hosting packages (plans) run:
 
@@ -30,7 +29,7 @@ You can also format the data as JSON:
 opencli plan-list --json
 ```
 
-### Create Plan
+## Create Plan
 
 To create a new plan run the following command:
 
@@ -43,7 +42,7 @@ Example:
 opencli plan-create cloud_8 "Custom plan with 8GB of RAM&CPU" 0 0 15 500000 0 8 8 nginx 200
 ```
 
-### List Users on Plan
+## List Users on Plan
 
 List all users that are currently using a plan:
 
@@ -68,7 +67,7 @@ You can also format the data as JSON:
 opencli plan-usage --json
 ```
 
-### Delete Plan
+## Delete Plan
 
 Delete a plan if no users are currently using it.
 
@@ -76,7 +75,7 @@ Delete a plan if no users are currently using it.
 opencli plan-delete <PLAN_NAME> 
 ```
 
-### Edit Plan
+## Edit Plan
 
 Change plan limits.
 
