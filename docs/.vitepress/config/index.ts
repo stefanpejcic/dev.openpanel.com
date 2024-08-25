@@ -164,7 +164,7 @@ export default defineConfig({
           text: 'OpenCLI',
           items: [
             {
-              text: 'Introduction',
+              text: 'opencli',
               link: '/cli/',
             },
             {
@@ -182,6 +182,14 @@ export default defineConfig({
             {
               text: 'opencli config',
               link: '/cli/config.html',
+            },
+            {
+              text: 'opencli admin',
+              link: '/cli/admin.html',
+            },
+            {
+              text: 'opencli sentinel',
+              link: '/cli/sentinel.html',
             },
             {
               text: 'opencli users',
@@ -224,28 +232,12 @@ export default defineConfig({
               link: '/cli/commands.html',
             },
             {
-              text: 'opencli sentinel',
-              link: '/cli/sentinel.html',
-            },
-            {
               text: 'opencli firewall',
               link: '/cli/firewall.html',
             },
             {
-              text: 'opencli admin',
-              link: '/cli/admin.html',
-            },
-            {
               text: 'opencli backup',
               link: '/cli/backup.html',
-            },
-            {
-              text: 'opencli report',
-              link: '/cli/report.html',
-            },
-            {
-              text: 'opencli admin',
-              link: '/cli/admin.html',
             },
             {
               text: 'opencli locale',
@@ -254,6 +246,10 @@ export default defineConfig({
             {
               text: 'opencli license',
               link: '/cli/license.html',
+            },
+            {
+              text: 'opencli report',
+              link: '/cli/report.html',
             },
           ],
         },
