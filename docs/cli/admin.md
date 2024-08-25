@@ -90,3 +90,59 @@ opencli admin delete <username>
 :::info
 Note: User with 'admin' role can not be deleted.
 :::
+
+
+
+## Notifications
+
+`opencli admin notifications` allows you to change the notification preferences.
+
+Settings are stored in `/usr/local/admin/service/notifications.ini` file. However, it is recommended not to modify this file directly. Instead, it's best to utilize the opencli commands. This way, any changes made are immediately applied, and the admin service is automatically restarted only when necessary.
+
+#### Get
+
+The `get` parameter allows you to view current notification settings.
+
+```bash
+opencli admin notifications get <OPTION>
+```
+
+Example:
+
+```bash
+# opencli admin notifications get reboot
+yes
+```
+
+#### Update
+
+The `update` parameter allows you to change the notification settings.
+
+
+```bash
+opencli admin notifications update <OPTION> <NEW-VALUE>
+```
+
+Example:
+```bash
+opencli admin notifications update load 10
+Updated load to 10
+```
+
+#### Options
+
+Currently available options for notifications are:
+
+- reboot
+- backups
+- attack
+- limit
+- update
+- load
+- swap
+- cpu
+- ram
+- du
+
+
+
