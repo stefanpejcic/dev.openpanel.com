@@ -1,5 +1,4 @@
-
-## Locale
+# Locale
 
 List or install new locale(s) for OpenPanel interface:
 
