@@ -61,7 +61,7 @@ export default defineConfig({
     outline: [2, 3],
 
     socialLinks: [
-      { icon: 'x', link: 'https://twitter.com/openpanelco' },
+      { icon: 'x', link: 'https://x.com/openpanel' },
       {
         icon: 'github',
         link: 'https://github.com/stefanpejcic/openpanel',
