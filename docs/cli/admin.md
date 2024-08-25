@@ -1,5 +1,5 @@
 
-## Admin
+# Admin
 
 enable/disable the admin panel, reset password, add admin users, etc.
 
