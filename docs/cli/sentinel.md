@@ -1,4 +1,4 @@
-## Sentinel
+# Sentinel
 
 Sentinel is an AI-powered service that autonomously monitors your server, makes decisions, and sends alerts to the notifications center and emails.
 
