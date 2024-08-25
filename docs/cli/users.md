@@ -1,6 +1,4 @@
-
-
-## Users
+# Users
 
 Manage users: Add, Delete, Suspend, Unsuspend, etc.
 
