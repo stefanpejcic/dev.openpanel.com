@@ -1,4 +1,4 @@
-## Cloudflare only
+# Cloudflare only
 
 Administrators can disable direct server access and only allow access via Cloudflare proxy. This setting affects all domains and users.
 
