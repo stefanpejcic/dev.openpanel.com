@@ -1,4 +1,4 @@
-## FAQ 
+# FAQ 
 
 `opencli faq` displays most frequently asked questions:
 
