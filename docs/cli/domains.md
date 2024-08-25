@@ -1,5 +1,4 @@
-
-## Domains
+# Domains
 
 Manage domains: Add, Delete, detect, etc.
 
