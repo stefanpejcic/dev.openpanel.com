@@ -1,5 +1,4 @@
-
-## Backups
+# Backups
 
 Manage backup jobs, destiantions, exclude lists, restore, etc.
 
