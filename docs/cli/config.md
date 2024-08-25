@@ -1,5 +1,4 @@
-
-## Config
+# Config
 
 `opencli config` allows you to change the configuration of the user interface and set defaults for new accounts.
 
