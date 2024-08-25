@@ -1,7 +1,10 @@
 # Commands 
 
-`opencli commands` generates a list of available OpenCLI commands:
+`opencli commands` generates a list of available OpenCLI commands on the current server:
 
 ```
 opencli commands
 ```
+
+
+As new commands are added gradually, they might not yet be available in your OpenPanel version. To check if a command is available on a server, run `opencli commands`.
