@@ -4,7 +4,7 @@ The OpenPanel API provides a comprehensive set of endpoints for managing user ac
 
 ### List accounts
 
-```
+```bash
 curl -X GET http://PANEL:2087/api/users -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
@@ -12,7 +12,7 @@ curl -X GET http://PANEL:2087/api/users -H "Authorization: Bearer JWT_TOKEN_HERE
 
 To create a new user account:
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" -d '{"email": "EMAIL_HERE", "username": "USERNAME_HERE", "password": "PASSWORD_HERE", "plan_name": "PLAN_NAME_HERE"}' http://PANEL:2087/api/users
 ```
 
