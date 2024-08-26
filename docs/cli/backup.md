@@ -295,7 +295,7 @@ Example:
 
 #### Update
 
-The `update` parameter allows you to change backuo settings.
+The `update` parameter allows you to change backup settings.
 
 
 ```bash
