@@ -179,7 +179,7 @@ opencli email-setup quota del <EMAIL ADDRESS>
 
 ## Dovecot Master
 
-Dovecot Master accounts are used to auto-login from OpenPanel interface to any email address.
+[Dovecot Master](https://doc.dovecot.org/2.3/configuration_manual/authentication/master_users/) accounts are used to auto-login from OpenPanel interface to any email address.
 
 `opencli email-setup dovecot-master` 
 
