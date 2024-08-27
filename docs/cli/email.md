@@ -177,13 +177,49 @@ opencli email-setup quota del <EMAIL ADDRESS>
 
 
 
-## opencli email-setup dovecot-master
+## Dovecot Master
+
+Dovecot Master accounts are used to auto-login from OpenPanel interface to any email address.
+
+`opencli email-setup dovecot-master` 
+
+
+### List Dovecot Master 
+
+To list all dovecot-master accounts:
+
 ```
-opencli email-setup dovecot-master add <USERNAME> [<PASSWORD>]
-opencli email-setup dovecot-master update <USERNAME> [<PASSWORD>]
-opencli email-setup dovecot-master del [ OPTIONS... ] <USERNAME> [ <USERNAME>... ]
 opencli email-setup dovecot-master list
 ```
+
+
+### Add Dovecot Master 
+
+To create a new dovecot-master account:
+
+```
+opencli email-setup dovecot-master add <USERNAME> [<PASSWORD>]
+```
+
+### Update Dovecot Master 
+
+To chaneg password for existing dovecot-master account:
+
+```
+opencli email-setup dovecot-master update <USERNAME> [<PASSWORD>]
+```
+
+### Add Dovecot Master 
+
+To delete an dovecot-master account:
+
+```
+opencli email-setup dovecot-master del [ OPTIONS... ] <USERNAME> [ <USERNAME>... ]
+```
+
+
+
+
 
 ## DKIM
 
