@@ -2,7 +2,7 @@
 
 Manage domains: Add, Delete, detect, etc.
 
-### List user domains
+## List user domains
 
 To list all domains owned by a user run the following command:
 
@@ -18,7 +18,7 @@ panel.pejcic.rs
 example.openpanel.co
 ```
 
-### List all domains
+## List all domains
 
 To list all domains owned by all users run the following command:
 
@@ -36,7 +36,36 @@ example.net
 ...
 ```
 
-### Check who owns a domain name
+
+## DNS
+
+```bash
+ opencli domains-dns reconfig               - Load new DNS zones into bind server.
+ opencli domains-dns check <DOMAIN>         - Check and validate dns zone for a domain.
+ opencli domains-dns reload <DOMAIN>        - Reload DNS zone for a single domain.
+ opencli domains-dns show <DOMAIN>          - Display DNS zone for a single domain.
+ opencli domains-dns list                   - List all domains with DNS zones on the server.
+ opencli domains-dns delete <DOMAIN>        - Delete DNS zone for a domain.
+ opencli domains-dns create <DOMAIN>        - Create DNS zone for a domain.
+ opencli domains-dns count                  - Display total number of DNS zones present on the server.
+ opencli domains-dns config                 - Check main bind configuration file for syntax errros.
+ opencli domains-dns start                  - Start the DNS server.
+ opencli domains-dns restart                - Soft restart of bind9 docker container.
+ opencli domains-dns hard-restart           - Hard restart: terminates container and start again.
+ opencli domains-dns stop                   - Stop the DNS server.
+
+```
+
+
+
+
+
+
+
+
+
+
+## Check who owns a domain name
 
 To check which user owns a domain name run the following command:
 
@@ -53,7 +82,7 @@ Owner of 'pejcic.rs': stefan
 The `whoowns` script searches the database in order to determine which username added a domain.
 
 
-### Add Domain to User
+## Add Domain to User
 
 To add a domain name for user:
 
@@ -69,7 +98,7 @@ opencli domains-add pejcic.rs stefan
 Note: this command will add a domain for user regardless of their domains limit.
 
 
-### DNSSEC
+## DNSSEC
 
 Command `opencli domains-dnssec` allows administrators to enable DNSSEC, re-sign the zone and view DS records for domains.
 
@@ -92,7 +121,7 @@ Please note that this feature is still experimental and there is still no UI for
   opencli domains-dnssec example.com --check
   ```
 
-### Parse domain access logs
+## Parse domain access logs
 
 To parse domain (Nginx) access logs and generate static reports for users domains accessible from `Domains > Access Logs` run the script:
 
@@ -114,7 +143,7 @@ To parse (Nginx) access logs for all active users and their domains run the scri
 opencli domains-stats
 ```
 
-### Enable modsecurity
+## Enable modsecurity
 
 To enable modsecurity for all domains owned by a specific user:
 
