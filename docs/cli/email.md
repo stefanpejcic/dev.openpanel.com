@@ -2,9 +2,33 @@
 
 Starting from the [0.2.5](https://openpanel.com/docs/changelog/0.2.5/) version, [OpenPanel Enterprise edition](https://openpanel.com/beta/) includes a mailserver.
 
-
 The following commands are available **for OpenPanel Enterprise** users:
 
+```bash
+opencli email-server status                           Show status
+opencli email-server config                           Show configuration
+opencli email-server install                          Install the email server  
+opencli email-server start                            Start the email server
+opencli email-server stop                             Stop the email server
+opencli email-server restart                          Restart the email server
+opencli email-server queue                            Show mail queue
+opencli email-server flush                            Flush mail queue
+opencli email-server view   <queue id>                Show mail by queue id
+opencli email-server unhold <queue id> [<queue id>]   Release mail that was put "on hold" (marked with '!')
+opencli email-server unhold ALL                       Release all mails that were put "on hold" (marked with '!')
+opencli email-server delete <queue id> [<queue id>]   Delete mail from queue
+opencli email-server delete ALL                       Delete all mails from queue
+opencli email-server fail2ban [<ban|unban> <IP>]      Interact with fail2ban
+opencli email-server fail2ban log                     Show fail2ban log
+opencli email-server ports                            Show published ports
+opencli email-server postconf                         Show postfix configuration
+opencli email-server logs [-f]                        Show logs. Use -f to 'follow' the logs
+opencli email-server login                            Run container shell
+opencli email-server supervisor                       Interact with supervisorctl
+opencli email-server update-check                     Check for container package updates
+opencli email-server update-packages                  Update container packages
+opencli email-server versions                         Show versions
+```
 
 ## MailServer
 
