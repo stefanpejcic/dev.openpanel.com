@@ -39,6 +39,8 @@ example.net
 
 ## DNS
 
+The `opencli domains-dns` command is used for everything dns related:
+
 ```bash
  opencli domains-dns reconfig               - Load new DNS zones into bind server.
  opencli domains-dns check <DOMAIN>         - Check and validate dns zone for a domain.
@@ -57,12 +59,86 @@ example.net
 ```
 
 
+### reconfig
+
+To load new dns zones into the bind server:
+```bash
+ opencli domains-dns reconfig
+```  
 
 
+### Check
+To check and validate dns zone for a domain:
+```bash
+ opencli domains-dns check <DOMAIN>
+```
 
+### Reload
 
+Reload DNS zone for a single domain:
+```bash
+ opencli domains-dns reload <DOMAIN>
+```
 
+### Show
+Display dns zone records for a domain:
+```bash
+ opencli domains-dns show <DOMAIN>
+```
 
+### List
+List all DNS zones on the server:
+```bash
+ opencli domains-dns list
+```
+
+### Delete
+Delete DNS zone for a domain:
+```bash
+ opencli domains-dns delete <DOMAIN>
+```
+
+### Create
+Create DNS zone for a domain:
+```bash
+ opencli domains-dns create <DOMAIN>
+```
+
+### Count 
+Display total number of DNS zones present on the server:
+```bash
+ opencli domains-dns count
+```
+
+### Config
+Check main bind configuration file for syntax errros:
+```bash
+ opencli domains-dns config
+```
+
+### Start
+Start the DNS server:
+```bash
+ opencli domains-dns start
+```
+
+## Restart
+Soft restart of bind9 docker container:
+```bash
+ opencli domains-dns restart
+```
+
+### Hard Restart
+Hard restart - terminates container and start again:
+```bash
+ opencli domains-dns hard-restart
+```
+
+### Stop
+Stop the DNS server:
+```bash
+ opencli domains-dns stop
+```
 
 
 ## Check who owns a domain name
