@@ -58,12 +58,12 @@ The `whoowns` script searches the database in order to determine which username 
 To add a domain name for user:
 
 ```bash
-opencli domains-add <USERNAME> <DOMAIN>
+opencli domains-add <DOMAIN> <USERNAME>
 ```
 
 Example:
 ```bash
-opencli domains-add stefan pejcic.rs
+opencli domains-add pejcic.rs stefan
 ```
 
 Note: this command will add a domain for user regardless of their domains limit.
