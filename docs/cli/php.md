@@ -121,7 +121,7 @@ php8.3-fpm
 
 The `get_available_php_versions` script performs various actions:
 
-- Runs `apt-get update` inside users contianer
+- Runs `apt-get update` inside users container
 - Lists available PHP versions from remote repositories
 - Saves the list to `/php_available_versions.json` in user home directory
 - optionally display the list
@@ -159,6 +159,13 @@ After this operation, 21.1 MB of additional disk space will be used.
 .
 ```
 
+### PHP.INI
+
+View or update current setting value from php.ini file for user:
+
+```bash
+opencli php-ini <username> <action> <setting> [value]
+```
 
 ### Enable ioncube loader
 
