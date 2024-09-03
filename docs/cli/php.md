@@ -159,6 +159,10 @@ After this operation, 21.1 MB of additional disk space will be used.
 .
 ```
 
+- You can specify php extensions to be installed by editing the [`/etc/openpanel/php/extensions.txt` file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/php/extensions.txt)
+- You can specify limits in php.ini file to be set by editing the [`/etc/openpanel/php/ini.txt` file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/php/ini.txt)
+
+
 ### PHP.INI
 
 View or update current setting value from php.ini file for user:
