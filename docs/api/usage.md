@@ -9,6 +9,14 @@ View current CPU usage:
 curl -X GET http://PANEL:2087/api/usage/cpu -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
+Example response:
+```json
+{
+  "core_0": 0,
+  "core_1": 0
+}
+```
+
 ## Memory usage
 
 View current RAM usage:
@@ -16,10 +24,60 @@ View current RAM usage:
 curl -X GET http://PANEL:2087/api/usage/memory -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
+Example response:
+```json
+{
+  "human_readable_info": {
+    "available": "6.14 GB",
+    "percent": "20.9%",
+    "total": "7.76 GB",
+    "used": "1.33 GB"
+  },
+  "ram_info": {
+    "available": 6587547648,
+    "percent": 20.9,
+    "total": 8327839744,
+    "used": 1425428480
+  }
+}
+```
 
 ## Disk usage
 
 View current disk usage:
 ```bash
 curl -X GET http://PANEL:2087/api/usage/disk -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Example response:
+```json
+[
+  {
+    "device": "/dev/vda1",
+    "free": 60307525632,
+    "fstype": "ext4",
+    "mountpoint": "/",
+    "percent": 51.2,
+    "total": 123690532864,
+    "used": 63366230016
+  },
+  {
+    "device": "/dev/vda16",
+    "free": 794705920,
+    "fstype": "ext4",
+    "mountpoint": "/boot",
+    "percent": 7.4,
+    "total": 923156480,
+    "used": 63807488
+  },
+  {
+    "device": "/dev/loop0",
+    "free": 54706995200,
+    "fstype": "xfs",
+    "mountpoint": "/var/lib/docker",
+    "percent": 8.9,
+    "total": 60062433280,
+    "used": 5355438080
+  }
+]
 ```
