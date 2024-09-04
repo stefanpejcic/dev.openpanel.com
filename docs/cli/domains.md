@@ -197,6 +197,19 @@ Please note that this feature is still experimental and there is still no UI for
   opencli domains-dnssec example.com --check
   ```
 
+## Update Nameservers
+
+To change nameservers in a single dns zone:
+```bash
+opencli domains-update_ns <DOMAIN_NAME>
+```
+
+To change nameservers for all dns zones on the server:
+```bash
+opencli domains-update_ns --all
+```
+
+
 ## Parse domain access logs
 
 To parse domain (Nginx) access logs and generate static reports for users domains accessible from `Domains > Access Logs` run the script:
