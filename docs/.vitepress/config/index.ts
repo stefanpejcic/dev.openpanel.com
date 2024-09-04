@@ -268,6 +268,10 @@ export default defineConfig({
               link: '/cli/locale.html',
             },
             {
+              text: 'opencli api',
+              link: '/cli/api.html',
+            },
+            {
               text: 'opencli license',
               link: '/cli/license.html',
             },
