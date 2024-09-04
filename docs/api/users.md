@@ -66,3 +66,12 @@ curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TO
 ```bash
 curl -X CONNECT -H "Content-Type: application/json" -H "Authorization: Bearer JWT_TOKEN_HERE" http://PANEL:2087/api/users/USERNAME_HERE
 ```
+
+### IPs
+
+List users with dedicated IP addresses:
+
+```bash
+curl -X GET -H "Authorization: Bearer JWT_TOKEN_HERE" http://PANEL:2087/api/ips
+```
+
