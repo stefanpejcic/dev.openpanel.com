@@ -2,6 +2,23 @@
 
 Display real-time resource usage.
 
+
+## Stats
+
+Display current number of users, domains and websites:
+```bash
+curl -X GET http://PANEL:2087/api/usage/stats -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Example response:
+```json
+{
+  "usage_stats": "{\"timestamp\": \"2024-09-03\", \"users\": 1, \"domains\": 2, \"websites\": 0}\n{\"timestamp\": \"2024-09-04\", \"users\": 1, \"domains\": 2, \"websites\": 0}"
+}
+```
+
+
+
 ## CPU usage
 
 View current CPU usage:
