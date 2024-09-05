@@ -17,6 +17,12 @@ Example response:
 }
 ```
 
+## Endpoints
+
+Display available API endpoints with usage examples:
+```bash
+curl -X GET http://PANEL:2087/api/usage -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
 
 
 ## CPU usage
