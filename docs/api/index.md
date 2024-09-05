@@ -52,7 +52,24 @@ This section will guide you through the initial steps needed to start using the 
    ```
   This request will return information about your admin account, verifying that your API key is working correctly.
 
+## Endpoints List
 
+New API endpoints are added gradually, so some might not be available in your installed version of OpenPanel yet. To get a list of available API endpoints for your installed version, use:
+
+- ### OpenAdmin:
+  From OpenAdmin navigate to **Settings > API** and click on 'Examples':
+  ![screenshot](https://i.postimg.cc/bpMqV3VK/2024-09-05-14-56.png)
+  
+- ### OpenCLI
+  Run the [opencli api-list](/cli/api.html#API-list) command:
+  ```bash
+  opencli api-list
+  ```
+- ### OpenAdmin API
+  Send a GET request to [/api/usage](/cli/api.html#API-list):
+  ```bash
+  curl -X GET http://PANEL:2087/api/usage -H "Authorization: Bearer JWT_TOKEN_HERE"
+  ```
 
 ## Best Practices
 
