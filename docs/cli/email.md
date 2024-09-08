@@ -32,6 +32,7 @@ opencli email-server postconf                         Show postfix configuration
 opencli email-server logs [-f]                        Show logs. Use -f to 'follow' the logs
 opencli email-server login                            Run container shell
 opencli email-server supervisor                       Interact with supervisorctl
+opencli email-servers install                         Generate summary reports
 opencli email-server update-check                     Check for container package updates
 opencli email-server update-packages                  Update container packages
 opencli email-server versions                         Show versions
@@ -290,6 +291,12 @@ Use -f to 'follow' the logs:
 opencli email-server logs -f
 ```
 
+### pflogsumm
+
+Generate HTML reports from mail logs:
+```bash
+opencli email-server pflogsumm
+```
 
 ### Supervisor
 
