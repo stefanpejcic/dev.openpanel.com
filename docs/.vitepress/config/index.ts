@@ -167,6 +167,10 @@ export default defineConfig({
               link: '/api/usage.html',
             },
             {
+              text: '/api/backups',
+              link: '/api/backups.html',
+            },
+            {
               text: '/api/docker',
               link: '/api/docker.html',
             },
