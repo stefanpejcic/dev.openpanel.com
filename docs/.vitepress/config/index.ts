@@ -256,6 +256,10 @@ export default defineConfig({
               link: '/cli/files.html',
             },
             {
+              text: 'opencli ftp',
+              link: '/cli/ftp.html',
+            },
+            {
               text: 'opencli firewall',
               link: '/cli/firewall.html',
             },
