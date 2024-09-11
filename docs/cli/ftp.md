@@ -34,6 +34,23 @@ Delete FTP sub-user for openpanel user:
 opencli ftp-delete <username> <openpanel_username> [--debug]
 ```
 
+## Connections
+View all current connections to the FTP servise:
+```bash
+opencli ftp-connections
+```
+
+View current connections for a specific OpenPanel user:
+```bash
+opencli ftp-connections <openpanel_username>
+```
+
+## Logs
+View live FTP service logs while service is running:
+```
+opencli ftp-connections <openpanel_username>
+```
+
 ## Users
 Recreate list of all ftp users:
 ```bash
