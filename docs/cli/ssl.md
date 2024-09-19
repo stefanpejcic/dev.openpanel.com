@@ -10,6 +10,17 @@ Generate and manage SSL certificates for user domains and server hostname.
 opencli ssl-domain <domain_name>
 ```
 
+### Upload custom SSL for domain
+```bash
+opencli ssl-domain <domain_name> -k path -p path
+```
+
+### Delete SSL for domain
+```bash
+opencli ssl-domain -d <domain_name>
+```
+
+
 ### Check SSL for all domains owned by user
 
 This command allows you to check the SSL status of all user domains in Certbot and updates the ssl/.domain_status file of the user/s.
