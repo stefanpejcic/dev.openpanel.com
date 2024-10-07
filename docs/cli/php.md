@@ -70,12 +70,14 @@ PHP version for user 'stefan' updated to: 8.1
 To list all installed PHP versions for a user, run the following command:
 
 ```bash
-opencli php-enabled_php_versions <USERNAME>
+opencli php-installed_versions <USERNAME>
 ```
+
+
 
 Example:
 ```bash
-# opencli php-enabled_php_versions stefan
+# opencli php-installed_versions stefan
 php7.4
 php8.1
 php8.2
@@ -86,12 +88,12 @@ php8.2
 To get available (that can be installed) PHP versions for users' OS, run the following command:
 
 ```bash
-opencli php-get_available_php_versions <USERNAME>
+opencli php-available_versions <USERNAME>
 ```
 
 Example:
 ```bash
-# opencli php-get_available_php_versions stefan
+# opencli php-available_versions stefan
 ....
 PHP versions for user stefan have been updated and stored in /home/stefan/etc/.panel/php/php_available_versions.json.
 ```
@@ -99,12 +101,12 @@ PHP versions for user stefan have been updated and stored in /home/stefan/etc/.p
 The script will by default update users' available PHP versions setting for the UI, optionally you can add `--show` flag to display the available versions.
 
 ```bash
-opencli php-get_available_php_versions <USERNAME> --show
+opencli php-available_versions <USERNAME> --show
 ```
 
 Example:
 ```bash
-# opencli php-get_available_php_versions stefan --show
+# opencli php-available_versions stefan --show
 ....
 Available PHP versions for user stefan:
 php8.1-fpm
@@ -119,24 +121,24 @@ php8.2-fpm
 php8.3-fpm
 ```
 
-The `get_available_php_versions` script performs various actions:
+The `available_versions` script performs various actions:
 
 - Runs `apt-get update` inside users container
 - Lists available PHP versions from remote repositories
 - Saves the list to `/php_available_versions.json` in user home directory
-- optionally display the list
+- optionally display the listf
 
 ### Install a new version
 
 To install a a new PHP version run the following command:
 
 ```bash
-opencli php-install_php_version <USERNAME> <PHP-VERSION>
+opencli php-install_version <USERNAME> <PHP-VERSION>
 ```
 
 Example:
 ```bash
-# opencli php-install_php_version stefan 8.2
+# opencli php-install_version stefan 8.2
 Hit:1 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
 Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
 Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
