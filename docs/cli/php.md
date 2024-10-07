@@ -42,26 +42,26 @@ The default PHP version for a user determines which PHP version will be used for
 To list the currently set default PHP version for a user, run the following command:
 
 ```bash
-opencli php-default_php_version <USERNAME>
+opencli php-default_version <USERNAME>
 ```
 
 Example:
 ```bash
-# opencli php-default_php_version stefan
+# opencli php-default_version stefan
 Default PHP version for user 'stefan' is: php8.3
 ```
 
 ### Change the default version
 
-To update the default PHP version for a user use the php-default_php_version with `--update` flag and provide the new PHP version.
+To update the default PHP version for a user use the php-default_version with `--update` flag and provide the new PHP version.
 
 ```bash
-opencli php-default_php_version <USERNAME> --update <VERSION>
+opencli php-default_version <USERNAME> --update <VERSION>
 ```
 
 Example:
 ```bash
-# opencli php-default_php_version stefan --update 8.1
+# opencli php-default_version stefan --update 8.1
 PHP version for user 'stefan' updated to: 8.1
 ```
 
