@@ -2,7 +2,7 @@
 
 `opencli config` allows you to change the configuration of the user interface and set defaults for new accounts.
 
-Settings are stored in `/usr/local/panel/conf/panel.config` file. However, it is recommended not to modify this file directly. Instead, it's best to utilize the `config` script. This way, any changes made are immediately applied, and the  panel service is automatically restarted only when necessary.
+Settings are stored in `/etc/openpanel/openpanel/conf/openpanel.config` file. However, it is recommended not to modify this file directly. Instead, it's best to utilize the `config` script. This way, any changes made are immediately applied, and the  panel service is automatically restarted only when necessary.
 
 
 Example:
