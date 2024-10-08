@@ -7,14 +7,15 @@ Settings are stored in `/etc/openpanel/openpanel/conf/openpanel.config` file. Ho
 
 Example:
 ```bash
-############################## NOTICE #########################################
+################################### NOTICE ####################################
 #                                                                             #
 # Manually modifying this file is not recommended!                            #
 #                                                                             #
-# You should use the interface in Admin Panel > Server Configuration          #
+# You should use the interface in OpenAdmin > Settings                        #
+# or 'opencli config update' command                                          #
 # for applying changes to these settings.                                     #
 #                                                                             #
-# https://openpanel.co/docs/admin/scripts/openpanel_config               #
+# https://dev.openpanel.com/cli/config.html                                   #
 #                                                                             #
 ###############################################################################
 
@@ -29,8 +30,11 @@ ns1=
 ns2=
 ns3=
 ns4=
+email=
 logout_url=
-enabled_modules=phpmyadmin,ssh,crons,backups,wordpress,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,malware_scan,process_manager,ip_blocker,redis,memcached,elasticsearch,login_history,activity
+enabled_modules=dns,favorites,phpmyadmin,temporary_links,ssh,crons,backups,wordpress,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,process_manager,ip_blocker,redis,memcached,login_history,activity,twofa,domains_visitors
+
+available_modules=malware_scan, elasticsearch
 
 [USERS]
 password_reset=no
@@ -49,17 +53,52 @@ domains_per_page=100
 [PHP]
 default_php_version=8.2
 
+[LOGS]
+logrotate_enable=yes
+logrotate_size_limit=100M
+logrotate_retention=10
+logrotate_keep_days=30
+
+[STATS]
+goaccess_enable=yes
+goaccess_schedule=monthly
+goaccess_email=no
+goaccess_keep_days=365
+
+
 [PANEL]
 autoupdate=on
 autopatch=on
 api=off
 dev_mode=off
+template=
+admin_template=
+basic_auth=no
+basic_auth_username=
+basic_auth_password=
+screenshots=http://screenshots-api.openpanel.com/screenshot
+
+[SMTP]
+mail_server=
+mail_port=465
+mail_use_tls=False
+mail_use_ssl=True
+mail_username=
+mail_password=
+mail_default_sender=
+mail_security_token=78bd237db2da
 
 [DOCKER]
 max_ram=90
 max_cpu=95
 
 
+[SECURITY]
+backups_encryption_key=
+
+
+[LICENSE]
+key=
 ```
 
 
