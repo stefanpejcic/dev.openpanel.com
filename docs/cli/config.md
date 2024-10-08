@@ -396,7 +396,7 @@ Default value is Off
 
 #### dev_mode
 
-The `dev_mode` option allows Aministrator to disable minified responses for OpenAdmin (HTML, JS, CSS and JSON).
+The `dev_mode` option allows Aministrator to both enable verbose logging for API requests and disable minified responses for OpenAdmin and OpenPanel interfaces (HTML, JS, CSS and JSON).
 
 Default value is Off
 
