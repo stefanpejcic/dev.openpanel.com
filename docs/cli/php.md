@@ -180,3 +180,5 @@ To enable ioncube loader php extension on all installed PHP versions for users' 
 ```bash
 opencli php-ioncube <USERNAME>
 ```
+
+- You can [specify a custom link from which to download files](https://openpanel.com/docs/articles/user-experience/install-older-ioncube-loader-extensions/), by creating a file `/etc/openpanel/php/ioncube.txt` and setting link in it.
