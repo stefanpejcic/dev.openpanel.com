@@ -33,11 +33,10 @@ For those who require a more personalized touch, OpenPanel allows the creation o
 To create new templates copy the default templates folders:
 
 For OpenPanel:
-```cp /usr/local/panel/templates/ /home/custom_template/```
+`docker cp openpanel:/usr/local/panel/templates/ /home/custom_template/`
 
 For OpenAdmin:
-```cp /usr/local/admin/templates/ /home/custom_admin_template/```
+`cp /usr/local/admin/templates/ /home/custom_admin_template/`
 
 and then make the changes in html/css files.
-
 
