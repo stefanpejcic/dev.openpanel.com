@@ -33,7 +33,7 @@ opencli user-list --json
 To create a new user run the following command:
 
 ```bash
-opencli user-add <USERNAME> <PASSWORD> <EMAIL> <PLAN_ID>
+opencli user-add <USERNAME> <PASSWORD> <EMAIL> <PLAN_NAME>
 ```
 
 :::tip
