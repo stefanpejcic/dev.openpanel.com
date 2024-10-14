@@ -77,6 +77,8 @@ basic_auth=no
 basic_auth_username=
 basic_auth_password=
 screenshots=http://screenshots-api.openpanel.com/screenshot
+temporary_links=https://preview.openpanel.org/index.php
+
 
 [SMTP]
 mail_server=
@@ -414,4 +416,28 @@ The `max_cpu` option allows Aministrator to set maximum % of available CPU that 
 
 ```bash
 max_cpu=95
+```
+
+
+
+#### screenshots
+
+The `screenshots` option allows Aministrator to set a custom screenshots api to be used for generating website screenshots. 
+
+- If 'local' is defined then screenshots will be generated locally on the server.
+- If left empty, [default is our remote api](http://screenshots-api.openpanel.com/screenshot)
+- To define custom screenshots api add it's url as value.
+
+```bash
+screenshots=http://screenshots-api.openpanel.com/screenshot
+```
+
+
+
+#### temporary_links
+
+The `temporary_links` option allows Aministrator to set a custom domain name to be used to generate temporary sub-domains for WP installations. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
+
+```bash
+temporary_links=https://preview.openpanel.org/index.php
 ```
