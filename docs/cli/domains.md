@@ -122,7 +122,7 @@ Start the DNS server:
  opencli domains-dns start
 ```
 
-## Restart
+### Restart
 Soft restart of bind9 docker container:
 ```bash
  opencli domains-dns restart
