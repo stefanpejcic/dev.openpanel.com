@@ -18,6 +18,19 @@ List all websites owned by user:
 opencli websites-user <USERNAME>
 ```
 
+### Add websites for user
+
+Scan user files and add WordPress installations:
+```bash
+opencli websites-scan <USERNAME>
+```
+
+use `-all` flag to run for all users:
+```bash
+opencli websites-scan -all
+```
+
+
 ### PageSpeed
 
 Get Google PageSpeed data for a single website:
