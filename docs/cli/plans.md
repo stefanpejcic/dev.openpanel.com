@@ -32,12 +32,12 @@ opencli plan-list --json
 To create a new plan run the following command:
 
 ```bash
-opencli plan-create <NAME> <DESCRIPTION> <EMAILS_LIMIT> <FTP_LIMIT> <DOMAINS_LIMIT> <WEBSITES_LIMIT> <DISK_LIMIT> <INODES_LIMITS> <DATABASES_LIMIT> <CPU_LIMIT> <RAM_LIMIT> <DOCKER_IMAGE> <PORT_SPEED_LIMIT> <STORAGE_FILE>
+opencli plan-edit  id= name="<NAME>" description="<DESCRIPTION>" emails=<EMAILS_LIMIT> ftp=<FTP_LIMIT> domains=<DOMAINS_LIMIT> websites=<WEBSITES_LIMIT> disk=<DISK_LIMIT> inodes=<INODES_LIMITS> databases=<DATABASES_LIMIT> cpu=<CPU_LIMIT> ram=<RAM_LIMIT> docker_image="<DOCKER_IMAGE>" bandwidth=<PORT_SPEED_LIMIT> storage="<STORAGE_FILE>" [--debug]
 ```
 
 Example:
 ```bash
-opencli plan-create cloud_8 "Custom plan with 8GB of RAM&CPU" 0 0 0 0 15 500000 0 8 8 nginx 200 10
+opencli plan-edit id=1 name="Pro Plan" description="A professional plan" emails=500 ftp=100 domains=10 websites=5 disk=50 inodes=1000000 databases=20 cpu=4 ram=1 docker_image="openpanel/nginx" bandwidth=100 storage="10" --debug
 ```
 
 ## List Users on Plan
