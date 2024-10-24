@@ -13,6 +13,12 @@ OpenPanel generates the following logs:
 |`/var/log/openpanel/admin/cron.log`|OpenAdmin Crons log|
 |`/var/log/openpanel/admin/error.log`|OpenAdmin error log|
 
+
+:::info
+By default, logging for OpenPanel, OpenAdmin, and the API is minimal in production. Administrators can [enable dev_mode](/cli/config.html#dev-mode) during development to generate more detailed logs and keep the panel code unminified.
+:::
+
+
 Services used by OpenPanel have the following logs:
 
 | Log file | Description |
@@ -27,6 +33,3 @@ Services used by OpenPanel have the following logs:
 
 Logs can be viewed from the [OpenAdmin > Services > Log Viewer](https://openpanel.com/docs/admin/services/log_viewer/) and Administrators can even [add custom log files to OpenAdmin Log Viewer](https://openpanel.com/docs/admin/services/log_viewer/#how-to-add-more-files-to-openadmin-log-viewer).
 
-:::info
-By default, logging for OpenPanel, OpenAdmin, and the API is minimal in production. Administrators can [enable dev_mode](/cli/config.html#dev-mode) during development to generate more detailed logs and keep the panel code unminified.
-:::
