@@ -23,3 +23,10 @@ Services used by OpenPanel have the following logs:
 |`journalctl -u named`|Named service logs|
 |`/var/log/ufw.log`|UFW log|
 |`docker logs $USERNAME`|Docker logs for user|
+
+
+Logs can be viewed from the [OpenAdmin > Services > Log Viewer](https://openpanel.com/docs/admin/services/log_viewer/) and Administrators can even [add custom log files to OpenAdmin Log Viewer](https://openpanel.com/docs/admin/services/log_viewer/#how-to-add-more-files-to-openadmin-log-viewer).
+
+:::info
+By default, logging for OpenPanel, OpenAdmin, and the API is minimal in production. Administrators can [enable dev_mode](/cli/config.html#dev-mode) during development to generate more detailed logs and keep the panel code unminified.
+:::
