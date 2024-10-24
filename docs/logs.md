@@ -23,7 +23,3 @@ Services used by OpenPanel have the following logs:
 |`journalctl -u named`|Named service logs|
 |`/var/log/ufw.log`|UFW log|
 |`docker logs $USERNAME`|Docker logs for user|
-
-```
-multitail /var/log/nginx/access.log -I /var/log/nginx/error.log
-```
