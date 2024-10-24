@@ -8,14 +8,17 @@ Configuration:
 /etc/openpanel/
 ├── bind9/                    - DNS configuration files and templates 
 ├── docker/                   - Docker configuration
+├── ftp/                      - vsftpd configuration
 ├── goaccess/                 - Configuration for Domain Access Reports
 ├── mysql/                    - MySQL login information and backups
 ├── nginx/                    - Nginx configurtion and domain templates
 ├── openadmin/                - Configuration files for OpenAdmin service
 ├── openpanel/                - Configuration files for OpenPanel
+├── php/                      - Configuration files for PHP
+├── services/                 - Various services
 ├── skeleton/                 - Files that are used for new users
 ├── ssh/                      - SSH configuration
-└── ufw/                      - Firewall configuration
+└── varnish/                  - Varnish Caching configuration
 ```
 
 OpenAdmin Directories:
