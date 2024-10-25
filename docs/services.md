@@ -6,37 +6,22 @@ OpenPanel uses the following services:
 
 [Nginx](https://www.nginx.com/) is used as a reverse proxy to redirect traffic from and to user websites in their docker containers.
 
-Nginx main configuration file location: `/etc/openpanel/nginx/nginx.conf`
-
-This file is generated at the time of OpenPanel installation and remains unchanged during updates, allowing for the addition of custom configurations without the risk of them being overwritten by subsequent updates.
 
 
-The `/var/log/nginx/domlogs/` directory serves as the repository for access logs of all domains. Within this folder, each domain is allocated its own file for logging purposes. For instance, the access logs for the domain *pejcic.rs* are stored in the file named `/var/log/nginx/domlogs/pejcic.rs.log`.
 
-The `/etc/openpanel/nginx/vhosts/default.conf`  file acts as the default configuration file, which restricts access to domains that are not hosted on the server. It is recommended not to modify this file.
+| File              | Location      | Description      |
+|----------------------|-----------|-----------|
+| Nginx main configuration file | `/etc/openpanel/nginx/nginx.conf` | This file is generated at the time of OpenPanel installation and remains unchanged during updates, allowing for the addition of custom configurations without the risk of them being overwritten by subsequent updates. |
+| Nginx access logs | `/var/log/nginx/domlogs/` | This directory holds access logs of all domains. Within this folder, each domain is allocated its own file for logging purposes. For instance, the access logs for the domain *pejcic.rs* are stored in the file named `/var/log/nginx/domlogs/pejcic.rs.log`. |
+| Template for new domains | `/etc/openpanel/nginx/vhosts/default.conf` | The [template](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/vhosts/default.conf) used for new domains: restricts access to domains that are not hosted on the server. It is recommended not to modify this file. |
+| Vhost for existing domains | `/etc/nginx/sites-enabled/` | Virtual host files for each domain are situated within the `/etc/nginx/sites-enabled/` directory. For example, the virtual host file for the domain *pejcic.rs* can be found at `/etc/nginx/sites-enabled/pejcic.rs.conf`. |
+| /openpanel /openadmin and /webmail redirects | `/etc/openpanel/nginx/vhosts/openpanel_proxy.conf` | [This file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/vhosts/openpanel_proxy.conf) allows users to access `/webmail` and `/openpanel` from their domains. This can be changed by the Administrator from *OpenAdmin > General Settings* |
+| IP blocking per domain | `/etc/openpanel/openpanel/core/users/<USERNAME>/domains/<DOMAIN_NAME>-block_ips.conf` | Each domain has a configuration file where user can block IP addresses per domain: `/etc/openpanel/openpanel/core/users/<USERNAME>/domains/<DOMAIN_NAME>-block_ips.conf`. |
+| Error pages | `/etc/openpanel/nginx/error_pages` | This directory is used to store configuration and templates for [Nginx error pages](https://github.com/denysvitali/nginx-error-pages). |
+| Error pages | `/etc/openpanel/nginx/error_pages` | This directory is used to store configuration and templates for [Nginx error pages](https://github.com/denysvitali/nginx-error-pages). |
+| Nginx error log | `/var/log/nginx/error.log` | Default error log file for nginx service. |
+| Nginx access log | `/var/log/nginx/access.log` | Default access log file for doamins that are not hosted on server. |
 
-[default vhost file template](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/vhosts/default.conf)
-
-
-Virtual host files for each domain are situated within the `/etc/nginx/sites-enabled/` directory. For example, the virtual host file for the domain *pejcic.rs* can be found at `/etc/nginx/sites-enabled/pejcic.rs.conf`.
-
-[VrutalHosts template for domains](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/vhosts/domain.conf)
-
-`/etc/openpanel/nginx/vhosts/openpanel_proxy.conf` allows users to access `/phpmyadmin` and `/openpanel` from their domains.
-
-[default penpanel_proxy.conf](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/vhosts/openpanel_proxy.conf)
-
-This can be changed by the Administrator from *OpenAdmin > General Settings*
-
-`/etc/openpanel/nginx/error_pages` directory is used to store configuration and templates for [Nginx error pages](https://github.com/denysvitali/nginx-error-pages).
-
-Each domain has a configuration file where user can block IP addresses per domain: `/etc/openpanel/openpanel/core/users/<USERNAME>/domains/<DOMAIN_NAME>-block_ips.conf`.
-
-Nginx service uses the following log files:
-- error log: `/var/log/nginx/error.log`
-- access log: `/var/log/nginx/access.log`
-
-There is a known issue with the Nginx service on servers operating behind NAT (such as those on Azure, AWS, etc.) that do not have a public IP assigned directly to them, which can cause the Nginx service to fail to start. To circumvent this problem, the OpenPanel installation procedure includes a check for this scenario and, if necessary, [applies an additional configuration](https://stackoverflow.com/questions/3191509/nginx-error-99-cannot-assign-requested-address/13141104#13141104) as advised. This step ensures that Nginx can successfully start and operate even in environments where the server is behind NAT and lacks a public IP address.
 
 
 
