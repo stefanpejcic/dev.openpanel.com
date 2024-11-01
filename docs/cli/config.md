@@ -32,9 +32,7 @@ ns3=
 ns4=
 email=
 logout_url=
-enabled_modules=dns,favorites,phpmyadmin,temporary_links,ssh,crons,backups,wordpress,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,process_manager,ip_blocker,redis,memcached,login_history,activity,twofa,domains_visitors
-
-available_modules=malware_scan, elasticsearch
+enabled_modules=enabled_modules=dns,notifications,favorites,phpmyadmin,temporary_links,ssh,crons,backups,wordpress,flarum,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,process_manager,ip_blocker,redis,memcached,login_history,activity,twofa,domains_visitors,malware_scan,elasticsearch
 
 [USERS]
 password_reset=no
@@ -243,6 +241,23 @@ Available options are:
 ```bash
 sidebar_color=prime
 ```
+
+#### login_ratelimit
+
+The `login_ratelimit` parameter allows you to specify the maximum number of failed login attempts per minute for each IP address accessing the OpenPanel interface. The default setting is `5`.
+
+```bash
+login_ratelimit=5
+```
+
+#### login_blocklimit
+
+The `login_blocklimit` parameter allows you to specify the maximum number of failed login attempts per IP before it is temporary blocked for one hour. The default setting is `20`.
+
+```bash
+login_blocklimit=20
+```
+
 
 #### password_reset
 
