@@ -8,8 +8,10 @@ OpenPanel generates the following logs:
 |`docker logs openpanel`|OpenPanel error log|
 |`/var/log/openpanel/admin/access.log`|OpenAdmin access log|
 |`/var/log/openpanel/admin/api.log`|OpenAdmin [API](/api/) log|
-|`/var/log/openpanel/admin/login.log`|OpenAdmin Login log|
-|`/var/log/openpanel/admin/notifications.log`|OpenAdmin notifications log|
+|`/var/log/openpanel/admin/login.log`|OpenAdmin Successful Logins|
+|`/var/log/openpanel/admin/failed_login.log`|OpenAdmin Failed & Blocked Logins|
+|`/var/log/openpanel/user/failed_login.log`|OpenPanel Failed & Blocked Logins|
+|`/var/log/openpanel/admin/notifications.log`|OpenAdmin notifications|
 |`/var/log/openpanel/admin/cron.log`|OpenAdmin Crons log|
 |`/var/log/openpanel/admin/error.log`|OpenAdmin error log|
 
