@@ -35,6 +35,10 @@ logout_url=
 enabled_modules=enabled_modules=dns,notifications,favorites,phpmyadmin,temporary_links,ssh,crons,backups,wordpress,flarum,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,process_manager,ip_blocker,redis,memcached,login_history,activity,twofa,domains_visitors,malware_scan,elasticsearch
 
 [USERS]
+login_ratelimit=5
+login_blocklimit=20
+session_duration=30
+session_lifetime=300
 password_reset=no
 twofa_nag=yes
 how_to_guides=yes
@@ -257,6 +261,25 @@ The `login_blocklimit` parameter allows you to specify the maximum number of fai
 ```bash
 login_blocklimit=20
 ```
+
+
+#### session_lifetime
+
+The `session_lifetime` parameter allows you to specify the number of minutes that user session is valid after they login. If there are no user interactions during this period then the session espires. The default setting is `300`.
+
+```bash
+session_lifetime=300
+```
+
+
+#### session_duration
+
+The `session_duration` parameter allows you to specify the number of minutes that session is extended for after the `session_lifetime` setting based on user interactions. The default setting is `30`.
+
+```bash
+session_duration=30
+```
+
 
 
 #### password_reset
