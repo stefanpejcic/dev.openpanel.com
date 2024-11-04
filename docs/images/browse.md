@@ -1,8 +1,9 @@
 # Official OpenPanel Docker images
 
+Docker images are used per plan to create containerized environments for each user. Think of them like VPS ISO images—once an environment is created for a user, it is permanent and cannot be modified.
 ## openpanel/apache
 
-The official Docker image for Apache enables OpenPanel users to utilize the Apache web server for website management. Apache natively supports .htaccess files, although restarting Apache is required to activate any modifications made through .htaccess.
+Ubuntu24.04 + Apache + PHP8.2 + MariaDB + WP-CLI + ttyd + cron + OpenSSH
 
 - Download: https://hub.docker.com/r/openpanel/apache
 
@@ -13,6 +14,7 @@ Technology Stack:
 | Apache2      | web server                             |
 | MySQL        | database                               |
 | PHP 8.2      | serving .php files                     |
+| WP-CLI       | Run WP CLI commands                    |
 | phpMyAdmin   | manage databases from GUI              |
 | OpenSSH      | SSH access                             |
 | NodeJS 18    | nodejs                                 |
@@ -28,7 +30,7 @@ Technology Stack:
 
 ## openpanel/nginx
 
-The official Docker image for Nginx provides OpenPanel users with the capability to manage websites using the Nginx web server. Unlike Apache, Nginx does not natively support .htaccess files. For configuration changes, directly editing the Nginx configuration files is necessary, and requires reloading Nginx.
+Ubuntu24.04 + Nginx + PHP8.2 + MariaDB + WP-CLI + ttyd + cron + OpenSSH
 
 - Download: https://hub.docker.com/r/openpanel/nginx
 
@@ -40,6 +42,7 @@ Technology Stack:
 | Nginx        | web server                             |
 | MySQL        | database                               |
 | PHP 8.2      | serving .php files                     |
+| WP-CLI       | Run WP CLI commands                    |
 | phpMyAdmin   | manage databases from GUI              |
 | OpenSSH      | SSH access                             |
 | NodeJS 18    | nodejs                                 |
@@ -52,8 +55,58 @@ Technology Stack:
 | cron         | run scheduled tasks                    |
 
 
-----
 
-## LiteSpeed
+## openpanel/apache-mariadb
 
-SOON
+Ubuntu24.04 + Apache + PHP8.2 + MariaDB + WP-CLI + ttyd + cron + OpenSSH
+
+- Download: https://hub.docker.com/r/openpanel/apache-mariadb
+
+
+Technology Stack: 
+| Service/Tool |                 Purpose                |
+|:------------:|:--------------------------------------:|
+| Ubuntu 24    | Operating System                       |
+| Apache       | web server                             |
+| MariaDB      | database server                        |
+| PHP 8.2      | serving .php files                     |
+| WP-CLI       | Run WP CLI commands                    |
+| phpMyAdmin   | manage databases from GUI              |
+| OpenSSH      | SSH access                             |
+| NodeJS 18    | nodejs                                 |
+| Python 3.9   | python                                 |
+| curl / wget  | downloading files                      |
+| pwgen        | password generate                      |
+| zip / unzip  | create/extract archives                |
+| ttyd         | Web Terminal                           |
+| screen       | background processes                   |
+| cron         | run scheduled tasks                    |
+
+
+## openpanel/nginx-mariadb
+
+Ubuntu24.04 + Nginx + PHP8.2 + MariaDB + WP-CLI + ttyd + cron + OpenSSH
+
+- Download: https://hub.docker.com/r/openpanel/nginx-mariadb
+
+
+Technology Stack: 
+| Service/Tool |                 Purpose                |
+|:------------:|:--------------------------------------:|
+| Ubuntu 24    | Operating System                       |
+| Nginx        | web server                             |
+| MariaDB      | database server                        |
+| PHP 8.2      | serving .php files                     |
+| WP-CLI       | Run WP CLI commands                    |
+| phpMyAdmin   | manage databases from GUI              |
+| OpenSSH      | SSH access                             |
+| NodeJS 18    | nodejs                                 |
+| Python 3.9   | python                                 |
+| curl / wget  | downloading files                      |
+| pwgen        | password generate                      |
+| zip / unzip  | create/extract archives                |
+| ttyd         | Web Terminal                           |
+| screen       | background processes                   |
+| cron         | run scheduled tasks                    |
+
+
