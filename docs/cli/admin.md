@@ -145,4 +145,22 @@ Currently available options for notifications are:
 - du
 
 
+### View OpenAdmin logs
+
+To multitail [all OpenAdmin logs](/logs.html):
+
+```bash
+opencli admin logs
+```
+
+
+To tail OpenAdmin error log:
+
+```bash
+opencli admin log
+```
+
+
+
+
 
