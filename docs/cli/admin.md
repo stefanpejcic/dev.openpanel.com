@@ -5,7 +5,7 @@ enable/disable the admin panel, reset password, add admin users, etc.
 
 ### Check Status
 
-Check if AdminPanel is enabled or disabled and display link on which the AdminPanel is accessibe:
+Check if admin panel is enabled or disabled and display link on which the OpenAdmin is accessibe:
 
 ```bash
 opencli admin
@@ -14,10 +14,10 @@ opencli admin
 Example:
 ```bash
 # opencli admin
-● AdminPanel is running and is available on: https://server.openpanel.co:2087/
+● OpenAdmin is running and is available on: https://server.openpanel.co:2087/
 ```
 
-### Enable / Disable AdminPanel
+### Enable / Disable adminpanel
 
 OpenAdmin can run in headless mode, that is to say without a front-end UI. This can further save on memory requirements and keep your server secure.
 
