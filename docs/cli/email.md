@@ -521,7 +521,6 @@ To set quota for email account:
 
 ```bash
 opencli email-setup quota set <EMAIL ADDRESS> [<QUOTA>]
-opencli email-setup quota del <EMAIL ADDRESS>
 ```
 
 ### Remove Quota
