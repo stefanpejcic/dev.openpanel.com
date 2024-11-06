@@ -284,6 +284,10 @@ export default defineConfig({
               link: '/cli/license.html',
             },
             {
+              text: 'opencli error',
+              link: '/cli/error.html',
+            },
+            {
               text: 'opencli report',
               link: '/cli/report.html',
             },
