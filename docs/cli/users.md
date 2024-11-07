@@ -218,7 +218,7 @@ Example usage:
 
 ### Grant root
 
-Administrators can grant root-level (sudo) permissions to users inside their docker containers. This allows user to use the 'su -' command and switch ti root user.
+Administrators can grant root-level (sudo) permissions to users inside their docker containers. This allows user to use the 'su -' command and switch to root user.
 
 - Check current sudo status:
   ```bash
