@@ -174,6 +174,15 @@ opencli domains-add pejcic.rs stefan
 Note: this command will add a domain for user regardless of their domains limit.
 
 
+## Delete Domain
+
+To remove domain from user and delete all associated data:
+```bash
+opencli domains-delete <DOMAIN>
+```
+
+This will delete: websites, DNS zone, email accounts, proxy configuration, Let's Encrypt SSL, Ngin/Apache configuration, access logs, blocked IPs per domain, ModSecurity setting for domain.
+
 ## DNSSEC
 
 Command `opencli domains-dnssec` allows administrators to enable DNSSEC, re-sign the zone and view DS records for domains.
