@@ -40,6 +40,7 @@ login_blocklimit=20
 session_duration=30
 session_lifetime=300
 password_reset=no
+weakpass=yes
 twofa_nag=yes
 how_to_guides=yes
 sidebar_color=dark
@@ -106,7 +107,7 @@ key=
 ```
 
 
-### Get
+## Get
 
 The `get` parameter allows you to view current settings.
 
@@ -121,7 +122,7 @@ Example:
 srv.openpanel.co
 ```
 
-### Update
+## Update
 
 The `update` parameter allows you to change the settings.
 
@@ -140,11 +141,11 @@ Updated force_domain to nesto.rs
 To apply the new settings panel service needs to be restarted.
 :::
 
-### Options
+## Options
 
 Currently available configuration options:
 
-#### logo
+### logo
 
 `logo` allows you to set a url for image *(suggested dimensions are 80x200px) that will be displayed to users on:
 
@@ -156,7 +157,7 @@ Currently available configuration options:
 logo=https://http.cat/images/100.jpg
 ```
 
-#### brand_name
+### brand_name
 
 `brand_name` allows you to brand the OpenPanel name that users see in their user panel with your custom brand name.
 
@@ -170,7 +171,7 @@ This brand name is displayed in the following positions:
 brand_name=pcx3.com
 ```
 
-#### max_login_records
+### max_login_records
 
 `max_login_records` determines how many records are kept for every users login history page. Default value, if empty is 20.
 
@@ -178,7 +179,7 @@ brand_name=pcx3.com
 max_login_records=20
 ```
 
-#### default_php_version
+### default_php_version
 
 `default_php_version` sets the PHP version used for new accounts. Default value is 8.3
 
@@ -187,7 +188,7 @@ default_php_version=8.3
 ```
 
 
-#### domains_per_page
+### domains_per_page
 
 Set number of domains to show per page for the user, default value is 100.
 
@@ -195,7 +196,7 @@ Set number of domains to show per page for the user, default value is 100.
 domains_per_page=100
 ```
 
-#### acccess_logs_per_page
+### acccess_logs_per_page
 
 Set number of lines to show per page from the domains activity log.
 
@@ -203,7 +204,7 @@ Set number of lines to show per page from the domains activity log.
 acccess_logs_per_page=1000
 ```
 
-#### resource_usage_items_per_page
+### resource_usage_items_per_page
 
 Set number of rows to display per page on the 'Resource Usage History' page.
 
@@ -211,7 +212,7 @@ Set number of rows to display per page on the 'Resource Usage History' page.
 resource_usage_items_per_page=100
 ```
 
-#### resource_usage_retention
+### resource_usage_retention
 
 Set number of records to keep for each user, default value is 100.
 
@@ -219,7 +220,7 @@ Set number of records to keep for each user, default value is 100.
 resource_usage_retention=100
 ```
 
-#### resource_usage_charts_mode
+### resource_usage_charts_mode
 `resource_usage_charts_mode` allows you to set the number of charts displayed on users _Historical Resource Usage_ page.
 
 
@@ -231,7 +232,9 @@ resource_usage_retention=100
 resource_usage_charts_mode=two
 ```
 
-#### sidebar_color
+### sidebar_color
+
+note: this setting is deprecated and willl be removed in the future.
 
 `sidebar_color` allows you to set a custom color scheme for the sidebar.
 
@@ -246,7 +249,7 @@ Available options are:
 sidebar_color=prime
 ```
 
-#### login_ratelimit
+### login_ratelimit
 
 The `login_ratelimit` parameter allows you to specify the maximum number of failed login attempts per minute for each IP address accessing the OpenPanel interface. The default setting is `5`.
 
@@ -254,7 +257,7 @@ The `login_ratelimit` parameter allows you to specify the maximum number of fail
 login_ratelimit=5
 ```
 
-#### login_blocklimit
+### login_blocklimit
 
 The `login_blocklimit` parameter allows you to specify the maximum number of failed login attempts per IP before it is temporary blocked for one hour. The default setting is `20`.
 
@@ -263,7 +266,7 @@ login_blocklimit=20
 ```
 
 
-#### session_lifetime
+### session_lifetime
 
 The `session_lifetime` parameter allows you to specify the number of minutes that user session is valid after they login. If there are no user interactions during this period then the session espires. The default setting is `300`.
 
@@ -272,7 +275,7 @@ session_lifetime=300
 ```
 
 
-#### session_duration
+### session_duration
 
 The `session_duration` parameter allows you to specify the number of minutes that session is extended for after the `session_lifetime` setting based on user interactions. The default setting is `30`.
 
@@ -281,8 +284,15 @@ session_duration=30
 ```
 
 
+### weakpass
 
-#### password_reset
+`weakpass` enables you to check passwords against the [weakpass.com](https://weakpass.com/wordlist) dictionaries and prevent the use of weak passwords. By default, it is set to 'yes,' allowing weak passwords to be used.
+
+```bash
+weakpass=yes
+```
+
+### password_reset
 
 `password_reset` allows you to enable or disable the password reset functionality for the login page. By default password reset is disabled.
 
@@ -290,7 +300,7 @@ session_duration=30
 password_reset=yes
 ```
 
-#### avatar_type
+### avatar_type
 
 `avatar_type` allows you to set the type of images used for users profile pictures in the users panel.
 
@@ -305,7 +315,7 @@ Available options:
 avatar_type=gravatar
 ```
 
-#### logout_url
+### logout_url
 
 `logout_url` allows administrators to define the destination to which users should be redirected after they log out. The default setting directs them to the `/login` page.
 
@@ -313,7 +323,7 @@ avatar_type=gravatar
 logout_url=https://google.com
 ```
 
-#### activity_items_per_page
+### activity_items_per_page
 
 `activity_items_per_page` allows administrators to define the default number of displayed items on the `/activity` page, the value defaults to 25.
 
@@ -321,7 +331,7 @@ logout_url=https://google.com
 activity_items_per_page=50
 ```
 
-#### force_domain
+### force_domain
 
 `force_domain` enables you to specify a mandatory domain name for accessing the user panel. If a user attempts to visit the panel using any other domain, such as "their-domain.com:2083", they will be automatically redirected to "your-domain.com:2083." This feature utilizes the `port` option to ensure the enforcement of the specified port value as well.
 
@@ -330,7 +340,7 @@ activity_items_per_page=50
 force_domain=openpanel.co
 ```
 
-#### port
+### port
 
 The `port` setting enables you to define a custom port for the panel's operation. By default, the panel uses port **2083**, but you have the flexibility to set it to any desired port.
 It's crucial to ensure that the chosen port is open in your firewall configuration. 
@@ -344,7 +354,7 @@ After adjusting the port, it's necessary to restart the panel service to apply t
 :::
 
 
-#### ssl
+### ssl
 
 The `ssl` setting when enabled will force both the OpenPanel and AdminPanel to use SSL for the hostname and redirect traffic to https. This setting is by default disabled but will be automatically enabled if [opencli ssl-hostname](#hostname) succeeded in generating an SSL for the hostname during OpenPanel installation.
 
@@ -352,7 +362,7 @@ The `ssl` setting when enabled will force both the OpenPanel and AdminPanel to u
 ssl=no
 ```
 
-#### openpanel_proxy
+### openpanel_proxy
 
 The `openpanel_proxy` setting allows you to set a custom /something that will allow users to access their openpanel interface using their domain names. For example: 'panel' will make any domain, example: 'example.com/panel' redirect to the OpenPanel.
 
@@ -360,7 +370,7 @@ The `openpanel_proxy` setting allows you to set a custom /something that will al
 openpanel_proxy=open_sesame
 ```
 
-#### nameservers
+### nameservers
 
 The `ns1` `ns2` `ns3` `ns4` options allow you to set nameservers that will be used in dns zone files for newly added domains, and displayed to users on their panel dashboard.
 Nameservers should be added in pairs, ns1 and ns2, ns3 and ns4.
@@ -372,7 +382,7 @@ ns3=ns3.openpanel.co
 ns4=ns4.openpanel.co
 ```
 
-#### enabled_modules
+### enabled_modules
 
 In OpenPanel version 0.1.5, we implemented the Modules feature, which, by default, loads only the essential modules. Administrators also have the option to selectively disable modules they do not require.
 
@@ -381,7 +391,7 @@ Currently, the following modules are optional and can be disabled by the Adminis
 enabled_modules=phpmyadmin,ssh,crons,backups,wordpress,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,malware_scan,process_manager,ip_blocker,redis,memcached,elasticsearch,login_history,activity
 ```
 
-#### autopatch
+### autopatch
 
 The `autopatch` option allows Administrator to automatically update OpenPanel to minor versions.
 
@@ -394,7 +404,7 @@ The `autopatch` option allows Administrator to automatically update OpenPanel to
 autopatch=yes
 ```
 
-#### autoupdate
+### autoupdate
 
 The `autoupdate` option allows Aministrator to enable or disable automatic updates.
 
@@ -408,7 +418,7 @@ autoupdate=yes
 ```
 
 
-#### twofa_nag
+### twofa_nag
 
 The `twofa_nag` option allows Administrator to set if 2FA nag should be displayed to users on their dashboard page.
 
@@ -417,7 +427,7 @@ The `twofa_nag` option allows Administrator to set if 2FA nag should be displaye
 twofa_nag=yes
 ```
 
-#### how_to_guides
+### how_to_guides
 
 The `how_to_guides` option allows Aministrator to enable or disable the How-to guides section from users dashboards.
 
@@ -428,19 +438,19 @@ how_to_guides=yes
 If configured as "yes", the system will initially attempt to access a JSON file containing your custom how-to guides. In the event that the file is not available, articles from https://openpanel.co/docs/panel/dashboard/#how-to-guides will be shown instead.
 
 
-#### api
+### api
 
 The `api` option allows Aministrator to enable or disable the API functionality.
 
 Default value is Off
 
-#### dev_mode
+### dev_mode
 
 The `dev_mode` option allows Aministrator to both enable verbose logging for API requests and disable minified responses for OpenAdmin and OpenPanel interfaces (HTML, JS, CSS and JSON).
 
 Default value is Off
 
-#### max_ram
+### max_ram
 
 The `max_ram` option allows Aministrator to set maximum % of available RAM that can be used by Docker service. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
 
@@ -448,7 +458,7 @@ The `max_ram` option allows Aministrator to set maximum % of available RAM that 
 max_ram=90
 ```
 
-#### max_cpu
+### max_cpu
 
 The `max_cpu` option allows Aministrator to set maximum % of available CPU that can be used by Docker service. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
 
@@ -458,7 +468,7 @@ max_cpu=95
 
 
 
-#### screenshots
+### screenshots
 
 The `screenshots` option allows Aministrator to set a custom screenshots api to be used for generating website screenshots. 
 
@@ -472,7 +482,7 @@ screenshots=http://screenshots-api.openpanel.com/screenshot
 
 
 
-#### temporary_links
+### temporary_links
 
 The `temporary_links` option allows Aministrator to set a custom domain name to be used to generate temporary sub-domains for WP installations. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
 
