@@ -1,6 +1,6 @@
 # Docker
 
-Manage Docker settings.
+Manage Docker settings: update docker images, set global resource limits for docker, etc.
 
 ### Collect Stats
 
