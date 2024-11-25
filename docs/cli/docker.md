@@ -9,7 +9,7 @@ To collect docker resource usage information (cpu, ram, i/o) for all users:
 opencli docker-collect_stats
 ```
 
-#### Limits
+### Limits
 
 Set global docker limits (storage, ram and cpu) for all containers combined.
 ```bash
@@ -27,18 +27,22 @@ Example:
 
 ```
 
+#### CPU and RAM limit
+
 To apply new limits for CPU % and RAM %:
 
 ```bash
 opencli docker-limits --apply
 ```
 
+#### Storage (disk) limit
+
 To increase storage (disk) allocated to Docker, pass the size in **GB**:
 
 ```bash
 opencli docker-limits --apply 100
 ```
-#### Update Images
+### Update Images
 
 Download [official docker images](/images/browse.html) for OpenPanel:
 
@@ -46,7 +50,7 @@ Download [official docker images](/images/browse.html) for OpenPanel:
 opencli docker-update_images
 ```
 
-#### Usage Stats Cleanup
+### Usage Stats Cleanup
 
 Rotate resource usage logs for all users according to the [resource_usage_retention](#resource-usage-retention) setting.
 
