@@ -49,6 +49,7 @@ The `opencli domains-dns` command is used for everything dns related:
  opencli domains-dns list                   - List all domains with DNS zones on the server.
  opencli domains-dns delete <DOMAIN>        - Delete DNS zone for a domain.
  opencli domains-dns create <DOMAIN>        - Create DNS zone for a domain.
+ opencli domains-dns default <DOMAIN>       - Restore default DNS zone for a domain.
  opencli domains-dns count                  - Display total number of DNS zones present on the server.
  opencli domains-dns config                 - Check main bind configuration file for syntax errros.
  opencli domains-dns start                  - Start the DNS server.
@@ -102,6 +103,12 @@ Delete DNS zone for a domain:
 Create DNS zone for a domain:
 ```bash
  opencli domains-dns create <DOMAIN>
+```
+
+### Default
+Delete existing DNS zone and create default DNS zone for a domain:
+```bash
+ opencli domains-dns default <DOMAIN> -y
 ```
 
 ### Count 
