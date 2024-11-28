@@ -24,7 +24,11 @@ opencli docker-limits --read
 
 Example:
 ```bash
-
+root@stefan:~# opencli docker-limits --read
+[DOCKER]
+max_ram=90
+max_cpu=95
+max_disk=114
 ```
 
 #### CPU and RAM limit
