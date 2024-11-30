@@ -134,6 +134,10 @@ export default defineConfig({
               link: '/localization.html',
             },
             {
+              text: 'Updates',
+              link: '/updates.html',
+            },
+            {
               text: 'Customize',
               link: '/customize.html',
             },
