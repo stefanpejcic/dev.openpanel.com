@@ -30,6 +30,15 @@ Files located in `/etc/openpanel/` are **never updated**.
 
 Panels, CLI, and services are updated only when necessary—specifically, when changes are made to that part of the system. For example, **OpenAdmin** will only be updated if the changelog indicates modifications specific to OpenAdmin. This approach minimizes interruptions and ensures stability.
 
+### Updates Location  
+
+Update files are hosted on the following platforms:  
+
+- **DockerHub**: For OpenPanel and Docker images.  
+- **GitHub**: For OpenAdmin.  
+- **Google Cloud**: For OpenCLI.  
+
+Ensure that your server has access to these services to successfully download updates.  
 
 ### Version check
 Latest version available for update is published on github, you can use it for checks in third-party code: 
