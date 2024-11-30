@@ -10,6 +10,8 @@ OpenPanel updates are released at least once a month, except for urgent bug fixe
 
 The [OpenPanel Roadmap](https://openpanel.com/roadmap) provides an overview of planned features and anticipated release dates for upcoming versions.
 
+You can request new features or vote for proposed ones here: [roadmap.openpanel.com](https://roadmap.openpanel.com).
+
 ### Update Availability  
 Updates for existing installations are made available **one week after a new version is released**. This delay ensures that new versions are thoroughly tested in production environments before being rolled out to existing users. During this period, the latest version is available only for new installations.  
 
