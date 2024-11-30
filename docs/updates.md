@@ -17,8 +17,12 @@ Updates for existing installations are made available **one week after a new ver
 If you wish to update before the scheduled release, you can manually apply the update by downloading the [update scripts from GitHub](https://github.com/stefanpejcic/OpenPanel/tree/main/version).  
 
 
-## Version check
+### Version check
 Latest version available for update is published on github, you can use it for checks in third-party code: 
 ```
 https://raw.githubusercontent.com/stefanpejcic/OpenPanel/refs/heads/main/version/latest
 ```
+
+### Changelog
+
+[Our Changelog](https://openpanel.com/docs/changelog/intro/) has documented changes for each version and published date.
