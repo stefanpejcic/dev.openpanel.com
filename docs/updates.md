@@ -17,6 +17,20 @@ Updates for existing installations are made available **one week after a new ver
 If you wish to update before the scheduled release, you can manually apply the update by downloading the [update scripts from GitHub](https://github.com/stefanpejcic/OpenPanel/tree/main/version).  
 
 
+
+### What is Updated  
+The OpenPanel project consists of:  
+- Two independent panels: **OpenPanel** and **OpenAdmin**.  
+- Terminal commands: **OpenCLI**.  
+- Multiple Docker images.  
+- Related services: **FloatingIP**, **FileWatcher**.
+- Configuration files that integrate these components.  
+
+Files located in `/etc/openpanel/` are **never updated**.  
+
+Panels, CLI, and services are updated only when necessary—specifically, when changes are made to that part of the system. For example, **OpenAdmin** will only be updated if the changelog indicates modifications specific to OpenAdmin. This approach minimizes interruptions and ensures stability.
+
+
 ### Version check
 Latest version available for update is published on github, you can use it for checks in third-party code: 
 ```
