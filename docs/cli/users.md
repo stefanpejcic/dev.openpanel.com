@@ -96,6 +96,15 @@ Use the `--ssh` flag to also change the password for the SSH user in the contain
 ### Login as User
 
 This command allows you to login as the root user inside any users container.
+
+To list all users and select user to login:
+
+```bash
+opencli user-login
+```
+
+To login directly as a specific user:
+
 ```bash
 opencli user-login <USERNAME>
 ```
