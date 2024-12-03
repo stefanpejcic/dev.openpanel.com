@@ -92,3 +92,17 @@ and set the data to be used:
 }
 
 ```
+
+
+## Domain Restriction
+Administrators can restrict the usage of specific domains by creating the file `/etc/openpanel/openpanel/conf/domain_restriction.txt` and adding one domain per line.
+
+Example:
+
+```bash
+facebook.com
+openpanel.com
+pejcic.rs
+openpanel.org
+demo.openpanel.org
+```
