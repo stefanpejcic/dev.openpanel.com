@@ -28,57 +28,6 @@ touch /root/fixperms/fixperms.py  /root/fixperms/fixperms.html
 fixperms.py is the python code that will create /files/fix-permissions and on it display the HTMl code from fixperms.html
 
 
-```python
-# fixperms.py
-
-# this is needed for translations
-from flask_babel import Babel, _ # https://python-babel.github.io/flask-babel/
-
-# this is needed for the flask application as we will use Path, OS and subprocess to run commands
-from flask import Flask, render_template, request, g, session, flash
-import os
-import subprocess
-import requests
-from pathlib import Path
-
-# this is needed for openpanel to register the module
-from app import app
-from app import login_required_route, query_email_by_id, query_username_by_id, gravatar_url, avatar_type
-
-
-# this is the actual code!
-
-@app.route('/fix-perms', methods=['GET', 'POST'])
-@login_required_route
-def fix_perms():
-    current_route = "/fix-permissions"
-    user_id = session['user_id']
-    current_email = query_email_by_id(user_id)
-    gravatar_image_url = gravatar_url(current_email)
-    current_username = query_username_by_id(user_id)
-    base_directory = f'/home/{current_username}/'
-
-    if request.method == 'POST':
-        base_directory = Path(f'/home/{current_username}').resolve()
-        fix_directory = Path(request.form.get('directory')).resolve()
-
-        if not fix_directory.is_relative_to(base_directory):
-            return _("Invalid fix_directory"), 400
-
-        # Run subprocess command to fix permissions
-        subprocess_command = f"opencli files-fix_permissions {current_username} {fix_directory}"
-        subprocess.run(subprocess_command, shell=True)
-        flash(_('Success.'), "success")
-    
-    directories = [directory for directory, _, _ in os.walk(base_directory)]
-    return render_template('fix_permissions.html',
-                            title=_('Fix Permissions'),
-                            current_username=current_username,
-                            gravatar_image_url=gravatar_image_url,
-                            current_route=current_route,
-                            directories=directories,
-                            avatar_type=avatar_type)
-```
 
 
 And now let's create the .html file.
