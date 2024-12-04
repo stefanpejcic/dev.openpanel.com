@@ -11,7 +11,7 @@ Modules offer additional features that administrators can enable or disable. Dis
 
 ## Example Module
 
-In this example we will create a simple module to run command `opencli files-fix_permissions <USER> <FOLDER>` and set appropiate user permissions in home directory.
+In this example we will create a simple module to run command [opencli files-fix_permissions](/cli/files.html#Fix-Permissions) and set appropiate user permissions in home directory.
 
 First lets create a directory for our new app:
 
