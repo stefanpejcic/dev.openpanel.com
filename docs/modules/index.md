@@ -36,15 +36,3 @@ Bootstrap5 elements are already loaded on templates and any custom code will be 
 
 
 
-thats it!
-
-Now we just need to add files to the OpenPanel container and enable the newly created module.
-
-Edit the `/root/docker-compose.yaml` file and under the section `openpanel:` look for 'volumes:'.
-
-We need to make the .py file available in `/usr/local/panel/modules/` and .html inside `/usr/local/panel/templates/`
-
-In the file, for volumes left side is where the file/directory is on the server and right after `:` is where it is in the OpenPanel container (`- /SERVER/PATH:/CONTAINER/PATH`) 
-
-so we need to add in this example:
-
