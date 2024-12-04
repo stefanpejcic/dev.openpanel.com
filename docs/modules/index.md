@@ -261,4 +261,6 @@ cd /root && docker compose down openpanel && docker compose up -d openpanel
 
 Then open your panel interface and navigate to `/fix-perms` as that is the route we defined in python code where this module is avaialble.
 
+![openpanel fixperms example module](https://i.postimg.cc/XqPrCzHD/2024-12-04-18-40.png)
+
 that's it!
