@@ -181,6 +181,21 @@ opencli domains-add pejcic.rs stefan
 Note: this command will add a domain for user regardless of their domains limit.
 
 
+## Suspend Domain
+
+Suspended domains will display [suspended_website.html](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/suspended_website.html) template. To suspend a domain:
+```bash
+opencli domains-suspend <DOMAIN>
+```
+
+## Unsuspend Domain
+
+Unsuspended domains will display user content. To unsuspend a domain:
+
+```bash
+opencli domains-unsuspend <DOMAIN>
+```
+
 ## Delete Domain
 
 To remove domain from user and delete all associated data:
