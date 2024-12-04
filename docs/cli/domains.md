@@ -183,7 +183,11 @@ Note: this command will add a domain for user regardless of their domains limit.
 
 ## Suspend Domain
 
-Suspended domains will display [suspended_website.html](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/suspended_website.html) template. To suspend a domain:
+Suspended domains will display [suspended_website.html](https://github.com/stefanpejcic/openpanel-configuration/blob/main/nginx/suspended_website.html) template. 
+
+All other services such as DNS and email remain active for the domain.
+
+To suspend a domain:
 ```bash
 opencli domains-suspend <DOMAIN>
 ```
