@@ -250,8 +250,13 @@ so we need to add in this example:
       - /root/fixperms/fixperms.html:/usr/local/panel/templates/fixperms.html
 ```
 
-Now to let OpenPanel know about the new module by enabling it, simply edit `/etc/openpanel/openpanel/conf/openpanel.config` and under `enabled_modules=` add our new moduel as well - module name is the same as.py file name but without the extension, so in our case `fixperms`
+![openpanel fixperms example module](https://i.postimg.cc/Qt4t2z3x/2024-12-04-18-42.png)
 
+-----
+
+Now to let OpenPanel know about the new module by enabling it, simply edit `/etc/openpanel/openpanel/conf/openpanel.config` and under `enabled_modules=` add our new module as well (I added `fixperms,` ad the beginning) - module name is the same as.py file name but without the extension, so in our case `fixperms`
+
+![openpanel fixperms example module](https://i.postimg.cc/SsvSTz6n/2024-12-04-18-43.png)
 
 then restart the OpenPanel container in order to make the file visible and OpenPanel load the new module code:
 
@@ -259,8 +264,11 @@ then restart the OpenPanel container in order to make the file visible and OpenP
 cd /root && docker compose down openpanel && docker compose up -d openpanel
 ```
 
+![openpanel fixperms example module](https://i.postimg.cc/mk9P7SvL/2024-12-04-18-44.png)
+
+-----
+
 Then open your panel interface and navigate to `/fix-perms` as that is the route we defined in python code where this module is avaialble.
 
 ![openpanel fixperms example module](https://i.postimg.cc/XqPrCzHD/2024-12-04-18-40.png)
 
-that's it!
