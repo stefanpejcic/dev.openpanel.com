@@ -14,25 +14,3 @@ Modules offer additional features that administrators can enable or disable. Dis
 In this example we will create a simple module to run command 'opencli files-fix_permissions <USER> <FOLDER>' and set appropiate user permissions in home directory.
 
 First lets create a directory for our new app:
-
-```bash
-mkdir -p /root/fixperms
-```
-
-In this directory lets create fixperms.py and fixperms.html files
-
-```bash
-touch /root/fixperms/fixperms.py  /root/fixperms/fixperms.html
-```
-
-fixperms.py is the python code that will create /files/fix-permissions and on it display the HTMl code from fixperms.html
-
-
-
-
-And now let's create the .html file.
-
-Bootstrap5 elements are already loaded on templates and any custom code will be inherited. In this exmaple I will add a simple select where user can select their directory and a button to send the request to run the fixperms script.
-
-
-
