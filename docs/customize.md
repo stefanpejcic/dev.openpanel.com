@@ -106,3 +106,8 @@ pejcic.rs
 openpanel.org
 demo.openpanel.org
 ```
+
+
+----
+
+For more examples please follow this guide: [Customizing OpenPanel Interface (Branding and White-Label)](https://openpanel.com/docs/articles/dev-experience/customizing-openpanel-user-interface/)
