@@ -256,7 +256,7 @@ Now to let OpenPanel know about the new module by enabling it, simply edit `/etc
 then restart the OpenPanel container in order to make the file visible and OpenPanel load the new module code:
 
 ```bash
-cd /root && docker compose down openpanel && docker compsoe up -d openpanel
+cd /root && docker compose down openpanel && docker compose up -d openpanel
 ```
 
 Then open your panel interface and navigate to `/fix-perms` as that is the route we defined in python code where this module is avaialble.
