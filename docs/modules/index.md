@@ -8,48 +8,6 @@ Modules are intended for adding functionality rather than just aesthetic modific
 
 Modules offer additional features that administrators can enable or disable. Disabling a module immediately removes its associated menu item, search functionality, and page visibility.
 
-## Official Modules
-
-OpenPanel currently includes the following official modules:
-
-- phpmyadmin
-- ssh
-- dns
-- ftp
-- crons
-- backups
-- wordpress
-- pm2
-- disk_usage
-- inodes
-- usage
-- terminal
-- services
-- webserver
-- fix_permissions
-- malware_scan
-- process_manager
-- ip_blocker
-- redis
-- memcached
-- elasticsearch
-- login_history
-- activity
-- favorites
-- notifications
-
-These modules are part of the standard OpenPanel installation but can be deactivated by the administrator.
-
-## Custom Modules
-
-To develop a custom module, follow these steps:
-
-1. Craft a new Python file that imports core modules and incorporates your specific code.
-2. If your module introduces a custom page to the interface, create a template for it within the templates directory. Additionally, integrate links to this new page in the search JSON and the appropriate sidebar template location.
-3. Integrate your new module into the main `app.py` file.
-4. Insert the module's name into the `enabled_modules` list within the configuration file.
-5. Restart the OpenPanel service to immediately apply the changes.
-
 
 ## Example Module
 
@@ -57,13 +15,13 @@ In this example we will create a simple module to run command 'opencli files-fix
 
 First lets create a directory for our new app:
 
-```
+```bash
 mkdir -p /root/fixperms
 ```
 
 In this directory lets create fixperms.py and fixperms.html files
 
-```
+```bash
 touch /root/fixperms/fixperms.py  /root/fixperms/fixperms.html
 ```
 
@@ -71,7 +29,6 @@ fixperms.py is the python code that will create /files/fix-permissions and on it
 
 
 ```python
-
 # fixperms.py
 
 # this is needed for translations
@@ -245,6 +202,7 @@ We need to make the .py file available in `/usr/local/panel/modules/` and .html 
 In the file, for volumes left side is where the file/directory is on the server and right after `:` is where it is in the OpenPanel container (`- /SERVER/PATH:/CONTAINER/PATH`) 
 
 so we need to add in this example:
+
 ```bash
       - /root/fixperms/fixperms.py:/usr/local/panel/modules/fixperms.py
       - /root/fixperms/fixperms.html:/usr/local/panel/templates/fixperms.html
