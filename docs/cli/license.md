@@ -13,6 +13,11 @@ Adding a license key:
 opencli license <KEY>
 ```
 
+Additional flags are available:
+
+- `--json` - displays response as json.
+- `--no-restart` - skips restarting OpenAdmin interface after adding a key.
+
 View license key:
 ```bash
 opencli license key
