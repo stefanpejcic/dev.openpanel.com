@@ -73,6 +73,22 @@ Delete a plan if no users are currently using it.
 opencli plan-delete <PLAN_NAME> 
 ```
 
+Example:
+```bash
+root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'
+Plan 'ubuntu_nginx_mysql' and Docker network 'ubuntu_nginx_mysql' deleted successfully.
+```
+
+TIP: use `'` or `"` around the plan name if it contains spaces: `"plan name here"`.
+
+`--json` flag can be passed to return the response as JSON:
+
+```bash
+root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'  --json
+{"message": "Plan 'ubuntu_nginx_mysql' and Docker network 'ubuntu_nginx_mysql' deleted successfully."}
+```
+
+
 ## Edit Plan
 
 Change plan limits.
