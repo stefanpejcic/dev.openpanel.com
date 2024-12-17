@@ -54,6 +54,12 @@ add `-y` flag to disable prompt.
 This action is irreversible and will permanently delete all user data.
 :::
 
+To delete all users and all their data use the `--all` flag:
+
+```bash
+opencli user-delete --all
+```
+
 ### Suspend User
 
 To suspend (temporary disable access) to user, run the follwowing command:
