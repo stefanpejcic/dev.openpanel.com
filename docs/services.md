@@ -69,6 +69,11 @@ MYSQL_RAM="0.5g"
 MYSQL_CPUS="1.0"
 ```
 
+`MYSQL_ROOT_PASSWORD` stores the random mysql root password:
+```
+MYSQL_ROOT_PASSWORD=
+```
+
 ## SQLite
 
 SQLite database is used by the OpenAdmin panel in order to completely separate the Admin and end-user interface.
