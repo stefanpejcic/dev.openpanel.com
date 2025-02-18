@@ -119,14 +119,30 @@ During installation you can set [UFW](https://wiki.ubuntu.com/UncomplicatedFirew
 
 [openpanel/openpanel](https://hub.docker.com/r/openpanel/openpanel) docker image is used to provide access to the OpenPanel interface that allows users to manage their accounts.
 
+Admins can set the OpenPanel version by changing the tag in the `/root/.env` file with any tag from [hub.docker.com](https://hub.docker.com/r/openpanel/openpanel/tags):
+```
+VERSION="1.0.0"
+```
+
+By default OpenPanel is accesible on port `2083` but this can also be configured by Admin by editing the `PORT` value:
+
+```
+PORT="2083"
+```
+
+
 OpenPanel is a [Flask](https://flask.palletsprojects.com/en/3.0.x/)-based application that uses [MySQL](#MySQL) to store user data and operates on the [Gunicorn](https://gunicorn.org/) web server. This configuration ensures that OpenPanel remains functional even if the web server is down, thereby providing complete isolation between user websites and the admin panel.
 
 OpenPanel operates in production mode by default, logging only [errors and access logs](/logs.html). For developers needing more detailed logs for troubleshooting or development purposes, it is possible to switch to a more verbose logging mode by enabling dev_mode.
 
 
+
+
 ## OpenAdmin
 
 `admin` service is used by the OpenAdmin interface.
+
+By default, OpenAdmin is accessible on port `2087`, but this can be changed by the Admin by modifying the `port` value in the admin service configuration. However, due to limitations in billing systems like WHMCS, which do not support custom port settings, changing the port through the admin interface is not allowed. If the port is changed via the terminal, it may disrupt any third-party integrations that rely on the default port `2087`.
 
 OpenAdmin is a [Flask](https://flask.palletsprojects.com/en/3.0.x/) application that utilizes [SQLite](https://www.sqlite.org/) for its database and runs on a separate Gunicorn instance. It operates independently from the OpenPanel and webserver.
 
