@@ -6,7 +6,7 @@ OpenPanel uses the following services:
 
 [Caddy](https://caddyserver.com/) is utilized as a reverse proxy to manage traffic to and from user websites hosted in their Docker containers. It also handles SSL certificate generation and renewals for both user domains and the main control panel domain.
 
-### Configuration Files:
+Configuration Files:
 - `/etc/openpanel/caddy/Caddyfile`: This is the main configuration file that includes all others.
 - `/etc/openpanel/caddy/check.conf`: This file manages domain verification for SSL generation on the server.
 - `/etc/openpanel/caddy/redirects.conf`: Contains redirections for `/openpanel`, `/openadmin`, and `/webmail` for all domains.
