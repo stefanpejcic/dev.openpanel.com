@@ -62,6 +62,13 @@ MySQL login information is stored in files: `/etc/openpanel/mysql/host_db.conf` 
 
 MySQL data is stored inside the `root_mysql` docker volume.
 
+Admins can set memory (RAM) and CPU limits for MySQL service by modifying the `/root/.env` file:
+
+```
+MYSQL_RAM="0.5g"
+MYSQL_CPUS="1.0"
+```
+
 ## SQLite
 
 SQLite database is used by the OpenAdmin panel in order to completely separate the Admin and end-user interface.
@@ -75,6 +82,23 @@ Administrators can set custom nameservers on *OpenAdmin > OpenPanel Settings* to
 
 [ default named.conf.options` configuration file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/bind9/named.conf.options)
 
+Admins can set memory (RAM) and CPU limits for BIND9 service by modifying the `/root/.env` file:
+
+```
+BIND9_RAM="0.1g"
+BIND9_CPUS="0.1"
+```
+
+BIND9 version can be set by changing the `latest` tag to any version from [hub.docker.com](https://hub.docker.com/r/ubuntu/bind9/tags):
+```
+BIND9_VERSION="latest"
+```
+
+Timezone for the BIND9 service can be changed by editing:
+
+```
+BIND_TIMEZONE="America/New_York"
+```
 
 ## GoAccess
 
@@ -101,6 +125,68 @@ OpenPanel operates in production mode by default, logging only [errors and acces
 
 OpenAdmin is a [Flask](https://flask.palletsprojects.com/en/3.0.x/) application that utilizes [SQLite](https://www.sqlite.org/) for its database and runs on a separate Gunicorn instance. It operates independently from the OpenPanel and webserver.
 
+## ClamAV
+
+[ClamAV](https://www.clamav.net/) is an open-source antivirus engine for detecting trojans, viruses, malware & other malicious threats. OpenPanel uses ClamAV for the `'malware_scanner' feature.
+
+
+Admins can set memory (RAM) and CPU limits for ClamAV service by modifying the `/root/.env` file:
+
+```
+CLAMAV_RAM="1g"
+CLAMAV_CPUS="1.0"
+```
+*Note:ClamAV requires at least 1GB of RAM nad 1 CPU: https://docs.clamav.net/#recommended-system-requirements*
+
+ClamAV version can be set by changing the `latest` tag to any version from [hub.docker.com](https://hub.docker.com/r/clamav/clamav/tags):
+```
+CLAMAV_VERSION="latest"
+```
+
+ClamAV will daily update the singatures database and keep it in RAM. To enable this feature set:
+
+```
+CLAMAV_DB_AUTOUPDATE="host"
+```
+
+Admins can specify the delay in seconds to wait for the signature database to load before starting the deamon:
+
+```
+CLAMD_STARTUP_DELAY=30
+```
+
+
+## Redis
+
+Redis service is used by the OpenPanel user interface to keep user session data and temporary files in the meomory.
+
+Admins can set memory (RAM) and CPU limits for Redis service by modifying the `/root/.env` file:
+
+```
+CLAMAV_RAM="1g"
+CLAMAV_CPUS="1.0"
+```
+
+By default `/tmp/redis/` is used for the redis.sock file for conencting the OpenPanel and Redis services. This path can be changed by editing:
+```
+REDIS_SOCKET="/tmp/redis/"
+```
+
+## FTP
+
+[vsftpd](https://security.appspot.com/vsftpd.html) is used as FTP server for the Enterprise edition. OpenPanel provides terminal commands and UI for managing ftp sub-accounts.
+
+Admins can set memory (RAM) and CPU limits for FTP service by modifying the `/root/.env` file:
+
+```
+FTP_RAM="0.5g"
+FTP_CPUS="0.5"
+```
+
+Port range for passive ftp can also be configured:
+```
+FTP_PORT_RANGE="21000-21010"
+```
 
 ## MailServer
 
