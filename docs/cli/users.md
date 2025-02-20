@@ -13,13 +13,16 @@ opencli user-list
 Example output:
 ```bash
 opencli user-list
-+----+----------+-----------------+-----------------+---------------------+
-| id | username | email           | plan_name       | registered_date     |
-+----+----------+-----------------+-----------------+---------------------+
-| 52 | stefan   | stefan          | cloud_4_nginx_3 | 2023-11-16 19:11:20 |
-| 53 | petar    | petarc@petar.rs | cloud_8_nginx   | 2023-11-17 12:25:44 |
-| 54 | rasa     | rasa@rasa.rs    | cloud_12_nginx  | 2023-11-17 15:09:28 |
-+----+----------+-----------------+-----------------+---------------------+
++----+-----------+---------------------------------+-----------------------+-----------+---------+---------------------+
+| id | username  | email                           | plan_name             | server    | owner   | registered_date     |
++----+-----------+---------------------------------+-----------------------+-----------+---------+---------------------+
+|  1 | pejcic    | stefan@pejcic.rs                | Nesto trece           | pejcic    | NULL    | 2025-02-19 11:32:05 |
+|  2 | nesto     | stefan@netops.com               | Cloud Web Starter     | nesto     | NULL    | 2025-02-19 11:33:28 |
+|  5 | jecmenica | jecmenica@jecmenica.rs          | Nginx MySQL Basic     | jecmenica | NULL    | 2025-02-19 14:20:50 |
+|  8 | ajde      | ajde                            | LiteSpeed Nginx Boost | ajde      | NULL    | 2025-02-20 09:11:23 |
+|  9 | fctuzc3n  | fctuzc3n                        | Nginx MySQL Basic     | fctuzc3n  | pavlaka | 2025-02-20 18:50:07 |
++----+-----------+---------------------------------+-----------------------+-----------+---------+---------------------+
+
 ```
 
 You can also format the data as JSON:
@@ -28,7 +31,23 @@ You can also format the data as JSON:
 opencli user-list --json
 ```
 
+To display only user count:
+
+```bash
+opencli user-list --total
+```
+or:
+
+```bash
+opencli user-list --total --json
+```
+
+
 ### Add User
+
+```
+opencli user-add <USERNAME> <PASSWORD|generate> <EMAIL> "<PLAN_NAME>" [--send-email] [--debug] [--reseller=<RESELLER_USERNAME>] [--server=<IP_ADDRESS>]  [--key=<SSH_KEY_PATH>]
+```
 
 To create a new user run the following command:
 
@@ -36,9 +55,49 @@ To create a new user run the following command:
 opencli user-add <USERNAME> <PASSWORD> <EMAIL> <PLAN_NAME>
 ```
 
+Example:
+```bash
+opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx'
+```
+
+
 :::tip
 Provide `random` as password to generate a strong random password.
 :::
+
+
+To send email to the email address for the user with login credentials, pass the `--send-email` flag.
+
+
+#### Create user on Slave server
+
+To create a new user on another server:
+
+1. Create ssk key pair and establish ssh connection from master to the slave server.
+2. Run the following command:
+
+```bash
+opencli user-add <USERNAME> <PASSWORD> <EMAIL> "<PLAN_NAME>" --server=<IP_ADDRESS> --key=<SSH_KEY_PATH>
+```
+
+
+Example:
+```bash
+opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --server=11.54.64.71 --key=/root/some_key.rsa
+```
+
+#### Create user for Reseller
+
+
+```bash
+opencli user-add <USERNAME> <PASSWORD> <EMAIL> "<PLAN_NAME>" --reseller=<RESELLER_USERNAME>
+```
+
+Example:
+```bash
+opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --reseller=pejcic
+```
+
 
 ### Delete User
 
@@ -230,23 +289,6 @@ Example usage:
   {"home_directory": "/home/proba","docker_container_path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184"}
   ```
 
-
-### Grant root
-
-Administrators can grant root-level (sudo) permissions to users inside their docker containers. This allows user to use the 'su -' command and switch to root user.
-
-- Check current sudo status:
-  ```bash
-  opencli user-sudo USERNAME status
-  ```
-- Grant sudo privilegies:
-  ```bash
-  opencli user-sudo USERNAME enable
-  ```
-- Remove sudo privilegies:
-  ```bash
-  opencli user-sudo USERNAME disable
-  ```
 
 ### View login log
 View up to last 20 successfull logins for the user.
