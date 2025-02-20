@@ -3,11 +3,24 @@
 
 ### Fix Permissions
 
-The `fix_permissions` script can be used to fix permissions on user files.
+The `fix_permissions` script can be used to fix permissions on user files inside their container.
 
 It performs:
-- sets the owner of all files in path to the user.
-- sets the group of all files in path to the www-data group (apache/nginx webserver user).
+
+Website files:
+- sets the owner of all files in `/var/www/html/` to the  www-data user.
+- sets the group of all files in `/var/www/html/` to the www-data group.
+- sets the permissions of all files to 644.
+- sets the permissions of all directories to 755.
+
+Website files:
+- sets the owner of all files in `/var/www/html/` to the  www-data user.
+- sets the group of all files in `/var/www/html/` to the www-data group.
+- sets the permissions of all files to 644.
+- sets the permissions of all directories to 755.
+
+Emails:
+- sets the owner of all files in `/var/mail/` to the  user.
 - sets the permissions of all files to 644.
 - sets the permissions of all directories to 755.
 
@@ -31,7 +44,7 @@ opencli files-fix_permissions stefan stefan.pejcic.rs
 ```
 
 ## Single User
-Fix permissions for all folders iniside user home directory (/home/$username):
+Fix permissions for all folders iniside user home directory (`/var/www/html/`):
 
 ```bash
 opencli files-fix_permissions <USERNAME>
@@ -43,14 +56,4 @@ Use the `--all` flag to change permissions for all active users:
 
 ```bash
 opencli files-fix_permissions --all
-```
-
-
-
-### Remount
-
-This will stop docker container for user, mount their storage file to the home directory, then restart their docker contianer to show the home directory files within their container.
-
-```bash
-opencli files-remount
 ```
