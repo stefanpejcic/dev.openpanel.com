@@ -2,14 +2,11 @@
 
 ## Introduction
 
-OpenPanel utilizes custom Docker images as the foundation for the hosting plans assigned to users.
+OpenPanel uses custom Docker images as the foundation for the hosting plans assigned to users.
 
-Currently, OpenPanel includes two default images:
+Official images are hosted on [hub.docker.com](https://hub.docker.com/r/openpanel/nginx-mariadb).
 
-- [`openpanel_nginx`](/images/browse.html#Nginx)
-- [`openpanel_apache`](/images/browse.html#Apache)
-
-Additionally, you can craft custom Docker images tailored with specific MySQL/MariaDB versions, various PHP versions and extensions, or bespoke commands like composer or WPCLI.
+For productuon it is best to create your own custom Docker images tailored with specific MySQL/MariaDB versions, various PHP versions and extensions, or commands like composer or WPCLI.
 
 ## Creating an Image
 
@@ -43,4 +40,9 @@ This process can take up to 15 minutes, depending on the complexity of the stack
 Should any errors arise during the build process, address the indicated issues and initiate the build process again.
 
 Following a successful build, [create a new hosting plan](https://openpanel.co/docs/admin/plans/hosting_plans/#create-a-plan) and set the newly built image for that plan.
+
+Image should be uploaded to a free repository like GitHub Container Registry  or Docker Hub in order to be downloaded for new users.
+
+- https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+- https://hub.docker.com/
 
