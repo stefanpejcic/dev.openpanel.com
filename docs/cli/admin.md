@@ -47,6 +47,16 @@ To create new admin accounts:
 ```bash
 opencli admin new <username> <password>
 ```
+
+
+### Create new Reseller
+
+To create new reseller accounts:
+
+```bash
+opencli admin new <username> <password> --reseller
+```
+
 ### Reset Admin Password
 
 To reset the password for an admin user:
