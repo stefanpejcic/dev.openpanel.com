@@ -32,12 +32,30 @@ opencli plan-list --json
 To create a new plan run the following command:
 
 ```bash
-opencli plan-create <NAME> <DESCRIPTION> <EMAILS_LIMIT> <FTP_LIMIT> <DOMAINS_LIMIT> <WEBSITES_LIMIT> <DISK_LIMIT> <INODES_LIMITS> <DATABASES_LIMIT> <CPU_LIMIT> <RAM_LIMIT> <DOCKER_IMAGE> <PORT_SPEED_LIMIT> <STORAGE_FILE>
+opencli plan-create 'name' 'description' email_limit ftp_limit domains_limit websites_limit disk_limit inodes_limit db_limit cpu ram docker_image bandwidth
 ```
+
+| Parameter      | Description                                           | Type      | Notes                          |
+|--------------|-----------------------------------------------------|----------|-------------------------------|
+| `name`       | Name of the plan                                    | String   | Use quotes for multiple words |
+| `description`| Plan description                                   | String   | Use quotes for multiple words  |
+| `email_limit`| Max number of email accounts                       | Integer  | 0 for unlimited                |
+| `ftp_limit`  | Max number of FTP accounts                         | Integer  | 0 for unlimited                |
+| `domains_limit` | Max number of domains                          | Integer  | 0 for unlimited                |
+| `websites_limit` | Max number of websites                        | Integer  | 0 for unlimited                |
+| `disk_limit` | Disk space limit in GB                             | Integer  |                                |
+| `inodes_limit` | Max number of inodes                            | Integer  | Minimum 250000                 |
+| `db_limit`   | Max number of databases                            | Integer  | 0 for unlimited                |
+| `cpu`        | CPU core limit                                     | Integer  |                                |
+| `ram`        | RAM limit in GB                                    | Integer  |                                |
+| `docker_image` | Docker image name                                | String   |                                |
+| `bandwidth`  | Port speed in Mbit/s                               | Integer  |                                |
+
+
 
 Example:
 ```bash
-opencli plan-create cloud_8 "Custom plan with 8GB of RAM&CPU" 0 0 0 0 15 500000 0 8 8 nginx 200 10
+opencli plan-create 'basic' 'Basic Hosting Plan' 10 5 10 5 50 500000 10 2 4 nginx 1000
 ```
 
 ## List Users on Plan
