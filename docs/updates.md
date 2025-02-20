@@ -15,10 +15,6 @@ You can request new features or vote for proposed ones here: [roadmap.openpanel.
 ### Update Availability  
 Updates for existing installations are made available **one week after a new version is released**. This delay ensures that new versions are thoroughly tested in production environments before being rolled out to existing users. During this period, the latest version is available only for new installations.  
 
-### Installing Beta Updates  
-If you wish to update before the scheduled release, you can manually apply the update by downloading the [update scripts from GitHub](https://github.com/stefanpejcic/OpenPanel/tree/main/version).  
-
-
 
 ### What is Updated  
 The OpenPanel project consists of:  
@@ -37,16 +33,12 @@ Panels, CLI, and services are updated only when necessary—specifically, when c
 Update files are hosted on the following platforms:  
 
 - **DockerHub**: For OpenPanel and Docker images.  
-- **GitHub**: For OpenAdmin.  
-- **Google Cloud**: For OpenCLI.  
+- **GitHub**: For OpenAdmin, OpenCLI, custom scripts and configuration files.  
 
 Ensure that your server has access to these services to successfully download updates.  
 
 ### Version check
-Latest version available for update is published on github, you can use it for checks in third-party code: 
-```
-https://raw.githubusercontent.com/stefanpejcic/OpenPanel/refs/heads/main/version/latest
-```
+Latest version available for update is published on [docker hub](https://hub.docker.com/r/openpanel/openpanel/tags).
 
 ### Changelog
 
