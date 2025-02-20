@@ -1,7 +1,7 @@
 <template>
   <a
     class="mp-banner"
-    href="https://community.openpanel.com?utm=dev_docs-sidebar"
+    href="https://community.openpanel.org?utm=dev_docs-sidebar"
     target="_blank"
   >
     <img width="22" height="22" src="/logo.svg" />
