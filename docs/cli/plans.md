@@ -115,6 +115,24 @@ Change plan limits.
 opencli plan-edit  id= name="<NAME>" description="<DESCRIPTION>" emails=<EMAILS_LIMIT> ftp=<FTP_LIMIT> domains=<DOMAINS_LIMIT> websites=<WEBSITES_LIMIT> disk=<DISK_LIMIT> inodes=<INODES_LIMITS> databases=<DATABASES_LIMIT> cpu=<CPU_LIMIT> ram=<RAM_LIMIT> docker_image="<DOCKER_IMAGE>" bandwidth=<PORT_SPEED_LIMIT> storage="<STORAGE_FILE>" [--debug]
 ```
 
+| Parameter        | Description                                           | Type      | Notes                              |
+|-----------------|-------------------------------------------------------|----------|------------------------------------|
+| `plan_id`       | ID of the plan                                        | Integer  | Required                          |
+| `new_plan_name` | New name of the plan                                  | String   | No spaces                         |
+| `description`   | Plan description                                     | String   | Use quotes for multiple words     |
+| `email_limit`   | Max number of email accounts                         | Integer  | 0 for unlimited                    |
+| `ftp_limit`     | Max number of FTP accounts                           | Integer  | 0 for unlimited                    |
+| `domains_limit` | Max number of domains                               | Integer  | 0 for unlimited                    |
+| `websites_limit`| Max number of websites                              | Integer  | 0 for unlimited                    |
+| `disk_limit`    | Disk space limit in GB                              | Integer  |                                    |
+| `inodes_limit`  | Max number of inodes                                | Integer  | Minimum 250000                     |
+| `db_limit`      | Max number of databases                             | Integer  | 0 for unlimited                    |
+| `cpu`           | CPU core limit                                      | Integer  |                                    |
+| `ram`           | RAM limit in GB                                     | Integer  |                                    |
+| `docker_image`  | Docker image name                                     | String   |  |
+| `bandwidth`     | Port speed in Mbit/s                                | Integer  |                                    |
+
+
 Example:
 ```bash
 opencli plan-edit id=1 name="Pro Plan" description="A professional plan" emails=500 ftp=100 domains=10 websites=5 disk=50 inodes=1000000 databases=20 cpu=4 ram=1 docker_image="openpanel/nginx" bandwidth=100 storage="10" --debug
