@@ -207,7 +207,7 @@ To remove domain from user and delete all associated data:
 opencli domains-delete <DOMAIN>
 ```
 
-This will delete: websites, DNS zone, email accounts, proxy configuration, Let's Encrypt SSL, Ngin/Apache configuration, access logs, blocked IPs per domain, ModSecurity setting for domain.
+This will delete: websites, DNS zone, email accounts, proxy configuration, Let's Encrypt SSL, Ngin/Apache configuration, access logs, blocked IPs per domain, WAF setting for domain.
 
 ## DNSSEC
 
@@ -247,7 +247,7 @@ opencli domains-update_ns --all
 
 ## Parse domain access logs
 
-To parse domain (Nginx) access logs and generate static reports for users domains accessible from `Domains > Access Logs` run the script:
+To parse domain (Caddy) access logs and generate static reports for users domains accessible from `Domains > Access Logs` run the script:
 
 ```bash
 opencli domains-stats [USERNAME]
@@ -261,22 +261,8 @@ Processed domain pejcic.rs for user stefan
 Processed domain openpanel.co for user stefan
 ```
 
-To parse (Nginx) access logs for all active users and their domains run the script without username:
+To parse (Caddy) access logs for all active users and their domains run the script without username:
 
 ```bash
 opencli domains-stats
-```
-
-## Enable modsecurity
-
-To enable modsecurity for all domains owned by a specific user:
-
-```bash
-opencli domains-enable_modsec [USERNAME]
-```
-
-To enable modsecurity on all domains for all active users:
-
-```bash
-opencli domains-enable_modsec
 ```
