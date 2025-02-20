@@ -118,7 +118,7 @@ opencli plan-edit  id= name="<NAME>" description="<DESCRIPTION>" emails=<EMAILS_
 | Parameter        | Description                                           | Type      | Notes                              |
 |-----------------|-------------------------------------------------------|----------|------------------------------------|
 | `plan_id`       | ID of the plan                                        | Integer  | Required                          |
-| `new_plan_name` | New name of the plan                                  | String   | No spaces                         |
+| `new_plan_name` | New name of the plan                                  | String   | Use quotes for multiple words     |
 | `description`   | Plan description                                     | String   | Use quotes for multiple words     |
 | `email_limit`   | Max number of email accounts                         | Integer  | 0 for unlimited                    |
 | `ftp_limit`     | Max number of FTP accounts                           | Integer  | 0 for unlimited                    |
