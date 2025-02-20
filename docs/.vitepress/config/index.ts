@@ -204,12 +204,24 @@ export default defineConfig({
               link: '/cli/commands.html',
             },
             {
-              text: 'opencli config',
-              link: '/cli/config.html',
-            },
-            {
               text: 'opencli admin',
               link: '/cli/admin.html',
+            },            
+            {
+              text: 'opencli domain',
+              link: '/cli/domain.html',
+            },
+            {
+              text: 'opencli port',
+              link: '/cli/port.html',
+            },            
+            {
+              text: 'opencli proxy',
+              link: '/cli/proxy.html',
+            },
+            {
+              text: 'opencli config',
+              link: '/cli/config.html',
             },
             {
               text: 'opencli sentinel',
@@ -228,10 +240,6 @@ export default defineConfig({
               link: '/cli/domains.html',
             },
             {
-              text: 'opencli ssl',
-              link: '/cli/ssl.html',
-            },
-            {
               text: 'opencli websites',
               link: '/cli/websites.html',
             },
@@ -246,10 +254,6 @@ export default defineConfig({
             {
               text: 'opencli webserver',
               link: '/cli/webserver.html',
-            },
-            {
-              text: 'opencli nginx',
-              link: '/cli/nginx.html',
             },
             {
               text: 'opencli docker',
