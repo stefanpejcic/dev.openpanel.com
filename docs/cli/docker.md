@@ -11,7 +11,7 @@ opencli docker-collect_stats
 
 ### Limits
 
-Set global docker limits (storage, ram and cpu) for all containers combined.
+Set global docker limits (storage, ram and cpu) for all system containers.
 ```bash
 opencli docker-limits [--apply | --read]
 ```
