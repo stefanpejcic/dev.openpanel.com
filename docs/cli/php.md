@@ -7,26 +7,26 @@ Manage users' PHP versions: list enabled, list available, change version, etc.
 To view the current PHP version used by a domain, run the following command:
 
 ```bash
-opencli php-domain_php <DOMAIN-NAME>
+opencli php-domain <DOMAIN-NAME>
 ```
 
 Example:
 ```bash
-# opencli php-domain_php pejcic.rs
+# opencli php-domain pejcic.rs
 Domain 'pejcic.rs' (owned by user: stefan) uses PHP version: php8.1
 ```
 
 ### Change version for a domain
 
-To change a PHP version for a domain name run the `domain_php` script with `--update` flag::
+To change a PHP version for a domain name run the `domain` script with `--update` flag::
 
 ```bash
-opencli php-domain_php <DOMAIN-NAME> --update <PHP-VERSION>
+opencli php-domain <DOMAIN-NAME> --update <PHP-VERSION>
 ```
 
 Example:
 ```bash
-# opencli php-domain_php pejcic.rs --update 8.3
+# opencli php-domain pejcic.rs --update 8.3
 Updating PHP version to: 8.3
 Domain 'pejcic.rs' (owned by user: stefan) uses PHP version: php8.3
 Updating PHP version in the Apache configuration file...
@@ -35,33 +35,33 @@ Updating PHP version in the Apache configuration file...
 Updated PHP version in the configuration file to 8.3
 ```
 
-### List the default version
+### View default version
 
 The default PHP version for a user determines which PHP version will be used for all domains that the user adds in the future. It does not change the PHP version for any existing domains.
 
 To list the currently set default PHP version for a user, run the following command:
 
 ```bash
-opencli php-default_version <USERNAME>
+opencli php-default <USERNAME>
 ```
 
 Example:
 ```bash
-# opencli php-default_version stefan
+# opencli php-default stefan
 Default PHP version for user 'stefan' is: php8.3
 ```
 
 ### Change the default version
 
-To update the default PHP version for a user use the php-default_version with `--update` flag and provide the new PHP version.
+To update the default PHP version for a user use the php-default with `--update` flag and provide the new PHP version.
 
 ```bash
-opencli php-default_version <USERNAME> --update <VERSION>
+opencli php-default <USERNAME> --update <VERSION>
 ```
 
 Example:
 ```bash
-# opencli php-default_version stefan --update 8.1
+# opencli php-default stefan --update 8.1
 PHP version for user 'stefan' updated to: 8.1
 ```
 
@@ -85,7 +85,7 @@ php8.2
 
 ### List available versions
 
-To get available (that can be installed) PHP versions for users' OS, run the following command:
+To get available (that can be installed) PHP versions for users' container, run the following command:
 
 ```bash
 opencli php-available_versions <USERNAME>
@@ -133,12 +133,12 @@ The `available_versions` script performs various actions:
 To install a a new PHP version run the following command:
 
 ```bash
-opencli php-install_version <USERNAME> <PHP-VERSION>
+opencli php-install <USERNAME> <PHP-VERSION>
 ```
 
 Example:
 ```bash
-# opencli php-install_version stefan 8.2
+# opencli php-install stefan 8.2
 Hit:1 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
 Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
 Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
@@ -163,7 +163,6 @@ After this operation, 21.1 MB of additional disk space will be used.
 
 - You can specify php extensions to be installed by editing the [`/etc/openpanel/php/extensions.txt` file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/php/extensions.txt)
 - You can specify limits in php.ini file to be set by editing the [`/etc/openpanel/php/ini.txt` file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/php/ini.txt)
-
 
 ### PHP.INI
 
