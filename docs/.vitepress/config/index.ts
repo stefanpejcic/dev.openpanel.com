@@ -228,7 +228,7 @@ export default defineConfig({
               link: '/cli/sentinel.html',
             },
             {
-              text: 'opencli users',
+              text: 'opencli user',
               link: '/cli/users.html',
             },
             {
