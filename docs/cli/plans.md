@@ -112,7 +112,8 @@ root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'  --json
 Change plan limits.
 
 ```bash
-opencli plan-edit  id= name="<NAME>" description="<DESCRIPTION>" emails=<EMAILS_LIMIT> ftp=<FTP_LIMIT> domains=<DOMAINS_LIMIT> websites=<WEBSITES_LIMIT> disk=<DISK_LIMIT> inodes=<INODES_LIMITS> databases=<DATABASES_LIMIT> cpu=<CPU_LIMIT> ram=<RAM_LIMIT> docker_image="<DOCKER_IMAGE>" bandwidth=<PORT_SPEED_LIMIT> storage="<STORAGE_FILE>" [--debug]
+opencli plan-edit plan_id new_plan_name new_description new_email_limit new_ftp_limit new_domains_limit new_websites_limit new_disk_limit new_inodes_limit new_db_limit new_cpu new_ram new_docker_image new_bandwidth
+
 ```
 
 | Parameter        | Description                                           | Type      | Notes                              |
@@ -135,6 +136,6 @@ opencli plan-edit  id= name="<NAME>" description="<DESCRIPTION>" emails=<EMAILS_
 
 Example:
 ```bash
-opencli plan-edit id=1 name="Pro Plan" description="A professional plan" emails=500 ftp=100 domains=10 websites=5 disk=50 inodes=1000000 databases=20 cpu=4 ram=1 docker_image="openpanel/nginx" bandwidth=100 storage="10" --debug
+opencli plan-edit 1 "sad_se_zove_ovako" "novi plan skroz" 0 0 0 0 10 500000 1 1 1 openpanel/nginx 500
 ```
 
