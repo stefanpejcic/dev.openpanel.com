@@ -13,12 +13,12 @@ opencli plan-list
 Example output:
 ```bash
 opencli plan-list
-+----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+------------------+-----------+--------------+
-| id | name                | description                     | domains_limit | websites_limit | email_limit | ftp_limit | disk_limit | inodes_limit | db_limit | cpu  | ram  | docker_image     | bandwidth | storage_file |
-+----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+------------------+-----------+--------------+
-|  1 | ubuntu_nginx_mysql  | Unlimited disk space and Nginx  |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 1    | 1g   | openpanel/nginx  |       100 | 0 GB         |
-|  2 | ubuntu_apache_mysql | Unlimited disk space and Apache |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 1    | 1g   | openpanel/apache |       100 | 0 GB         |
-+----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+------------------+-----------+--------------+
++----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+--------------+
+| id | name                | description                     | domains_limit | websites_limit | email_limit | ftp_limit | disk_limit | inodes_limit | db_limit | cpu  | ram  | bandwidth | storage_file |
++----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+--------------+
+|  1 | ubuntu_nginx_mysql  | Unlimited disk space and Nginx  |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 1    | 1g   |       100 | 0 GB         |
+|  2 | ubuntu_apache_mysql | Unlimited disk space and Apache |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 1    | 1g   |       100 | 0 GB         |
++----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+--------------+
 ```
 
 You can also format the data as JSON:
@@ -32,7 +32,7 @@ opencli plan-list --json
 To create a new plan run the following command:
 
 ```bash
-opencli plan-create 'name' 'description' email_limit ftp_limit domains_limit websites_limit disk_limit inodes_limit db_limit cpu ram docker_image bandwidth
+opencli plan-create name"<TEXT>" description="<TEXT>" emails=<COUNT> ftp=<COUNT> domains=<COUNT> websites=<COUNT> disk=<COUNT> inodes=<COUNT> databases=<COUNT> cpu=<COUNT> ram=<COUNT> bandwidth=<COUNT>
 ```
 
 | Parameter      | Description                                           | Type      | Notes                          |
@@ -48,7 +48,6 @@ opencli plan-create 'name' 'description' email_limit ftp_limit domains_limit web
 | `db_limit`   | Max number of databases                            | Integer  | 0 for unlimited                |
 | `cpu`        | CPU core limit                                     | Integer  |                                |
 | `ram`        | RAM limit in GB                                    | Integer  |                                |
-| `docker_image` | Docker image name                                | String   |                                |
 | `bandwidth`  | Port speed in Mbit/s                               | Integer  |                                |
 
 
@@ -94,7 +93,7 @@ opencli plan-delete <PLAN_NAME>
 Example:
 ```bash
 root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'
-Plan 'ubuntu_nginx_mysql' and Docker network 'ubuntu_nginx_mysql' deleted successfully.
+Plan 'ubuntu_nginx_mysql' deleted successfully.
 ```
 
 TIP: use `'` or `"` around the plan name if it contains spaces: `"plan name here"`.
@@ -103,7 +102,7 @@ TIP: use `'` or `"` around the plan name if it contains spaces: `"plan name here
 
 ```bash
 root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'  --json
-{"message": "Plan 'ubuntu_nginx_mysql' and Docker network 'ubuntu_nginx_mysql' deleted successfully."}
+{"message": "Plan 'ubuntu_nginx_mysql' deleted successfully."}
 ```
 
 
@@ -112,8 +111,7 @@ root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'  --json
 Change plan limits.
 
 ```bash
-opencli plan-edit plan_id new_plan_name new_description new_email_limit new_ftp_limit new_domains_limit new_websites_limit new_disk_limit new_inodes_limit new_db_limit new_cpu new_ram new_docker_image new_bandwidth
-
+opencli plan-edit id=<ID> name"<TEXT>" description="<TEXT>" emails=<COUNT> ftp=<COUNT> domains=<COUNT> websites=<COUNT> disk=<COUNT> inodes=<COUNT> databases=<COUNT> cpu=<COUNT> ram=<COUNT> bandwidth=<COUNT> --debug
 ```
 
 | Parameter        | Description                                           | Type      | Notes                              |
@@ -130,7 +128,6 @@ opencli plan-edit plan_id new_plan_name new_description new_email_limit new_ftp_
 | `db_limit`      | Max number of databases                             | Integer  | 0 for unlimited                    |
 | `cpu`           | CPU core limit                                      | Integer  |                                    |
 | `ram`           | RAM limit in GB                                     | Integer  |                                    |
-| `docker_image`  | Docker image name                                     | String   |  |
 | `bandwidth`     | Port speed in Mbit/s                                | Integer  |                                    |
 
 
