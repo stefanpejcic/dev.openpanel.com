@@ -2,6 +2,18 @@
 
 Manage Docker settings: update docker images, set global resource limits for docker, etc.
 
+### lazydocker
+
+To manage system containers *(run as root user):
+```bash
+opencli docker
+```
+
+To manage user containers:
+```bash
+opencli docker <USERNAME>
+```
+
 ### Collect Stats
 
 To collect docker resource usage information (cpu, ram, i/o) for all users:
