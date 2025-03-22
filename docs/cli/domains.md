@@ -36,6 +36,45 @@ example.net
 ...
 ```
 
+### SSL
+
+`opencli domains-ssl` command will display current ssl settings for a domain, display certificate files or switch from autossl to custom certificate.
+
+#### status
+
+Display current status for domain (AutoSSL, Custom or No SSL):
+
+
+```bash
+opencli domains-ssl <DOMAIN> status
+```
+
+#### info
+
+Display fullchain and key for domain certificate:
+
+```bash
+opencli domains-ssl <DOMAIN> info
+```
+
+#### auto
+
+Swith to autossl for a domain (default):
+
+```bash
+opencli domains-ssl <DOMAIN> auto
+```
+
+
+#### custom
+
+Set custom SSL to be used for a domain:
+
+
+```bash
+opencli domains-ssl <DOMAIN> custom path/to/fullchain.pem path/to/key.pem
+```
+
 
 ## DNS
 
