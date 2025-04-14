@@ -49,3 +49,8 @@ Get Google PageSpeed data for all websites hosted on server:
 ```bash
 opencli websites-pagespeed -all
 ```
+
+> **Note:**  
+> Since version **1.2.2**, users can provide their own PageSpeed API key by creating a file named `pagespeed_api_key.txt` in their home directory at `/var/www/html/`.  
+>  
+> Administrators can also set a system-wide API key by creating the file `/etc/openpanel/openpanel/service/pagespeed.api` and placing the key inside.
