@@ -12,7 +12,7 @@ Overwrite HTML template or Python module within the OpenPanel UI container
   ```
 - To overwrite an HTML template:
   ```bash
-  opencli modules/PATH.py
+  opencli templates/dashboard/dashboard.html
   ```
 
 **Note:** This command is intended for development purposes, specifically when creating custom modules or modifying templates. It provides a quick way to overwrite files for testing. For persistent changes, refer to the [Customizing](/customize.html) section.
