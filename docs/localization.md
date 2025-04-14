@@ -12,7 +12,8 @@ OpenPanel is shipped with the following locales:
 - [🇫🇷 French (FR)](https://community.openpanel.com/d/45-parles-tu-francais-french-translation-for-openpanel)
 - [🇩🇪 German (DE)](https://community.openpanel.com/d/25-sprichst-du-deutsch-german-translation-for-openpanel)
 - [🇹🇷 Turkish (TR)](https://community.openpanel.com/d/31-turkce-konusuyor-musun-turkish-translation-for-openpanel)
-- [🇨🇳](https://community.openpanel.org/d/151-simplified-chinese-translation-for-openpanel)
+- [🇨🇳 Simplified Chinese (ZH)](https://community.openpanel.org/d/151-simplified-chinese-translation-for-openpanel)
+- [🇵🇹 Portuguese (PT)](https://community.openpanel.org/d/154-fala-portugues-portuguese-translation-for-openpanel)
 
 ## How to translate
 
