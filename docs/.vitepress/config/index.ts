@@ -359,10 +359,6 @@ export default defineConfig({
               text: 'Available images',
               link: '/images/browse.html',
             },
-            {
-              text: 'Create an image',
-              link: '/images/create.html',
-            },
           ],
         },
       ],
