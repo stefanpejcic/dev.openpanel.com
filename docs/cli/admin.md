@@ -107,7 +107,7 @@ Note: User with 'admin' role can not be deleted.
 
 `opencli admin notifications` allows you to change the notification preferences.
 
-Settings are stored in `/usr/local/admin/service/notifications.ini` file. However, it is recommended not to modify this file directly. Instead, it's best to utilize the opencli commands. This way, any changes made are immediately applied, and the admin service is automatically restarted only when necessary.
+Settings are stored in `/etc/openpanel/openadmin/config/notifications.ini` file. However, it is recommended not to modify this file directly. Instead, it's best to utilize the opencli commands. This way, any changes made are immediately applied, and the admin service is automatically restarted only when necessary.
 
 #### Get
 
