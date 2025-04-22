@@ -252,6 +252,10 @@ export default defineConfig({
               link: '/cli/php.html',
             },
             {
+              text: 'opencli waf',
+              link: '/cli/waf.html',
+            },
+            {
               text: 'opencli webserver',
               link: '/cli/webserver.html',
             },
