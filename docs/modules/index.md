@@ -197,15 +197,15 @@ Now we just need to add files to the OpenPanel container and enable the newly cr
 
 Edit the `/root/docker-compose.yaml` file and under the section `openpanel:` look for 'volumes:'.
 
-We need to make the .py file available in `/usr/local/panel/modules/` and .html inside `/usr/local/panel/templates/`
+We need to make the .py file available in `/modules/` and .html inside `/templates/`
 
 In the file, for volumes left side is where the file/directory is on the server and right after `:` is where it is in the OpenPanel container (`- /SERVER/PATH:/CONTAINER/PATH`) 
 
 so we need to add in this example:
 
 ```bash
-      - /root/fixperms/fixperms.py:/usr/local/panel/modules/fixperms.py
-      - /root/fixperms/fixperms.html:/usr/local/panel/templates/fixperms.html
+      - /root/fixperms/fixperms.py:/modules/fixperms.py
+      - /root/fixperms/fixperms.html:/templates/fixperms.html
 ```
 
 ![openpanel fixperms example module](https://i.postimg.cc/Qt4t2z3x/2024-12-04-18-42.png)
