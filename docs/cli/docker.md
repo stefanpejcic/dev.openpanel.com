@@ -58,13 +58,6 @@ To increase storage (disk) allocated to Docker, pass the size in **GB**:
 ```bash
 opencli docker-limits --apply 100
 ```
-### Update Images
-
-Download [official docker images](/images/browse.html) for OpenPanel:
-
-```bash
-opencli docker-update_images
-```
 
 ### Usage Stats Cleanup
 
