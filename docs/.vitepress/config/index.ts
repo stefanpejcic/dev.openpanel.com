@@ -313,10 +313,6 @@ export default defineConfig({
               link: '/templates/',
             },
             {
-              text: 'Available Templates',
-              link: '/templates/browse.html',
-            },
-            {
               text: 'Create a Template',
               link: '/templates/create.html',
             },
@@ -354,10 +350,6 @@ export default defineConfig({
             {
               text: 'Introduction',
               link: '/images/',
-            },
-            {
-              text: 'Available images',
-              link: '/images/browse.html',
             },
           ],
         },
