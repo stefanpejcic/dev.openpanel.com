@@ -10,7 +10,7 @@ To change theme for OpenPanel, run command:
 
 ```opencli config update template NAME_HERE```
 
-instead of *NAME_HERE* set either just the folder name in `/usr/local/panel/` or a full path, example:
+instead of *NAME_HERE* set either just the folder name or a full path, example:
 
 ```opencli config update template "/home/custom_template/"```
 
@@ -20,7 +20,7 @@ To change theme for OpenAdmin, run command:
 
 ```opencli config update admin_template NAME_HERE```
 
-instead of *NAME_HERE* set either just the folder name in `/usr/local/admin/` or a full path, example:
+instead of *NAME_HERE* set either just the folder name or a full path, example:
 
 ```opencli config update admin_template "/home/custom_admin_template/"```
 
@@ -33,10 +33,10 @@ For those who require a more personalized touch, OpenPanel allows the creation o
 To create new templates copy the default templates folders:
 
 For OpenPanel:
-`docker cp openpanel:/usr/local/panel/templates/ /home/custom_template/`
+`docker cp openpanel:/templates/ /home/custom_template/`
 
 For OpenAdmin:
-`cp /usr/local/admin/templates/ /home/custom_admin_template/`
+`cp /templates/ /home/custom_admin_template/`
 
 and then make the changes in html/css files.
 
