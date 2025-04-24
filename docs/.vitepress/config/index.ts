@@ -73,7 +73,7 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: 'Copyright © 2024 OPENPANEL',
+      copyright: 'Copyright © 2023-2025 OPENPANEL',
       message: 'Released under the MIT License.',
     },
 
