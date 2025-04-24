@@ -33,6 +33,22 @@ Disable WAF for a domain:
 opencli waf domain <DOMAIN_NAME> disable
 ```
 
+## IDs
+
+List all rule IDs from all enabled sets:
+
+```bash
+opencli waf ids
+```
+
+## Tags
+
+List all rule tags from all enabled sets:
+
+```bash
+opencli waf tags
+```
+
 ## Stats
 
 Get stats from the log.
