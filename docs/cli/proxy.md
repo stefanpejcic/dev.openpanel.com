@@ -16,3 +16,6 @@ Switch back to the default `/openpanel`:
 ```bash
 opencli domain set default
 ```
+
+
+You can also pass `--no-restart` flag to avoid interrupting the Caddy or OpenPanel services.
