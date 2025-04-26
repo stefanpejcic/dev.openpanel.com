@@ -74,6 +74,7 @@ autoupdate=on
 autopatch=on
 api=off
 dev_mode=off
+demo_mode=off
 template=
 admin_template=
 basic_auth=no
@@ -447,6 +448,12 @@ Default value is Off
 ### dev_mode
 
 The `dev_mode` option allows Aministrator to both enable verbose logging for API requests and disable minified responses for OpenAdmin and OpenPanel interfaces (HTML, JS, CSS and JSON).
+
+Default value is Off
+
+### demo_mode
+
+The `demo_mode` option allows Aministrator lock both OpenPanel and OpenAdmin UI in read-only mode, allowing users to login and view data, but not to make any changes.
 
 Default value is Off
 
