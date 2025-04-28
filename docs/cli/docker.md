@@ -2,7 +2,32 @@
 
 Manage Docker settings: update docker images, set global resource limits for docker, etc.
 
-### lazydocker
+
+### logs
+
+View logs sizes for user and system containers.
+
+
+```bash
+# opencli docker-logs
+
+Usage: opencli docker-logs [options]
+
+Options:
+  <USERNAME>                                    Display log sizes for specified user.
+  --system                                      Display log sizes just for system containers.
+  --users                                       Display log sizes just for user containers.
+  --all                                         Display log sizes for all user and system containers.
+
+Examples:
+  opencli docker-logs stefan
+  opencli docker-logs --users
+  opencli docker-logs --system
+  opencli docker-logs --all
+
+```
+
+### lazydocker (DEPRECATED)
 
 To manage system containers *(run as root user):
 ```bash
