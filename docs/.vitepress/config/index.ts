@@ -171,10 +171,6 @@ export default defineConfig({
               link: '/api/usage.html',
             },
             {
-              text: '/api/backups',
-              link: '/api/backups.html',
-            },
-            {
               text: '/api/docker',
               link: '/api/docker.html',
             },
@@ -278,10 +274,6 @@ export default defineConfig({
             {
               text: 'opencli cloudflare',
               link: '/cli/cloudflare.html',
-            },
-            {
-              text: 'opencli backup',
-              link: '/cli/backup.html',
             },
             {
               text: 'opencli locale',
