@@ -17,6 +17,8 @@ Example:
 opencli domain set srv7.openpanel.org
 ```
 
+`--debug` flag can be passed to dispaly verbose information as script is running.
+
 Note: If domain is not pointed to the server via A record and SSL can not be generated, then `http://IP` will be used instead of `https://DOMAIN`.
 
 Set IP address to be used instead of domain:
