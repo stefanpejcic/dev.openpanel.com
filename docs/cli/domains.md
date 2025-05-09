@@ -225,8 +225,27 @@ Example:
 opencli domains-add pejcic.rs stefan
 ```
 
-Note: this command will add a domain for user regardless of their domains limit.
+To add a domain with custom document root:
+```bash
+opencli domains-add pejcic.rs stefan --docroot /var/ww/html/path
+```
 
+To get more verbose information when adding a domain pass the `--debug` flag.
+
+Note: the command `opencli domains-add` will add a domain for user regardless of their domains limit.
+
+## Add .onion domain to user
+
+To import a Tor (.onion) domain name for user:
+
+```bash
+opencli domains-add <DOMAIN> <USERNAME> --hs_ed25519_public_key /path/to/key  --hs_ed25519_secret_key /path/to/key
+```
+
+Example:
+```bash
+opencli domains-add pejcic.rs stefan --hs_ed25519_public_key /var/ww/html/hs_ed25519_public_key  --hs_ed25519_secret_key /var/ww/html/hs_ed25519_secret_key
+```
 
 ## Suspend Domain
 
