@@ -44,27 +44,6 @@ To insert custom code within the `<footer>` tag of the OpenPanel interface, modi
 nano /etc/openpanel/openpanel/custom_code/in_footer.html
 ```
 
-### Hooks
-
-OpenPanel supports hooks that run bash scripts before or after running opencli commands.
-
-To create a hook, first create a new directory: `/etc/openpanel/openpanel/hooks/` and inside create a file based on the desired command:
-
-- `pre_` prefix for script to run **before** a command.
-- `post_` prefix for a script to run **after** executing an opencli command.
-
-Example, to run a custom script before the user creation process (opencli *user-add*) you would create a new file:
-```bash
-pre_user-create.sh
-```
-
-another example, script that executes after adding a domain (opencli *domains-add*) you would create file:
-```bash
-post_domains-add.sh
-```
-
-any command-line attributes passed to opencli script will also be to your custom scripts.
-
 ### After installation
 
 To execute custom code following the installation of OpenPanel, place your custom script on the server. When initiating the OpenPanel installation process, use the `--post_install=` flag and specify the path to your script within it.
@@ -112,6 +91,29 @@ and set the data to be used:
 }
 
 ```
+
+
+## Hooks
+
+OpenPanel supports hooks that run bash scripts before or after running opencli commands.
+
+To create a hook, first create a new directory: `/etc/openpanel/openpanel/hooks/` and inside create a file based on the desired command:
+
+- `pre_` prefix for script to run **before** a command.
+- `post_` prefix for a script to run **after** executing an opencli command.
+
+Example, to run a custom script before the user creation process (opencli *user-add*) you would create a new file:
+```bash
+pre_user-create.sh
+```
+
+another example, script that executes after adding a domain (opencli *domains-add*) you would create file:
+```bash
+post_domains-add.sh
+```
+
+any command-line attributes passed to opencli script will also be to your custom scripts.
+
 
 
 ## Domain Restriction
