@@ -104,7 +104,7 @@ To create a hook, first create a new directory: `/etc/openpanel/openpanel/hooks/
 
 Example, to run a custom script before the user creation process (opencli *user-add*) you would create a new file:
 ```bash
-pre_user-create.sh
+pre_user-add.sh
 ```
 
 another example, script that executes after adding a domain (opencli *domains-add*) you would create file:
