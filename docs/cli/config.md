@@ -447,7 +447,11 @@ Default value is Off
 
 ### dev_mode
 
-The `dev_mode` option allows Aministrator to both enable verbose logging for API requests and disable minified responses for OpenAdmin and OpenPanel interfaces (HTML, JS, CSS and JSON).
+The `dev_mode` option allows Aministrator to view more verbose information in both OpenPanel and OpenAdmin, as well as their log files.
+
+- verbose logging for API requests
+- disables minified responses for both interfaces (HTML, JS, CSS and JSON)
+- uses latest CDN for tailwindcss, alpinejs and flowbite
 
 Default value is Off
 
