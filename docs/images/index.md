@@ -4,7 +4,7 @@
 
 OpenPanel uses official Docker images for services.
 
-For each user you can edit their `/home/USER/docker-composq.yml` file to specify custom services.
+For each user you can edit their `/home/USER/docker-compose.yml` file to specify custom services.
 
 To edit services for all new users that you create, edit the template files:
 
