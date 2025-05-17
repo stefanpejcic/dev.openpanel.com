@@ -36,7 +36,7 @@ Update files are hosted on the following platforms:
 Ensure that your server has access to these services to successfully download updates.  
 
 ### Version check
-Latest version available for update is published on [docker hub](https://hub.docker.com/r/openpanel/openpanel/tags).
+Latest version available for update is published on [docker hub](https://hub.docker.com/r/openpanel/openpanel-ui/tags).
 
 ### Changelog
 
