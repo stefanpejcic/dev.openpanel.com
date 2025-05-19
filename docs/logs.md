@@ -29,7 +29,6 @@ Services used by OpenPanel have the following logs:
 |`/var/log/nginx/error.log`|Nginx error log|
 |`docker logs openpanel_mysql`|MySQL error log|
 |`docker logs openpanel_dns`|DNS service logs|
-|`/var/log/ufw.log`|UFW log|
 |`docker logs $USERNAME`|Docker logs for user|
 
 
