@@ -32,7 +32,7 @@ ns3=
 ns4=
 email=
 logout_url=
-enabled_modules=enabled_modules=dns,notifications,favorites,phpmyadmin,temporary_links,ssh,crons,backups,wordpress,flarum,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,process_manager,ip_blocker,redis,memcached,login_history,activity,twofa,domains_visitors,malware_scan,elasticsearch
+enabled_modules=enabled_modules=dns,notifications,favorites,phpmyadmin,temporary_links,ssh,crons,backups,wordpress,flarum,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,process_manager,ip_blocker,redis,memcached,login_history,activity,twofa,domains,domains_visitors,malware_scan,elasticsearch
 
 [USERS]
 login_ratelimit=5
