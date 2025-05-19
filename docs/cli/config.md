@@ -43,7 +43,6 @@ password_reset=no
 weakpass=yes
 twofa_nag=yes
 how_to_guides=yes
-sidebar_color=dark
 avatar_type=gravatar
 max_login_records=20
 activity_items_per_page=25
@@ -231,23 +230,6 @@ resource_usage_retention=100
 
 ```bash
 resource_usage_charts_mode=two
-```
-
-### sidebar_color
-
-note: this setting is deprecated and willl be removed in the future.
-
-`sidebar_color` allows you to set a custom color scheme for the sidebar.
-
-
-Available options are:
-
-- dark
-- prime
-- light
-
-```bash
-sidebar_color=prime
 ```
 
 ### login_ratelimit
