@@ -113,7 +113,6 @@ To customize these reports edit the [/etc/openpanel/goaccess/goaccess.conf](http
 
 ## CSF
 
-During installation you can set [UFW](https://wiki.ubuntu.com/UncomplicatedFirewall) or CSF to be used.
 
 ## OpenPanel
 
