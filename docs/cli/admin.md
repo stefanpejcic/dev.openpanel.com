@@ -144,7 +144,6 @@ Updated load to 10
 Currently available options for notifications are:
 
 - reboot
-- backups
 - attack
 - limit
 - update
