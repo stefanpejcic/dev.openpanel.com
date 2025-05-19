@@ -268,14 +268,6 @@ export default defineConfig({
               link: '/cli/ftp.html',
             },
             {
-              text: 'opencli firewall',
-              link: '/cli/firewall.html',
-            },
-            {
-              text: 'opencli cloudflare',
-              link: '/cli/cloudflare.html',
-            },
-            {
               text: 'opencli locale',
               link: '/cli/locale.html',
             },
