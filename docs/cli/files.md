@@ -1,5 +1,50 @@
 # Files
 
+### Purge Trash
+
+The `purge_trash` script is run periodically to remove files form users *.Trash* folder, according to the `autopurge_trash` setting.
+
+
+## Single User
+
+To purge files for a single user:
+
+```bash
+opencli files-purge_trash --user [USERNAME]
+```
+
+To list files that would be purged (dry-run) for a single user:
+
+```bash
+opencli files-purge_trash --user [USERNAME] --dry-run
+```
+
+To purge files for a single user regardless of the `autopurge_trash` setting:
+
+```bash
+opencli files-purge_trash --user [USERNAME] --force
+```
+
+## All Users
+
+To purge files for all users:
+
+```bash
+opencli files-purge_trash
+```
+
+To list files that would be purged (dry-run) for all users:
+
+```bash
+opencli files-purge_trash --dry-run
+```
+
+To purge files for all users regardless of the `autopurge_trash` setting:
+
+```bash
+opencli files-purge_trash --force
+```
+
 
 ### Fix Permissions
 
