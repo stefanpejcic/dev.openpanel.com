@@ -5,7 +5,7 @@
 The `purge_trash` script is run periodically to remove files form users *.Trash* folder, according to the `autopurge_trash` setting.
 
 
-## Single User
+#### Single User
 
 To purge files for a single user:
 
@@ -25,7 +25,7 @@ To purge files for a single user regardless of the `autopurge_trash` setting:
 opencli files-purge_trash --user [USERNAME] --force
 ```
 
-## All Users
+#### All Users
 
 To purge files for all users:
 
@@ -70,7 +70,7 @@ Emails:
 - sets the permissions of all directories to 755.
 
 
-## Single folder
+#### Single folder
 
 Fix permissions for specific folder for user:
 
@@ -95,7 +95,7 @@ Fix permissions for all folders iniside user home directory (`/var/www/html/`):
 opencli files-fix_permissions <USERNAME>
 ```
 
-## All Users
+#### All Users
 
 Use the `--all` flag to change permissions for all active users:
 
