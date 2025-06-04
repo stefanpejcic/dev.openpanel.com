@@ -36,7 +36,7 @@ example.net
 ...
 ```
 
-### SSL
+## SSL
 
 `opencli domains-ssl` command will display current ssl settings for a domain, display certificate files or switch from autossl to custom certificate.
 
@@ -48,7 +48,7 @@ example.net
  opencli domains-ssl <DOMAIN> auto            - Swith back to autossl for the domain.
 ```
 
-#### status
+### status
 
 Display current status for domain (AutoSSL, Custom or No SSL):
 
@@ -57,7 +57,7 @@ Display current status for domain (AutoSSL, Custom or No SSL):
 opencli domains-ssl <DOMAIN> status
 ```
 
-#### info
+### info
 
 Display fullchain and key for domain certificate:
 
@@ -65,7 +65,7 @@ Display fullchain and key for domain certificate:
 opencli domains-ssl <DOMAIN> info
 ```
 
-#### auto
+### auto
 
 Swith to autossl for a domain (default):
 
@@ -74,7 +74,7 @@ opencli domains-ssl <DOMAIN> auto
 ```
 
 
-#### custom
+### custom
 
 Set custom SSL to be used for a domain:
 
