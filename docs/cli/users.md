@@ -22,7 +22,6 @@ opencli user-list
 |  8 | ajde      | ajde                            | LiteSpeed Nginx Boost | ajde      | NULL    | 2025-02-20 09:11:23 |
 |  9 | fctuzc3n  | fctuzc3n                        | Nginx MySQL Basic     | fctuzc3n  | pavlaka | 2025-02-20 18:50:07 |
 +----+-----------+---------------------------------+-----------------------+-----------+---------+---------------------+
-
 ```
 
 You can also format the data as JSON:
@@ -42,6 +41,47 @@ or:
 opencli user-list --total --json
 ```
 
+#### List users over Quota
+
+
+```bash
+opencli user-list --over_quota
+```
+
+Example output:
+```bash
+opencli user-list --over_quota
+
+                        Block limits                File limits
+User            used    soft    hard  grace    used  soft  hard  grace
+----------------------------------------------------------------------
+api       +- 6228924 5120000 5120000   none   73320 1000000 1000000  
+```
+
+#### List all users Quotas
+
+
+```bash
+opencli user-list --quota
+```
+
+Example output:
+```bash
+opencli user-list --quota
+
+                        Block limits                File limits
+User            used    soft    hard  grace    used  soft  hard  grace
+----------------------------------------------------------------------
+api       +- 6228924 5120000 5120000   none   73320 1000000 1000000       
+root@baze:/# bash  a --quota
+                        Block limits                File limits
+User            used    soft    hard  grace    used  soft  hard  grace
+----------------------------------------------------------------------
+root      -- 15657452       0       0         333161     0     0       
+dnsmasq   --      88       0       0             10     0     0       
+api       +- 6228924 5120000 5120000   none   73320 1000000 1000000       
+dbonly    -- 1317260 5120000 5120000          22140 1000000 1000000       
+```
 
 ### Add User
 
