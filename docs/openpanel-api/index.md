@@ -60,10 +60,10 @@ Example response:
 ```
 
 
-## Domains
+## Dashboard
 
 ```bash
-curl -X POST https://OPENPANEL:2083/api/domains \
+curl -X POST https://OPENPANEL:2083/api/dashboard \
   -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
