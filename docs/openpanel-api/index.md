@@ -9,17 +9,7 @@ OpenPanel API is available only on [OpenPanel Enterprise edition](https://openpa
 
 ### 🔐 Login without 2FA
 
-```
-curl -X POST https://OPENPANEL:2083/api/login \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json" \
-  -d '{"username": "testuser", "password": "your_password_here"}'
-```
-
-### 🔐 Login with 2FA (Two-Step)
-
-Initial request:
-```
+```bash
 curl -X POST https://OPENPANEL:2083/api/login \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
@@ -27,7 +17,25 @@ curl -X POST https://OPENPANEL:2083/api/login \
 ```
 
 Example response:
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
 ```
+
+### 🔐 Login with 2FA (Two-Step)
+
+Initial request:
+```bash
+curl -X POST https://OPENPANEL:2083/api/login \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{"username": "testuser", "password": "your_password_here"}'
+```
+
+Example response:
+```json
 {
   "twofa_required": true,
   "user_id": 123
@@ -35,7 +43,7 @@ Example response:
 ```
 
 Submit 2FA code:
-```
+```bash
 curl -X POST https://OPENPANEL:2083/api/login \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
@@ -43,7 +51,7 @@ curl -X POST https://OPENPANEL:2083/api/login \
 ```
 
 Example response:
-```
+```json
 {
   "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
   "user_id": 123,
