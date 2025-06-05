@@ -179,6 +179,62 @@ Example response:
 }
 ```
 
+
+## Account
+
+### Activity Log
+
+Returns user's activity log, with search and filters.
+
+```bash
+curl -X GET https://OPENPANEL:2083/api/account/activity \
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+- specify page with: `--data-urlencode "page=2"`
+- specify search query with: `--data-urlencode "search=failed`
+- to show all logs pass `?show_all=true` in url
+
+Example response:
+```json
+{
+  "log_content": [
+    "[2025-06-05 13:14:22] User 'johndoe' successfully logged in from IP 192.168.1.10",
+    "[2025-06-04 22:09:55] User 'johndoe' attempted login with invalid password",
+    "[2025-06-03 16:40:03] User 'johndoe' logged in from IP 192.168.1.15"
+  ],
+  "current_page": 1,
+  "items_per_page": 25,
+  "total_pages": 1,
+  "total_lines": 3,
+  "search_term": "login",
+  "show_all": false
+}
+```
+
+### Language
+
+Returns list of available (installed) locales on the server.
+
+```bash
+curl -X GET https://OPENPANEL:2083/api/account/language \
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Example response:
+```json
+{
+  "locales": [
+    "en",
+    "fr",
+    "de"
+  ]
+}
+```
+
+
+
+
 ## Other
 
 
