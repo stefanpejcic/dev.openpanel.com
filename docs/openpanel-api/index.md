@@ -268,6 +268,23 @@ curl -X DELETE https://OPENPANEL:2083/api/favorites \
   -d '{"link": "/dashboard"}'
 ```
 
+### 2FA
+
+Manage 2FA.
+
+```bash
+curl -X GET https://OPENPANEL:2083/api/account/2fa \
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Example response:
+```json
+{
+  "enabled": true,
+  "method": "authenticator_app",
+  "code": "123456"
+}
+```
 
 ### Login History
 
@@ -294,21 +311,10 @@ Example response:
 ]
 ```
 
-To add new favorite:
-```bash
-curl -X PUT https://OPENPANEL:2083/api/favorites \
-  -H "Authorization: Bearer JWT_TOKEN_HERE" \
-  -H "Content-Type: application/json" \
-  -d '{"link": "/dashboard", "title": "Dashboard"}'
-```
 
-To delete a favorite:
-```bash
-curl -X DELETE https://OPENPANEL:2083/api/favorites \
-  -H "Authorization: Bearer JWT_TOKEN_HERE" \
-  -H "Content-Type: application/json" \
-  -d '{"link": "/dashboard"}'
-```
+
+
+
 
 
 
