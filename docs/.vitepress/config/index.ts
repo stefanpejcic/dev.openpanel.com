@@ -94,7 +94,6 @@ export default defineConfig({
         text: 'Getting Started',
         link: '/introduction.html',
       },
-       { text: 'API', link: '/api/', activeMatch: '^/api/' },
        { text: 'OpenCLI', link: '/cli/', activeMatch: '^/cli/' },
       {
         text: 'Links',
@@ -144,39 +143,6 @@ export default defineConfig({
             {
               text: 'Logs',
               link: '/logs.html',
-            },
-          ],
-        },
-        {
-          text: 'API',
-          items: [
-            {
-              text: '/api/',
-              link: '/api/',
-            },
-            {
-              text: '/api/users',
-              link: '/api/users.html',
-            },
-            {
-              text: '/api/plans',
-              link: '/api/plans.html',
-            },
-            {
-              text: '/api/services',
-              link: '/api/services.html',
-            },
-            {
-              text: '/api/usage',
-              link: '/api/usage.html',
-            },
-            {
-              text: '/api/docker',
-              link: '/api/docker.html',
-            },
-            {
-              text: '/api/system',
-              link: '/api/system.html',
             },
           ],
         },
@@ -290,6 +256,48 @@ export default defineConfig({
             {
               text: 'opencli report',
               link: '/cli/report.html',
+            },
+          ],
+        },
+        {
+          text: 'OpenAdmin API',
+          items: [
+            {
+              text: '/openadmin-api/',
+              link: '/openadmin-api/',
+            },
+            {
+              text: '/openadmin-api/users',
+              link: '/openadmin-api/users.html',
+            },
+            {
+              text: '/openadmin-api/plans',
+              link: '/openadmin-api/plans.html',
+            },
+            {
+              text: '/openadmin-api/services',
+              link: '/openadmin-api/services.html',
+            },
+            {
+              text: '/openadmin-api/usage',
+              link: '/openadmin-api/usage.html',
+            },
+            {
+              text: '/openadmin-api/docker',
+              link: '/openadmin-api/docker.html',
+            },
+            {
+              text: '/openadmin-api/system',
+              link: '/openadmin-api/system.html',
+            },
+          ],
+        },
+        {
+          text: 'OpenPanel API',
+          items: [
+            {
+              text: '/api/',
+              link: '/openpanel-api/',
             },
           ],
         },
