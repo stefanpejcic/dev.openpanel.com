@@ -24,7 +24,7 @@ Example response:
 }
 ```
 
-### 🔐 Login with 2FA (Two-Step)
+### 🔐 Login with 2FA
 
 Initial request:
 ```bash
