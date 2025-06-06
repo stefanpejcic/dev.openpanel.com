@@ -65,11 +65,24 @@ Example response:
 }
 ```
 
-## Disk usage
+## Users Disk usage
 
-View current disk usage:
+View current disk usage for all users:
 ```bash
 curl -X GET http://PANEL:2087/api/usage/disk -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Example response:
+```json
+[ ]
+```
+
+
+## Server Disk usage
+
+View current server disk usage:
+```bash
+curl -X GET http://PANEL:2087/api/usage/server -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
 Example response:
