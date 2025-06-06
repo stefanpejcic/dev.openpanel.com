@@ -316,6 +316,23 @@ Example response:
 
 
 
+## Files
+
+
+### List Directories
+
+```bash
+curl -X GET https://OPENPANEL:2083/api/folders/<path:path_param> \
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+Example response:
+```json
+{
+}
+```
+
+
 
 
 ## Other
