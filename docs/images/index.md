@@ -54,6 +54,73 @@ add to docker-compose.yml file **in the services section:
       - www
 ```
 
+
+
+
+### Minecraft
+
+To add [Minecraft](https://github.com/itzg/docker-minecraft-server) as a service or user in OpenPanel:
+
+add to .env file:
+
+```
+# MINECRAFT
+MINECRAFT_VERSION="latest"
+MINECRAFT_PORT="25565"
+MINECRAFT_CPU="1.0"
+MINECRAFT_RAM="1.0G"
+MINECRAFT_ENABLE_QUERY="true"
+MINECRAFT_MAX_PLAYERS="20"
+MINECRAFT_MAX_WORLD_SIZE="10000"
+MINECRAFT_ALLOW_NETHER="false"
+MINECRAFT_ANNOUNCE_PLAYER_ACHIEVEMENTS="false"
+MINECRAFT_ENABLE_COMMAND_BLOCK="false"
+```
+
+add to docker-compose.yml file **in the volumes section:
+
+```
+  mc_data:
+    driver: local
+    labels:
+      description: "This volume holds the minecraft data directory."
+      purpose: "storage"
+```
+
+add to docker-compose.yml file **in the services section:
+
+```
+  minecraft:
+    image: itzg/minecraft-server:${MINECRAFT_VERSION:-latest}
+    container_name: minecraft
+    tty: true
+    stdin_open: true
+    ports:
+      - "${MINECRAFT_PORT:-25565}:25565"
+    environment:
+      EULA: "TRUE"
+      ENABLE_QUERY: "${MINECRAFT_ENABLE_QUERY:-true}"
+      QUERY_PORT: "${MINECRAFT_PORT:-25565}"
+    volumes:
+      - mc_data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: "${MINECRAFT_CPU:-1.0}"
+          memory: "${MINECRAFT_RAM:-1.0G}"
+          pids: 100
+    healthcheck:
+      test: mc-health
+      start_period: 1m
+      interval: 5s
+      retries: 20
+    networks:
+      - www
+```
+
+
+
+
 ### MsSQL
 
 To add [MsSQL](https://hub.docker.com/r/microsoft/mssql-server) as a service or user in OpenPanel:
@@ -137,3 +204,37 @@ add to docker-compose.yml file **in the services section:
     networks:
       - www
 ```
+
+
+
+
+### BusyBox
+
+This example adds busybox container, its an example on how to add any docker compose service:
+
+add to .env file:
+
+```
+# BUSYBOX
+BUSYBOX_CPU="0.1"
+BUSYBOX_RAM="0.1G"
+```
+
+add to docker-compose.yml file **in the services section:
+
+```
+  busybox:
+    image: busybox
+    container_name: busybox          
+    restart: unless-stopped
+    working_dir: /var/www/html
+    deploy:
+      resources:
+        limits:
+          cpus: "${BUSYBOX_CPU:-0.1}"
+          memory: "${BUSYBOX_RAM:-0.1G}"   
+          pids: 100
+    volumes:
+      - html_data:/var/www/html/
+```
+
