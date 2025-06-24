@@ -30,7 +30,7 @@ FILEBROWSER_CPU="0.25"
 FILEBROWSER_RAM="0.35"
 ```
 
-add to docker-compose.yml file **in the services section:
+add to `docker-compose.yml` file in the **services** section:
 
 ```
   filebrowser:
@@ -77,7 +77,7 @@ MINECRAFT_ANNOUNCE_PLAYER_ACHIEVEMENTS="false"
 MINECRAFT_ENABLE_COMMAND_BLOCK="false"
 ```
 
-add to docker-compose.yml file **in the volumes section:
+add to `docker-compose.yml` file in the **volumes** section:
 
 ```
   mc_data:
@@ -87,7 +87,7 @@ add to docker-compose.yml file **in the volumes section:
       purpose: "storage"
 ```
 
-add to docker-compose.yml file **in the services section:
+add to `docker-compose.yml` file in the **services** section:
 
 ```
   minecraft:
@@ -138,7 +138,17 @@ MSSQL_RAM="1.0G"
 MSSQL_SA_PASSWORD="rootpassword"
 ```
 
-add to docker-compose.yml file **in the services section:
+add to `docker-compose.yml` file in the **volumes** section:
+
+```
+  mssql_data:
+    driver: local
+    labels:
+      description: "This volume holds the MSSQL databases."
+      purpose: "database"      
+```
+
+add to `docker-compose.yml` file in the **services** section:
 
 ```
   mssql:
@@ -185,7 +195,7 @@ UPTIMEKUMA_CPU="0.5"
 UPTIMEKUMA_RAM="0.5G"
 ```
 
-add to docker-compose.yml file **in the services section:
+add to `docker-compose.yml` file in the **services** section:
 
 ```
   uptimekuma:
@@ -220,7 +230,7 @@ BUSYBOX_CPU="0.1"
 BUSYBOX_RAM="0.1G"
 ```
 
-add to docker-compose.yml file **in the services section:
+add to `docker-compose.yml` file in the **services** section:
 
 ```
   busybox:
