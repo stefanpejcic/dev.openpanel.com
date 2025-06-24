@@ -4,18 +4,49 @@
 
 OpenPanel uses official Docker images for services.
 
+Each user has a Docker service running in [Rootless mode](https://docs.docker.com/engine/security/rootless/) and a single `docker-compose.yml` file that has all their services defined.
+
 For each user you can edit their `/home/USER/docker-compose.yml` file to specify custom services.
+
+
+
+## Default services
 
 To edit services for all new users that you create, edit the template files:
 
 - `/etc/openpanel/docker/compose/1.0/docker-compose.yml` - services for users, volumes and networks.
 - `/etc/openpanel/docker/compose/1.0/.env` - limits for services.
 
-## Default services
+## Guidelines
 
+You can add **any Docker image** by including its Compose configuration. However, there are a few important **rules** to follow so that OpenPanel can:
+
+* Recognize the service as valid
+* Allow editing of resource limits from the GUI
+* Enable service start/stop control from the GUI
+* Monitor usage statistics
+* Enforce resource restrictions
+
+Make sure your service definition follows the required structure to ensure full OpenPanel integration.
+
+
+| **Name**          | **Description**                                                                                                                                                                                                                                                                                                | **Example**                                                                                                                     |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **service name**  | The service name must exactly match the `container_name` and **cannot contain spaces**.                                                                                                                                                                                                                        | For `uptimekuma`:<br>`container_name: uptimekuma`                                                                               |
+| **env variables** | All variables in the `.env` file must start with the service name in **uppercase**, followed by an underscore. Each service must define `_CPU` and `_RAM` to allow OpenPanel to restrict and monitor resource usage.                                                                                           | `UPTIMEKUMA_VERSION="1"`<br>`UPTIMEKUMA_CPU="0.5"`<br>`UPTIMEKUMA_RAM="0.5G"`<br>                                               |
+| **image tag**     | The image tag should be a variable, allowing it to be changed via the OpenPanel UI. If not provided, a fallback value is used.                                                                                                                                                                                 | `image: louislam/uptime-kuma:${UPTIMEKUMA_VERSION:-1}`                                                                          |
+| **volumes**       | Mounting host OS paths can expose the server. Use relative paths (e.g., `./data`) for app data. To use existing data like `/var/www/html/`, mount the appropriate volume. If Docker socket access is needed, mount `/hostfs/run/user/${USER_ID}/docker.sock` as **read-only** to prevent privilege escalation. | `- ./data:/app/data`<br>`- html_data:/var/www/html/`<br>`- /hostfs/run/user/${USER_ID}/docker.sock:/var/run/docker.sock:ro` |
+| **resources**     | Define `cpus`, `memory`, and `pids` under the `deploy.resources.limits` section. Without `pids`, services are vulnerable to fork bombs. Use variables with fallback values for `cpus` and `memory`.                                                                                                            | `cpus: "${BUSYBOX_CPU:-0.1}"`<br>`memory: "${BUSYBOX_RAM:-0.1G}"<br>pids: 100`                                            |
+| **networks**      | Only add networks if the service needs access to other containers. Use either `www` or `db` networks. `www` is for app/webserver access; `db` is for database-only access.                                                                                                                                     | `- www`<br>`- db`                                                                                                         |
+| **environment**   | Use the `environment` section to pass custom environment variables.                                                                                                                                                                                                                                            | `EULA: "TRUE"`<br>`ENABLE_QUERY: "${MINECRAFT_ENABLE_QUERY:-true}"`                                                       |
+| **ports**         | Only define ports if external access is required. For internal-only services (e.g., Redis, Memcached), **do not expose ports**.                                                                                                                                                                                | `- "${MYSQL_PORT}"`<br>`- "${MINECRAFT_PORT:-25565}:25565"`                                                               |
+| **labels**        | Labels are optional and ignored by OpenPanel but can be used for external tools or metadata.                                                                                                                                                                                                                   | `- docker-volume-backup.archive-pre=/bin/sh -c '/dump.sh'`                                                                      |
+| **healthcheck**   | Optional. If defined, OpenPanel respects the health check and uses it to manage restarts.                                                                                                                                                                                                                      | `test: ['CMD-SHELL', 'mysqladmin ping -h localhost']`<br>`interval: 1s`<br>`timeout: 5s`<br>`retries: 10`                     |
+| restart policy                                 | restart policy should be explicitly set to [unless-stopped](https://docs.docker.com/engine/containers/start-containers-automatically/#use-a-restart-policy) so that OpenPanel can auto-restart services in case of failure, except when user account is suspended. | `restart: unless-stopped` |
 
 ## Examples
 
+These examples are **drop-in snippets** you can insert into your files to add a new service for an OpenPanel user.
 
 ### FileBrowser
 
@@ -199,7 +230,7 @@ add to `docker-compose.yml` file in the **services** section:
 
 ```
   uptimekuma:
-    image: louislam/uptime-kum:${UPTIMEKUMA_VERSION:-1}
+    image: louislam/uptime-kuma:${UPTIMEKUMA_VERSION:-1}
     container_name: uptimekuma
     volumes:
       - ./data:/app/data
