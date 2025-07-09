@@ -5,7 +5,13 @@ Enable and manage FTP server shared for all OpenPanel users.
 
 ## List
 
-List all FTP sub-users for a single OpenPanel user:
+List all FTP sub-users from all OpenPanel accounts:
+```bash
+opencli ftp-list
+```
+
+
+List all FTP sub-users for a single OpenPanel accounts:
 ```bash
 opencli ftp-list <OPENPANEL_USERNAME>
 ```
