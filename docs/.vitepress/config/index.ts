@@ -257,6 +257,10 @@ export default defineConfig({
               text: 'opencli report',
               link: '/cli/report.html',
             },
+            {
+              text: 'opencli update',
+              link: '/cli/update.html',
+            },
           ],
         },
         {
