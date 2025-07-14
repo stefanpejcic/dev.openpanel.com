@@ -6,7 +6,6 @@ Manage domains: Add, Delete, detect, etc.
 
 To list all domains owned by a user run the following command:
 
-
 ```bash
 opencli domains-user <USERNAME>
 ```
@@ -15,13 +14,20 @@ Example:
 ```bash
 # opencli domains-user stefan
 panel.pejcic.rs
-example.openpanel.co
+example.openpanel.com
+```
+
+To view document root, pass the `--docroot` flag, to view php versions pass the `--php_versions` flag, example:
+
+```bash
+# opencli domains-user stefan --docroot --php_version
+panel.pejcic.rs	/var/www/html/pejcic.rs/panel	8.2
+example.openpanel.com	/var/www/html/example.openpanel.com	5.6
 ```
 
 ## List all domains
 
 To list all domains owned by all users run the following command:
-
 
 ```bash
 opencli domains-all
@@ -31,9 +37,16 @@ Example:
 ```bash
 # opencli domains-all
 panel.pejcic.rs
-example.openpanel.co
-example.net
+example.openpanel.com
 ...
+```
+
+To view document root, pass the `--docroot` flag, to view php versions pass the `--php_versions` flag, example:
+
+```bash
+# opencli domains-all --docroot --php_version
+panel.pejcic.rs	/var/www/html/pejcic.rs/panel	8.2
+example.openpanel.com	/var/www/html/example.openpanel.com	5.6
 ```
 
 ## SSL
