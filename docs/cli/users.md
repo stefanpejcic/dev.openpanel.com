@@ -138,6 +138,15 @@ Example:
 opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --reseller=pejcic
 ```
 
+### Transfer User
+
+To transfer user account to another server:
+
+```bash
+opencli user-transfer --account <OPENPANEL_USER> --host <DESTINATION_IP> --username <OPENPANEL_USERNAME> --password <DESTINATION_SSH_PASSWORD> --port 22
+```
+
+add `--live-transfer` flag to suspend account after the transfer, and forward DNS to the new server.
 
 ### Delete User
 
