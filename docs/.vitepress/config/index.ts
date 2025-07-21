@@ -326,8 +326,8 @@ export default defineConfig({
               link: '/modules/',
             },
             {
-              text: 'Example Modules',
-              link: '/modules/examples.html',
+              text: 'Example Module',
+              link: 'https://openpanel.com/docs/articles/dev-experience/custom-plugins#example',
             },
           ],
         },
