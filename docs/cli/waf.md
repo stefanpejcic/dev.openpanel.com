@@ -33,6 +33,22 @@ Disable WAF for a domain:
 opencli waf domain <DOMAIN_NAME> disable
 ```
 
+## Update
+
+Update OWASP CRS:
+
+```bash
+opencli waf update
+```
+
+### Update Log
+
+Viw update log for OWASP CRS:
+
+```bash
+opencli waf update log
+```
+
 ## IDs
 
 List all rule IDs from all enabled sets:
