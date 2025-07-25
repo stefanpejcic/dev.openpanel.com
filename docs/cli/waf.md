@@ -43,7 +43,7 @@ opencli waf update
 
 ### Update Log
 
-Viw update log for OWASP CRS:
+View update log for OWASP CRS:
 
 ```bash
 opencli waf update log
