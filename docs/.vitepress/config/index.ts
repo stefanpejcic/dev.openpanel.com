@@ -218,6 +218,10 @@ export default defineConfig({
               link: '/cli/waf.html',
             },
             {
+              text: 'opencli imunify',
+              link: '/cli/imunify.html',
+            },
+            {
               text: 'opencli webserver',
               link: '/cli/webserver.html',
             },
