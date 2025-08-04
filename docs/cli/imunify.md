@@ -39,6 +39,14 @@ To stop the ImunifyAV GUI:
 opencli imunify stop
 ```
 
+## Update
+
+To update ImunifyAV:
+
+```bash
+opencli imunify update
+```
+
 ## Uninstall
 
 To uninstall ImunifyAV:
