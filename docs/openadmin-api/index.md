@@ -105,4 +105,4 @@ Here are some technical recommendations and insights to ensure that your use of 
 ### Updates and Community
 
 - **Stay Updated**: Follow our [changelog](https://openpanel.com/docs/changelog/intro/) to stay informed about new features, bug fixes, and security updates.
-- **Community Engagement**: Engage with the OpenPanel community through [forums](https://community.openpanel.com/), or [discord](https://discord.openpanel.com) to share insights, ask questions, and stay connected with other developers.
+- **Community Engagement**: Engage with the OpenPanel community through [forums](https://community.openpanel.org/), or [discord](https://discord.openpanel.com) to share insights, ask questions, and stay connected with other developers.
