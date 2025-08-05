@@ -16,4 +16,4 @@ Afterwards, make sure to understand OpenPanel directory structure, services and 
 
 ## Developer Support
 
-Connect with fellow developers in the [OpenPanel community](https://community.openpanel.com/) through our Forum. Share your experiences, seek advice, and collaborate on innovative solutions. Together, we can expand the capabilities of OpenPanel and create a vibrant ecosystem.
+Connect with fellow developers in the [OpenPanel community](https://community.openpanel.org/) through our Forum. Share your experiences, seek advice, and collaborate on innovative solutions. Together, we can expand the capabilities of OpenPanel and create a vibrant ecosystem.
