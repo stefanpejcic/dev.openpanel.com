@@ -3,7 +3,7 @@
     <div>
 
       <div class="cta">
-        <a class="become-sponsor" href="https://community.openpanel.com">{{
+        <a class="become-sponsor" href="https://community.openpanel.org">{{
           translations[site.lang] || translations.en
         }}</a>
       </div>
