@@ -335,6 +335,16 @@ Example response:
 
 
 
+## Websites
+
+### AutoInstaller
+
+List available and existing apps in AutoInstaller:
+```bash
+curl -X GET https://OPENPANEL:2083/api/auto-installer \
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
 ## Other
 
 
