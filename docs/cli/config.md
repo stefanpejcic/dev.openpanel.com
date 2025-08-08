@@ -418,7 +418,7 @@ The `how_to_guides` option allows Aministrator to enable or disable the How-to g
 ```bash
 how_to_guides=yes
 ```
-If configured as "yes", the system will initially attempt to access a JSON file containing your custom how-to guides. In the event that the file is not available, articles from https://openpanel.co/docs/panel/dashboard/#how-to-guides will be shown instead.
+If configured as "yes", the system will initially attempt to access a JSON file containing your custom how-to guides. In the event that the file is not available, articles from https://openpanel.com/docs/panel/dashboard/#how-to-guides will be shown instead.
 
 
 ### api
@@ -445,7 +445,7 @@ Default value is Off
 
 ### max_ram
 
-The `max_ram` option allows Aministrator to set maximum % of available RAM that can be used by Docker service. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
+The `max_ram` option allows Aministrator to set maximum % of available RAM that can be used by Docker service. [More information](https://openpanel.com/docs/changelog/0.1.8/#docker-resources)
 
 ```bash
 max_ram=90
@@ -453,7 +453,7 @@ max_ram=90
 
 ### max_cpu
 
-The `max_cpu` option allows Aministrator to set maximum % of available CPU that can be used by Docker service. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
+The `max_cpu` option allows Aministrator to set maximum % of available CPU that can be used by Docker service. [More information](https://openpanel.com/docs/changelog/0.1.8/#docker-resources)
 
 ```bash
 max_cpu=95
@@ -477,7 +477,7 @@ screenshots=http://screenshots-api.openpanel.com/screenshot
 
 ### temporary_links
 
-The `temporary_links` option allows Aministrator to set a custom domain name to be used to generate temporary sub-domains for WP installations. [More information](https://openpanel.co/docs/changelog/0.1.8/#docker-resources)
+The `temporary_links` option allows Aministrator to set a custom domain name to be used to generate temporary sub-domains for WP installations. [More information](https://openpanel.com/docs/changelog/0.1.8/#docker-resources)
 
 ```bash
 temporary_links=https://preview.openpanel.org/index.php
