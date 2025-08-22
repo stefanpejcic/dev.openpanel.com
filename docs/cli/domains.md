@@ -345,3 +345,21 @@ To parse (Caddy) access logs for all active users and their domains run the scri
 ```bash
 opencli domains-stats
 ```
+
+## Varnish
+
+Check Varnish status for domain, enable/disable Varnish caching.
+
+```bash
+opencli domains-varnish <DOMAIN-NAME> [on|off] [--short]
+```
+
+Enable Varnish Caching for domain:
+```bash
+opencli domains-varnish <DOMAIN-NAME> on
+```
+
+Disable Varnish Caching for domain:
+```bash
+opencli domains-varnish <DOMAIN-NAME> off
+```
