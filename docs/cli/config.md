@@ -33,7 +33,7 @@ Updated api to on
 To apply the new settings, OpenPanel UI willl be restarted if needed.
 :::
 
-## Options
+## Available Options
 Currently available configuration options:
 
 ### logo
