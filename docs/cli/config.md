@@ -5,108 +5,6 @@
 Settings are stored in `/etc/openpanel/openpanel/conf/openpanel.config` file. However, it is recommended not to modify this file directly. Instead, it's best to utilize the `config` script. This way, any changes made are immediately applied, and the  panel service is automatically restarted only when necessary.
 
 
-Example:
-```bash
-################################### NOTICE ####################################
-#                                                                             #
-# Manually modifying this file is not recommended!                            #
-#                                                                             #
-# You should use the interface in OpenAdmin > Settings                        #
-# or 'opencli config update' command                                          #
-# for applying changes to these settings.                                     #
-#                                                                             #
-# https://dev.openpanel.com/cli/config.html                                   #
-#                                                                             #
-###############################################################################
-
-[DEFAULT]
-brand_name=
-logo=
-force_domain=
-port=2083
-ssl=no
-openpanel_proxy=
-ns1=
-ns2=
-ns3=
-ns4=
-email=
-logout_url=
-enabled_modules=enabled_modules=dns,notifications,favorites,phpmyadmin,temporary_links,ssh,crons,backups,wordpress,flarum,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,process_manager,ip_blocker,redis,memcached,login_history,activity,twofa,domains,domains_visitors,malware_scan,elasticsearch
-
-[USERS]
-login_ratelimit=5
-login_blocklimit=20
-session_duration=30
-session_lifetime=300
-password_reset=no
-weakpass=yes
-twofa_nag=yes
-how_to_guides=yes
-avatar_type=gravatar
-max_login_records=20
-activity_items_per_page=25
-resource_usage_charts_mode=two
-resource_usage_items_per_page=100
-resource_usage_retention=100
-acccess_logs_per_page=1000
-domains_per_page=100
-
-[PHP]
-default_php_version=8.2
-
-[LOGS]
-logrotate_enable=yes
-logrotate_size_limit=100M
-logrotate_retention=10
-logrotate_keep_days=30
-
-[STATS]
-goaccess_enable=yes
-goaccess_schedule=monthly
-goaccess_email=no
-goaccess_keep_days=365
-
-
-[PANEL]
-autoupdate=on
-autopatch=on
-api=off
-dev_mode=off
-demo_mode=off
-template=
-admin_template=
-basic_auth=no
-basic_auth_username=
-basic_auth_password=
-screenshots=http://screenshots-api.openpanel.com/screenshot
-temporary_links=https://preview.openpanel.org/index.php
-
-
-[SMTP]
-mail_server=
-mail_port=465
-mail_use_tls=False
-mail_use_ssl=True
-mail_username=
-mail_password=
-mail_default_sender=
-mail_security_token=78bd237db2da
-
-[DOCKER]
-max_ram=90
-max_cpu=95
-
-
-[SECURITY]
-backups_encryption_key=
-
-
-[LICENSE]
-key=
-```
-
-
 ## Get
 
 The `get` parameter allows you to view current settings.
@@ -196,6 +94,22 @@ Set number of domains to show per page for the user, default value is 100.
 domains_per_page=100
 ```
 
+### domain_log_per_page
+
+Set number of lines (table rows) to display per page on *Domains > Access Logs* and *Advanced > WAF Logs*. Default value is 500.
+
+```bash
+domain_log_per_page=500
+```
+
+### domain_log_max_for_show_all
+
+Set maximum number of lines (table rows) to display **when user selects *show_all* option** on *Domains > Access Logs* and *Advanced > WAF Logs*. Default value is 10000.
+
+```bash
+domain_log_max_for_show_all=10000
+```
+
 ### acccess_logs_per_page
 
 Set number of lines to show per page from the domains activity log.
@@ -232,8 +146,20 @@ resource_usage_retention=100
 resource_usage_charts_mode=two
 ```
 
-### login_ratelimit
+### found_a_bug_link
+When set to 'yes', a *Found a bug? Let us know* link appears in the bottom-right corner of all pages in the OpenPanel and OpenAdmin UI, allowing users to report issues directly on GitHub.
 
+```bash
+found_a_bug_link=yes
+```
+
+### ip_county_flag
+When set to 'yes', a *Cuntry Code Flag* icon appears in the Dashboard page for last login IP address.
+```bash
+ip_county_flag=yes
+```
+
+### login_ratelimit
 The `login_ratelimit` parameter allows you to specify the maximum number of failed login attempts per minute for each IP address accessing the OpenPanel interface. The default setting is `5`.
 
 ```bash
@@ -314,43 +240,12 @@ logout_url=https://google.com
 activity_items_per_page=50
 ```
 
-### force_domain
+### activity_lines_retention
 
-`force_domain` enables you to specify a mandatory domain name for accessing the user panel. If a user attempts to visit the panel using any other domain, such as "their-domain.com:2083", they will be automatically redirected to "your-domain.com:2083." This feature utilizes the `port` option to ensure the enforcement of the specified port value as well.
-
-
-```bash
-force_domain=openpanel.co
-```
-
-### port
-
-The `port` setting enables you to define a custom port for the panel's operation. By default, the panel uses port **2083**, but you have the flexibility to set it to any desired port.
-It's crucial to ensure that the chosen port is open in your firewall configuration. 
+`activity_lines_retention` allows administrators to define the default number of lines to keep for each user `/activity` log. The value defaults to 1500.
 
 ```bash
-port=2083
-```
-
-:::info
-After adjusting the port, it's necessary to restart the panel service to apply the new port configuration.
-:::
-
-
-### ssl
-
-The `ssl` setting when enabled will force both the OpenPanel and AdminPanel to use SSL for the hostname and redirect traffic to https. This setting is by default disabled but will be automatically enabled if [opencli ssl-hostname](#hostname) succeeded in generating an SSL for the hostname during OpenPanel installation.
-
-```bash
-ssl=no
-```
-
-### openpanel_proxy
-
-The `openpanel_proxy` setting allows you to set a custom /something that will allow users to access their openpanel interface using their domain names. For example: 'panel' will make any domain, example: 'example.com/panel' redirect to the OpenPanel.
-
-```bash
-openpanel_proxy=open_sesame
+activity_lines_retention=1500
 ```
 
 ### nameservers
@@ -359,20 +254,101 @@ The `ns1` `ns2` `ns3` `ns4` options allow you to set nameservers that will be us
 Nameservers should be added in pairs, ns1 and ns2, ns3 and ns4.
 
 ```bash
-ns1=ns1.openpanel.co
-ns2=ns2.openpanel.co
-ns3=ns3.openpanel.co
-ns4=ns4.openpanel.co
+ns1=ns1.openpanel.com
+ns2=ns2.openpanel.com
+ns3=ns3.openpanel.com
+ns4=ns4.openpanel.com
 ```
 
 ### enabled_modules
 
 In OpenPanel version 0.1.5, we implemented the Modules feature, which, by default, loads only the essential modules. Administrators also have the option to selectively disable modules they do not require.
 
-Currently, the following modules are optional and can be disabled by the Administrator:
+
+### logrotate_enable
+Enable or disable **logrotate** for system logs: webserver, DNS, OpenPanel, FTP, MailServer, etc.
 ```bash
-enabled_modules=phpmyadmin,ssh,crons,backups,wordpress,pm2,disk_usage,inodes,usage,terminal,services,webserver,fix_permissions,malware_scan,process_manager,ip_blocker,redis,memcached,elasticsearch,login_history,activity
+logrotate_enable=yes
 ```
+
+* **yes** → Log rotation is active for supported services.
+* **no** → Logs will grow indefinitely unless manually managed.
+
+### `logrotate_size_limit`
+Set the maximum log file size (in MB) before rotation occurs. Once a log file exceeds this size, it will be rotated automatically.
+
+```bash
+logrotate_size_limit=100
+```
+
+### `logrotate_retention`
+Define the number of rotated log files to keep. Once the limit is reached, the oldest files are deleted.
+```bash
+logrotate_retention=10
+```
+
+* Example: If set to `10`, the system will keep 10 old log archives per log file.
+* Helps control disk usage.
+
+---
+
+### `logrotate_keep_days`
+Specify how many days rotated logs should be retained before deletion.
+```bash
+logrotate_keep_days=30
+```
+
+* Example: Setting to `30` means rotated logs older than 30 days will be removed.
+* Works alongside `logrotate_retention` — whichever limit is hit first will trigger deletion.
+
+
+### `goaccess_enable`
+
+Enable or disable **GoAccess** web log analytics.
+
+```bash
+goaccess_enable=yes
+```
+
+* **yes** → GoAccess will process web server logs to generate analytics reports.
+* **no** → Analytics will be disabled.
+
+### `goaccess_schedule`
+
+Set how often GoAccess reports should be generated.
+
+```bash
+goaccess_schedule=monthly
+```
+
+* Supported values: `daily`, `weekly`, `monthly`.
+* Determines the frequency of log analysis and report generation.
+
+
+### `goaccess_email`
+
+Control whether GoAccess reports are emailed automatically.
+
+```bash
+goaccess_email=no
+```
+
+* **yes** → Reports are sent via email to the configured recipient.
+* **no** → Reports are generated but not emailed.
+
+
+### `goaccess_keep_days`
+
+Specify how long GoAccess reports are retained before deletion.
+
+```bash
+goaccess_keep_days=365
+```
+
+* Example: `365` means reports older than one year will be removed automatically.
+* Helps manage disk space while keeping historical analytics.
+
+
 
 ### autopatch
 
@@ -423,9 +399,33 @@ If configured as "yes", the system will initially attempt to access a JSON file 
 
 ### api
 
-The `api` option allows Aministrator to enable or disable the API functionality.
+The `api` option allows Aministrator to enable or disable the API functionality. Default value is `Off`
 
-Default value is Off
+Here’s a polished and consistent refactoring of your `[API]` section:
+
+---
+
+### `[API]`
+
+The `api` option allows the **Administrator** to enable or disable API functionality. The default value is `off`.
+
+* **on** → API access is enabled.
+* **off** → API access is disabled.
+
+**Check current status**:
+```bash
+opencli config get how_to_guides
+```
+
+**Enable API**:
+```bash
+opencli config update how_to_guides on
+```
+
+**Disable API (default)**:
+```bash
+opencli config update how_to_guides off
+```
 
 ### dev_mode
 
