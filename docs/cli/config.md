@@ -6,45 +6,37 @@ Settings are stored in `/etc/openpanel/openpanel/conf/openpanel.config` file. Ho
 
 
 ## Get
-
 The `get` parameter allows you to view current settings.
-
 ```bash
 opencli config get <OPTION>
 ```
 
 Example:
-
 ```bash
-# opencli config get force_domain
-srv.openpanel.co
+# opencli config get api
+off
 ```
 
 ## Update
-
 The `update` parameter allows you to change the settings.
-
-
 ```bash
 opencli config update <OPTION> <NEW-VALUE>
 ```
 
 Example:
 ```bash
-opencli config update force_domain nesto.rs
-Updated force_domain to nesto.rs
+opencli config update api on nesto.rs
+Updated api to on
 ```
 
 :::info
-To apply the new settings panel service needs to be restarted.
+To apply the new settings, OpenPanel UI willl be restarted if needed.
 :::
 
 ## Options
-
 Currently available configuration options:
 
 ### logo
-
 `logo` allows you to set a url for image *(suggested dimensions are 80x200px) that will be displayed to users on:
 
 - logo on every page
@@ -398,14 +390,6 @@ If configured as "yes", the system will initially attempt to access a JSON file 
 
 
 ### api
-
-The `api` option allows Aministrator to enable or disable the API functionality. Default value is `Off`
-
-Here’s a polished and consistent refactoring of your `[API]` section:
-
----
-
-### `[API]`
 
 The `api` option allows the **Administrator** to enable or disable API functionality. The default value is `off`.
 
