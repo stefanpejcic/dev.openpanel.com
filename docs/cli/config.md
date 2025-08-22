@@ -419,31 +419,75 @@ The `dev_mode` option allows Aministrator to view more verbose information in bo
 - disables minified responses for both interfaces (HTML, JS, CSS and JSON)
 - uses latest CDN for tailwindcss, alpinejs and flowbite
 
-Default value is Off
+* **on** → DEV_MODE is enabled.
+* **off** → DEV_MODE is disabled.
+
+**Check current status**:
+```bash
+opencli config get dev_mode
+```
+
+**Enable dev_mode**:
+```bash
+opencli config update dev_mode on
+```
+
+**Disable dev_mode (default)**:
+```bash
+opencli config update dev_mode off
+```
+
+
 
 ### demo_mode
 
 The `demo_mode` option allows Aministrator lock both OpenPanel and OpenAdmin UI in read-only mode, allowing users to login and view data, but not to make any changes.
 
-Default value is Off
+* **on** → DEMO_MODE is enabled.
+* **off** → DEMO_MODE is disabled.
+
+**Check current status**:
+```bash
+opencli config get dev_mode
+```
+
+**Enable demo_mode**:
+```bash
+opencli config update dev_mode on
+```
+
+**Disable demo_mode (default)**:
+```bash
+opencli config update demo_mode off
+```
 
 ### max_ram
 
-The `max_ram` option allows Aministrator to set maximum % of available RAM that can be used by Docker service. [More information](https://openpanel.com/docs/changelog/0.1.8/#docker-resources)
+The `max_ram` option allows Aministrator to set maximum % of available RAM that can be used by Docker service.
 
+**Check current value**:
 ```bash
-max_ram=90
+opencli config get max_ram
+```
+
+**Set new value**:
+```bash
+opencli config update max_ram 85
 ```
 
 ### max_cpu
 
-The `max_cpu` option allows Aministrator to set maximum % of available CPU that can be used by Docker service. [More information](https://openpanel.com/docs/changelog/0.1.8/#docker-resources)
+The `max_cpu` option allows Aministrator to set maximum % of available CPU that can be used by Docker service.
 
+**Check current value**:
 ```bash
-max_cpu=95
+opencli config get max_cpu
 ```
 
-
+**Set new value**:
+```bash
+opencli config update max_cpu 95
+```
 
 ### screenshots
 
@@ -466,3 +510,177 @@ The `temporary_links` option allows Aministrator to set a custom domain name to 
 ```bash
 temporary_links=https://preview.openpanel.org/index.php
 ```
+
+### blacklist_useragents
+
+The `blacklist_useragents` option allows Administrators to blacklist certain useragents from accessing OpenPanel UI.
+
+**Check current value**:
+```bash
+opencli config get blacklist_useragents
+```
+
+**Enable blacklist**:
+```bash
+opencli config update blacklist_useragents yes
+```
+
+**Disable blacklist**:
+```bash
+opencli config update blacklist_useragents no
+```
+
+### `mail_server`
+
+Hostname or IP address of the SMTP mail server to be used for sending notifications to users.
+
+**Check current value**:
+
+```bash
+opencli config get mail_server
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_server smtp.example.com
+```
+
+
+### `mail_port`
+
+SMTP server port (common: 25, 465, 587).
+
+**Check current value**:
+
+```bash
+opencli config get mail_port
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_port 465
+```
+
+
+### `mail_use_tls`
+
+Enable or disable STARTTLS encryption.
+
+**Check current value**:
+
+```bash
+opencli config get mail_use_tls
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_use_tls True
+```
+
+
+### `mail_use_ssl`
+
+Enable or disable SSL/TLS for SMTP connections.
+
+**Check current value**:
+
+```bash
+opencli config get mail_use_ssl
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_use_ssl True
+```
+
+
+### `mail_username`
+
+SMTP username for authentication.
+
+**Check current value**:
+
+```bash
+opencli config get mail_username
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_username user@example.com
+```
+
+
+### `mail_password`
+
+SMTP password for authentication.
+
+**Check current value**:
+
+```bash
+opencli config get mail_password
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_password yourpassword
+```
+
+
+### `mail_default_sender`
+
+Default “From” address for outgoing emails.
+
+**Check current value**:
+
+```bash
+opencli config get mail_default_sender
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_default_sender no-reply@example.com
+```
+
+
+### `mail_security_token`
+
+Optional token for email API or internal security.
+
+**Check current value**:
+
+```bash
+opencli config get mail_security_token
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_security_token 78bd237db2da
+```
+
+
+### `mail_debug`
+
+Enable debug logging for email operations.
+
+**Check current value**:
+
+```bash
+opencli config get mail_debug
+```
+
+**Set new value**:
+
+```bash
+opencli config update mail_debug True
+```
+
+
+
