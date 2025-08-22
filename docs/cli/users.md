@@ -479,3 +479,20 @@ opencli user-memcached enable stefan
 Memcached enabled successfully for user stefan.
 ```
 
+### Varnish
+Check Varnish Caching status for user and enable/disable Varnish service.
+
+```bash
+opencli user-varnish <USERNAME> [enable|disable]
+```
+
+Check status:
+```bash
+opencli user-varnish <USERNAME>
+```
+
+Disable Varnish:
+```bash
+opencli user-varnish <USERNAME> enable 
+```
+
