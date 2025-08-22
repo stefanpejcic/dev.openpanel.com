@@ -490,7 +490,6 @@ opencli config update max_cpu 95
 ```
 
 ### screenshots
-
 The `screenshots` option allows Aministrator to set a custom screenshots api to be used for generating website screenshots. 
 
 - If 'local' is defined then screenshots will be generated locally on the server.
@@ -502,10 +501,9 @@ screenshots=http://screenshots-api.openpanel.com/screenshot
 ```
 
 
-
 ### temporary_links
 
-The `temporary_links` option allows Aministrator to set a custom domain name to be used to generate temporary sub-domains for WP installations. [More information](https://openpanel.com/docs/changelog/0.1.8/#docker-resources)
+The `temporary_links` option allows Aministrator to set a custom domain name to be used to generate temporary sub-domains for WP installations.
 
 ```bash
 temporary_links=https://preview.openpanel.org/index.php
@@ -531,155 +529,284 @@ opencli config update blacklist_useragents no
 ```
 
 ### `mail_server`
-
 Hostname or IP address of the SMTP mail server to be used for sending notifications to users.
 
 **Check current value**:
-
 ```bash
 opencli config get mail_server
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_server smtp.example.com
 ```
 
 
 ### `mail_port`
-
 SMTP server port (common: 25, 465, 587).
 
 **Check current value**:
-
 ```bash
 opencli config get mail_port
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_port 465
 ```
 
 
 ### `mail_use_tls`
-
 Enable or disable STARTTLS encryption.
 
 **Check current value**:
-
 ```bash
 opencli config get mail_use_tls
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_use_tls True
 ```
 
 
 ### `mail_use_ssl`
-
 Enable or disable SSL/TLS for SMTP connections.
 
 **Check current value**:
-
 ```bash
 opencli config get mail_use_ssl
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_use_ssl True
 ```
 
 
 ### `mail_username`
-
 SMTP username for authentication.
 
 **Check current value**:
-
 ```bash
 opencli config get mail_username
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_username user@example.com
 ```
 
 
 ### `mail_password`
-
 SMTP password for authentication.
 
 **Check current value**:
-
 ```bash
 opencli config get mail_password
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_password yourpassword
 ```
 
 
 ### `mail_default_sender`
-
 Default “From” address for outgoing emails.
 
 **Check current value**:
-
 ```bash
 opencli config get mail_default_sender
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_default_sender no-reply@example.com
 ```
 
 
 ### `mail_security_token`
-
 Optional token for email API or internal security.
 
 **Check current value**:
-
 ```bash
 opencli config get mail_security_token
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_security_token 78bd237db2da
 ```
 
 
 ### `mail_debug`
-
-Enable debug logging for email operations.
+Enable debug logging for email operations (each email sent from the OpenAdmin is stored as file on the server).
 
 **Check current value**:
-
 ```bash
 opencli config get mail_debug
 ```
 
 **Set new value**:
-
 ```bash
 opencli config update mail_debug True
+```
+
+
+
+
+### `autopurge_trash`
+Automatically purge files in the File Manager trash after a number of days.
+
+**Check current value**:
+```bash
+opencli config get autopurge_trash
+```
+
+**Set new value**:
+```bash
+opencli config update autopurge_trash 7
+```
+
+
+### `filemanager_edit_size`
+Maximum file size (in MB) allowed for editing files using the File Manager.
+
+**Check current value**:
+```bash
+opencli config get filemanager_edit_size
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_edit_size 5
+```
+
+
+### `filemanager_view_size`
+Maximum file size (in MB) allowed for viewing files in the File Manager.
+
+**Check current value**:
+```bash
+opencli config get filemanager_view_size
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_view_size 5
+```
+
+
+### `filemanager_download_size`
+Maximum file size (in MB) allowed for downloading files using the File Manager.
+
+**Check current value**:
+```bash
+opencli config get filemanager_download_size
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_download_size 2000
+```
+
+
+### `filemanager_upload_size`
+Maximum file size (in MB) allowed for uploading files in the File Manager.
+
+**Check current value**:
+```bash
+opencli config get filemanager_upload_size
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_upload_size 2000
+```
+
+
+### `filemanager_compress_max_time`
+Maximum time (in seconds) allowed for compressing files using File Manager.
+
+**Check current value**:
+```bash
+opencli config get filemanager_compress_max_time
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_compress_max_time 5
+```
+
+
+### `filemanager_extract_max_time`
+Maximum time (in seconds) allowed for extracting archives using File Manager.
+
+**Check current value**:
+```bash
+opencli config get filemanager_extract_max_time
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_extract_max_time 5
+```
+
+
+### `filemanager_download_max_time`
+Maximum time (in seconds) allowed for downloading files.
+
+**Check current value**:
+```bash
+opencli config get filemanager_download_max_time
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_download_max_time 60
+```
+
+
+### `filemanager_edit_extensions`
+
+Allowed file extensions for editing in the File Manager.
+**Check current value**:
+```bash
+opencli config get filemanager_edit_extensions
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_edit_extensions ".txt .md error_log .log env gitconfig cfg htaccess .ini .php .sh .html .json .htm .html5 .xml .py .php5 .php7 .php8 .sql .css .js .conf"
+```
+
+
+### `filemanager_image_extensions`
+Allowed image file extensions to be viewed using Fle Manager.
+
+**Check current value**:
+```bash
+opencli config get filemanager_image_extensions
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_image_extensions ".jpg .jpeg .png .gif .webp .avif"
+```
+
+
+### `filemanager_archives_extensions`
+Allowed archive file extensions for compression/extraction.
+
+**Check current value**:
+```bash
+opencli config get filemanager_archives_extensions
+```
+
+**Set new value**:
+```bash
+opencli config update filemanager_archives_extensions ".zip .tar .gz .tar.gz"
 ```
 
 
