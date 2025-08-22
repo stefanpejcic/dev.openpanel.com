@@ -201,6 +201,15 @@ weakpass=yes
 password_reset=yes
 ```
 
+
+### permit_username_change_by_user
+
+`permit_username_change_by_user` allows Administrators to enable or disable the username change functionality by OpenPanel users from their Account page. By default username change is disabled.
+
+```bash
+permit_username_change_by_user=no
+```
+
 ### avatar_type
 
 `avatar_type` allows you to set the type of images used for users profile pictures in the users panel.
