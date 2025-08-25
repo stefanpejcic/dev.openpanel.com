@@ -1,14 +1,36 @@
-# OpenPanel Modules
+# Modularity
 
-## Introduction
+OpenPanel supports **modules** and **plugins** to extend its functionality.
 
-OpenPanel utilizes modules, which are separate Python files that **cannot** be executed directly but only through the OpenPanel interface. These modules enrich the OpenPanel interface by introducing new pages or sections to the current template.
+* **Modules** are built-in (core) components that come with OpenPanel.
+* **Plugins** are third-party add-ons that can be installed to expand functionality.
 
-Modules are intended for adding functionality rather than just aesthetic modifications. For visual changes, please utilize [templates](/templates/) instead.
+---
 
-Modules offer additional features that administrators can enable or disable. Disabling a module immediately removes its associated menu item, search functionality, and page visibility.
+## Modules
 
-## Example Module
+Modules enhance the OpenPanel interface by adding new pages, sections, or features to the existing template.
 
-Please view: https://openpanel.com/docs/articles/dev-experience/custom-plugins#example
+* Administrators can enable or disable modules at any time.
+* When disabled, the module’s menu item, search integration, and page visibility are immediately removed.
 
+👉 View the full list of OpenPanel core modules here: [OpenPanel Core Modules](https://github.com/stefanpejcic/openpanel-configuration/blob/main/openadmin/config/features.json)
+
+### Managing Modules
+
+* **Global control:** Admins can enable/disable modules from
+  **OpenAdmin → Settings → Modules**.
+* **Per hosting plan:** Admins can manage module availability per plan via
+  **OpenAdmin → Hosting Plans → Module Manager**.
+
+---
+
+## Plugins
+
+Plugins extend OpenPanel by adding **new functionality** (not just visual changes).
+For layout or design customization, please use [templates](/templates/) instead.
+
+### Example Plugin
+
+For a practical guide, see:
+[Custom Plugins Example](https://openpanel.com/docs/articles/dev-experience/custom-plugins#example)
