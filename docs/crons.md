@@ -9,8 +9,7 @@ If you need to customize or add cron jobs, please use the **root user's crontab*
 
 ## Crons
 
-To manage these crons, sue the **OpenAdmin > Advanced > System Cron Jobs** page.
-
+To manage these crons, use the **OpenAdmin > Advanced > System Cron Jobs** page.
 
 
 ## docker-collect_stats --all
