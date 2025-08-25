@@ -11,6 +11,7 @@ Afterwards, make sure to understand OpenPanel directory structure, services and 
 
 - [Directory Structure](structure.html)
 - [Services and their Configuration files](/services.html)
+- [System Crons and their purpose](/crons.html)
 - [Log file locations](/logs.html)
 
 
