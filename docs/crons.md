@@ -5,10 +5,6 @@ These jobs are managed by **OpenPanel** and should **not be edited manually**, a
 
 If you need to customize or add cron jobs, please use the **root user's crontab** instead.  
 
-⚠️ **Important Note:**  
-If your system is running under **systemd**, these cron jobs may not be executed directly.  
-In that case, `systemd.timer` units take precedence. See the [`systemd.timer`](https://www.freedesktop.org/software/systemd/man/systemd.timer.html) manpage for more details.
-
 ---
 
 ## Crons
