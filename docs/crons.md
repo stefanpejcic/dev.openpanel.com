@@ -134,7 +134,7 @@ Command `opencli sentinel` runs the notification script for server monitoring.
 ---
 
 ## sentinel --report
-Command `opencli sentinel --report` generates the [**daily usage report**](/docs/admin/settings/notifications).
+Command `opencli sentinel --report` generates the [**daily usage report**](https://openpanel.com/docs/admin/settings/notifications).
 
 - **Default schedule:** daily at 11:45 (`45 11 * * *`)
 - **Documentation:** [opencli sentinel report](https://openpanel.com/docs/admin/settings/notifications)
