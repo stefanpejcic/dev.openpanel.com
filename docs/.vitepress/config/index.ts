@@ -141,6 +141,10 @@ export default defineConfig({
               link: '/crons.html',
             },
             {
+              text: 'Troubleshooting',
+              link: '/troubleshooting.html',
+            },
+            {
               text: 'Customize',
               link: '/customize.html',
             },
