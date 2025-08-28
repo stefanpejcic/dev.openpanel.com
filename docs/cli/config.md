@@ -424,9 +424,11 @@ opencli config update how_to_guides off
 
 The `dev_mode` option allows Aministrator to view more verbose information in both OpenPanel and OpenAdmin, as well as their log files.
 
+- displays detailed startup log
 - verbose logging for API requests
 - disables minified responses for both interfaces (HTML, JS, CSS and JSON)
-- uses latest CDN for tailwindcss, alpinejs and flowbite
+- uses latest CDN for tailwindcss and alpinejs
+- displays detailed processing of each request
 
 * **on** → DEV_MODE is enabled.
 * **off** → DEV_MODE is disabled.
