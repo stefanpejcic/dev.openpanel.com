@@ -502,7 +502,7 @@ opencli config update max_cpu 95
 The `screenshots` option allows Aministrator to set a custom screenshots api to be used for generating website screenshots. 
 
 - If 'local' is defined then screenshots will be generated locally on the server.
-- If left empty, [default is our remote api](http://screenshots-api.openpanel.com/screenshot)
+- If left empty, default is our remote api
 - To define custom screenshots api add it's url as value.
 
 ```bash
