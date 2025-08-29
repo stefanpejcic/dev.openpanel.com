@@ -13,37 +13,37 @@ opencli sentinel
 ## Email notification test examples
 
 ### Login to OpenAdmin from an unknown ip address
-![sentinel_adminlogin.png](/img/panel/v2/sentinel_adminlogin.png)
+![sentinel_adminlogin.png](https://i.postimg.cc/jjdk02DP/sentinel-adminlogin.png)
 
 ### Server reboot alert
-![sentinel_reboot.png](/img/panel/v2/sentinel_reboot.png)
+![sentinel_reboot.png](https://i.postimg.cc/1XpKN1gy/sentinel-reboot.png)
 
 ### Daily usage report
-![sentinel_dailyusage.png](/img/panel/v2/sentinel_dailyusage.png)
+![sentinel_dailyusage.png](https://i.postimg.cc/kgjvSc5R/sentinel-dailyusage.png)
 
 ### Disk usage alert
-![sentinel_diskspace.png](/img/panel/v2/sentinel_diskspace.png)
+![sentinel_diskspace.png](https://i.postimg.cc/zvSnGwMB/sentinel-diskspace.png)
 
 ### High LOAD alert
-![sentinel_highload.png](/img/panel/v2/sentinel_highload.png)
+![sentinel_highload.png](https://i.postimg.cc/PrTWFcp8/sentinel-highload.png)
 
 ### CPU usage alert
-![sentinel_highcpu.png](/img/panel/v2/sentinel_highcpu.png)
+![sentinel_highcpu.png](https://i.postimg.cc/s2kSP0Cx/sentinel-highcpu.png)
 
 ### MEM usage alert
-![sentinel_highmem.png](/img/panel/v2/sentinel_highmem.png)
+![sentinel_highmem.png](https://i.postimg.cc/PJ4wjXpv/sentinel-highmem.png)
 
 ### SWAP usage alert
-![sentinel_highswap.png](/img/panel/v2/sentinel_highswap.png)
+![sentinel_highswap.png](https://i.postimg.cc/JzgBmdnx/sentinel-highswap.png)
 
 ### MySQL service inactive alert
-![sentinel_mysql.png](/img/panel/v2/sentinel_mysql.png)
+![sentinel_mysql.png](https://i.postimg.cc/761C3HNt/sentinel-mysql.png)
 
 ### Nameservers resolution alert
-![sentinel_nameservers.png](/img/panel/v2/sentinel_nameservers.png)
+![sentinel_nameservers.png](https://i.postimg.cc/GtqHfXVk/sentinel-nameservers.png)
 
 ### OpenPanel container inactive alert
-![sentinel_opanelcontainer.png](/img/panel/v2/sentinel_opanelcontainer.png)
+![sentinel_opanelcontainer.png](https://i.postimg.cc/xTpXyFKQ/sentinel-opanelcontainer.png)
 
 ### Hostname resolution alert
-![sentinel_resolve.png](/img/panel/v2/sentinel_resolve.png)
+![sentinel_resolve.png](https://i.postimg.cc/158mPRqx/sentinel-resolve.png)
