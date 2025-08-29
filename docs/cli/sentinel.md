@@ -12,7 +12,7 @@ opencli sentinel
 
 ## Email notification test examples
 
-### Login to OpenAdmin from a new ip address
+### Login to OpenAdmin from an unknown ip address
 ![sentinel_adminlogin.png](/img/panel/v2/sentinel_adminlogin.png)
 
 ### Server reboot alert
