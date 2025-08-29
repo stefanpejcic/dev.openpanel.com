@@ -10,40 +10,40 @@ opencli sentinel
 
 ![sentinel openpanel cli](https://i.postimg.cc/kg56D2x2/sentinel-openpaenl.png)
 
-##Email notification test examples
+## Email notification test examples
 
-###Login to OpenAdmin from a new ip address
+### Login to OpenAdmin from a new ip address
 ![sentinel_adminlogin.png](/img/panel/v2/sentinel_adminlogin.png)
 
-###Server reboot alert
+### Server reboot alert
 ![sentinel_reboot.png](/img/panel/v2/sentinel_reboot.png)
 
-###Daily usage report
+### Daily usage report
 ![sentinel_dailyusage.png](/img/panel/v2/sentinel_dailyusage.png)
 
-###Disk usage alert
+### Disk usage alert
 ![sentinel_diskspace.png](/img/panel/v2/sentinel_diskspace.png)
 
-###High LOAD alert
+### High LOAD alert
 ![sentinel_highload.png](/img/panel/v2/sentinel_highload.png)
 
-###CPU usage alert
+### CPU usage alert
 ![sentinel_highcpu.png](/img/panel/v2/sentinel_highcpu.png)
 
-###MEM usage alert
+### MEM usage alert
 ![sentinel_highmem.png](/img/panel/v2/sentinel_highmem.png)
 
-###SWAP usage alert
+### SWAP usage alert
 ![sentinel_highswap.png](/img/panel/v2/sentinel_highswap.png)
 
-###MySQL service inactive alert
+### MySQL service inactive alert
 ![sentinel_mysql.png](/img/panel/v2/sentinel_mysql.png)
 
-###Nameservers resolution alert
+### Nameservers resolution alert
 ![sentinel_nameservers.png](/img/panel/v2/sentinel_nameservers.png)
 
-###OpenPanel container inactive alert
+### OpenPanel container inactive alert
 ![sentinel_opanelcontainer.png](/img/panel/v2/sentinel_opanelcontainer.png)
 
-###Hostname resolution alert
+### Hostname resolution alert
 ![sentinel_resolve.png](/img/panel/v2/sentinel_resolve.png)
