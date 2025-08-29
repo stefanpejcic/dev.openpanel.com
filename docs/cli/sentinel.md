@@ -10,6 +10,3 @@ opencli sentinel
 
 ![sentinel openpanel cli](https://i.postimg.cc/kg56D2x2/sentinel-openpaenl.png)
 
-
-## Email Alerts
-
