@@ -483,16 +483,28 @@ Memcached enabled successfully for user stefan.
 Check Varnish Caching status for user and enable/disable Varnish service.
 
 ```bash
-opencli user-varnish <USERNAME> [enable|disable]
+opencli user-varnish <USERNAME> [enable|disable|status]
 ```
 
-Check status:
+
+Enable Varnish:
 ```bash
-opencli user-varnish <USERNAME>
+opencli user-varnish <USERNAME> enable 
 ```
 
 Disable Varnish:
 ```bash
-opencli user-varnish <USERNAME> enable 
+opencli user-varnish <USERNAME> disable 
 ```
+
+Check status:
+```bash
+opencli user-varnish <USERNAME> status
+```
+
+Check short status (returns *Current status: on/off*):
+```bash
+opencli user-varnish <USERNAME>
+```
+
 
