@@ -5,8 +5,6 @@ OpenPanel supports **modules** and **plugins** to extend its functionality.
 * **Modules** are built-in (core) components that come with OpenPanel.
 * **Plugins** are third-party add-ons that can be installed to expand functionality.
 
----
-
 ## Modules
 
 Modules enhance the OpenPanel interface by adding new pages, sections, or features to the existing template.
@@ -23,8 +21,6 @@ Modules enhance the OpenPanel interface by adding new pages, sections, or featur
 * **Per hosting plan:** Admins can manage module availability per plan via
   **OpenAdmin → Hosting Plans → Module Manager**.
 
----
-
 ## Plugins
 
 Plugins extend OpenPanel by adding **new functionality** (not just visual changes).
@@ -32,5 +28,9 @@ For layout or design customization, please use [templates](/templates/) instead.
 
 ### Example Plugin
 
-For a practical guide, see:
-[Custom Plugins Example](https://openpanel.com/docs/articles/dev-experience/custom-plugins#example)
+For a practical guide, see: [Custom Plugins Example](https://openpanel.com/docs/articles/dev-experience/custom-plugins#example)
+
+Example plugins:
+
+- [traceroute](https://github.com/stefanpejcic/traceroute)
+- [dns-visualizer](https://github.com/stefanpejcic/dns-visualizer)
