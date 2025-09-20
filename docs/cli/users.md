@@ -223,6 +223,30 @@ To login directly as a specific user:
 opencli user-login <USERNAME>
 ```
 
+
+### Resources
+
+Command: `opencli user-resources` lists a user's active services, allows editing of their CPU and RAM limits, and can start or stop the services.
+
+```bash
+Usage: opencli user-resources <context> [options]
+
+Options:
+  --json                         Output result in JSON format.
+  --update_cpu=<value>           Update CPU allocation (global or per service).
+  --update_ram=<value>           Update RAM allocation (global or per service).
+  --service=<service>            Specify the service name to update.
+  --activate=<service>           Start the specified service.
+  --deactivate=<service>         Stop the specified service.
+  --force                        Force image pull before activation.
+  --debug                        Display raw output of docker-compsoe commands.
+
+Example:
+  opencli user-resources stefan --json
+  opencli user-resources stefan --service=apache --update_cpu=1.5
+```
+
+
 ### Check / Disable 2FA
 
 To disable **Two-Factor Authentication** for a user, run the following command:
