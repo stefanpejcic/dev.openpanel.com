@@ -34,3 +34,4 @@ Example plugins:
 
 - [traceroute](https://github.com/stefanpejcic/traceroute)
 - [dns-visualizer](https://github.com/stefanpejcic/dns-visualizer)
+- [domain-diagnostics](https://github.com/stefanpejcic/domain-diagnostics)
