@@ -53,6 +53,14 @@ Example:
  --post_install=/root/my_custom_script.sh
 ```
 
+### Before startup
+
+To execute custom code before starting OpenPanel, create a custom bash script:
+
+```bash
+/root/openpanel_run_on_startup
+```
+
 ### After update
 
 To execute custom code following the update of OpenPanel, create a custom bash script:
