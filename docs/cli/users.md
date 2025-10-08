@@ -224,6 +224,14 @@ opencli user-login <USERNAME>
 ```
 
 
+### Quota
+
+Command: `opencli user-quota` enforces and recalculates disk and inodes for specific or all users.
+
+```bash
+opencli user-quota <username|--all>
+```
+
 ### Resources
 
 Command: `opencli user-resources` lists a user's active services, allows editing of their CPU and RAM limits, and can start or stop the services.
