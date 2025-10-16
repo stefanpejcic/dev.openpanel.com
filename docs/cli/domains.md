@@ -49,6 +49,22 @@ panel.pejcic.rs	/var/www/html/pejcic.rs/panel	8.2
 example.openpanel.com	/var/www/html/example.openpanel.com	5.6
 ```
 
+
+
+## Edit domains
+
+To edit via  terminal domain's docroot files or the domains's VirtualHosts file:
+
+`cd` into the docroot for a domain:
+```bash
+opencli domains-edit <DOMAIN_NAME>
+```
+
+Edit VirtualHosts file for a domain (opens nano, and restarts user's webserver after saving):
+```bash
+opencli domains-edit <DOMAIN_NAME> --ws
+```
+
 ## SSL
 
 `opencli domains-ssl` command will display current ssl settings for a domain, display certificate files or switch from autossl to custom certificate.
