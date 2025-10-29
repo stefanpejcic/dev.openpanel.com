@@ -69,6 +69,10 @@ To execute custom code following the update of OpenPanel, create a custom bash s
 /root/openpanel_run_after_update
 ```
 
+Examples:
+
+- [Custom email templates](https://community.openpanel.org/d/214-customizing-openpanel-email-templates)
+
 ## Pre-fill **OpenAdmin > Plans > New** form
 
 ![screenshot](/prefill_plan_form.png)
