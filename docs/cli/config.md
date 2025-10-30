@@ -448,7 +448,15 @@ opencli config update dev_mode on
 opencli config update dev_mode off
 ```
 
+### favorites_items
 
+The `favorites_items` option controls total number of favorites items that user can have at a time. Default is 10.
+
+To change value:
+
+```
+opencli config update favorites_items 5
+```
 
 ### demo_mode
 
