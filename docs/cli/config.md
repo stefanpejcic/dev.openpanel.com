@@ -448,6 +448,20 @@ opencli config update dev_mode on
 opencli config update dev_mode off
 ```
 
+
+### favicons
+
+The `favicons` option allows you to specify api to use for favicon images.
+
+To set api:
+```
+opencli config update favicons https://www.google.com/s2/favicons?domain=
+
+opencli config update favicons https://favicon-api.openpanel.org/
+```
+
+For selfhosting favicon api, check [vemetric/favicon-api](https://github.com/Vemetric/favicon-api?tab=readme-ov-file#deployment)
+
 ### favorites_items
 
 The `favorites_items` option controls total number of favorites items that user can have at a time. Default is 10.
