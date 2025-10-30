@@ -72,6 +72,7 @@ To execute custom code following the update of OpenPanel, create a custom bash s
 Examples:
 
 - [Custom email templates](https://community.openpanel.org/d/214-customizing-openpanel-email-templates)
+- [Custom OpenAdmin color scheme](https://community.openpanel.org/d/216-customizing-openadmin-color-scheme)
 
 ## Pre-fill **OpenAdmin > Plans > New** form
 
