@@ -63,15 +63,6 @@ Command `opencli server-ips` generates a fresh list of the server’s IP address
 - **Documentation:** This command is DEPRECATED.
 
 
-
-## server-motd
-Command `opencli server-motd` updates the server SSH **Message of the Day (MOTD)**.
-
-- **Default schedule:** every 10 hours (`0 */10 * * *`)  
-- **Documentation:** This command is DEPRECATED.
-
-
-
 ## ftp-users
 Command `opencli ftp-users` recreates the FTP users file that displays users in OpenAdmin interface.
 
