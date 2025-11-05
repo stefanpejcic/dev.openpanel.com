@@ -184,6 +184,13 @@ The `session_duration` parameter allows you to specify the number of minutes tha
 session_duration=30
 ```
 
+### terminal_timeout
+
+`terminal_timeout` enables you to set time in seconds to limit command execution from *OpenPanel > Docker > Terminal* and *OpenAdmin > Advanced > Terminal*.
+
+```bash
+terminal_timeout=30
+```
 
 ### weakpass
 
