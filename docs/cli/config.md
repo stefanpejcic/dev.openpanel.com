@@ -256,6 +256,17 @@ activity_items_per_page=50
 activity_lines_retention=1500
 ```
 
+
+### activity_max_size_bytes
+
+`activity_max_size_bytes` allows administrators to define the total size in bytes for each user `/activity` log. The value defaults to 2000000 (2MB).
+
+```bash
+activity_max_size_bytes=2000000
+```
+
+
+
 ### nameservers
 
 The `ns1` `ns2` `ns3` `ns4` options allow you to set nameservers that will be used in dns zone files for newly added domains, and displayed to users on their panel dashboard.
