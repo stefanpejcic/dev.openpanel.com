@@ -224,6 +224,14 @@ opencli user-login <USERNAME>
 ```
 
 
+### Change Plan
+
+Command: `opencli user-change_plan` allows you to change plan for a user.
+
+```bash
+opencli user-change-plan <username> "<new_plan_name>"
+```
+
 ### Quota
 
 Command: `opencli user-quota` enforces and recalculates disk and inodes for specific or all users.
