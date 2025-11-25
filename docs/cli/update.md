@@ -12,7 +12,17 @@ Start update immediately if `autoupdate` or `autopatch` is enabled:
 opencli update
 ```
 
-Start update immediately:
+Start update immediately, regardless of `autoupdate` or `autopatch` setting:
 ```bash
 opencli update --force
+```
+
+Update only OpenAdmin:
+```bash
+opencli update --admin
+```
+
+Update only OpenCLI:
+```bash
+opencli update --cli
 ```
