@@ -3,6 +3,46 @@
 
 enable/disable the admin panel, reset password, add admin users, etc.
 
+```bash
+Usage: opencli admin <command> [options]
+
+Commands:
+  on                                            Enable and start the OpenAdmin service.
+  off                                           Stop and disable the OpenAdmin service.
+  log                                           Display the last 25 lines of the OpenAdmin error log.
+  logs                                          Display live logs for all OpenAdminn services.
+  list                                          List all current admin users.
+  new <user> <pass>                             Add a new user with the specified username and password.
+  password <user> <pass>                        Reset the password for the specified admin user.
+  update <user> --allowed_plans=[] --max_accounts=<int> --max_disk_blocks=1000000 Assign plans and set limits for reseller.
+  rename <old> <new>                            Change the admin username.
+  suspend <user>                                Suspend admin user.
+  unsuspend <user>                              Unsuspend admin user.
+  notifications <command> <param> [value]       Control notification preferences.
+
+  Notifications Commands:
+    check                                       Check and write notifications.
+    get <param>                                 Get the value of the specified notification parameter.
+    update <param> <value>                      Update the specified notification parameter with the new value.
+
+Examples:
+  opencli admin on
+  opencli admin off
+  opencli admin log
+  opencli admin logs
+  opencli admin list
+  opencli admin new stefan SuperStrong1
+  opencli admin password stefan SuperStrong2
+  opencli admin rename stefan pejcic
+  opencli admin suspend pejcic
+  opencli admin unsuspend pejcic
+  opencli admin notifications check
+  opencli admin notifications get ssl
+  opencli admin notifications update ssl true
+```
+
+
+
 ### Check Status
 
 Check if admin panel is enabled or disabled and display link on which the OpenAdmin is accessibe:
