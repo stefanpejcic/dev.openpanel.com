@@ -154,7 +154,7 @@ Currently available options for notifications are:
 - du
 
 
-#### View OpenAdmin logs
+### View OpenAdmin logs
 
 To multitail [all OpenAdmin logs](/logs.html):
 
