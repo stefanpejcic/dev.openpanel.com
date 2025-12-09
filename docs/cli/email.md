@@ -418,17 +418,19 @@ opencli email-server uninstall
 
 
 
-
 ## Webmail
 
-Choose Webmail software: [Roundcube](https://roundcube.net/), [SnappyMail](https://snappymail.eu/) or [Sogo](https://www.sogo.nu/)
+Display current webmail domain:
 
 ```bash
-opencli email-webmail <roundcube|snappymail|sogo>
+opencli email-webmail
 ```
 
-Webmail is available on port `8080`.
+Set 'webmail.example.com' as a webmail domain:
 
+```bash
+opencli email-webmail domain webmail.example.com
+```
 
 ## Emails
 
