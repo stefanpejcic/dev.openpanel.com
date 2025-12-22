@@ -60,6 +60,26 @@ Example response:
 ```
 
 
+
+## Domains
+
+### New Domain
+
+```bash
+curl -X POST https://OPENPANEL:2083/api/domains/new \
+  -H "Authorization: Bearer JWT_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{"domain_url": "example.com", "docroot": "/var/www/html/example"}'
+```
+
+### List Domains
+
+```bash
+curl -X GET https://OPENPANEL:2083/api/domanis \
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
+
 ## Dashboard
 
 ```bash
