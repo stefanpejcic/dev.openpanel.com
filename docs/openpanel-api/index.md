@@ -1,5 +1,7 @@
 # OpenPanel API
 
+End-user API for OpenaPanel users to manage their data.
+
 :::info
 OpenPanel API is available only on [OpenPanel Enterprise edition](https://openpanel.com/beta/).
 :::
