@@ -65,6 +65,13 @@ Example response:
 
 ## Domains
 
+### List Domains
+
+```bash
+curl -X GET https://OPENPANEL:2083/api/domanis \
+  -H "Authorization: Bearer JWT_TOKEN_HERE"
+```
+
 ### New Domain
 
 ```bash
@@ -74,11 +81,13 @@ curl -X POST https://OPENPANEL:2083/api/domains/new \
   -d '{"domain_url": "example.com", "docroot": "/var/www/html/example"}'
 ```
 
-### List Domains
+### Delete Domain
 
 ```bash
-curl -X GET https://OPENPANEL:2083/api/domanis \
-  -H "Authorization: Bearer JWT_TOKEN_HERE"
+curl -X POST https://OPENPANEL:2083/api/domains/delete \
+  -H "Authorization: Bearer JWT_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{"domain_url": "example.com"}'
 ```
 
 
