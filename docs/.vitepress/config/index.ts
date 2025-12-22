@@ -203,7 +203,7 @@ export default defineConfig({
             },
             {
               text: 'opencli domains',
-              link: '/cli/domains.html',
+              link: '/cli/domains.md',
             },
             {
               text: 'opencli websites',
