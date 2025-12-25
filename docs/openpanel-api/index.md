@@ -68,7 +68,7 @@ Example response:
 ### List Domains
 
 ```bash
-curl -X GET https://OPENPANEL:2083/api/domanis \
+curl -X GET https://OPENPANEL:2083/api/domains \
   -H "Authorization: Bearer JWT_TOKEN_HERE"
 ```
 
