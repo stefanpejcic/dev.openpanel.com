@@ -128,12 +128,6 @@ The `available_versions` script performs various actions:
 - Saves the list to `/php_available_versions.json` in user home directory
 - optionally display the listf
 
-### Install a new version
-
-- To install a new PHP version **for a specific user**, edit their docker-compose.yml and .env files.
-- To install a new PHP version **for all new users**, edit the defailt docker-compose.yml and .env templates.
-- To install a new PHP version **for all existing users**, write a bash command to go over all user's .env and docker-compose.yml files.
-
 ### PHP.INI
 
 View or update current setting value from php.ini file for user:
