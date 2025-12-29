@@ -130,39 +130,9 @@ The `available_versions` script performs various actions:
 
 ### Install a new version
 
-To install a a new PHP version run the following command:
-
-```bash
-opencli php-install <USERNAME> <PHP-VERSION>
-```
-
-Example:
-```bash
-# opencli php-install stefan 8.2
-Hit:1 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
-Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
-Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
-Hit:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
-Hit:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
-Reading package lists... Done
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following additional packages will be installed:
-  php8.1-cli php8.1-common php8.1-opcache php8.1-readline
-Suggested packages:
-  php-pear
-The following NEW packages will be installed:
-  php8.1-cli php8.1-common php8.1-fpm php8.1-opcache php8.1-readline
-0 upgraded, 5 newly installed, 0 to remove and 5 not upgraded.
-Need to get 4804 kB of archives.
-After this operation, 21.1 MB of additional disk space will be used.
-..
-.
-```
-
-- You can specify php extensions to be installed by editing the [`/etc/openpanel/php/extensions.txt` file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/php/extensions.txt)
-- You can specify limits in php.ini file to be set by editing the [`/etc/openpanel/php/ini.txt` file](https://github.com/stefanpejcic/openpanel-configuration/blob/main/php/ini.txt)
+- To install a new PHP version **for a specific user**, edit their docker-compose.yml and .env files.
+- To install a new PHP version **for all new users**, edit the defailt docker-compose.yml and .env templates.
+- To install a new PHP version **for all existing users**, write a bash command to go over all user's .env and docker-compose.yml files.
 
 ### PHP.INI
 
