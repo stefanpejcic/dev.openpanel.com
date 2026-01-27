@@ -207,7 +207,7 @@ opencli user-password <USERNAME> <NEW_PASSWORD> --ssh
 ```
 Use the `--ssh` flag to also change the password for the SSH user in the container.
 
-## Login as User
+### Login as User
 
 This command allows you to generate an auto-login link for any OpenPanel user.
 
