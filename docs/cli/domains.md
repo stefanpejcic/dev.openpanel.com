@@ -10,20 +10,28 @@ To list all domains owned by a user run the following command:
 opencli domains-user <USERNAME>
 ```
 
-Example:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 # opencli domains-user stefan
 panel.pejcic.rs
 example.openpanel.com
 ```
+</details>
 
-To view document root, pass the `--docroot` flag, to view php versions pass the `--php_versions` flag, example:
+
+To view document root, pass the `--docroot` flag, to view php versions pass the `--php_versions` flag.
+
+<details>
+  <summary>Example output</summary>
 
 ```bash
 # opencli domains-user stefan --docroot --php_version
 panel.pejcic.rs	/var/www/html/pejcic.rs/panel	8.2
 example.openpanel.com	/var/www/html/example.openpanel.com	5.6
 ```
+</details>
 
 ## List all domains
 
@@ -33,23 +41,27 @@ To list all domains owned by all users run the following command:
 opencli domains-all
 ```
 
-Example:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 # opencli domains-all
 panel.pejcic.rs
 example.openpanel.com
-...
 ```
+</details>
 
-To view document root, pass the `--docroot` flag, to view php versions pass the `--php_versions` flag, example:
+To view document root, pass the `--docroot` flag, to view php versions pass the `--php_versions` flag.
+
+<details>
+  <summary>Example output</summary>
 
 ```bash
 # opencli domains-all --docroot --php_version
 panel.pejcic.rs	/var/www/html/pejcic.rs/panel	8.2
 example.openpanel.com	/var/www/html/example.openpanel.com	5.6
 ```
-
-
+</details>
 
 ## Edit domains
 
@@ -78,16 +90,13 @@ opencli domains-edit <DOMAIN_NAME> --ws
 ```
 
 ### status
-
 Display current status for domain (AutoSSL, Custom or No SSL):
-
 
 ```bash
 opencli domains-ssl <DOMAIN> status
 ```
 
 ### info
-
 Display fullchain and key for domain certificate:
 
 ```bash
@@ -95,18 +104,14 @@ opencli domains-ssl <DOMAIN> info
 ```
 
 ### auto
-
 Swith to autossl for a domain (default):
 
 ```bash
 opencli domains-ssl <DOMAIN> auto
 ```
 
-
 ### custom
-
 Set custom SSL to be used for a domain:
-
 
 ```bash
 opencli domains-ssl <DOMAIN> custom path/to/fullchain.pem path/to/key.pem
@@ -142,7 +147,6 @@ To load new dns zones into the bind server:
 ```bash
  opencli domains-dns reconfig
 ```  
-
 
 ### Check
 To check and validate dns zone for a domain:
@@ -223,7 +227,6 @@ Stop the DNS server:
  opencli domains-dns stop
 ```
 
-
 ## Check who owns a domain name
 
 To check which user owns a domain name run the following command:
@@ -232,14 +235,16 @@ To check which user owns a domain name run the following command:
 opencli domains-whoowns <DOMAIN-NAME>
 ```
 
-Example:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 opencli domains-whoowns pejcic.rs
 Owner of 'pejcic.rs': stefan
 ```
+</details>
 
 The `whoowns` script searches the database in order to determine which username added a domain.
-
 
 ## Add Domain to User
 
@@ -348,13 +353,16 @@ To parse domain (Caddy) access logs and generate static reports for users domain
 opencli domains-stats [USERNAME]
 ```
 
-Example:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 opencli domains-stats stefan
 Processing user: stefan
 Processed domain pejcic.rs for user stefan
 Processed domain openpanel.co for user stefan
 ```
+</details>
 
 To parse (Caddy) access logs for all active users and their domains run the script without username:
 
