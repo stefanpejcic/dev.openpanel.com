@@ -207,6 +207,30 @@ opencli user-password <USERNAME> <NEW_PASSWORD> --ssh
 ```
 Use the `--ssh` flag to also change the password for the SSH user in the container.
 
+## Login as User
+
+This command allows you to generate an auto-login link for any OpenPanel user.
+
+```bash
+opencli user-login <USERNAME>
+```
+
+example:
+```bash
+# opencli user-login demouser --open
+https://demo.openpanel.org:2083/login_autologin?admin_token=RMWvZK1cdeRkZQJGVQv682qby9XIPr&username=demouser
+```
+
+To invalidate an existing token for a user:
+```bash
+opencli user-login <USERNAME> --delete
+```
+
+To open the link in a browser:
+```bash
+opencli user-login <USERNAME> --open
+```
+
 ### Change Plan
 
 Command: `opencli user-change_plan` allows you to change plan for a user.
