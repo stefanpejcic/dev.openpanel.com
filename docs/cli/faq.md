@@ -6,7 +6,8 @@
 opencli faq
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
 
 ```bash
 # opencli faq
@@ -75,5 +76,5 @@ execute command opencli config update autoupdate off
 
 - opencli config update dev_mode yes
 ------------------------------------------------------------
-
 ```
+</details>
