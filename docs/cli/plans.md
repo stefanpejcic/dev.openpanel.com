@@ -170,22 +170,52 @@ List all users that are currently using a plan:
 opencli plan-usage
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
+
 ```bash
-opencli plan-usage
-+----+----------+-------+----------------+---------------------+
-| id | username | email | plan_name      | registered_date     |
-+----+----------+-------+----------------+---------------------+
-|  2 | rasa     | rasa  | cloud_4_apache | 2023-11-30 10:33:52 |
-|  3 | aas      | sasa  | cloud_4_apache | 2023-11-30 12:01:49 |
-+----+----------+-------+----------------+---------------------+
+# opencli plan-usage 'Standard plan'
++----+----------+-------------------+---------------+---------------------+
+| id | username | email             | plan_name     | registered_date     |
++----+----------+-------------------+---------------+---------------------+
+|  3 | demo     | stefan@netops.com | Standard plan | 2025-04-28 14:47:52 |
+|  4 | dummy    | dummy             | Standard plan | 2025-04-28 15:20:19 |
++----+----------+-------------------+---------------+---------------------+
+
 ```
+</details>
 
 You can also format the data as JSON:
 
 ```bash
 opencli plan-usage --json
 ```
+
+<details>
+  <summary>Example output</summary>
+  
+```json
+[
+  {
+    "id": "3",
+    "username": "demo",
+    "email": "stefan@netops.com",
+    "plan_name": "Standard plan",
+    "registered_date": "2025-04-28 14:47:52"
+  }
+]
+[
+  {
+    "id": "4",
+    "username": "dummy",
+    "email": "dummy",
+    "plan_name": "Standard plan",
+    "registered_date": "2025-04-28 15:20:19"
+  }
+]
+```
+</details>
+
 
 ## Delete Plan
 
@@ -195,20 +225,27 @@ Delete a plan if no users are currently using it.
 opencli plan-delete <PLAN_NAME> 
 ```
 
-Example:
+<details>
+  <summary>Example output</summary>
+  
 ```bash
-root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'
+# opencli plan-delete 'ubuntu_nginx_mysql'
 Plan 'ubuntu_nginx_mysql' deleted successfully.
 ```
+</details>
 
 TIP: use `'` or `"` around the plan name if it contains spaces: `"plan name here"`.
 
-`--json` flag can be passed to return the response as JSON:
+`--json` flag can be passed to return the response as JSON.
+
+<details>
+  <summary>Example output</summary>
 
 ```bash
-root@stefan:~# opencli plan-delete 'ubuntu_nginx_mysql'  --json
+# opencli plan-delete 'ubuntu_nginx_mysql'  --json
 {"message": "Plan 'ubuntu_nginx_mysql' deleted successfully."}
 ```
+</details>
 
 
 ## Edit Plan
@@ -236,8 +273,10 @@ opencli plan-edit id=<ID> name"<TEXT>" description="<TEXT>" emails=<COUNT> ftp=<
 | `bandwidth`     | Port speed in Mbit/s                                | Integer  |                                    |
 
 
-Example:
-```bash
-opencli plan-edit 1 "sad_se_zove_ovako" "novi plan skroz" 0 0 0 0 10 500000 1 1 1 openpanel/nginx 500
-```
+<details>
+  <summary>Example output</summary>
 
+```bash
+# opencli plan-edit 1 "sad_se_zove_ovako" "novi plan skroz" 0 0 0 0 10 500000 1 1 1 openpanel/nginx 500
+```
+</details>
