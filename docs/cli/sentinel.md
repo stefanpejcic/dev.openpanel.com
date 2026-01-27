@@ -10,7 +10,9 @@ opencli sentinel
 
 ![sentinel openpanel cli](https://i.postimg.cc/kg56D2x2/sentinel-openpaenl.png)
 
-## Email notification test examples
+
+<details>
+  <summary>Example email notifications</summary>
 
 ### Login to OpenAdmin from an unknown ip address
 ![sentinel_adminlogin.png](https://i.postimg.cc/jjdk02DP/sentinel-adminlogin.png)
@@ -47,3 +49,5 @@ opencli sentinel
 
 ### Hostname resolution alert
 ![sentinel_resolve.png](https://i.postimg.cc/158mPRqx/sentinel-resolve.png)
+
+</details>
