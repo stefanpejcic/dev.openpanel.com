@@ -9,7 +9,8 @@ opencli commands
 
 As new commands are added gradually, they might not yet be available in your OpenPanel version. To check if a command is available on a server, run `opencli commands`.
 
-Example output:
+<details>
+  <summary>Example output</summary>
 
 ```bash
 opencli server-ips
@@ -392,3 +393,4 @@ opencli locale
 Description: Install locales (Languages) for OpenPanel UI.
 Usage: opencli locale <CODE>
 ```
+</details>
