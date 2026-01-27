@@ -236,7 +236,7 @@ opencli user-login <USERNAME> --open
 Command: `opencli user-change_plan` allows you to change plan for a user.
 
 ```bash
-opencli user-change-plan <username> "<new_plan_name>"
+opencli user-change_plan <username> "<new_plan_name>"
 ```
 
 ### Quota
