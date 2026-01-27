@@ -6,9 +6,11 @@
 opencli version
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
 
 ```bash
 # opencli version
 1.7.4
 ```
+</details>
