@@ -12,13 +12,16 @@ opencli plan-list
 
 Example output:
 ```bash
-opencli plan-list
-+----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+--------------+
-| id | name                | description                     | domains_limit | websites_limit | email_limit | ftp_limit | disk_limit | inodes_limit | db_limit | cpu  | ram  | bandwidth | storage_file |
-+----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+--------------+
-|  1 | ubuntu_nginx_mysql  | Unlimited disk space and Nginx  |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 1    | 1g   |       100 | 0 GB         |
-|  2 | ubuntu_apache_mysql | Unlimited disk space and Apache |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 1    | 1g   |       100 | 0 GB         |
-+----+---------------------+---------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+--------------+
+# opencli plan-list
++----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
+| id | name                   | description                       | domains_limit | websites_limit | email_limit | ftp_limit | disk_limit | inodes_limit | db_limit | cpu  | ram  | bandwidth | feature_set |
++----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
+|  1 | Standard plan          | Small plan for testing            |             0 |             10 |           0 |         0 | 5 GB       |      1000000 |        0 | 2    | 2g   |        10 | default     |
+|  2 | Developer Plus         | 4 cores, 6G ram                   |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 4    | 6g   |       100 | default     |
+|  3 | unlimited plan         | literally unlimited!              |             0 |              0 |           0 |         0 | 0 GB       |            0 |        0 | 0    | 0g   |         0 | default     |
+|  4 | small 456              |                                   |             2 |              2 |           1 |         1 | 1 GB       |       100000 |        1 | 1    | 1g   |        10 | basic       |
+|  5 | Database Administrator | only mysql and phpmyadmin enabled |             0 |              0 |           0 |         0 | 0 GB       |            0 |        0 | 0    | 0g   |         0 | mysql_only  |
++----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
 ```
 
 You can also format the data as JSON:
@@ -26,6 +29,105 @@ You can also format the data as JSON:
 ```bash
 opencli plan-list --json
 ```
+
+<details>
+  <summary>Example output</summary>
+
+```json
+[
+  {
+    "id": "1",
+    "name": "Standard plan",
+    "description": "Small plan for testing",
+    "email_limit": "0",
+    "ftp_limit": "10",
+    "domains_limit": "0",
+    "websites_limit": "0",
+    "disk_limit": "5 GB",
+    "inodes_limit": "1000000",
+    "db_limit": "0",
+    "cpu": "2",
+    "ram": "2g",
+    "bandwidth": "10",
+    "feature_set": "default"
+  }
+]
+[
+  {
+    "id": "2",
+    "name": "Developer Plus",
+    "description": "4 cores, 6G ram",
+    "email_limit": "0",
+    "ftp_limit": "10",
+    "domains_limit": "0",
+    "websites_limit": "0",
+    "disk_limit": "10 GB",
+    "inodes_limit": "1000000",
+    "db_limit": "0",
+    "cpu": "4",
+    "ram": "6g",
+    "bandwidth": "100",
+    "feature_set": "default"
+  }
+]
+[
+  {
+    "id": "3",
+    "name": "unlimited plan",
+    "description": "literally unlimited!",
+    "email_limit": "0",
+    "ftp_limit": "0",
+    "domains_limit": "0",
+    "websites_limit": "0",
+    "disk_limit": "0 GB",
+    "inodes_limit": "0",
+    "db_limit": "0",
+    "cpu": "0",
+    "ram": "0g",
+    "bandwidth": "0",
+    "feature_set": "default"
+  }
+]
+[
+  {
+    "id": "4",
+    "name": "small 456",
+    "description": "",
+    "email_limit": "2",
+    "ftp_limit": "2",
+    "domains_limit": "1",
+    "websites_limit": "1",
+    "disk_limit": "1 GB",
+    "inodes_limit": "100000",
+    "db_limit": "1",
+    "cpu": "1",
+    "ram": "1g",
+    "bandwidth": "10",
+    "feature_set": "basic"
+  }
+]
+[
+  {
+    "id": "5",
+    "name": "Database Administrator",
+    "description": "only mysql and phpmyadmin enabled",
+    "email_limit": "0",
+    "ftp_limit": "0",
+    "domains_limit": "0",
+    "websites_limit": "0",
+    "disk_limit": "0 GB",
+    "inodes_limit": "0",
+    "db_limit": "0",
+    "cpu": "0",
+    "ram": "0g",
+    "bandwidth": "0",
+    "feature_set": "mysql_only"
+  }
+]
+```
+
+</details>
+
 
 ## Create Plan
 
