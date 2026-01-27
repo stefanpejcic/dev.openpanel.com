@@ -65,76 +65,38 @@ Example:
 PHP version for user 'stefan' updated to: 8.1
 ```
 
-### List installed versions
+### List versions
 
-To list all installed PHP versions for a user, run the following command:
+To list all available PHP versions for a user, grep 'php-fpm' in docker-compose.yml file for the user:
 
 ```bash
-opencli php-installed_versions <USERNAME>
+grep php-fpm- /home/ <USERNAME>/docker-compose.yml
 ```
-
 
 
 Example:
 ```bash
-# opencli php-installed_versions stefan
-php7.4
-php8.1
-php8.2
+# grep php-fpm- /home/demo/docker-compose.yml
+  php-fpm-5.6:
+    container_name: php-fpm-5.6
+  php-fpm-7.0:
+    container_name: php-fpm-7.0
+  php-fpm-7.1:
+    container_name: php-fpm-7.1
+  php-fpm-7.2:
+    container_name: php-fpm-7.2
+  php-fpm-7.3:
+    container_name: php-fpm-7.3
+  php-fpm-7.4:
+    container_name: php-fpm-7.4
+  php-fpm-8.0:
+    container_name: php-fpm-8.0
+  php-fpm-8.1:
+    container_name: php-fpm-8.1
+  php-fpm-8.2:
+    container_name: php-fpm-8.2
+  php-fpm-8.3:
+    container_name: php-fpm-8.3
+  php-fpm-8.4:
+    container_name: php-fpm-8.4
 ```
-
-### List available versions
-
-To get available (that can be installed) PHP versions for users' container, run the following command:
-
-```bash
-opencli php-available_versions <USERNAME>
-```
-
-Example:
-```bash
-# opencli php-available_versions stefan
-....
-PHP versions for user stefan have been updated and stored in /home/stefan/etc/.panel/php/php_available_versions.json.
-```
-
-The script will by default update users' available PHP versions setting for the UI, optionally you can add `--show` flag to display the available versions.
-
-```bash
-opencli php-available_versions <USERNAME> --show
-```
-
-Example:
-```bash
-# opencli php-available_versions stefan --show
-....
-Available PHP versions for user stefan:
-php8.1-fpm
-php5.6-fpm
-php7.0-fpm
-php7.1-fpm
-php7.2-fpm
-php7.3-fpm
-php7.4-fpm
-php8.0-fpm
-php8.2-fpm
-php8.3-fpm
-```
-
-The `available_versions` script performs various actions:
-
-- Runs `apt-get update` inside users container
-- Lists available PHP versions from remote repositories
-- Saves the list to `/php_available_versions.json` in user home directory
-- optionally display the listf
-
-### PHP.INI
-
-View or update current setting value from php.ini file for user:
-
-```bash
-opencli php-ini <username> <action> <setting> [value]
-```
-
-
-- You can [specify a custom link from which to download files](https://openpanel.com/docs/articles/user-experience/install-older-ioncube-loader-extensions/), by creating a file `/etc/openpanel/php/ioncube.txt` and setting link in it.
