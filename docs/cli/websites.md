@@ -30,35 +30,6 @@ use `-all` flag to run for all users:
 opencli websites-scan -all
 ```
 
-
-### Google Index
-
-Get Google Index status for a single website:
-
-```bash
-opencli websites-google_indexed --domain <WEBSITE>
-```
-
-Example response:
-
-```bash
-# opencli websites-google_indexed --domain pcx3.com
-{
-  "timestamp": "2025-06-03 10:18:16",
-  "domain": "pcx3.com",
-  "indexed": true,
-  "results_count": "1000"
-}
-```
-
-
-Get Google Index status for all websites:
-
-```bash
-opencli websites-google_indexed
-```
-
-
 ### PageSpeed
 
 Get Google PageSpeed data for a single website:
