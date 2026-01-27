@@ -10,7 +10,9 @@ To list all current hosting packages (plans) run:
 opencli plan-list
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 # opencli plan-list
 +----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
@@ -23,6 +25,7 @@ Example output:
 |  5 | Database Administrator | only mysql and phpmyadmin enabled |             0 |              0 |           0 |         0 | 0 GB       |            0 |        0 | 0    | 0g   |         0 | mysql_only  |
 +----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
 ```
+</details>
 
 You can also format the data as JSON:
 
