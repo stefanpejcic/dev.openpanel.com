@@ -203,9 +203,8 @@ opencli user-email <USERNAME> <NEW_EMAIL>
 To reset the password for a OpenPanel user, you can use the `user-password` command:
 
 ```bash
-opencli user-password <USERNAME> <NEW_PASSWORD> --ssh
+opencli user-password <USERNAME> <NEW_PASSWORD>
 ```
-Use the `--ssh` flag to also change the password for the SSH user in the container.
 
 ### Login as User
 
