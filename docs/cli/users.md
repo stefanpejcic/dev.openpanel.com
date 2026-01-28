@@ -124,7 +124,9 @@ opencli user-list --total --json
 opencli user-list --over_quota
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 opencli user-list --over_quota
 
@@ -133,6 +135,7 @@ User            used    soft    hard  grace    used  soft  hard  grace
 ----------------------------------------------------------------------
 api       +- 6228924 5120000 5120000   none   73320 1000000 1000000  
 ```
+</details>
 
 #### List all users Quotas
 
