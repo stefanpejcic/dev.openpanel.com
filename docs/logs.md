@@ -25,11 +25,8 @@ Services used by OpenPanel have the following logs:
 
 | Log file | Description |
 |----------|-------------|
-|`/var/log/nginx/access.log`|Nginx access log|
-|`/var/log/nginx/error.log`|Nginx error log|
 |`docker logs openpanel_mysql`|MySQL error log|
 |`docker logs openpanel_dns`|DNS service logs|
-|`docker logs $USERNAME`|Docker logs for user|
 
 
 Logs can be viewed from the [OpenAdmin > Services > Log Viewer](https://openpanel.com/docs/admin/services/log_viewer/) and Administrators can even [add custom log files to OpenAdmin Log Viewer](https://openpanel.com/docs/admin/services/log_viewer/#how-to-add-more-files-to-openadmin-log-viewer).
