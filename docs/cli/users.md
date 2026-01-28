@@ -497,34 +497,6 @@ View up to last 20 successfull logins for the user.
 opencli user-loginlog <USERNAME> [--json]
 ```
 
-### REDIS
-Check REDIS service status for user and enable/disable REDIS® service.
-
-```bash
-opencli user-redis [check|enable|disable] <USERNAME>
-```
-
-Example:
-```bash
-opencli user-redis check stefan
-
-Memcached is not installed for user stefan.
-```
-
-### Memcached
-Check Memcached service status for user and enable/disable Memcached service.
-
-```bash
-opencli user-memcached [check|enable|disable] <USERNAME>
-```
-
-Example:
-```bash
-opencli user-memcached enable stefan
-
-Memcached enabled successfully for user stefan.
-```
-
 ### Varnish
 Check Varnish Caching status for user and enable/disable Varnish service.
 
