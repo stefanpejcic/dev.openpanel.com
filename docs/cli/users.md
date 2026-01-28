@@ -10,19 +10,22 @@ To list all users, use the following command:
 opencli user-list
 ```
 
-Example output:
+
+<details>
+  <summary>Example output</summary>
+
 ```bash
-opencli user-list
-+----+-----------+---------------------------------+-----------------------+-----------+---------+---------------------+
-| id | username  | email                           | plan_name             | server    | owner   | registered_date     |
-+----+-----------+---------------------------------+-----------------------+-----------+---------+---------------------+
-|  1 | pejcic    | stefan@pejcic.rs                | Nesto trece           | pejcic    | NULL    | 2025-02-19 11:32:05 |
-|  2 | nesto     | stefan@netops.com               | Cloud Web Starter     | nesto     | NULL    | 2025-02-19 11:33:28 |
-|  5 | jecmenica | jecmenica@jecmenica.rs          | Nginx MySQL Basic     | jecmenica | NULL    | 2025-02-19 14:20:50 |
-|  8 | ajde      | ajde                            | LiteSpeed Nginx Boost | ajde      | NULL    | 2025-02-20 09:11:23 |
-|  9 | fctuzc3n  | fctuzc3n                        | Nginx MySQL Basic     | fctuzc3n  | pavlaka | 2025-02-20 18:50:07 |
-+----+-----------+---------------------------------+-----------------------+-----------+---------+---------------------+
+# opencli user-list
++----+----------------+-------------------+----------------+----------------+-------+---------------------+
+| id | username       | email             | plan_name      | server         | owner | registered_date     |
++----+----------------+-------------------+----------------+----------------+-------+---------------------+
+|  1 | stefan         | stefan@pejcic.rs  | Developer Plus | stefan         | NULL  | 2025-12-25 14:49:38 |
+|  2 | panel          | stefan@netops.com | Developer Plus | panel          | NULL  | 2025-12-25 14:50:18 |
+|  6 | emailfilterapi | emailfilterapi    | Developer Plus | emailfilterapi | NULL  | 2026-01-28 12:25:41 |
++----+----------------+-------------------+----------------+----------------+-------+---------------------+
 ```
+</details>
+
 
 You can also format the data as JSON:
 
@@ -30,16 +33,89 @@ You can also format the data as JSON:
 opencli user-list --json
 ```
 
+<details>
+  <summary>Example output</summary>
+
+```json
+{
+  "data": [
+    {
+      "id": 1000,
+      "username": "stefan",
+      "context": "stefan",
+      "owner": "root",
+      "package": {
+        "name": "Developer Plus",
+        "owner": "root"
+      },
+      "email": "stefan@pejcic.rs",
+      "locale_code": "EN_us"
+    },
+    {
+      "id": 1001,
+      "username": "panel",
+      "context": "panel",
+      "owner": "root",
+      "package": {
+        "name": "Developer Plus",
+        "owner": "root"
+      },
+      "email": "stefan@netops.com",
+      "locale_code": "EN_us"
+    },
+    {
+      "id": 1002,
+      "username": "emailfilterapi",
+      "context": "emailfilterapi",
+      "owner": "root",
+      "package": {
+        "name": "Developer Plus",
+        "owner": "root"
+      },
+      "email": "emailfilterapi",
+      "locale_code": "EN_us"
+    }
+  ],
+  "metadata": {
+    "result": "ok"
+  }
+}
+```
+</details>
+
+
 To display only user count:
 
 ```bash
 opencli user-list --total
 ```
+
+<details>
+  <summary>Example output</summary>
+
+```bash
+# opencli user-list --total
+Total number of users: 3
+```
+</details>
+
+
 or:
 
 ```bash
 opencli user-list --total --json
 ```
+
+<details>
+  <summary>Example output</summary>
+
+```bash
+#opencli user-list --total --json
+3
+```
+</details>
+
+
 
 #### List users over Quota
 
@@ -65,23 +141,31 @@ api       +- 6228924 5120000 5120000   none   73320 1000000 1000000
 opencli user-list --quota
 ```
 
-Example output:
-```bash
-opencli user-list --quota
 
+<details>
+  <summary>Example output</summary>
+
+```bash
+# opencli user-list --quota
                         Block limits                File limits
 User            used    soft    hard  grace    used  soft  hard  grace
 ----------------------------------------------------------------------
-api       +- 6228924 5120000 5120000   none   73320 1000000 1000000       
-root@baze:/# bash  a --quota
-                        Block limits                File limits
-User            used    soft    hard  grace    used  soft  hard  grace
-----------------------------------------------------------------------
-root      -- 15657452       0       0         333161     0     0       
-dnsmasq   --      88       0       0             10     0     0       
-api       +- 6228924 5120000 5120000   none   73320 1000000 1000000       
-dbonly    -- 1317260 5120000 5120000          22140 1000000 1000000       
+stefan    -- 8539632 10240000 10240000         102072 1000000 1000000       
+panel     -- 2594328 10240000 10240000          57712 1000000 1000000       
+emailfilterapi -- 1430620 20480000 20480000          29462 2500000 2500000       
+#100999   --      16       0       0              4     0     0       
+#100041   --      20       0       0              5     0     0       
+#100032   --      20       0       0              5     0     0       
+#100500   --    1576       0       0            269     0     0       
+#100998   --  302664       0       0            618     0     0       
+#165568   --      16       0       0              4     0     0       
+#165577   --      12       0       0              3     0     0       
+#166036   --    1576       0       0            269     0     0       
+#166534   --  258916       0       0            264     0     0       
+#231113   --      20       0       0              5     0     0       
+#231172   --      20       0       0              5     0     0       
 ```
+</details>
 
 ### Add User
 
@@ -120,11 +204,15 @@ To create a new user on another server:
 opencli user-add <USERNAME> <PASSWORD> <EMAIL> "<PLAN_NAME>" --server=<IP_ADDRESS> --key=<SSH_KEY_PATH>
 ```
 
+<details>
+  <summary>Example output</summary>
 
-Example:
 ```bash
-opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --server=11.54.64.71 --key=/root/some_key.rsa
+opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --server=11.54.64.71 --key=/root/some_key.rsa   
 ```
+</details>
+
+
 
 #### Create user for Reseller
 
@@ -133,10 +221,13 @@ opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --server
 opencli user-add <USERNAME> <PASSWORD> <EMAIL> "<PLAN_NAME>" --reseller=<RESELLER_USERNAME>
 ```
 
-Example:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --reseller=pejcic
 ```
+</details>
 
 ### Transfer User
 
@@ -214,11 +305,14 @@ This command allows you to generate an auto-login link for any OpenPanel user.
 opencli user-login <USERNAME>
 ```
 
-example:
+<details>
+  <summary>Example output</summary>
+
 ```bash
 # opencli user-login demouser --open
 https://demo.openpanel.org:2083/login_autologin?admin_token=RMWvZK1cdeRkZQJGVQv682qby9XIPr&username=demouser
 ```
+</details>
 
 To invalidate an existing token for a user:
 ```bash
@@ -246,6 +340,18 @@ Command: `opencli user-quota` enforces and recalculates disk and inodes for spec
 opencli user-quota <username|--all>
 ```
 
+<details>
+  <summary>Example output</summary>
+
+```bash
+# opencli user-quota stefan
+[2026-01-28 17:51:40] Processing user: stefan
+[2026-01-28 17:51:40] Quota set for user stefan: 20480000 blocks (20 GB) and 2500000 inodes
+[2026-01-28 17:51:40] Updating repquota file...
+[2026-01-28 17:51:40] Repquota file updated successfully: /etc/openpanel/openpanel/core/users/repquota
+```
+</details>
+
 ### Resources
 
 Command: `opencli user-resources` lists a user's active services, allows editing of their CPU and RAM limits, and can start or stop the services.
@@ -268,6 +374,50 @@ Example:
   opencli user-resources stefan --service=apache --update_cpu=1.5
 ```
 
+
+<details>
+  <summary>Example output</summary>
+
+```json
+# opencli user-resources stefan --json
+{
+  "context": "stefan",
+  "services": [
+    {
+      "name": "redis",
+      "cpu": "0.1",
+      "ram": "0.1"
+    },
+    {
+      "name": "mariadb",
+      "cpu": "2.0",
+      "ram": "2"
+    },
+    {
+      "name": "apache",
+      "cpu": "0.5",
+      "ram": "0.5"
+    },
+    {
+      "name": "php-fpm-8.5",
+      "cpu": "2",
+      "ram": "2"
+    }
+  ],
+  "limits": {
+    "cpu": {
+      "used": 4.6,
+      "total": 4
+    },
+    "ram": {
+      "used": 4.6,
+      "total": 6
+    }
+  },
+  "message": ""
+}
+```
+</details>
 
 ### Check / Disable 2FA
 
@@ -309,10 +459,11 @@ Check files and security for a user:
 opencli user-check <USERNAME>
 ```
 
-Example report:
+<details>
+  <summary>Example output</summary>
 
 ```bash
-root@test:/usr/local/# opencli user-check mozda
+# opencli user-check mozda
 ===== Checking user: mozda =====
 ---- Docker Daemon Security ----
 [INFO] Running for user: mozda
@@ -400,8 +551,9 @@ Total checks performed: 70
 ℹ️  Info: 3
 
 ⚠️  Critical issues found! Please review and address failed checks.
-
 ```
+</details>
+
 
 
 
@@ -416,63 +568,79 @@ opencli user-disk <USERNAME> <summary|detail|path> [--json]
 Example usage:
 
 - Disk usage summary for user:
-  ```bash
-  # opencli user-disk proba summary
+
+  <details>
+    <summary>Example output</summary>
   
-  -------------- disk usage --------------
-  - 564M	/home/proba
-  - 864M	/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184
-  ```
-  
-  ```bash
-  # opencli user-disk proba summary --json
-  
-  {"home_directory_usage": "564564", "docker_container_usage": "883864", "home_path": "/home/proba", "docker_path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184"}
-  ```
+    ```bash
+    # opencli user-disk proba summary
+    
+    -------------- disk usage --------------
+    - 564M	/home/proba
+    - 864M	/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184
+    ```
+    
+    ```bash
+    # opencli user-disk proba summary --json
+    
+    {"home_directory_usage": "564564", "docker_container_usage": "883864", "home_path": "/home/proba", "docker_path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184"}
+    ```
+  </details>
+
+
 
 - Detailed disk usage report for user:
-  ```bash
-  # opencli user-disk proba detail
-  ------------- home directory -------------
-  - home directory:        /home/proba
-  - mountpoint:            /home/proba
-  - bytes used:            61440
-  - bytes total:           10375548928
-  - bytes limit:           true
-  - inodes used:           20
-  - inodes total:          1000960
-  ---------------- container ---------------
-  - container directory:   /var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184
-  - bytes used:            1025388544
-  - bytes total:           10726932480
-  - inodes used:           20905
-  - inodes total:          5242880
-  - storage driver:        devicemapper
-  ```
-  
-  ```bash
-  # opencli user-disk proba detail --json
-  
-  {
-    "user": "proba",
-    "home": {
-      "path": "/home/proba",
-      "bytes_used": "61440",
-      "bytes_total": "10375548928",
-      "bytes_limit": true,
-      "inodes_used": "20",
-      "inodes_total": "1000960"
-    },
-    "container": {
-      "path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184",
-      "storage_driver": "devicemapper",
-      "bytes_used": "1025388544",
-      "bytes_total": "10726932480",
-      "inodes_used": "20905",
-      "inodes_total": "5242880"
+
+  <details>
+    <summary>Example output</summary>
+
+    ```bash
+    # opencli user-disk proba detail
+    ------------- home directory -------------
+    - home directory:        /home/proba
+    - mountpoint:            /home/proba
+    - bytes used:            61440
+    - bytes total:           10375548928
+    - bytes limit:           true
+    - inodes used:           20
+    - inodes total:          1000960
+    ---------------- container ---------------
+    - container directory:   /var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184
+    - bytes used:            1025388544
+    - bytes total:           10726932480
+    - inodes used:           20905
+    - inodes total:          5242880
+    - storage driver:        devicemapper
+    ```
+  </details>
+
+  <details>
+    <summary>Example output</summary>
+    
+    ```bash
+    # opencli user-disk proba detail --json
+    
+    {
+      "user": "proba",
+      "home": {
+        "path": "/home/proba",
+        "bytes_used": "61440",
+        "bytes_total": "10375548928",
+        "bytes_limit": true,
+        "inodes_used": "20",
+        "inodes_total": "1000960"
+      },
+      "container": {
+        "path": "/var/lib/docker/devicemapper/mnt/ac28d2b066f5ffcacf4510b042623f6a3c196bd4f5fb9e842063c5325e4d0184",
+        "storage_driver": "devicemapper",
+        "bytes_used": "1025388544",
+        "bytes_total": "10726932480",
+        "inodes_used": "20905",
+        "inodes_total": "5242880"
+      }
     }
-  }
-  ```
+    ```
+  </details>
 
 - Paths for user:
   ```bash
