@@ -173,7 +173,7 @@ opencli user-delete --all
 To suspend (temporary disable access) to user, run the follwowing command:
 
 ```bash
-opencli user-suspend <USERNAME>
+opencli user-suspend <USERNAME> [-y]
 ```
 
 ### Unsuspend User
