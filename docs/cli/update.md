@@ -17,7 +17,8 @@ Start update immediately, regardless of `autoupdate` or `autopatch` setting:
 opencli update --force
 ```
 
-Update only OpenAdmin UI *(`/usr/local/admin/` from https://github.com/stefanpejcic/openadmin )*:
+Update only OpenAdmin UI:
+*(`/usr/local/admin/` from https://github.com/stefanpejcic/openadmin )*:
 ```bash
 opencli update --admin
 ```
