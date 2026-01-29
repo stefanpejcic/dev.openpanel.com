@@ -17,18 +17,17 @@ Start update immediately, regardless of `autoupdate` or `autopatch` setting:
 opencli update --force
 ```
 
-Update only OpenAdmin UI:
-*(`/usr/local/admin/` from https://github.com/stefanpejcic/openadmin )*:
+Update only OpenAdmin UI *(`/usr/local/admin/` from [stefanpejcic/openadmin](https://github.com/stefanpejcic/openadmin))*:
 ```bash
 opencli update --admin
 ```
 
-Update only OpenPanel UI *(docker image from https://hub.docker.com/r/openpanel/openpanel-ui )*:
+Update only OpenPanel UI *(docker image from [openpanel/openpanel-ui](https://hub.docker.com/r/openpanel/openpanel-ui))*:
 ```bash
 opencli update --panel
 ```
 
-Update only OpenCLI *(`/usr/local/opencli/` from https://github.com/stefanpejcic/opencli )*:
+Update only OpenCLI *(`/usr/local/opencli/` from [stefanpejcic/opencli](https://github.com/stefanpejcic/opencli))*:
 ```bash
 opencli update --cli
 ```
