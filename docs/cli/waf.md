@@ -1,13 +1,28 @@
 # CorazaWAF
 
-`opencli waf` command can be used to view CorazaWAF stats.
-
+`opencli waf` command can be used to enable/disable CorazaWAF on the server, enable/disable WAF per domain, view rules, view statistics, etc.
 
 ## Status
 
 ```bash
 opencli waf status
 ```
+
+
+## Enable
+
+```bash
+opencli waf enable
+```
+
+
+## Disable
+
+```bash
+opencli waf disable
+```
+
+
 
 ## Domain
 
