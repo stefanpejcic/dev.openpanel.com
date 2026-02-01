@@ -457,32 +457,6 @@ Example response:
 
 
 
-### Hosting Info
-
-Returns server system information.
-
-```bash
-curl -X GET https://OPENPANEL:2083/api/system/hosting/info \
-  -H "Authorization: Bearer JWT_TOKEN_HERE"
-```
-
-Example response:
-```json
-{
-  "ip": "95.217.216.36",
-  "load_avg": "0.27, 0.46, 0.59",
-  "machine": "aarch64",
-  "node": "2282e9e7eee2",
-  "processor": "",
-  "release": "5.14.0-503.38.1.el9_5.aarch64",
-  "system": "Linux",
-  "uptime": "27 days",
-  "version": "#1 SMP PREEMPT_DYNAMIC Fri Apr 18 08:35:41 EDT 2025"
-}
-```
-
-
-
 
 ### Hosting Info
 
