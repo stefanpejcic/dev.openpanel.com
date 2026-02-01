@@ -299,6 +299,10 @@ export default defineConfig({
               link: '/openadmin-api/docker.html',
             },
             {
+              text: '/openadmin-api/notifications',
+              link: '/openadmin-api/notifications.html',
+            },            
+            {
               text: '/openadmin-api/system',
               link: '/openadmin-api/system.html',
             },
