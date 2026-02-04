@@ -170,29 +170,13 @@ export default defineConfig({
               link: '/cli/commands.html',
             },
             {
-              text: 'opencli admin',
-              link: '/cli/admin.html',
-            },            
-            {
-              text: 'opencli domain',
-              link: '/cli/domain.html',
-            },
-            {
-              text: 'opencli port',
-              link: '/cli/port.html',
-            },            
-            {
-              text: 'opencli proxy',
-              link: '/cli/proxy.html',
-            },
-            {
               text: 'opencli config',
               link: '/cli/config.html',
             },
             {
-              text: 'opencli sentinel',
-              link: '/cli/sentinel.html',
-            },
+              text: 'opencli admin',
+              link: '/cli/admin.html',
+            },            
             {
               text: 'opencli user',
               link: '/cli/users.html',
@@ -206,32 +190,28 @@ export default defineConfig({
               link: '/cli/domains.md',
             },
             {
-              text: 'opencli websites',
-              link: '/cli/websites.html',
-            },
-            {
               text: 'opencli email',
               link: '/cli/email.html',
+            },
+            {
+              text: 'opencli ftp',
+              link: '/cli/ftp.html',
+            },
+            {
+              text: 'opencli websites',
+              link: '/cli/websites.html',
             },
             {
               text: 'opencli php',
               link: '/cli/php.html',
             },
             {
-              text: 'opencli waf',
-              link: '/cli/waf.html',
-            },
-            {
-              text: 'opencli imunify',
-              link: '/cli/imunify.html',
-            },
-            {
               text: 'opencli webserver',
               link: '/cli/webserver.html',
             },
             {
-              text: 'opencli server',
-              link: '/cli/server.html',
+              text: 'opencli waf',
+              link: '/cli/waf.html',
             },
             {
               text: 'opencli docker',
@@ -242,36 +222,57 @@ export default defineConfig({
               link: '/cli/files.html',
             },
             {
-              text: 'opencli ftp',
-              link: '/cli/ftp.html',
-            },
+              text: 'opencli update',
+              link: '/cli/update.html',
+            },   
             {
               text: 'opencli locale',
               link: '/cli/locale.html',
-            },
-            {
-              text: 'opencli api',
-              link: '/cli/api.html',
-            },
+            },        
             {
               text: 'opencli license',
               link: '/cli/license.html',
             },
             {
-              text: 'opencli dev',
-              link: '/cli/dev.html',
+              text: 'opencli domain',
+              link: '/cli/domain.html',
+            },
+            {
+              text: 'opencli port',
+              link: '/cli/port.html',
+            },            
+            {
+              text: 'opencli proxy',
+              link: '/cli/proxy.html',
+            },
+            {
+              text: 'opencli report',
+              link: '/cli/report.html',
+            },
+
+            {
+              text: 'opencli sentinel',
+              link: '/cli/sentinel.html',
+            },
+            {
+              text: 'opencli imunify',
+              link: '/cli/imunify.html',
+            },
+            {
+              text: 'opencli server',
+              link: '/cli/server.html',
             },
             {
               text: 'opencli error',
               link: '/cli/error.html',
             },
             {
-              text: 'opencli report',
-              link: '/cli/report.html',
+              text: 'opencli dev',
+              link: '/cli/dev.html',
             },
             {
-              text: 'opencli update',
-              link: '/cli/update.html',
+              text: 'opencli api',
+              link: '/cli/api.html',
             },
           ],
         },
