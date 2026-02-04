@@ -230,6 +230,10 @@ export default defineConfig({
               link: '/cli/webserver.html',
             },
             {
+              text: 'opencli server',
+              link: '/cli/server.html',
+            },
+            {
               text: 'opencli docker',
               link: '/cli/docker.html',
             },
