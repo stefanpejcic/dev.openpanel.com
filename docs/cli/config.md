@@ -721,6 +721,26 @@ opencli config update autopurge_trash 7
 ```
 
 
+### `filemanager_buttons_style`
+
+Set default buttons style on 'OpenPanel > File Manager' - Available 'classic' 'modern'
+
+**Check current value**:
+```bash
+opencli config get filemanager_buttons_style
+```
+
+Set 'classic':
+```bash
+opencli config update filemanager_buttons_style classic
+```
+
+Set 'modern':
+```bash
+opencli config update filemanager_buttons_style modern
+```
+
+
 ### `filemanager_edit_size`
 Maximum file size (in MB) allowed for editing files using the File Manager.
 
