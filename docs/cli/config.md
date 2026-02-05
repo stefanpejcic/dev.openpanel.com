@@ -734,11 +734,14 @@ Set 'classic':
 ```bash
 opencli config update filemanager_buttons_style classic
 ```
+![classic screenshot](/openpanel_filemanager_buttons_classic.png)
+
 
 Set 'modern':
 ```bash
 opencli config update filemanager_buttons_style modern
 ```
+![modern screenshot](/openpanel_filemanager_buttons_modern.png)
 
 
 ### `filemanager_edit_size`
