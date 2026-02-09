@@ -15,15 +15,13 @@ opencli plan-list
 
 ```bash
 # opencli plan-list
-+----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
-| id | name                   | description                       | domains_limit | websites_limit | email_limit | ftp_limit | disk_limit | inodes_limit | db_limit | cpu  | ram  | bandwidth | feature_set |
-+----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
-|  1 | Standard plan          | Small plan for testing            |             0 |             10 |           0 |         0 | 5 GB       |      1000000 |        0 | 2    | 2g   |        10 | default     |
-|  2 | Developer Plus         | 4 cores, 6G ram                   |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 4    | 6g   |       100 | default     |
-|  3 | unlimited plan         | literally unlimited!              |             0 |              0 |           0 |         0 | 0 GB       |            0 |        0 | 0    | 0g   |         0 | default     |
-|  4 | small 456              |                                   |             2 |              2 |           1 |         1 | 1 GB       |       100000 |        1 | 1    | 1g   |        10 | basic       |
-|  5 | Database Administrator | only mysql and phpmyadmin enabled |             0 |              0 |           0 |         0 | 0 GB       |            0 |        0 | 0    | 0g   |         0 | mysql_only  |
-+----+------------------------+-----------------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+
++----+----------------+------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+-----------------+
+| id | name           | description            | domains_limit | websites_limit | email_limit | ftp_limit | disk_limit | inodes_limit | db_limit | cpu  | ram  | bandwidth | feature_set | max_email_quota |
++----+----------------+------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+-----------------+
+|  1 | Standard plan  | Small plan for testing |             0 |             10 |           0 |         0 | 5 GB       |      1000000 |        0 | 2    | 2g   |        10 | basic       | 10G             |
+|  2 | Developer Plus | 4 cores, 6G ram        |             0 |             10 |           0 |         0 | 10 GB      |      1000000 |        0 | 4    | 6g   |       100 | default     | 0               |
+|  3 | example        | ddfsds                 |             1 |              1 |           1 |         1 | 10 GB      |      1000000 |        1 | 1    | 1g   |       100 | default     | 10G             |
++----+----------------+------------------------+---------------+----------------+-------------+-----------+------------+--------------+----------+------+------+-----------+-------------+-----------------+
 ```
 </details>
 
@@ -52,7 +50,8 @@ opencli plan-list --json
     "cpu": "2",
     "ram": "2g",
     "bandwidth": "10",
-    "feature_set": "default"
+    "feature_set": "basic",
+    "max_email_quota": "10G"
   }
 ]
 [
@@ -70,63 +69,30 @@ opencli plan-list --json
     "cpu": "4",
     "ram": "6g",
     "bandwidth": "100",
-    "feature_set": "default"
+    "feature_set": "default",
+    "max_email_quota": "0"
   }
 ]
 [
   {
     "id": "3",
-    "name": "unlimited plan",
-    "description": "literally unlimited!",
-    "email_limit": "0",
-    "ftp_limit": "0",
-    "domains_limit": "0",
-    "websites_limit": "0",
-    "disk_limit": "0 GB",
-    "inodes_limit": "0",
-    "db_limit": "0",
-    "cpu": "0",
-    "ram": "0g",
-    "bandwidth": "0",
-    "feature_set": "default"
-  }
-]
-[
-  {
-    "id": "4",
-    "name": "small 456",
-    "description": "",
-    "email_limit": "2",
-    "ftp_limit": "2",
+    "name": "example",
+    "description": "ddfsds",
+    "email_limit": "1",
+    "ftp_limit": "1",
     "domains_limit": "1",
     "websites_limit": "1",
-    "disk_limit": "1 GB",
-    "inodes_limit": "100000",
+    "disk_limit": "10 GB",
+    "inodes_limit": "1000000",
     "db_limit": "1",
     "cpu": "1",
     "ram": "1g",
-    "bandwidth": "10",
-    "feature_set": "basic"
+    "bandwidth": "100",
+    "feature_set": "default",
+    "max_email_quota": "10G"
   }
 ]
-[
-  {
-    "id": "5",
-    "name": "Database Administrator",
-    "description": "only mysql and phpmyadmin enabled",
-    "email_limit": "0",
-    "ftp_limit": "0",
-    "domains_limit": "0",
-    "websites_limit": "0",
-    "disk_limit": "0 GB",
-    "inodes_limit": "0",
-    "db_limit": "0",
-    "cpu": "0",
-    "ram": "0g",
-    "bandwidth": "0",
-    "feature_set": "mysql_only"
-  }
-]
+
 ```
 
 </details>
@@ -137,29 +103,29 @@ opencli plan-list --json
 To create a new plan run the following command:
 
 ```bash
-opencli plan-create name"<TEXT>" description="<TEXT>" emails=<COUNT> ftp=<COUNT> domains=<COUNT> websites=<COUNT> disk=<COUNT> inodes=<COUNT> databases=<COUNT> cpu=<COUNT> ram=<COUNT> bandwidth=<COUNT>
+opencli plan-create name"<TEXT>" description="<TEXT>" emails=<COUNT> ftp=<COUNT> domains=<COUNT> websites=<COUNT> disk=<COUNT> inodes=<COUNT> databases=<COUNT> cpu=<COUNT> ram=<COUNT> bandwidth=<COUNT> feature_set=<NAME> max_email_quota=<COUNT>
 ```
 
-| Parameter      | Description                                           | Type      | Notes                          |
-|--------------|-----------------------------------------------------|----------|-------------------------------|
-| `name`       | Name of the plan                                    | String   | Use quotes for multiple words |
-| `description`| Plan description                                   | String   | Use quotes for multiple words  |
-| `email_limit`| Max number of email accounts                       | Integer  | 0 for unlimited                |
-| `ftp_limit`  | Max number of FTP accounts                         | Integer  | 0 for unlimited                |
-| `domains_limit` | Max number of domains                          | Integer  | 0 for unlimited                |
-| `websites_limit` | Max number of websites                        | Integer  | 0 for unlimited                |
-| `disk_limit` | Disk space limit in GB                             | Integer  |                                |
-| `inodes_limit` | Max number of inodes                            | Integer  | Minimum 250000                 |
-| `db_limit`   | Max number of databases                            | Integer  | 0 for unlimited                |
-| `cpu`        | CPU core limit                                     | Integer  |                                |
-| `ram`        | RAM limit in GB                                    | Integer  |                                |
-| `bandwidth`  | Port speed in Mbit/s                               | Integer  |                                |
-
-
+| Parameter           | Description                                      | Type    | Notes                                                         |
+|---------------------|--------------------------------------------------|---------|---------------------------------------------------------------|
+| `name`              | Name of the plan                                 | String  | No spaces                                                     |
+| `description`       | Plan description                                 | String  | Use quotes for multiple words                                |
+| `feature_set`       | Feature set assigned to the plan                 | String  | Must match an existing feature set name                      |
+| `email_limit`       | Max number of email accounts                     | Integer | `0` for unlimited                                            |
+| `max_email_quota`   | Max size per email account                       | String  | Integer followed by `B`, `k`, `M`, `G`, or `T`; `0` unlimited |
+| `ftp_limit`         | Max number of FTP accounts                       | Integer | `0` for unlimited                                            |
+| `domains_limit`     | Max number of domains                            | Integer | `0` for unlimited                                            |
+| `websites_limit`    | Max number of websites                           | Integer | `0` for unlimited                                            |
+| `disk_limit`        | Disk space limit in GB                           | Integer |                                                               |
+| `inodes_limit`      | Max number of inodes                             | Integer | `0` for unlimited (minimum recommended: 250000)             |
+| `db_limit`          | Max number of databases                          | Integer | `0` for unlimited                                            |
+| `cpu`               | CPU core limit                                   | Integer |                                                               |
+| `ram`               | RAM limit in GB                                  | Integer |                                                               |
+| `bandwidth`         | Port speed in Mbit/s                             | Integer |                                                               |
 
 Example:
 ```bash
-opencli plan-create 'basic' 'Basic Hosting Plan' 10 5 10 5 50 500000 10 2 4 nginx 1000
+opencli plan-create name="New Plan" description="This is a new plan" emails=100 ftp=50 domains=20 websites=30 disk=100 inodes=100000 databases=10 cpu=4 ram=8 bandwidth=100 feature_set=default max_email_quota=2G"
 ```
 
 ## List Users on Plan
@@ -253,30 +219,32 @@ TIP: use `'` or `"` around the plan name if it contains spaces: `"plan name here
 Change plan limits.
 
 ```bash
-opencli plan-edit id=<ID> name"<TEXT>" description="<TEXT>" emails=<COUNT> ftp=<COUNT> domains=<COUNT> websites=<COUNT> disk=<COUNT> inodes=<COUNT> databases=<COUNT> cpu=<COUNT> ram=<COUNT> bandwidth=<COUNT> --debug
+opencli plan-edit --debug id=<ID> name"<TEXT>" description="<TEXT>" emails=<COUNT> ftp=<COUNT> domains=<COUNT> websites=<COUNT> disk=<COUNT> inodes=<COUNT> databases=<COUNT> cpu=<COUNT> ram=<COUNT> bandwidth=<COUNT> feature_set=<DEFAULT> max_email_quota=<COUNT>
 ```
 
-| Parameter        | Description                                           | Type      | Notes                              |
-|-----------------|-------------------------------------------------------|----------|------------------------------------|
-| `plan_id`       | ID of the plan                                        | Integer  | Required                          |
-| `new_plan_name` | New name of the plan                                  | String   | Use quotes for multiple words     |
-| `description`   | Plan description                                     | String   | Use quotes for multiple words     |
-| `email_limit`   | Max number of email accounts                         | Integer  | 0 for unlimited                    |
-| `ftp_limit`     | Max number of FTP accounts                           | Integer  | 0 for unlimited                    |
-| `domains_limit` | Max number of domains                               | Integer  | 0 for unlimited                    |
-| `websites_limit`| Max number of websites                              | Integer  | 0 for unlimited                    |
-| `disk_limit`    | Disk space limit in GB                              | Integer  |                                    |
-| `inodes_limit`  | Max number of inodes                                | Integer  | Minimum 250000                     |
-| `db_limit`      | Max number of databases                             | Integer  | 0 for unlimited                    |
-| `cpu`           | CPU core limit                                      | Integer  |                                    |
-| `ram`           | RAM limit in GB                                     | Integer  |                                    |
-| `bandwidth`     | Port speed in Mbit/s                                | Integer  |                                    |
+| Parameter           | Description                                      | Type    | Notes                                                         |
+|---------------------|--------------------------------------------------|---------|---------------------------------------------------------------|
+| `name`              | Name of the plan                                 | String  | No spaces                                                     |
+| `description`       | Plan description                                 | String  | Use quotes for multiple words                                |
+| `feature_set`       | Feature set assigned to the plan                 | String  | Must match an existing feature set name                      |
+| `email_limit`       | Max number of email accounts                     | Integer | `0` for unlimited                                            |
+| `max_email_quota`   | Max size per email account                       | String  | Integer followed by `B`, `k`, `M`, `G`, or `T`; `0` unlimited |
+| `ftp_limit`         | Max number of FTP accounts                       | Integer | `0` for unlimited                                            |
+| `domains_limit`     | Max number of domains                            | Integer | `0` for unlimited                                            |
+| `websites_limit`    | Max number of websites                           | Integer | `0` for unlimited                                            |
+| `disk_limit`        | Disk space limit in GB                           | Integer |                                                               |
+| `inodes_limit`      | Max number of inodes                             | Integer | `0` for unlimited (minimum recommended: 250000)             |
+| `db_limit`          | Max number of databases                          | Integer | `0` for unlimited                                            |
+| `cpu`               | CPU core limit                                   | Integer |                                                               |
+| `ram`               | RAM limit in GB                                  | Integer |                                                               |
+| `bandwidth`         | Port speed in Mbit/s                             | Integer |                                                               |
+
 
 
 <details>
   <summary>Example output</summary>
 
 ```bash
-# opencli plan-edit 1 "sad_se_zove_ovako" "novi plan skroz" 0 0 0 0 10 500000 1 1 1 openpanel/nginx 500
+# opencli plan-edit --debug id=1 name="New Plan" description="This is a new plan" emails=100 ftp=50 domains=20 websites=30 disk=100 inodes=100000 databases=10 cpu=4 ram=8 bandwidth=100 feature_set="default" max_email_quota="2G"
 ```
 </details>
