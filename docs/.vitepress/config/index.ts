@@ -182,7 +182,7 @@ export default defineConfig({
               link: '/cli/users.html',
             },
             {
-              text: 'opencli plans',
+              text: 'opencli plan',
               link: '/cli/plans.html',
             },
             {
