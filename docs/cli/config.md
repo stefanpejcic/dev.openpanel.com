@@ -896,3 +896,18 @@ opencli config get cron_max_file_size_kb
 ```bash
 opencli config update cron_max_file_size_kb 100
 ```
+
+
+### `mysql_import_max_size_gb`
+Max size in GB for file that is allowed to be imported via *OpenPanel > MySQL > Import* page. Default is `1`.
+
+**Check current value**:
+```bash
+opencli config get mysql_import_max_size_gb
+```
+
+**Set new value**:
+```bash
+opencli config update mysql_import_max_size_gb 100
+```
+
