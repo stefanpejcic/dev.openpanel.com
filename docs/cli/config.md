@@ -884,4 +884,15 @@ opencli config update filemanager_archives_extensions ".zip .tar .gz .tar.gz"
 ```
 
 
+### `cron_max_file_size_kb`
+Max size in KB for user's cronjob file `/home/{context}/crons.ini` to be editable via *OpenPanel > CronJobs* page. Default is `100`.
 
+**Check current value**:
+```bash
+opencli config get cron_max_file_size_kb
+```
+
+**Set new value**:
+```bash
+opencli config update cron_max_file_size_kb 100
+```
