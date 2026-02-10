@@ -911,3 +911,44 @@ opencli config get mysql_import_max_size_gb
 opencli config update mysql_import_max_size_gb 100
 ```
 
+### `mysql_startup_time`
+Max time in seconds to wait on *OpenPanel > MySQL* page when initializing database (first time user open the page) before considering mysql failed. Default is 10.
+
+**Check current value**:
+```bash
+opencli config get mysql_startup_time
+```
+
+**Set new value**:
+```bash
+opencli config update mysql_startup_time `0
+```
+
+
+### `mysql_restricted_usernames`
+List of usernames that will be considered system users and can not be edited via OpenPanel UI.
+
+**Check current value**:
+```bash
+opencli config get mysql_restricted_usernames
+```
+
+**Set new value**:
+```bash
+opencli config update mysql_restricted_usernames "mysql.sys mysql sys mariadb.sys phpmyadmin mysql.session mysql.infoschema root debian-sys-maint healthcheck"
+```
+
+
+### `mysql_restricted_databases`
+List of databases that will be considered system databases and can not be edited via OpenPanel UI.
+
+**Check current value**:
+```bash
+opencli config get mysql_restricted_databases
+```
+
+**Set new value**:
+```bash
+opencli config update mysql_restricted_databases "information_schema performance_schema mysql phpmyadmin sys mariadb.sys"
+```
+
