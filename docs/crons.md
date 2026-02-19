@@ -39,15 +39,6 @@ If user has configured pagespeed api keys, those will be used automatically for 
 - **Documentation:** [opencli websites-pagespeed](https://dev.openpanel.com/cli/websites.html#PageSpeed)
 
 
-
-## docker-usage_stats_cleanup
-Command `opencli docker-usage_stats_cleanup` rotates resource usage logs for all accounts according to the `resource_usage_retention` setting on the server.
-
-- **Default schedule:** daily at 02:00 (`0 2 * * *`)  
-- **Documentation:** [opencli docker-usage_stats_cleanup](https://dev.openpanel.com/cli/docker.html#Usage-Stats-Cleanup)
-
-
-
 ## update
 Command `opencli update` checks for OpenPanel updates and performs them if `autopatch` or `autoupdate` are enabled.
 
