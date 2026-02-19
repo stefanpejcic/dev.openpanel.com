@@ -30,6 +30,25 @@ use `-all` flag to run for all users:
 opencli websites-scan -all
 ```
 
+### Vulnerability
+
+Check WordPress website for WP core, theme and plugin vulnerabilities:
+
+```bash
+opencli websites-vulnerability <WEBSITE>
+```
+
+Example:
+```bash
+opencli websites-vulnerability pejcic.rs
+```
+
+Check vulnerabilities for all WordPress websites hosted on server:
+
+```bash
+opencli websites-vulnerability --all
+```
+
 ### PageSpeed
 
 Get Google PageSpeed data for a single website:
