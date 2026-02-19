@@ -106,11 +106,3 @@ To increase storage (disk) allocated to Docker, pass the size in **GB**:
 ```bash
 opencli docker-limits --apply 100
 ```
-
-### Usage Stats Cleanup
-
-Rotate resource usage logs for all users according to the [resource_usage_retention](#resource-usage-retention) setting.
-
-```bash
-opencli docker-usage_stats_cleanup
-```
