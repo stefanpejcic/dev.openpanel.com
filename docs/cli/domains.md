@@ -85,9 +85,35 @@ opencli domains-edit <DOMAIN_NAME> --ws
  opencli domains-ssl <DOMAIN>                 - Display command examples for this domain.
  opencli domains-ssl <DOMAIN> status          - Display current status for the domain.
  opencli domains-ssl <DOMAIN> info            - Display certificate files.
- opencli domains-ssl <DOMAIN> logs            - View caddy SSL-related logs for the domain.
+ opencli domains-ssl <DOMAIN> logs [1000|-f]  - View caddy SSL-related logs for the domain.
  opencli domains-ssl <DOMAIN> custom cert key - Swith to custom ssl for the domain.
  opencli domains-ssl <DOMAIN> auto            - Swith back to autossl for the domain.
+```
+
+### examples
+
+View command usage exmaples for a domain:
+
+```bash
+opencli domains-ssl <DOMAIN>
+```
+
+Example output:
+
+```bash
+root@srv54:~# opencli domains-ssl pcelarstvopejcic.com
+Usage examples for domain pcelarstvopejcic.com:
+
+- Check current SSL status for domain (AutoSSL, CustomSSL or No SSL):
+  opencli domains-ssl pcelarstvopejcic.com status
+- Display fullchain and key files for the domain:
+  opencli domains-ssl pcelarstvopejcic.com info
+- Set AutoSSL for the domain (default):
+  opencli domains-ssl pcelarstvopejcic.com auto
+- Add custom certificate for the domain:
+  opencli domains-ssl pcelarstvopejcic.com custom /var/www/html/fullchain.pem /var/www/html/key.pem
+- View SSL-related lines for the domain from Caddy logs:
+  opencli domains-ssl pcelarstvopejcic.com logs
 ```
 
 ### status
@@ -97,12 +123,51 @@ Display current status for domain (AutoSSL, Custom or No SSL):
 opencli domains-ssl <DOMAIN> status
 ```
 
+Example output:
+
+```bash
+root@srv54:~# opencli domains-ssl pcelarstvopejcic.com status
+AutoSSL
+```
+
 ### info
 Display fullchain and key for domain certificate:
 
 ```bash
 opencli domains-ssl <DOMAIN> info
 ```
+Example output:
+
+```bash
+root@srv54:~# opencli domains-ssl pcelarstvopejcic.com info
+-----BEGIN CERTIFICATE-----
+MIIDmzCCAyKgAwIBAgISBmHEsLgWFMdotAwbJBo+9L0VMAoGCCqGSM49BAMDMDIx
+CzAJBgNVBAYTAlVTMRYw..............x9GsowAA
+AZtWLgBSAAgAAAUAKzg8XAQDAEYwRAIgPxbs8KcweBO4ghg0XK3teYFSQo/x7xN/
+4rTo4qQZN/8CIGGIgrOCOWBwsvtLCVycVywRi/lnUOCsl+uCSJN4aQJVMAoGCCqG
+SM49BAMDA2cAMGQCMFPzjiN2t0JlZNmO9jb4k0enhhHgUPnbvGUhiA7/2JQ3mYSx
+aQP20PZ0kNAC4e8l0AIwUNOxk/oW3xyKixiw+o0T9lItwI+kqua4NwCr9c0oYR+n
+ePhIBRiFYF3MGWl6f8e1
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+MIIEVzCCAj+gAwIBAgIRAKp18eYrjwoiCWbTi7/UuqEwDQYJKoZIhvcNAQELBQAw
+TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAw
+WhcNMjcwMzEyMjM1OTU5WjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg
+RW5jcnlwdDELMAkGA1UEAxMCRTcwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAARB6AST
+CFh/vjcwDMCgQer+VtqEkz7JANurZxLP+U9TCeioL6sp5Z8VRvRbYk4P1INBmbef
+QHJFHCxcSjKmwtvGBWp................bqne3uZ2q1GyPFJ
+YRmT7/OXpmOH/FVLtwS+8ng1cAmpCujPwteJZNcDG0sF2n/sc0+SQf49fdyUK0ty
++VUwFj9tmWxyR/M=
+-----END CERTIFICATE-----
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIE1QvitCk3OxAV.............JLxELjKRdC6SIInOyN+yc4o4VP
+bJnB0V8........mgIqqgQ==
+-----END EC PRIVATE KEY-----
+
+```
+
 
 ### auto
 Swith to autossl for a domain (default):
@@ -111,11 +176,26 @@ Swith to autossl for a domain (default):
 opencli domains-ssl <DOMAIN> auto
 ```
 
+Example output:
+
+```bash
+root@srv54:~# opencli domains-ssl pcelarstvopejcic.com auto
+Updated pcelarstvopejcic.com to use AutoSSL.
+```
+
+
 ### custom
 Set custom SSL to be used for a domain:
 
 ```bash
 opencli domains-ssl <DOMAIN> custom path/to/fullchain.pem path/to/key.pem
+```
+
+Example output:
+
+```bash
+root@srv54:~# opencli domains-ssl pcelarstvopejcic.com custom /var/www/html/fullchain.pem /var/www/html/key.pem
+Updated pcelarstvopejcic.com to use custom SSL.
 ```
 
 
@@ -125,6 +205,18 @@ Display SSL-related entries in cadyd log for the domain:
 ```bash
 opencli domains-ssl <DOMAIN> logs
 ```
+
+Example output:
+
+```bash
+root@srv54:~# opencli domains-ssl pcelarstvopejcic.com logs 10000
+Showing SSL-related log lines for pcelarstvopejcic.com
+-------------------------------------------------------
+{"level":"warn","ts":1771498281.5536706,"logger":"tls","msg":"stapling OCSP","error":"no OCSP stapling for [pcelarstvopejcic.com]: no OCSP server specified in certificate","identifiers":["pcelarstvopejcic.com"]}
+{"level":"info","ts":1771567582.1398098,"logger":"tls.on_demand","msg":"updated ACME renewal information","identifiers":["pcelarstvopejcic.com"],"server_name":"pcelarstvopejcic.com","cert_hash":"4ff3c89d8a5904714756448b7c6d62c91dbeb0c3a40317af91d1f24f428c2bfe","ari_unique_id":"rkie3IcdRKBv2qLlYHQEeMKcAIA.BmHEsLgWFMdotAwbJBo-9L0V","cert_expiry":1774449902,"selected_time":1771888562,"next_update":1771590559.132008,"explanation_url":""}
+
+```
+
 
 You can also:
 - Show a specific number of log lines (e.g., 1000):
