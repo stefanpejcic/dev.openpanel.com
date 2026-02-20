@@ -92,13 +92,14 @@ opencli domains-edit <DOMAIN_NAME> --ws
 
 ### examples
 
-View command usage exmaples for a domain:
+View command usage examples for a domain:
 
 ```bash
 opencli domains-ssl <DOMAIN>
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
 
 ```bash
 root@srv54:~# opencli domains-ssl pcelarstvopejcic.com
@@ -116,6 +117,9 @@ Usage examples for domain pcelarstvopejcic.com:
   opencli domains-ssl pcelarstvopejcic.com logs
 ```
 
+</details>
+
+
 ### status
 Display current status for domain (AutoSSL, Custom or No SSL):
 
@@ -123,12 +127,15 @@ Display current status for domain (AutoSSL, Custom or No SSL):
 opencli domains-ssl <DOMAIN> status
 ```
 
-Example output:
-
+<details>
+  <summary>Example output</summary>
+  
 ```bash
 root@srv54:~# opencli domains-ssl pcelarstvopejcic.com status
 AutoSSL
 ```
+
+</details>
 
 ### info
 Display fullchain and key for domain certificate:
@@ -136,7 +143,9 @@ Display fullchain and key for domain certificate:
 ```bash
 opencli domains-ssl <DOMAIN> info
 ```
-Example output:
+
+<details>
+  <summary>Example output</summary>
 
 ```bash
 root@srv54:~# opencli domains-ssl pcelarstvopejcic.com info
@@ -168,6 +177,7 @@ bJnB0V8........mgIqqgQ==
 
 ```
 
+</details>
 
 ### auto
 Swith to autossl for a domain (default):
@@ -176,13 +186,15 @@ Swith to autossl for a domain (default):
 opencli domains-ssl <DOMAIN> auto
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
 
 ```bash
 root@srv54:~# opencli domains-ssl pcelarstvopejcic.com auto
 Updated pcelarstvopejcic.com to use AutoSSL.
 ```
 
+</details>
 
 ### custom
 Set custom SSL to be used for a domain:
@@ -191,13 +203,15 @@ Set custom SSL to be used for a domain:
 opencli domains-ssl <DOMAIN> custom path/to/fullchain.pem path/to/key.pem
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
 
 ```bash
 root@srv54:~# opencli domains-ssl pcelarstvopejcic.com custom /var/www/html/fullchain.pem /var/www/html/key.pem
 Updated pcelarstvopejcic.com to use custom SSL.
 ```
 
+</details>
 
 ### logs
 Display SSL-related entries in cadyd log for the domain:
@@ -206,7 +220,8 @@ Display SSL-related entries in cadyd log for the domain:
 opencli domains-ssl <DOMAIN> logs
 ```
 
-Example output:
+<details>
+  <summary>Example output</summary>
 
 ```bash
 root@srv54:~# opencli domains-ssl pcelarstvopejcic.com logs 10000
@@ -217,6 +232,7 @@ Showing SSL-related log lines for pcelarstvopejcic.com
 
 ```
 
+</details>
 
 You can also:
 - Show a specific number of log lines (e.g., 1000):
