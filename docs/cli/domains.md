@@ -118,6 +118,24 @@ opencli domains-ssl <DOMAIN> custom path/to/fullchain.pem path/to/key.pem
 ```
 
 
+### logs
+Display SSL-related entries in cadyd log for the domain:
+
+```bash
+opencli domains-ssl <DOMAIN> logs
+```
+
+You can also:
+- Show a specific number of log lines (e.g., 1000):
+   ```bash
+   opencli domains-ssl <DOMAIN_NAME> logs 1000
+   ```
+- Tail logs live to see new entries in real-time:
+   ```bash
+   opencli domains-ssl <DOMAIN_NAME> logs -f
+   ```
+
+
 ## DNS
 
 The `opencli domains-dns` command is used for everything dns related:
