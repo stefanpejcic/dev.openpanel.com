@@ -85,6 +85,7 @@ opencli domains-edit <DOMAIN_NAME> --ws
  opencli domains-ssl <DOMAIN>                 - Display command examples for this domain.
  opencli domains-ssl <DOMAIN> status          - Display current status for the domain.
  opencli domains-ssl <DOMAIN> info            - Display certificate files.
+ opencli domains-ssl <DOMAIN> logs            - View caddy SSL-related logs for the domain.
  opencli domains-ssl <DOMAIN> custom cert key - Swith to custom ssl for the domain.
  opencli domains-ssl <DOMAIN> auto            - Swith back to autossl for the domain.
 ```
