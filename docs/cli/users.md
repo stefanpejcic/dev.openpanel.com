@@ -207,6 +207,20 @@ To create a new user on another server:
 opencli user-add <USERNAME> <PASSWORD> <EMAIL> "<PLAN_NAME>" --server=<IP_ADDRESS> --key=<SSH_KEY_PATH>
 ```
 
+#### Create all new users on Slave server
+
+To automatically create all future users on another server:
+
+1. Create ssh key pair and establish ssh connection from master to the slave server.
+2. Set the new server IP and path to the key file in `/etc/openpanel/openadmin/config/admin.ini` file:
+   ```
+   [CLUSTERING]
+   default_node="11.22.33.44"
+   default_ssh_key_path="/root/some-key.rsa"
+   ```
+3. That's it, all new user accounts are created on the remote server.
+
+> NOTE: The remote server must have a fresh installation of Ubuntu 24.04 - other distributions and versions are not supported.
 
 #### Create user for Reseller
 
