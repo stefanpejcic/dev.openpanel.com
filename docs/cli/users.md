@@ -200,21 +200,12 @@ To send email to the email address for the user with login credentials, pass the
 
 To create a new user on another server:
 
-1. Create ssk key pair and establish ssh connection from master to the slave server.
+1. Create ssh key pair and establish ssh connection from master to the slave server.
 2. Run the following command:
 
 ```bash
 opencli user-add <USERNAME> <PASSWORD> <EMAIL> "<PLAN_NAME>" --server=<IP_ADDRESS> --key=<SSH_KEY_PATH>
 ```
-
-<details>
-  <summary>Example output</summary>
-
-```bash
-opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --server=11.54.64.71 --key=/root/some_key.rsa   
-```
-</details>
-
 
 
 #### Create user for Reseller
@@ -223,14 +214,6 @@ opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --server
 ```bash
 opencli user-add <USERNAME> <PASSWORD> <EMAIL> "<PLAN_NAME>" --reseller=<RESELLER_USERNAME>
 ```
-
-<details>
-  <summary>Example output</summary>
-
-```bash
-opencli user-add stefan pejcic324 stefan@pejcic.rs 'Default Plan Nginx' --reseller=pejcic
-```
-</details>
 
 ### Transfer User
 
