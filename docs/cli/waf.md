@@ -10,6 +10,7 @@ opencli waf status
 
 
 ## Enable
+To enable the WAF and ensure it is used for new domains, run:
 
 ```bash
 opencli waf enable
@@ -17,6 +18,7 @@ opencli waf enable
 
 
 ## Disable
+To completely disable the WAF for all existing domains and prevent it from being applied to new domains, run:
 
 ```bash
 opencli waf disable
