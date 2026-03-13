@@ -30,6 +30,27 @@ use `-all` flag to run for all users:
 opencli websites-scan -all
 ```
 
+
+### Secure
+
+Server-level restrictions to harden WordPress instance. Rules are applied at the webserver level before PHP processing.
+
+```bash
+opencli websites-secure <DOMAIN> [--rules='RULE1 RULE2' | --disable-all | --list-active-rules]
+```
+
+- List all available rules:
+  `opencli websites-secure --list-available-rules`
+- Check if rules exist for a domain:
+  `opencli websites-secure <domain>`
+- List enabled rules for domain:
+  `opencli websites-secure <domain> --list-active-rules`
+- Enable rules for a domain:
+  `opencli websites-secure <domain> --rules='rule1 rule2'`
+- Disable all rules for a domain:
+  `opencli websites-secure <domain> --disable-all`
+
+
 ### Vulnerability
 
 Check WordPress website for WP core, theme and plugin vulnerabilities:
