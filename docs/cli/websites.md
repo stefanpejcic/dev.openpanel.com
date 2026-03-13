@@ -35,10 +35,6 @@ opencli websites-scan -all
 
 Server-level restrictions to harden WordPress instance. Rules are applied at the webserver level before PHP processing.
 
-```bash
-opencli websites-secure <DOMAIN> [--rules='RULE1 RULE2' | --disable-all | --list-active-rules]
-```
-
 List all available rules:
 ```bash
 opencli websites-secure --list-available-rules
