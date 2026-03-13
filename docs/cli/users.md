@@ -658,6 +658,30 @@ Example usage:
   ```
 
 
+
+### Block IP
+
+Prevent specific IP addresses or CIDR ranges from accessing any user websites:
+
+```bash
+opencli user-block_ip <username> [--list='ip_here another_ip' | --delete-all]
+```
+
+List blocked IPs for a user:
+```bash
+opencli user-block_ip <username>
+```
+
+Block IP addresses from accessing user websites:
+```bash
+opencli user-block_ip <username> --list='11.22.33.44 124.64.23.0/24'
+```
+
+Remove all blocked IP addresses for a user:
+```bash
+opencli user-block_ip <username> --delete-all
+```
+
 ### View login log
 View up to last 20 successfull logins for the user.
 
