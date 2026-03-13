@@ -39,17 +39,30 @@ Server-level restrictions to harden WordPress instance. Rules are applied at the
 opencli websites-secure <DOMAIN> [--rules='RULE1 RULE2' | --disable-all | --list-active-rules]
 ```
 
-- List all available rules:
-  `opencli websites-secure --list-available-rules`
-- Check if rules exist for a domain:
-  `opencli websites-secure <domain>`
-- List enabled rules for domain:
-  `opencli websites-secure <domain> --list-active-rules`
-- Enable rules for a domain:
-  `opencli websites-secure <domain> --rules='rule1 rule2'`
-- Disable all rules for a domain:
-  `opencli websites-secure <domain> --disable-all`
+List all available rules:
+```bash
+opencli websites-secure --list-available-rules
+```
 
+Check if rules exist for a domain:
+```bash
+opencli websites-secure <domain>
+```
+
+List enabled rules for domain:
+```bash
+opencli websites-secure <domain> --list-active-rules
+```
+
+Enable rules for a domain:
+```bash
+opencli websites-secure <domain> --rules='rule1 rule2'
+```
+  
+Disable all rules for a domain:
+```bash
+opencli websites-secure <domain> --disable-all
+```
 
 ### Vulnerability
 
