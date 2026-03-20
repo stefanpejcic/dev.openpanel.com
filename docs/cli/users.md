@@ -367,7 +367,8 @@ Options:
   --activate=<service>           Start the specified service.
   --deactivate=<service>         Stop the specified service.
   --force                        Force image pull before activation.
-  --debug                        Display raw output of docker-compsoe commands.
+  --dry-run                      Simulate actions without applying changes.
+  --debug                        Display raw output of docker-compose commands.
 
 Example:
   opencli user-resources stefan --json
