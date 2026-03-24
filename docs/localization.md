@@ -31,8 +31,4 @@ To translate OpenPanel to another language, for example Serbian:
 3. Translate the `messages.pot` file
 4. Send a pull request
 
-To instal additional locales (replace de-de with your locale):
-
-```bash
-opencli locale de-de
-```
+To instal additional locales: /cli/locale.html
