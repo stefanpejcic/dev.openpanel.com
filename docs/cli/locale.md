@@ -14,3 +14,7 @@ List or install new locale(s) for OpenPanel interface:
   ```bash
   opencli locale sr-sr tr-tr
   ```
+- Installing ALL available locales at once:
+  ```bash
+  opencli locale $(curl -s "https://api.github.com/repos/stefanpejcic/openpanel-translations/contents" | jq -r '.[] | select(.type=="dir") | .name' | tr '\n' ' ')
+  ```
