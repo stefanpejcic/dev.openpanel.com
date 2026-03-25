@@ -60,7 +60,7 @@ All files for a user are stored in their /home directory: `/home/$docker_context
 └── .bashrc                   - Sets path and docker host.
 ```
 
-## User Services Files
+## User Services files
 
 Certain files are shared across user services to provide Administrators with a single point of management. This enables faster updates and easier customization for all users. For example, it allows updating WP-CLI simultaneously for everyone or configuring OpenLiteSpeed consistently across all accounts.
 
@@ -72,3 +72,48 @@ Certain files are shared across user services to provide Administrators with a s
 - `/etc/openpanel/mysql/phpmyadmin/config.inc.php` - phpMyAdmin configuration file that allows auto-login from UI.
 - `/etc/openpanel/php/ioncube/`                    - Ioncube Loader files for PHP.
 - `/etc/openpanel/php/ioncube_extension.ini`       - Ioncube Loader extension for PHP.
+
+## Shared Services files
+
+Files that are used by shared services like FTP, Caddy webserver and Mailserver.
+
+- `/etc/openpanel/wordpress/wp-cli.phar`           - WP-CLI binnary used in OpenLitespeed and all PHP containers.
+- `/etc/openpanel/wordpress/wp-cli.phar`           - WP-CLI binnary used in OpenLitespeed and all PHP containers.
+
+## Templates files
+
+Files that are used for new services/domains that users add.
+
+- `/etc/openpanel/docker/compose/nodejs.yml`       - Used for new docker services via 'OpenPanel > AutoInstaller > NodeJS' page.
+- `/etc/openpanel/docker/compose/python.yml`       - Used for new docker services via 'OpenPanel > AutoInstaller > Python' page.
+- `/etc/openpanel/docker/daemon/rootless.json`     - Used for new users to configure docker rootless service.
+- `/etc/openpanel/apache/httpd.conf`     - Main configuration file used for new users with Apache webserver.
+- `/etc/openpanel/backups/backup.env`     - Template used for new user backups.
+- `/etc/openpanel/backups/customized.template`     - Notifications template used for user backups.
+- `/etc/openpanel/bind9/zone_template.txt` - DNS zone template used for new domains with IPv4 set for the user.
+- `/etc/openpanel/bind9/zone_template_ipv6.txt` - DNS zone template used for new domains with IPv6 set for the user.
+- `/etc/openpanel/bind9/zone_template_ipv6.txt` - DNS zone template used for new domains with IPv6 set for the user.
+- `/etc/openpanel/caddy/templates/domain.conf` - Caddyfile used for new domains.
+- `/etc/openpanel/caddy/templates/suspended_domain.html` - Landing page displayed on suspended domains for a user.
+- `/etc/openpanel/caddy/templates/suspended_user.html` - Landing page displayed on domains for a suspended user.
+- `/etc/openpanel/csf/csf.blocklists` - CSF blocklists used when configuring Sentinel Firewall.
+- `/etc/openpanel/mysql/user.cnf` - Configuration file used for MySQL services.
+
+
+## Configuration files
+
+- `/etc/openpanel/caddy/templates/wp.rules` - Rules used for hardening options in WP Manager.
+- `/etc/openpanel/clamav/extensions.txt` - List of extensions to scan using ClamAV (DEPRECATED).
+- `/etc/openpanel/csf/csf.blocklists` - CSF blocklists used when configuring Sentinel Firewall.
+- `/etc/openpanel/ftp/start_vsftpd.sh` - Entrypoint for FTP service (creates accounts on startup).
+- `/etc/openpanel/ftp/vsftpd.conf` - Vsftpd main configuration file.
+- `/etc/openpanel/goaccess/goaccess.conf` - GoAccess main configuration file.
+- `/etc/openpanel/modules/` - Custom plugins for OpenPanel UI.
+- `/etc/openpanel/mysql/initialize/1.1/plans.sql` - Initializes database on OpenPanel installation.
+- `/etc/openpanel/mysql/host_mysql.cnf` - Stores mysql logins for the OpenPanel installation.
+- `/etc/openpanel/mysql/keys.txt` - List of configuration keys editable from 'OpenPanel > MySQL > Configuration' page.
+- `/etc/openpanel/mysql/mysqld.cnf` - Configuration file for MySQL service.
+- `/etc/openpanel/docker/templates/docker_apache_domain.conf` - VirtualHosts template for new domains on Apache webserver.
+- `/etc/openpanel/docker/templates/docker_litespeed_domain.conf` - VirtualHosts template for new domains on OpenLitespeed webserver.
+- `/etc/openpanel/docker/templates/docker_nginx_domain.conf` - VirtualHosts template for new domains on Nginx webserver.
+- NOTE: list is incomplete, please refer to https://github.com/stefanpejcic/openpanel-configuration/tree/main for a full list.
