@@ -59,5 +59,5 @@ All files for a user are stored in their /home directory: `/home/$docker_context
 ├── sockets/                  - sockets for running services.
 └── .bashrc                   - Sets path and docker host.
 ```
--rw-r--r--  1 stefantestira stefantestira 30655 Mar 24 19:57 postgre_custom.conf
-drwxrwxrwx  6 stefantestira stefantestira  4096 Mar 24 19:57 sockets/
+
+
