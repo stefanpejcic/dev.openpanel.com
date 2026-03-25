@@ -60,4 +60,15 @@ All files for a user are stored in their /home directory: `/home/$docker_context
 └── .bashrc                   - Sets path and docker host.
 ```
 
+## User Services Files
 
+Certain files are shared across user services to provide Administrators with a single point of management. This enables faster updates and easier customization for all users. For example, it allows updating WP-CLI simultaneously for everyone or configuring OpenLiteSpeed consistently across all accounts.
+
+- `/etc/openpanel/wordpress/wp-cli.phar`           - WP-CLI binnary used in OpenLitespeed and all PHP containers.
+- `/etc/openpanel/openlitespeed/start.sh`          - Sets permissions and maps all individual VHosts files on OpenLitespeed.
+- `/etc/openpanel/nginx/certs/`                    - Self-signed SSL files for domains used inside user webservers.
+- `/etc/openpanel/nginx/default_page.html`         - Landing page displayed on user domains if no files exist.
+- `/etc/openpanel/mysql/scripts/dump.sh`           - Script used to generate mysql dumps when performing backups.
+- `/etc/openpanel/mysql/phpmyadmin/config.inc.php` - phpMyAdmin configuration file that allows auto-login from UI.
+- `/etc/openpanel/php/ioncube/`                    - Ioncube Loader files for PHP.
+- `/etc/openpanel/php/ioncube_extension.ini`       - Ioncube Loader extension for PHP.
