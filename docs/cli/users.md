@@ -116,27 +116,6 @@ opencli user-list --total --json
 </details>
 
 
-
-#### List users over Quota
-
-
-```bash
-opencli user-list --over_quota
-```
-
-<details>
-  <summary>Example output</summary>
-
-```bash
-opencli user-list --over_quota
-
-                        Block limits                File limits
-User            used    soft    hard  grace    used  soft  hard  grace
-----------------------------------------------------------------------
-api       +- 6228924 5120000 5120000   none   73320 1000000 1000000  
-```
-</details>
-
 #### List all users Quotas
 
 
@@ -148,25 +127,15 @@ opencli user-list --quota
 <details>
   <summary>Example output</summary>
 
-```bash
-# opencli user-list --quota
-                        Block limits                File limits
-User            used    soft    hard  grace    used  soft  hard  grace
-----------------------------------------------------------------------
-stefan    -- 8539632 10240000 10240000         102072 1000000 1000000       
-panel     -- 2594328 10240000 10240000          57712 1000000 1000000       
-emailfilterapi -- 1430620 20480000 20480000          29462 2500000 2500000       
-#100999   --      16       0       0              4     0     0       
-#100041   --      20       0       0              5     0     0       
-#100032   --      20       0       0              5     0     0       
-#100500   --    1576       0       0            269     0     0       
-#100998   --  302664       0       0            618     0     0       
-#165568   --      16       0       0              4     0     0       
-#165577   --      12       0       0              3     0     0       
-#166036   --    1576       0       0            269     0     0       
-#166534   --  258916       0       0            264     0     0       
-#231113   --      20       0       0              5     0     0       
-#231172   --      20       0       0              5     0     0       
+```json
+{
+  "timestamp": "2026-04-01T10:16:01Z",
+  "users": [
+    {"username":"stefan","uid":1000,"home_path":"/home/stefan/","disk_used":269744,"disk_soft":5120000,"disk_hard":5120000,"inodes_used":130,"inodes_soft":1000000,"inodes_hard":1000000},
+    {"username":"pejcic","uid":1001,"home_path":"/home/pejcic/","disk_used":550216,"disk_soft":5120000,"disk_hard":5120000,"inodes_used":143,"inodes_soft":1000000,"inodes_hard":1000000},
+    {"username":"demo","uid":1002,"home_path":"/home/demo/","disk_used":4138604,"disk_soft":10240000,"disk_hard":10240000,"inodes_used":74889,"inodes_soft":1000000,"inodes_hard":1000000}
+  ]
+}   
 ```
 </details>
 
