@@ -1,0 +1,689 @@
+openapi: 3.0.3
+info:
+  title: OpenPanel API
+  description: >
+    A comprehensive REST API for managing OpenPanel hosting accounts, plans, domains,
+    services, and server resources. All endpoints require Bearer JWT authentication.
+  version: 1.0.0
+
+servers:
+  - url: http://PANEL:2087
+    description: OpenPanel Admin Server
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        plan_name:
+          type: string
+
+    CreateUserRequest:
+      type: object
+      required: [email, username, password, plan_name]
+      properties:
+        email:
+          type: string
+          example: stefan@pejcic.rs
+        username:
+          type: string
+          example: stefan
+        password:
+          type: string
+          example: s32dsasaq
+        plan_name:
+          type: string
+          example: default_plan_nginx
+
+    CreateUserResponse:
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            message:
+              type: string
+              example: "Successfully added user stefan password: s32dsasaq"
+        success:
+          type: boolean
+          example: true
+
+    UserActionRequest:
+      type: object
+      properties:
+        action:
+          type: string
+          enum: [suspend, unsuspend]
+          example: suspend
+        password:
+          type: string
+          example: NEW_PASSWORD_HERE
+
+    ChangePlanRequest:
+      type: object
+      required: [plan_name]
+      properties:
+        plan_name:
+          type: string
+          example: default_plan_nginx
+
+    Plan:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: ubuntu_nginx_mysql
+        description:
+          type: string
+          example: Unlimited disk space and Nginx
+        bandwidth:
+          type: integer
+          example: 100
+        cpu:
+          type: string
+          example: "1"
+        ram:
+          type: string
+          example: 1g
+        disk_limit:
+          type: string
+          example: 10 GB
+        storage_file:
+          type: string
+          example: 0 GB
+        inodes_limit:
+          type: integer
+          example: 1000000
+        db_limit:
+          type: integer
+          example: 0
+        domains_limit:
+          type: integer
+          example: 0
+        websites_limit:
+          type: integer
+          example: 10
+        docker_image:
+          type: string
+          example: openpanel/nginx
+
+    AddDomainRequest:
+      type: object
+      required: [username, domain]
+      properties:
+        username:
+          type: string
+          example: current_user
+        domain:
+          type: string
+          example: example.com
+        docroot:
+          type: string
+          description: Optional. Must start with /var/www/html/
+          example: /var/www/html/example.com
+
+    UsageStats:
+      type: object
+      properties:
+        usage_stats:
+          type: string
+          example: "{\"timestamp\": \"2024-09-03\", \"users\": 1, \"domains\": 2, \"websites\": 0}"
+
+    CpuUsage:
+      type: object
+      additionalProperties:
+        type: number
+      example:
+        core_0: 0
+        core_1: 0
+
+    MemoryUsage:
+      type: object
+      properties:
+        human_readable_info:
+          type: object
+          properties:
+            available:
+              type: string
+              example: 6.14 GB
+            percent:
+              type: string
+              example: 20.9%
+            total:
+              type: string
+              example: 7.76 GB
+            used:
+              type: string
+              example: 1.33 GB
+        ram_info:
+          type: object
+          properties:
+            available:
+              type: integer
+              example: 6587547648
+            percent:
+              type: number
+              example: 20.9
+            total:
+              type: integer
+              example: 8327839744
+            used:
+              type: integer
+              example: 1425428480
+
+    DiskPartition:
+      type: object
+      properties:
+        device:
+          type: string
+          example: /dev/vda1
+        mountpoint:
+          type: string
+          example: /
+        fstype:
+          type: string
+          example: ext4
+        total:
+          type: integer
+          example: 123690532864
+        used:
+          type: integer
+          example: 63366230016
+        free:
+          type: integer
+          example: 60307525632
+        percent:
+          type: number
+          example: 51.2
+
+    SystemInfo:
+      type: object
+      properties:
+        hostname:
+          type: string
+          example: stefi
+        os:
+          type: string
+          example: Ubuntu 24.04 LTS
+        time:
+          type: string
+          example: "2024-09-04 15:09:16"
+        kernel:
+          type: string
+          example: 6.8.0-36-generic
+        cpu:
+          type: string
+          example: DO-Premium-Intel(x86_64)
+        openpanel_version:
+          type: string
+          example: 0.2.7
+        running_processes:
+          type: integer
+          example: 178
+        package_updates:
+          type: integer
+          example: 98
+        uptime:
+          type: string
+          example: "18905"
+
+    ServiceEntry:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Service One
+        status:
+          type: string
+          example: active
+
+    EditServicesRequest:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ServiceEntry'
+      example:
+        service1:
+          name: Service One
+          status: active
+        service2:
+          name: Service Two
+          status: inactive
+
+security:
+  - BearerAuth: []
+
+paths:
+
+  # ─── USERS ───────────────────────────────────────────────────────────────────
+
+  /api/users:
+    get:
+      tags: [Users]
+      summary: List all accounts
+      responses:
+        '200':
+          description: A list of user accounts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+
+    post:
+      tags: [Users]
+      summary: Create account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '200':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateUserResponse'
+
+  /api/users/{username}:
+    get:
+      tags: [Users]
+      summary: Get single account
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User account details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+    patch:
+      tags: [Users]
+      summary: Suspend, unsuspend, or change password
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserActionRequest'
+      responses:
+        '200':
+          description: Action performed successfully
+
+    put:
+      tags: [Users]
+      summary: Change plan
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePlanRequest'
+      responses:
+        '200':
+          description: Plan changed successfully
+
+    delete:
+      tags: [Users]
+      summary: Delete account
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Account deleted successfully
+
+    connect:
+      tags: [Users]
+      summary: Autologin to user account
+      parameters:
+        - name: username
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Autologin URL or session returned
+
+  /api/ips:
+    get:
+      tags: [Users]
+      summary: List users with dedicated IP addresses
+      responses:
+        '200':
+          description: List of users with dedicated IPs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  # ─── PLANS ───────────────────────────────────────────────────────────────────
+
+  /api/plans:
+    get:
+      tags: [Plans]
+      summary: List all plans
+      responses:
+        '200':
+          description: A list of hosting plans
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plans:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Plan'
+
+  /api/plans/{plan_id}:
+    get:
+      tags: [Plans]
+      summary: Get single plan
+      parameters:
+        - name: plan_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Hosting plan details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plan:
+                    $ref: '#/components/schemas/Plan'
+
+  # ─── DOMAINS ─────────────────────────────────────────────────────────────────
+
+  /api/domains:
+    get:
+      tags: [Domains]
+      summary: List all domains
+      responses:
+        '200':
+          description: A list of domains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /api/domains/new:
+    post:
+      tags: [Domains]
+      summary: Add a domain
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddDomainRequest'
+      responses:
+        '200':
+          description: Domain added successfully
+
+  /api/domains/suspend/{domain}:
+    post:
+      tags: [Domains]
+      summary: Suspend a domain
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Domain suspended successfully
+
+  /api/domains/unsuspend/{domain}:
+    post:
+      tags: [Domains]
+      summary: Unsuspend a domain
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Domain unsuspended successfully
+
+  /api/domains/delete/{domain}:
+    post:
+      tags: [Domains]
+      summary: Delete a domain
+      parameters:
+        - name: domain
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Domain deleted successfully
+
+  # ─── USAGE ───────────────────────────────────────────────────────────────────
+
+  /api/usage:
+    get:
+      tags: [Usage]
+      summary: List available API endpoints with usage examples
+      responses:
+        '200':
+          description: API endpoint usage information
+
+  /api/usage/stats:
+    get:
+      tags: [Usage]
+      summary: Current number of users, domains and websites
+      responses:
+        '200':
+          description: Usage statistics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsageStats'
+
+  /api/usage/cpu:
+    get:
+      tags: [Usage]
+      summary: Current CPU usage per core
+      responses:
+        '200':
+          description: CPU usage per core
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CpuUsage'
+
+  /api/usage/memory:
+    get:
+      tags: [Usage]
+      summary: Current RAM usage
+      responses:
+        '200':
+          description: Memory usage details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemoryUsage'
+
+  /api/usage/disk:
+    get:
+      tags: [Usage]
+      summary: Disk usage for all users
+      responses:
+        '200':
+          description: Per-user disk usage
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /api/usage/server:
+    get:
+      tags: [Usage]
+      summary: Server disk usage per partition
+      responses:
+        '200':
+          description: Server disk partitions usage
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DiskPartition'
+
+  # ─── SYSTEM ──────────────────────────────────────────────────────────────────
+
+  /api/system:
+    get:
+      tags: [System]
+      summary: System information
+      description: Returns hostname, OS, current time, kernel version, CPU architecture, OpenPanel version, running processes, and available package updates.
+      responses:
+        '200':
+          description: System information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemInfo'
+
+  # ─── SERVICES ────────────────────────────────────────────────────────────────
+
+  /api/services:
+    get:
+      tags: [Services]
+      summary: List monitored services
+      description: Reads from /etc/openpanel/openadmin/config/services.json
+      responses:
+        '200':
+          description: List of monitored services
+
+    put:
+      tags: [Services]
+      summary: Edit monitored services list
+      description: Updates /etc/openpanel/openadmin/config/services.json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EditServicesRequest'
+      responses:
+        '200':
+          description: Services list updated successfully
+
+  /api/services/status:
+    get:
+      tags: [Services]
+      summary: Check status of all monitored services
+      responses:
+        '200':
+          description: Status of each monitored service
+
+  /api/service/start/{service_name}:
+    post:
+      tags: [Services]
+      summary: Start a service
+      parameters:
+        - name: service_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Service started successfully
+
+  /api/service/restart/{service_name}:
+    post:
+      tags: [Services]
+      summary: Restart a service
+      parameters:
+        - name: service_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Service restarted successfully
+
+  /api/service/stop/{service_name}:
+    post:
+      tags: [Services]
+      summary: Stop a service
+      parameters:
+        - name: service_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Service stopped successfully
+
+  # ─── NOTIFICATIONS ───────────────────────────────────────────────────────────
+
+  /api/notifications:
+    get:
+      tags: [Notifications]
+      summary: List OpenAdmin notifications
+      responses:
+        '200':
+          description: List of notifications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
